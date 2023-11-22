@@ -87,7 +87,7 @@
                                                     <div class="comment"><i class=""></i><?php echo $data["genre"] ?></div>
                                                 </div>
                                                 <div class="product__item__text">
-                                                    <h5><a href="anime-details.php">
+                                                    <h5><a href="anime-details.php?id= <?php echo $data["id"]?>">
                                                             <?php echo $data["judul_film"] ?>
                                                         </a></h5>
                                                 </div>
