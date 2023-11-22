@@ -23,7 +23,7 @@
                                         <li><a href="./login.php">Login</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="./blog.php">Our Blog</a></li>
+                                <!-- <li><a href="./blog.php">Our Blog</a></li> -->
                                 <li><a href="#">Contacts</a></li>
                             </ul>
                         </nav>
