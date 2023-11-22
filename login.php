@@ -35,6 +35,7 @@
       <div class="loader"></div>
     </div>
 
+<<<<<<< HEAD:login.html
     <!-- Header Section Begin -->
     <header class="header">
       <div class="container">
@@ -84,6 +85,10 @@
         <div id="mobile-menu-wrap"></div>
       </div>
     </header>
+=======
+   <!-- Header Section Begin -->
+   <?php include "template/navbar.php"?>
+>>>>>>> 26ec64c13fe407eb3d5af857f2d7daf64d27f547:login.php
     <!-- Header End -->
 
     <!-- Normal Breadcrumb Begin -->
