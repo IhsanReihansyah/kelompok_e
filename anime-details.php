@@ -48,9 +48,9 @@ $data = mysqli_fetch_array($query);
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumb__links">
-                        <a href="./index.html"><i class="fa fa-home"></i> Home</a>
-                        <a href="./categories.html">Categories</a>
-                        <span>Romance</span>
+                        <a href="./index.php"><i class="fa fa-home"></i> Home</a>
+                        <a href="#">Detail Film</a>
+                        <span><?php echo $data["judul_film"] ?></span>
                     </div>
                 </div>
             </div>
@@ -75,7 +75,7 @@ $data = mysqli_fetch_array($query);
                                 <h3> <?php echo $data["judul_film"] ?></h3>
                             </div>
                             <div class="anime__details__rating">
-                                <span> Rate <?php echo $data["id_rating"]?> / 10 </span>
+                            <span> Rate <?php echo $data["id_rating"]?> / 10 </span>
                             </div>
                             <p> <?php echo $data["sinopsis"]?> </p>
                             <div class="anime__details__widget">
