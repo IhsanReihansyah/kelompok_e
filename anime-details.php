@@ -1,7 +1,5 @@
 <?php include "koneksi.php";
-//mendapatkan id
-$id = $_GET["id"];
-
+$id = $_GET["id"];//mendapatkan id
 $query = mysqli_query($conn, "SELECT * FROM `film` as f join kategori as k on f.id_kategori=k.id_kategori join sutradara as s on s.id_sutradara=f.id_sutradara where id = '$id'");
 $data = mysqli_fetch_array($query);
 ?>
@@ -49,8 +47,8 @@ $data = mysqli_fetch_array($query);
                 <div class="col-lg-12">
                     <div class="breadcrumb__links">
                         <a href="./index.html"><i class="fa fa-home"></i> Home</a>
-                        <a href="./categories.html">Categories</a>
-                        <span>Romance</span>
+                        <a href="./kategori.php">Categories</a>
+                        <span><?php echo $data["kategori"] ?></span>
                     </div>
                 </div>
             </div>
@@ -93,7 +91,7 @@ $data = mysqli_fetch_array($query);
                             </div>
                             <div class="anime__details__btn">
                                 <a href="#" class="follow-btn"><i class="fa fa-heart-o"></i> Follow</a>
-                                <a href="#" class="watch-btn"><span>Watch Now</span> <i
+                                <a href="anime-watching.php?id= <?php echo $data["id"]?>" class="watch-btn"><span>Watch Now</span> <i
                                     class="fa fa-angle-right"></i></a>
                                 </div>
                             </div>

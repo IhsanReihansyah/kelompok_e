@@ -26,6 +26,13 @@
 </head>
 
 <body>
+
+    <?php include "koneksi.php";
+    $id = $_GET["id"];//mendapatkan id
+    $query = mysqli_query($conn, "SELECT * FROM `film` as f join kategori as k on f.id_kategori=k.id_kategori join sutradara as s on s.id_sutradara=f.id_sutradara where id = '$id'");
+    $data = mysqli_fetch_array($query);
+    ?>
+
     <!-- Page Preloder -->
     <div id="preloder">
         <div class="loader"></div>
@@ -43,8 +50,8 @@
                     <div class="breadcrumb__links">
                         <a href="./index.html"><i class="fa fa-home"></i> Home</a>
                         <a href="./categories.html">Categories</a>
-                        <a href="#">Romance</a>
-                        <span>Fate Stay Night: Unlimited Blade</span>
+                        <a href="#"><?php echo $data["kategori"] ?></a>
+                        <span><?php echo $data["judul_film"] ?></span>
                     </div>
                 </div>
             </div>
@@ -58,7 +65,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="anime__video__player">
-                        <video id="player" playsinline controls data-poster="./videos/anime-watch.jpg">
+                        <video id="player" playsinline controls data-poster="<?php echo $data["gambar"] ?>">
                             <source src="videos/1.mp4" type="video/mp4" />
                             <!-- Captions are optional -->
                             <track kind="captions" label="English captions" src="#" srclang="en" default />
