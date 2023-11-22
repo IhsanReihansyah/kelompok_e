@@ -66,7 +66,7 @@
                             <div class="row">
                                 <div class="col-lg-8 col-md-8 col-sm-8">
                                     <div class="section-title">
-                                        <h4>Indonesia</h4>
+                                        <h4>All Movies</h4>
                                     </div>
                                 </div>
                             </div>
@@ -74,82 +74,29 @@
                         <div class="row">
                             <?php
                             $query = mysqli_query($conn, "SELECT * from film as f ORDER BY f.id ASC;");
-                            tampilkanProduk1($query);
-                            ?>
-                        </div>
-                        <div class="product__page__title">
-                            <div class="row">
-                                <div class="col-lg-8 col-md-8 col-sm-6">
-                                    <div class="section-title">
-                                        <h4>Korea</h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <?php
-                            $query = mysqli_query($conn, "SELECT * from film as f ORDER BY f.id ASC;");
-                            tampilkanProduk2($query);
-                            ?>
-                        </div>
-                        <div class="product__page__title">
-                            <div class="row">
-                                <div class="col-lg-8 col-md-8 col-sm-6">
-                                    <div class="section-title">
-                                        <h4>China</h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <?php
-                            $query = mysqli_query($conn, "SELECT * from film as f ORDER BY f.id ASC;");
-                            tampilkanProduk3($query);
-                            ?>
-                        </div>
-                        <div class="product__page__title">
-                            <div class="row">
-                                <div class="col-lg-8 col-md-8 col-sm-6">
-                                    <div class="section-title">
-                                        <h4>Jepang</h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <?php
-                            $query = mysqli_query($conn, "SELECT * from film as f ORDER BY f.id ASC;");
-                            tampilkanProduk4($query);
-                            ?>
-                        </div>
-                        <div class="product__page__title">
-                            <div class="row">
-                                <div class="col-lg-8 col-md-8 col-sm-6">
-                                    <div class="section-title">
-                                        <h4>Thailand</h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <?php
-                            $query = mysqli_query($conn, "SELECT * from film as f ORDER BY f.id ASC;");
-                            tampilkanProduk5($query);
-                            ?>
-                        </div>
-                        <div class="product__page__title">
-                            <div class="row">
-                                <div class="col-lg-8 col-md-8 col-sm-6">
-                                    <div class="section-title">
-                                        <h4>Amerika</h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <?php
-                            $query = mysqli_query($conn, "SELECT * from film as f ORDER BY f.id ASC;");
-                            tampilkanProduk6($query);
+                            if (mysqli_num_rows($query) > 0) {
+                                while ($data = mysqli_fetch_array($query)) {                            
+                                        ?>
+                        
+                                        <div class="col-lg-4 col-md-6 col-sm-6">
+                                            <div class="product__item">
+                                                <div class="product__item__pic set-bg" data-setbg="<?php echo $data["gambar"] ?>">
+                                                    <div class="ep">
+                                                        <?php echo $data["id_rating"] ?>
+                                                    </div>
+                                                    <div class="comment"><i class=""></i><?php echo $data["genre"] ?></div>
+                                                </div>
+                                                <div class="product__item__text">
+                                                    <h5><a href="anime-details.php">
+                                                            <?php echo $data["judul_film"] ?>
+                                                        </a></h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                        
+                                        <?php
+                                }                                
+                            }
                             ?>
                         </div>
                     </div>
