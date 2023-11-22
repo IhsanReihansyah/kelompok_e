@@ -1,3 +1,10 @@
+<?php include "koneksi.php";
+//mendapatkan id
+$id = $_GET["id"];
+
+$query = mysqli_query($conn, "SELECT * FROM `film` as f join kategori as k on f.id_kategori=k.id_kategori join sutradara as s on s.id_sutradara=f.id_sutradara where id = '$id'");
+$data = mysqli_fetch_array($query);
+?>
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -57,7 +64,7 @@
             <div class="anime__details__content">
                 <div class="row">
                     <div class="col-lg-3">
-                        <div class="anime__details__pic set-bg" data-setbg="img/anime/details-pic.jpg">
+                        <div class="anime__details__pic set-bg" data-setbg="<?php echo $data["gambar"] ?>">
                             <div class="comment"><i class="fa fa-comments"></i> 11</div>
                             <div class="view"><i class="fa fa-eye"></i> 9141</div>
                         </div>
@@ -65,41 +72,21 @@
                     <div class="col-lg-9">
                         <div class="anime__details__text">
                             <div class="anime__details__title">
-                                <h3>Fate Stay Night: Unlimited Blade</h3>
-                                <span>フェイト／ステイナイト, Feito／sutei naito</span>
+                                <h3> <?php echo $data["judul_film"] ?></h3>
                             </div>
                             <div class="anime__details__rating">
-                                <div class="rating">
-                                    <a href="#"><i class="fa fa-star"></i></a>
-                                    <a href="#"><i class="fa fa-star"></i></a>
-                                    <a href="#"><i class="fa fa-star"></i></a>
-                                    <a href="#"><i class="fa fa-star"></i></a>
-                                    <a href="#"><i class="fa fa-star-half-o"></i></a>
-                                </div>
-                                <span>1.029 Votes</span>
+                                <span> Rate <?php echo $data["id_rating"]?> / 10 </span>
                             </div>
-                            <p>Every human inhabiting the world of Alcia is branded by a “Count” or a number written on
-                                their body. For Hina’s mother, her total drops to 0 and she’s pulled into the Abyss,
-                                never to be seen again. But her mother’s last words send Hina on a quest to find a
-                            legendary hero from the Waste War - the fabled Ace!</p>
+                            <p> <?php echo $data["sinopsis"]?> </p>
                             <div class="anime__details__widget">
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6">
                                         <ul>
-                                            <li><span>Type:</span> TV Series</li>
-                                            <li><span>Studios:</span> Lerche</li>
-                                            <li><span>Date aired:</span> Oct 02, 2019 to ?</li>
-                                            <li><span>Status:</span> Airing</li>
-                                            <li><span>Genre:</span> Action, Adventure, Fantasy, Magic</li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6">
-                                        <ul>
-                                            <li><span>Scores:</span> 7.31 / 1,515</li>
-                                            <li><span>Rating:</span> 8.5 / 161 times</li>
-                                            <li><span>Duration:</span> 24 min/ep</li>
-                                            <li><span>Quality:</span> HD</li>
-                                            <li><span>Views:</span> 131,541</li>
+                                            <li><span>Genre:</span> <?php echo $data["genre"] ?> </li>
+                                            <li><span>Negara:</span> <?php echo $data["kategori"] ?> </li>
+                                            <li><span>Tahun:</span> <?php echo $data["tahun_rilis"] ?> </li>
+                                            <li><span>Sutradara:</span> <?php echo $data["nama_sutradara"] ?></li>
+                                            <li><span>Pemain:</span> <?php echo $data["nama_pemain"] ?></li>
                                         </ul>
                                     </div>
                                 </div>
