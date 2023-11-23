@@ -93,24 +93,24 @@
                                 </div><br>
                                 <div class="form-group">
                                     <label>Genre Film:</label><br>
-                                    <?php
-                                    $query = mysqli_query($conn, "SELECT DISTINCT genre FROM film");
-                                    $genres = array();
-                                    while ($data = mysqli_fetch_array($query)) {
-                                        $genre = $data['genre'];
-                                        if (!empty($genre)) {
-                                            $genre_list = explode(',', $genre);
-                                            $genres = array_merge($genres, $genre_list);
-                                        }
-                                    }
+                                    <input type="checkbox" name = "genre[]" value="Advanture" <?php echo (in_array("Advanture", explode(',', $genre))) ? 'checked' : ''; ?>>
+                                    <label>Advanture</label>
 
-                                    $genres = array_unique(array_map('trim', $genres));
+                                    <input type="checkbox" name = "genre[]"" value="Action" <?php echo (in_array("Action", explode(',', $genre))) ? 'checked' : ''; ?>>
+                                    <label>Action</label>
 
-                                    foreach ($genres as $genre) {
-                                        echo '<input type="checkbox" id="genre_' . $genre . '" name="genre[]" value="' . $genre . '">';
-                                        echo '<label for="genre_' . $genre . '">' . $genre . '</label><br>';
-                                    }
-                                    ?>
+                                    <input type="checkbox" name = "genre[]"" value="Drama" <?php echo (in_array("Drama", explode(',', $genre))) ? 'checked' : ''; ?>>
+                                    <label>Drama</label>
+
+                                    <input type="checkbox" name = "genre[]"" value="Romance" <?php echo (in_array("Romance", explode(',', $genre))) ? 'checked' : ''; ?>>
+                                    <label>Romance</label>
+
+                                    <input type="checkbox" name = "genre[]"" value="Horor" <?php echo (in_array("Horor", explode(',', $genre))) ? 'checked' : ''; ?>>
+                                    <label>Horor</label>
+
+                                    <input type="checkbox" name = "genre[]"" value="Comedi" <?php echo (in_array("Comedi", explode(',', $genre))) ? 'checked' : ''; ?>>
+                                    <label>Comedi</label>
+                                    
                                 </div><br>
                                 <div class="form-group">
                                     <label for="nama_pemain">Nama Pemain:</label>
