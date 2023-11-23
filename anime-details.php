@@ -48,8 +48,13 @@
                 <div class="col-lg-12">
                     <div class="breadcrumb__links">
                         <a href="./index.php"><i class="fa fa-home"></i> Home</a>
+<<<<<<< HEAD
                         <a href="./kategori.php">Categories</a>
                         <span><?php echo $data["kategori"] ?></span>
+=======
+                        <a href="#">Detail Film</a>
+                        <span><?php echo $data["judul_film"] ?></span>
+>>>>>>> 288340be8716dba1c461a2d1d6cb8c3cdbf21c25
                     </div>
                 </div>
             </div>
@@ -74,7 +79,7 @@
                                 <h3> <?php echo $data["judul_film"] ?></h3>
                             </div>
                             <div class="anime__details__rating">
-                                <span> Rate <?php echo $data["id_rating"]?> / 10 </span>
+                            <span> Rate <?php echo $data["id_rating"]?> / 10 </span>
                             </div>
                             <p> <?php echo $data["sinopsis"]?> </p>
                             <div class="anime__details__widget">

@@ -163,13 +163,16 @@
                                         $queryrating = mysqli_query($conn, "SELECT * FROM rating");
                                         if (mysqli_num_rows($queryrating) > 0) {
                                             while ($datarating = mysqli_fetch_array($queryrating)) {
-                                                $selected = ($datarating['id_rating'] == $rating) ? 'selected' : '';
+                                                $selected = ($datarating['id_rating'] == $rating_film) ? 'selected' : ''; // Perubahan di sini
                                                 echo "<option value='" . $datarating["id_rating"] . "' $selected>" . $datarating["rating_film"] . "</option>";
                                             }
                                         } else {
                                             echo "<option value=''>Tidak ada item tersedia</option>";
                                         }
                                         ?>
+                                        </select>
+</div><br>
+
                                     </select>
                                 </div><br>
                                 <input type="submit" class="btn btn-primary" name="Submit" value="Simpan">
