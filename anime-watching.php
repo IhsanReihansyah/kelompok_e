@@ -71,7 +71,7 @@
                             <track kind="captions" label="English captions" src="#" srclang="en" default />
                         </video>
                     </div>
-                    <div class="anime__details__episodes">
+                    <!-- <div class="anime__details__episodes">
                         <div class="section-title">
                             <h5>List Name</h5>
                         </div>
@@ -95,7 +95,7 @@
                         <a href="#">Ep 18</a>
                         <a href="#">Ep 19</a>
                     </div>
-                </div>
+                </div> -->
             </div>
             <div class="row">
                 <div class="col-lg-8">
