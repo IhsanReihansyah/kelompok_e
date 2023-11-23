@@ -75,27 +75,30 @@
                             <?php
                             $query = mysqli_query($conn, "SELECT * from film as f ORDER BY f.id ASC;");
                             if (mysqli_num_rows($query) > 0) {
-                                while ($data = mysqli_fetch_array($query)) {                            
-                                        ?>
-                        
-                                        <div class="col-lg-4 col-md-6 col-sm-6">
-                                            <div class="product__item">
-                                                <div class="product__item__pic set-bg" data-setbg="../<?php echo $data["gambar"] ?>">
-                                                    <div class="ep">
-                                                        <?php echo $data["id_rating"] ?>
-                                                    </div>
-                                                    <div class="comment"><i class=""></i><?php echo $data["genre"] ?></div>
+                                while ($data = mysqli_fetch_array($query)) {
+                                    ?>
+
+                                    <div class="col-lg-4 col-md-6 col-sm-6">
+                                        <div class="product__item">
+                                            <div class="product__item__pic set-bg"
+                                                data-setbg="../<?php echo $data["gambar"] ?>">
+                                                <div class="ep">
+                                                    <?php echo $data["id_rating"] ?>
                                                 </div>
-                                                <div class="product__item__text">
-                                                    <h5><a href="anime-details.php?id=<?php echo $data["id"]?>">
-                                                            <?php echo $data["judul_film"] ?>
-                                                        </a></h5>
+                                                <div class="comment"><i class=""></i>
+                                                    <?php echo $data["genre"] ?>
                                                 </div>
                                             </div>
+                                            <div class="product__item__text">
+                                                <h5><a href="anime-details.php?id=<?php echo $data["id"] ?>">
+                                                        <?php echo $data["judul_film"] ?>
+                                                    </a></h5>
+                                            </div>
                                         </div>
-                        
-                                        <?php
-                                }                                
+                                    </div>
+
+                                    <?php
+                                }
                             }
                             ?>
                         </div>
@@ -109,63 +112,6 @@
                         <a href="#"><i class="fa fa-angle-double-right"></i></a>
                     </div> -->
                 </div>x
-            </div>
-        </div>
-        <div class="product__sidebar__comment">
-            <div class="section-title">
-                <h5>New Comment</h5>
-            </div>
-            <div class="product__sidebar__comment__item">
-                <div class="product__sidebar__comment__item__pic">
-                    <img src="../img/sidebar/comment-1.jpg" alt="">
-                </div>
-                <div class="product__sidebar__comment__item__text">
-                    <ul>
-                        <li>Active</li>
-                        <li>Movie</li>
-                    </ul>
-                    <h5><a href="#">The Seven Deadly Sins: Wrath of the Gods</a></h5>
-                    <span><i class="fa fa-eye"></i> 19.141 Viewes</span>
-                </div>
-            </div>
-            <div class="product__sidebar__comment__item">
-                <div class="product__sidebar__comment__item__pic">
-                    <img src="../img/sidebar/comment-2.jpg" alt="">
-                </div>
-                <div class="product__sidebar__comment__item__text">
-                    <ul>
-                        <li>Active</li>
-                        <li>Movie</li>
-                    </ul>
-                    <h5><a href="#">Shirogane Tamashii hen Kouhan sen</a></h5>
-                    <span><i class="fa fa-eye"></i> 19.141 Viewes</span>
-                </div>
-            </div>
-            <div class="product__sidebar__comment__item">
-                <div class="product__sidebar__comment__item__pic">
-                    <img src="../img/sidebar/comment-3.jpg" alt="">
-                </div>
-                <div class="product__sidebar__comment__item__text">
-                    <ul>
-                        <li>Active</li>
-                        <li>Movie</li>
-                    </ul>
-                    <h5><a href="#">Kizumonogatari III: Reiket su-hen</a></h5>
-                    <span><i class="fa fa-eye"></i> 19.141 Viewes</span>
-                </div>
-            </div>
-            <div class="product__sidebar__comment__item">
-                <div class="product__sidebar__comment__item__pic">
-                    <img src="../img/sidebar/comment-4.jpg" alt="">
-                </div>
-                <div class="product__sidebar__comment__item__text">
-                    <ul>
-                        <li>Active</li>
-                        <li>Movie</li>
-                    </ul>
-                    <h5><a href="#">Monogatari Series: Second Season</a></h5>
-                    <span><i class="fa fa-eye"></i> 19.141 Viewes</span>
-                </div>
             </div>
         </div>
         </div>
