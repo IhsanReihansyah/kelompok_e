@@ -12,17 +12,11 @@ function tampilkanProduk1($query)
                             <div class="ep">
                                 <?php echo $data["id_rating"] ?>
                             </div>
-                            <div class="comment"><i class="fa fa-comments"></i> 11</div>
-                            <div class="view"><i class="fa fa-eye"></i> 9141</div>
+                            <div class="comment"><i class=""></i><?php echo $data["genre"] ?></div>
                         </div>
                         <div class="product__item__text">
-                            <ul>
-                                <li>
-                                    <?php echo $data["genre"] ?>
-                                </li>
-                            </ul>
-                            <h5><a href="#">
-                                    <?php echo $data["judul_film"] ?>
+                            <h5><a href="anime-details.php?id=<?php echo $data["id"]?>">
+                                     <?php echo $data["judul_film"] ?>
                                 </a></h5>
                         </div>
                     </div>
@@ -46,17 +40,11 @@ function tampilkanProduk2($query)
                             <div class="ep">
                                 <?php echo $data["id_rating"] ?>
                             </div>
-                            <div class="comment"><i class="fa fa-comments"></i> 11</div>
-                            <div class="view"><i class="fa fa-eye"></i> 9141</div>
+                            <div class="comment"><i class=""></i><?php echo $data["genre"] ?></div>
                         </div>
                         <div class="product__item__text">
-                            <ul>
-                                <li>
-                                    <?php echo $data["genre"] ?>
-                                </li>
-                            </ul>
-                            <h5><a href="#">
-                                    <?php echo $data["judul_film"] ?>
+                        <h5><a href="anime-details.php?id=<?php echo $data["id"]?>">
+                                     <?php echo $data["judul_film"] ?>
                                 </a></h5>
                         </div>
                     </div>
@@ -81,17 +69,11 @@ function tampilkanProduk3($query)
                             <div class="ep">
                                 <?php echo $data["id_rating"] ?>
                             </div>
-                            <div class="comment"><i class="fa fa-comments"></i> 11</div>
-                            <div class="view"><i class="fa fa-eye"></i> 9141</div>
+                            <div class="comment"><i class=""></i><?php echo $data["genre"] ?></div>
                         </div>
                         <div class="product__item__text">
-                            <ul>
-                                <li>
-                                    <?php echo $data["genre"] ?>
-                                </li>
-                            </ul>
-                            <h5><a href="#">
-                                    <?php echo $data["judul_film"] ?>
+                        <h5><a href="anime-details.php?id=<?php echo $data["id"]?>">
+                                     <?php echo $data["judul_film"] ?>
                                 </a></h5>
                         </div>
                     </div>
@@ -115,17 +97,67 @@ function tampilkanProduk4($query)
                             <div class="ep">
                                 <?php echo $data["id_rating"] ?>
                             </div>
-                            <div class="comment"><i class="fa fa-comments"></i> 11</div>
-                            <div class="view"><i class="fa fa-eye"></i> 9141</div>
+                            <div class="comment"><i class=""></i><?php echo $data["genre"] ?></div>
                         </div>
                         <div class="product__item__text">
-                            <ul>
-                                <li>
-                                    <?php echo $data["genre"] ?>
-                                </li>
-                            </ul>
-                            <h5><a href="#">
-                                    <?php echo $data["judul_film"] ?>
+                        <h5><a href="anime-details.php?id=<?php echo $data["id"]?>">
+                                     <?php echo $data["judul_film"] ?>
+                                </a></h5>
+                        </div>
+                    </div>
+                </div>
+
+                <?php
+            }
+        }
+    }
+}
+function tampilkanProduk5($query)
+{
+    if (mysqli_num_rows($query) > 0) {
+        while ($data = mysqli_fetch_array($query)) {
+            if ($data["id_kategori"] == '5') {
+                ?>
+
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="product__item">
+                        <div class="product__item__pic set-bg" data-setbg="<?php echo $data["gambar"] ?>">
+                            <div class="ep">
+                                <?php echo $data["id_rating"] ?>
+                            </div>
+                            <div class="comment"><i class=""></i><?php echo $data["genre"] ?></div>
+                        </div>
+                        <div class="product__item__text">
+                        <h5><a href="anime-details.php?id=<?php echo $data["id"]?>">
+                                     <?php echo $data["judul_film"] ?>
+                                </a></h5>
+                        </div>
+                    </div>
+                </div>
+
+                <?php
+            }
+        }
+    }
+}
+function tampilkanProduk6($query)
+{
+    if (mysqli_num_rows($query) > 0) {
+        while ($data = mysqli_fetch_array($query)) {
+            if ($data["id_kategori"] == '6') {
+                ?>
+
+        <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="product__item">
+                        <div class="product__item__pic set-bg" data-setbg="<?php echo $data["gambar"] ?>">
+                            <div class="ep">
+                                <?php echo $data["id_rating"] ?>
+                            </div>
+                            <div class="comment"><i class=""></i><?php echo $data["genre"] ?></div>
+                        </div>
+                        <div class="product__item__text">
+                        <h5><a href="anime-details.php?id=<?php echo $data["id"]?>">
+                                     <?php echo $data["judul_film"] ?>
                                 </a></h5>
                         </div>
                     </div>

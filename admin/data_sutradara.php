@@ -16,7 +16,7 @@
 <body class="sb-nav-fixed">
     <?php
     include 'koneksi.php';
-    $query = mysqli_query($conn, "SELECT f.id, f.judul_film, f.tahun_rilis,f.sinopsis,f.genre,f.nama_pemain,f.gambar,k.kategori,s.nama_sutradara,r.rating_film FROM `film` AS f JOIN kategori AS k ON k.id_kategori = f.id_kategori JOIN sutradara AS s ON s.id_sutradara=f.id_sutradara JOIN rating AS r ON r.id_rating=f.id_rating ORDER BY f.id ASC;");
+    $query = mysqli_query($conn, "SELECT * FROM sutradara;");
     ?>
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
         <!-- Navbar Brand-->
@@ -46,20 +46,14 @@
                             Halaman ini Khusus Admin
                         </div>
                     </div>
-                    <table id="film" class="table table-striped table-bordered">
+                    <table id="sutradara" class="table table-striped table-bordered">
                         <thead>
                             <tr>
                                 <th>No</th>
-                                <th>ID Film</th>
-                                <th>Judul Film</th>
-                                <th>Tahun Rilis</th>
-                                <th>Sinopsis</th>
-                                <th>Genre</th>
-                                <th>Nama Pemain</th>
-                                <th>Gambar</th>
-                                <th>kategori</th>
-                                <th>Nama Sutradara</th>
-                                <th>Rating Film</th>
+                                <th>ID Sutradara</th>
+                                <th>Nama</th>
+                                <th>Tanggal Lahir</th>
+                                <th>Negara</th>
                                 <th>Aksi</th>
                             </tr>
                         </thead>
@@ -74,38 +68,22 @@
                                             <?php echo $no ?>
                                         </td>
                                         <td>
-                                            <?php echo $data["id"]; ?>
-                                        </td>
-                                        <td>
-                                            <?php echo $data["judul_film"]; ?>
-                                        </td>
-                                        <td>
-                                            <?php echo $data["tahun_rilis"]; ?>
-                                        </td>
-                                        <td>
-                                            <?php echo $data["sinopsis"]; ?>
-                                        </td>
-                                        <td>
-                                            <?php echo $data["genre"]; ?>
-                                        </td>
-                                        <td>
-                                            <?php echo $data["nama_pemain"]; ?>
-                                        </td>
-                                        <td> <img src="<?php echo $data["gambar"] ?>" width="100"> </td>
-                                        <td>
-                                            <?php echo $data["kategori"]; ?>
+                                            <?php echo $data["id_sutradara"]; ?>
                                         </td>
                                         <td>
                                             <?php echo $data["nama_sutradara"]; ?>
                                         </td>
                                         <td>
-                                            <?php echo $data["rating_film"]; ?>
+                                            <?php echo $data["tanggal_lahir"]; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $data["negara"]; ?>
                                         </td>
                                         <td>
                                             <center>
-                                                <a href="edit.php?id=<?php echo $data["id"] ?>" class="btn btn-warning btn-sm">
+                                                <a href="edit_sutradara.php?id_sutradara=<?php echo $data["id_sutradara"] ?>" class="btn btn-warning btn-sm">
                                                     Ubah </a>&nbsp;
-                                                <a href="proses_hapus.php?id=<?php echo $data["id"] ?>"
+                                                <a href="proses_hapus_sutradara.php?id_sutradara=<?php echo $data["id_sutradara"] ?>"
                                                     onclick="return confirm('Yakin Ingin Menghapus Data?')"
                                                     class="btn btn-danger btn-sm">Delete </a>
                                             </center>
@@ -139,7 +117,7 @@
     <script src="js/scripts.js"></script>
     <script>
         $(document).ready(function () {
-            $('#film').DataTable();
+            $('#sutradara').DataTable();
         });
     </script>
 </body>

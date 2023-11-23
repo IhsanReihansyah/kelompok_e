@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 22, 2023 at 09:32 AM
+-- Generation Time: Nov 23, 2023 at 04:21 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -35,7 +35,7 @@ CREATE TABLE `film` (
   `id_kategori` int(11) NOT NULL,
   `id_sutradara` int(11) NOT NULL,
   `id_rating` int(11) NOT NULL,
-  `genre` set('Romance','Horor','Advanture','Action','Comedi','Drama') NOT NULL,
+  `genre` set('Romance','Horor','Advanture','Action','Comedi','Drama','Animation','Crime','Fantasy') NOT NULL,
   `nama_pemain` varchar(255) NOT NULL,
   `gambar` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -53,7 +53,13 @@ INSERT INTO `film` (`id`, `judul_film`, `tahun_rilis`, `sinopsis`, `id_kategori`
 (10, 'The Seven Deadly Sins: Wrath of the Gods', '2023-11-08', 'qwe', 4, 2, 8, 'Romance,Advanture', 'qwe', 'img/sidebar/tv-2.jpg'),
 (11, 'Sword art online alicization war of underworld', '2023-11-08', 'qwe', 4, 2, 8, 'Romance,Advanture', 'qwe', 'img/sidebar/tv-3.jpg'),
 (12, 'Fate/stay night: Heavens Feel I. presage flower', '2023-11-08', 'qwe', 4, 2, 8, 'Romance,Advanture', 'qwe', 'img/sidebar/tv-4.jpg'),
-(13, 'Fate stay night unlimited blade works', '2023-11-08', 'qwe', 4, 2, 8, 'Romance,Advanture', 'qwe', 'img/sidebar/tv-5.jpg');
+(13, 'Fate stay night unlimited blade works', '2023-11-08', 'qwe', 4, 2, 8, 'Romance,Advanture', 'qwe', 'img/sidebar/tv-5.jpg'),
+(14, 'qwe', '2023-11-07', 'qwe', 6, 2, 3, 'Romance,Horor,Advanture,Action,Comedi,Drama', 'qwe', 'qwe'),
+(15, 'THE CREATOR', '2023-10-27', 'Dengan latar belakang perang antara manusia dan robot dengan kecerdasan buatan, seorang mantan tentara menemukan senjata rahasia, robot dalam bentuk anak kecil.\r\n', 6, 4, 7, 'Advanture,Action,Drama', 'Gemma Chan, John David Washington, Madeleine Yuna Voyles', 'images/film-the-creator-2023-lk21-d21.jpg.webp'),
+(16, 'CREATION OF THE GODS I: KINGDOM OF STORMS', '2023-07-20', 'Epik fantasi tinggi timur yang luar biasa yang menciptakan kembali perang mitos berkepanjangan antara manusia, makhluk abadi, dan monster, yang terjadi lebih dari tiga ribu tahun yang lalu.\r\n', 3, 5, 7, 'Advanture,Drama', 'Huang Bo, Kris Phillips, Xuejian Li', 'images/film-creation-of-the-gods-i-kingdom-of-storms-2023-lk21-d21.jpg.webp'),
+(17, 'BELIEVER 2', '2023-10-10', 'seorang detektif polisi yang berusaha menjatuhkan kartel narkoba terbesar di Asia yang dijalankan oleh seorang pria bernama Tuan Lee. Dia tidak pernah diketahui oleh siapa pun dan sebagai konsekuensinya, banyak pengedar narkoba menyamar sebagai Tuan Lee untuk melakukan perdagangan ilegal.', 2, 7, 1, 'Romance,Horor,Advanture,Action,Drama,Animation,Crime,Fantasy', 'Cha Seung-won, Cho Jin-woong, Han Hyo-joo ', 'https://o-cdn-cas.sirclocdn.com/parenting/images/Believer_2.width-800.format-webp.webp'),
+(22, 'Captain Marvel', '2023-09-06', 'Pada 1995 di planet ibu kota Kekaisaran Kree, Hala, anggota Starforce Vers menderita amnesia dan mimpi buruk berulang yang melibatkan seorang wanita yang lebih tua.', 6, 7, 1, 'Advanture,Action,Drama', 'Ben Mendelsohn, Brie Larson, Jude Law, Samuel L. Jackson', 'images/marvel.jpg'),
+(23, 'THE CREATOR', '2023-11-17', 'Di tengah perang masa depan antara umat manusia dan kekuatan kecerdasan buatan, seorang mantan agen pasukan khusus yang berduka atas hilangnya istrinya, direkrut untuk memburu dan membunuh Sang Pencipta, arsitek AI canggih yang sulit dipahami yang telah mengembangkan sebuah teknologi misterius. senjata dengan kekuatan untuk mengakhiri perang dan umat manusia itu sendiri.', 6, 7, 4, 'Action', 'Gemma Chan, John David Washington, Madeleine Yuna Voyles', 'images/film-the-creator-2023-lk21-d21.jpg.webp');
 
 -- --------------------------------------------------------
 
@@ -113,16 +119,25 @@ INSERT INTO `rating` (`id_rating`, `rating_film`) VALUES
 
 CREATE TABLE `sutradara` (
   `id_sutradara` int(11) NOT NULL,
-  `nama_sutradara` varchar(255) NOT NULL
+  `nama_sutradara` varchar(255) NOT NULL,
+  `tanggal_lahir` date DEFAULT NULL,
+  `negara` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `sutradara`
 --
 
-INSERT INTO `sutradara` (`id_sutradara`, `nama_sutradara`) VALUES
-(1, 'Ihsan Reihansyah'),
-(2, 'Albert');
+INSERT INTO `sutradara` (`id_sutradara`, `nama_sutradara`, `tanggal_lahir`, `negara`) VALUES
+(1, 'Ihsan Reihansyah', NULL, NULL),
+(2, 'Albert', NULL, NULL),
+(3, 'Joss Whedon', '1964-06-23', 'Amerika Serikat'),
+(4, 'Taika Watiti', '1975-08-16', 'Selandia Baru'),
+(5, 'Wuershan', '1972-06-10', 'china'),
+(7, 'Joss Whedo', '1964-08-27', 'Amerika Serikat'),
+(8, 'Park Hoon-jung', '1981-04-27', 'Korea Selatan'),
+(10, 'Kim Yong-hwa', '1989-06-22', 'Korea Selatan'),
+(11, 'Carol Danvers', '1989-10-10', 'Amerika Serikat');
 
 -- --------------------------------------------------------
 
@@ -131,9 +146,10 @@ INSERT INTO `sutradara` (`id_sutradara`, `nama_sutradara`) VALUES
 --
 
 CREATE TABLE `ulasan` (
-  `id_ulasan` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
+  `ulasan_id` int(11) NOT NULL,
+  `nama_ulasan` varchar(255) NOT NULL,
   `ulasan` varchar(255) NOT NULL,
-  `rating` varchar(255) NOT NULL,
   `tanggal_ulasan` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -141,8 +157,12 @@ CREATE TABLE `ulasan` (
 -- Dumping data for table `ulasan`
 --
 
-INSERT INTO `ulasan` (`id_ulasan`, `ulasan`, `rating`, `tanggal_ulasan`) VALUES
-(1, 'Sangat bisa diterima', 'Sangat bagus', '2023-11-23');
+INSERT INTO `ulasan` (`id`, `ulasan_id`, `nama_ulasan`, `ulasan`, `tanggal_ulasan`) VALUES
+(2, 9, 'rehan bakery', 'sangat baik', '2023-11-07'),
+(3, 9, 'albert barber', 'tidak menarik', '2023-11-16'),
+(4, 12, 'Yesicha', 'tidak bagus', '2023-11-07'),
+(5, 17, 'rani', 'sangat baik', '2023-11-23'),
+(6, 17, 'yesi', 'bagus banget filmnya', '2023-11-23');
 
 --
 -- Indexes for dumped tables
@@ -179,7 +199,8 @@ ALTER TABLE `sutradara`
 -- Indexes for table `ulasan`
 --
 ALTER TABLE `ulasan`
-  ADD PRIMARY KEY (`id_ulasan`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `ulasan_id` (`ulasan_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -189,7 +210,7 @@ ALTER TABLE `ulasan`
 -- AUTO_INCREMENT for table `film`
 --
 ALTER TABLE `film`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `kategori`
@@ -207,13 +228,13 @@ ALTER TABLE `rating`
 -- AUTO_INCREMENT for table `sutradara`
 --
 ALTER TABLE `sutradara`
-  MODIFY `id_sutradara` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_sutradara` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `ulasan`
 --
 ALTER TABLE `ulasan`
-  MODIFY `id_ulasan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Constraints for dumped tables
@@ -223,9 +244,15 @@ ALTER TABLE `ulasan`
 -- Constraints for table `film`
 --
 ALTER TABLE `film`
-  ADD CONSTRAINT `kategori` FOREIGN KEY (`id_kategori`) REFERENCES `kategori` (`id_kategori`),
-  ADD CONSTRAINT `rating` FOREIGN KEY (`id_rating`) REFERENCES `rating` (`id_rating`),
-  ADD CONSTRAINT `sutradara` FOREIGN KEY (`id_sutradara`) REFERENCES `sutradara` (`id_sutradara`);
+  ADD CONSTRAINT `kategori` FOREIGN KEY (`id_kategori`) REFERENCES `kategori` (`id_kategori`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `rating` FOREIGN KEY (`id_rating`) REFERENCES `rating` (`id_rating`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `sutradara` FOREIGN KEY (`id_sutradara`) REFERENCES `sutradara` (`id_sutradara`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `ulasan`
+--
+ALTER TABLE `ulasan`
+  ADD CONSTRAINT `ulasan_ibfk_1` FOREIGN KEY (`ulasan_id`) REFERENCES `film` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
