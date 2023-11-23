@@ -6,5 +6,5 @@ $tanggal_lahir = $_POST["tanggal_lahir"];
 $negara = $_POST["negara"];
 
 $result = mysqli_query($conn, "INSERT INTO `sutradara` (`nama_sutradara`, `tanggal_lahir`, `negara`) VALUES ('$nama_sutradara', '$tanggal_lahir', '$negara');");
-header("Location:admin.php");
+header("Location:data_sutradara.php");
 ?>
