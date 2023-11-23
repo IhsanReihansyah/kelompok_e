@@ -4,7 +4,11 @@
                         <div class="nav">
                             <a class="nav-link" href="admin.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                                Dashboard
+                                Data Film
+                            </a>
+                            <a class="nav-link" href="#">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                Data Sutradara
                             </a>
                             <a class="nav-link" href="sutradara.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
