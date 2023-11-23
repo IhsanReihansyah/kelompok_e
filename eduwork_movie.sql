@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 23, 2023 at 08:13 AM
+-- Generation Time: Nov 23, 2023 at 08:20 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -114,16 +114,20 @@ INSERT INTO `rating` (`id_rating`, `rating_film`) VALUES
 
 CREATE TABLE `sutradara` (
   `id_sutradara` int(11) NOT NULL,
-  `nama_sutradara` varchar(255) NOT NULL
+  `nama_sutradara` varchar(255) NOT NULL,
+  `tanggal_lahir` date DEFAULT NULL,
+  `negara` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `sutradara`
 --
 
-INSERT INTO `sutradara` (`id_sutradara`, `nama_sutradara`) VALUES
-(1, 'Ihsan Reihansyah'),
-(2, 'Albert');
+INSERT INTO `sutradara` (`id_sutradara`, `nama_sutradara`, `tanggal_lahir`, `negara`) VALUES
+(1, 'Ihsan Reihansyah', NULL, NULL),
+(2, 'Albert', NULL, NULL),
+(3, 'Joss Whedon', '1964-06-23', 'Amerika Serikat'),
+(4, 'Taika Watiti', '1975-08-16', 'Selandia Baru');
 
 -- --------------------------------------------------------
 
@@ -212,7 +216,7 @@ ALTER TABLE `rating`
 -- AUTO_INCREMENT for table `sutradara`
 --
 ALTER TABLE `sutradara`
-  MODIFY `id_sutradara` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_sutradara` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `ulasan`
