@@ -38,7 +38,7 @@ $query = mysqli_query($conn, "SELECT * FROM `ulasan` as u join film as f on f.id
         </div>
         <form action="template/proses_review.php" method="post">
             <input type="text" placeholder=" Your Name" name="nama_ulasan"><br><br>
-            <input type="hidden" value="<?php echo $data['id']?>" name="ulasan_id">
+            <input type="hidden" value="<?php echo $id?>" name="ulasan_id">
             <textarea placeholder="Your Comment" name="ulasan"></textarea>
             <button type="submit" name="simpan" ><i class="fa fa-location-arrow"></i> Review</button>
         </form>

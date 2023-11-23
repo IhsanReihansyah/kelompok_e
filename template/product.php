@@ -15,7 +15,7 @@ function tampilkanProduk1($query)
                             <div class="comment"><i class=""></i><?php echo $data["genre"] ?></div>
                         </div>
                         <div class="product__item__text">
-                            <h5><a href="anime-details.php?id= <?php echo $data["id"]?>">
+                            <h5><a href="anime-details.php?id=<?php echo $data["id"]?>">
                                      <?php echo $data["judul_film"] ?>
                                 </a></h5>
                         </div>
@@ -43,7 +43,7 @@ function tampilkanProduk2($query)
                             <div class="comment"><i class=""></i><?php echo $data["genre"] ?></div>
                         </div>
                         <div class="product__item__text">
-                        <h5><a href="anime-details.php?id= <?php echo $data["id"]?>">
+                        <h5><a href="anime-details.php?id=<?php echo $data["id"]?>">
                                      <?php echo $data["judul_film"] ?>
                                 </a></h5>
                         </div>
@@ -72,7 +72,7 @@ function tampilkanProduk3($query)
                             <div class="comment"><i class=""></i><?php echo $data["genre"] ?></div>
                         </div>
                         <div class="product__item__text">
-                        <h5><a href="anime-details.php?id= <?php echo $data["id"]?>">
+                        <h5><a href="anime-details.php?id=<?php echo $data["id"]?>">
                                      <?php echo $data["judul_film"] ?>
                                 </a></h5>
                         </div>
@@ -100,7 +100,7 @@ function tampilkanProduk4($query)
                             <div class="comment"><i class=""></i><?php echo $data["genre"] ?></div>
                         </div>
                         <div class="product__item__text">
-                        <h5><a href="anime-details.php?id= <?php echo $data["id"]?>">
+                        <h5><a href="anime-details.php?id=<?php echo $data["id"]?>">
                                      <?php echo $data["judul_film"] ?>
                                 </a></h5>
                         </div>
@@ -128,7 +128,7 @@ function tampilkanProduk5($query)
                             <div class="comment"><i class=""></i><?php echo $data["genre"] ?></div>
                         </div>
                         <div class="product__item__text">
-                        <h5><a href="anime-details.php?id= <?php echo $data["id"]?>">
+                        <h5><a href="anime-details.php?id=<?php echo $data["id"]?>">
                                      <?php echo $data["judul_film"] ?>
                                 </a></h5>
                         </div>
@@ -156,7 +156,7 @@ function tampilkanProduk6($query)
                             <div class="comment"><i class=""></i><?php echo $data["genre"] ?></div>
                         </div>
                         <div class="product__item__text">
-                        <h5><a href="anime-details.php?id= <?php echo $data["id"]?>">
+                        <h5><a href="anime-details.php?id=<?php echo $data["id"]?>">
                                      <?php echo $data["judul_film"] ?>
                                 </a></h5>
                         </div>
