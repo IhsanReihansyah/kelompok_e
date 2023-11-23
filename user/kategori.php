@@ -15,14 +15,14 @@
         rel="stylesheet">
 
     <!-- Css Styles -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
-    <link rel="stylesheet" href="css/plyr.css" type="text/css">
-    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="../css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="../css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="../css/plyr.css" type="text/css">
+    <link rel="stylesheet" href="../css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="../css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="../css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="../css/style.css" type="text/css">
 </head>
 
 <body>
@@ -47,8 +47,8 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumb__links">
-                        <a href="./index.html"><i class="fa fa-home"></i> Home</a>
-                        <a href="./categories.html">Categories</a>
+                        <a href="./index.php"><i class="fa fa-home"></i> Home</a>
+                        <a href="./categories.php">Categories</a>
                     </div>
                 </div>
             </div>
@@ -80,7 +80,7 @@
                         
                                         <div class="col-lg-4 col-md-6 col-sm-6">
                                             <div class="product__item">
-                                                <div class="product__item__pic set-bg" data-setbg="<?php echo $data["gambar"] ?>">
+                                                <div class="product__item__pic set-bg" data-setbg="../<?php echo $data["gambar"] ?>">
                                                     <div class="ep">
                                                         <?php echo $data["id_rating"] ?>
                                                     </div>
@@ -117,7 +117,7 @@
             </div>
             <div class="product__sidebar__comment__item">
                 <div class="product__sidebar__comment__item__pic">
-                    <img src="img/sidebar/comment-1.jpg" alt="">
+                    <img src="../img/sidebar/comment-1.jpg" alt="">
                 </div>
                 <div class="product__sidebar__comment__item__text">
                     <ul>
@@ -130,7 +130,7 @@
             </div>
             <div class="product__sidebar__comment__item">
                 <div class="product__sidebar__comment__item__pic">
-                    <img src="img/sidebar/comment-2.jpg" alt="">
+                    <img src="../img/sidebar/comment-2.jpg" alt="">
                 </div>
                 <div class="product__sidebar__comment__item__text">
                     <ul>
@@ -143,7 +143,7 @@
             </div>
             <div class="product__sidebar__comment__item">
                 <div class="product__sidebar__comment__item__pic">
-                    <img src="img/sidebar/comment-3.jpg" alt="">
+                    <img src="../img/sidebar/comment-3.jpg" alt="">
                 </div>
                 <div class="product__sidebar__comment__item__text">
                     <ul>
@@ -156,7 +156,7 @@
             </div>
             <div class="product__sidebar__comment__item">
                 <div class="product__sidebar__comment__item__pic">
-                    <img src="img/sidebar/comment-4.jpg" alt="">
+                    <img src="../img/sidebar/comment-4.jpg" alt="">
                 </div>
                 <div class="product__sidebar__comment__item__text">
                     <ul>
@@ -184,7 +184,7 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="footer__logo">
-                        <a href="./index.html"><img src="img/logo.png" alt=""></a>
+                        <a href="./index.html"><img src="../img/logo.png" alt=""></a>
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -224,14 +224,14 @@
     <!-- Search model end -->
 
     <!-- Js Plugins -->
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/player.js"></script>
-    <script src="js/jquery.nice-select.min.js"></script>
-    <script src="js/mixitup.min.js"></script>
-    <script src="js/jquery.slicknav.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/player.js"></script>
+    <script src="../js/jquery.nice-select.min.js"></script>
+    <script src="../js/mixitup.min.js"></script>
+    <script src="../js/jquery.slicknav.js"></script>
+    <script src="../js/owl.carousel.min.js"></script>
+    <script src="../js/main.js"></script>
 
 </body>
 

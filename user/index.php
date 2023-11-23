@@ -15,14 +15,14 @@
         rel="stylesheet">
 
     <!-- Css Styles -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
-    <link rel="stylesheet" href="css/plyr.css" type="text/css">
-    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="../css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="../css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="../css/plyr.css" type="text/css">
+    <link rel="stylesheet" href="../css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="../css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="../css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="../css/style.css" type="text/css">
 </head>
 
 <body>
@@ -154,13 +154,13 @@
                             </ul>
                             <div class="filter__gallery">
                                 <div class="product__sidebar__view__item set-bg mix day years"
-                                    data-setbg="img/sidebar/tv-1.jpg">
+                                    data-setbg="../img/sidebar/tv-1.jpg">
                                     <div class="ep">18 / ?</div>
                                     <div class="view"><i class="fa fa-eye"></i> 9141</div>
                                     <h5><a href="#">Boruto: Naruto next generations</a></h5>
                                 </div>
                                 <div class="product__sidebar__view__item set-bg mix month week"
-                                    data-setbg="img/sidebar/tv-2.jpg">
+                                    data-setbg="../img/sidebar/tv-2.jpg">
                                     <div class="ep">18 / ?</div>
                                     <div class="view"><i class="fa fa-eye"></i> 9141</div>
                                     <h5><a href="#">The Seven Deadly Sins: Wrath of the Gods</a></h5>
@@ -191,7 +191,7 @@
                             </div>
                             <div class="product__sidebar__comment__item">
                                 <div class="product__sidebar__comment__item__pic">
-                                    <img src="img/sidebar/comment-1.jpg" alt="">
+                                    <img src="../img/sidebar/comment-1.jpg" alt="">
                                 </div>
                                 <div class="product__sidebar__comment__item__text">
                                     <ul>
@@ -204,7 +204,7 @@
                             </div>
                             <div class="product__sidebar__comment__item">
                                 <div class="product__sidebar__comment__item__pic">
-                                    <img src="img/sidebar/comment-2.jpg" alt="">
+                                    <img src="../img/sidebar/comment-2.jpg" alt="">
                                 </div>
                                 <div class="product__sidebar__comment__item__text">
                                     <ul>
@@ -217,7 +217,7 @@
                             </div>
                             <div class="product__sidebar__comment__item">
                                 <div class="product__sidebar__comment__item__pic">
-                                    <img src="img/sidebar/comment-3.jpg" alt="">
+                                    <img src="../img/sidebar/comment-3.jpg" alt="">
                                 </div>
                                 <div class="product__sidebar__comment__item__text">
                                     <ul>
@@ -230,7 +230,7 @@
                             </div>
                             <div class="product__sidebar__comment__item">
                                 <div class="product__sidebar__comment__item__pic">
-                                    <img src="img/sidebar/comment-4.jpg" alt="">
+                                    <img src="../img/sidebar/comment-4.jpg" alt="">
                                 </div>
                                 <div class="product__sidebar__comment__item__text">
                                     <ul>
@@ -258,7 +258,7 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="footer__logo">
-                        <a href="./index.html"><img src="img/logo.png" alt=""></a>
+                        <a href="./index.php"><img src="../img/logo.png" alt=""></a>
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -298,14 +298,14 @@
     <!-- Search model end -->
 
     <!-- Js Plugins -->
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/player.js"></script>
-    <script src="js/jquery.nice-select.min.js"></script>
-    <script src="js/mixitup.min.js"></script>
-    <script src="js/jquery.slicknav.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/player.js"></script>
+    <script src="../js/jquery.nice-select.min.js"></script>
+    <script src="../js/mixitup.min.js"></script>
+    <script src="../js/jquery.slicknav.js"></script>
+    <script src="../js/owl.carousel.min.js"></script>
+    <script src="../js/main.js"></script>
 
 
 </body>
