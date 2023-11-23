@@ -75,7 +75,7 @@
                         </div>
                         <div class="row">
                             <?php
-                            $query = mysqli_query($conn, "SELECT * from film as f ORDER BY f.id ASC;");
+                            $query = mysqli_query($conn, "SELECT * from `film` as f join rating as r on r.id_rating=f.id_rating ORDER BY f.id ASC;");
                             tampilkanProduk1($query);
                             ?>
                         </div>
@@ -96,7 +96,7 @@
                         </div>
                         <div class="row">
                             <?php
-                            $query = mysqli_query($conn, "SELECT * from film as f ORDER BY f.id ASC;");
+                            $query = mysqli_query($conn, "SELECT * from `film` as f join rating as r on r.id_rating=f.id_rating ORDER BY f.id ASC;");
                             tampilkanProduk2($query);
                             ?>
                         </div>
@@ -117,7 +117,7 @@
                         </div>
                         <div class="row">
                             <?php
-                            $query = mysqli_query($conn, "SELECT * from film as f ORDER BY f.id ASC;");
+                            $query = mysqli_query($conn, "SELECT * from `film` as f join rating as r on r.id_rating=f.id_rating ORDER BY f.id ASC;");
                             tampilkanProduk3($query);
                             ?>
                         </div>
@@ -138,7 +138,7 @@
                         </div>
                         <div class="row">
                             <?php
-                            $query = mysqli_query($conn, "SELECT * from film as f ORDER BY f.id ASC;");
+                            $query = mysqli_query($conn, "SELECT * from `film` as f join rating as r on r.id_rating=f.id_rating ORDER BY f.id ASC;");
                             tampilkanProduk4($query);
                             ?>
                         </div>
@@ -158,7 +158,7 @@
                             </ul>
                             <div class="filter__gallery">
                                 <?php
-                                $query = mysqli_query($conn, "SELECT * from film as f ORDER BY f.id ASC;");
+                            $query = mysqli_query($conn, "SELECT * from `film` as f join rating as r on r.id_rating=f.id_rating ORDER BY f.id ASC;");
                                 if (mysqli_num_rows($query) > 0) {
                                     while ($data = mysqli_fetch_array($query)) {
                                         if ($data["id_kategori"] == '1') {
@@ -166,8 +166,8 @@
                                             <div class="product__sidebar__view__item set-bg mix day years"
                                                 data-setbg="../<?php echo $data["gambar"] ?>">
                                                 <div class="ep">
-                                                    <?php echo $data["id_rating"] ?>
-                                                </div>
+                                <?php echo $data["rating_film"] ?>
+                            </div>
                                                 <h5><a href="#">
                                                         <?php echo $data["judul_film"] ?>
                                                     </a></h5>
@@ -176,7 +176,7 @@
                                         }
                                     }
                                 }
-                                $query = mysqli_query($conn, "SELECT * from film as f ORDER BY f.id ASC;");
+                            $query = mysqli_query($conn, "SELECT * from `film` as f join rating as r on r.id_rating=f.id_rating ORDER BY f.id ASC;");
                                 if (mysqli_num_rows($query) > 0) {
                                     while ($data = mysqli_fetch_array($query)) {
                                         if ($data["id_kategori"] == '2') {
@@ -184,8 +184,8 @@
                                             <div class="product__sidebar__view__item set-bg mix month week"
                                                 data-setbg="../<?php echo $data["gambar"] ?>">
                                                 <div class="ep">
-                                                    <?php echo $data["id_rating"] ?>
-                                                </div>
+                                <?php echo $data["rating_film"] ?>
+                            </div>
                                                 <h5><a href="#">
                                                         <?php echo $data["judul_film"] ?>
                                                     </a></h5>
@@ -194,7 +194,7 @@
                                         }
                                     }
                                 }
-                                $query = mysqli_query($conn, "SELECT * from film as f ORDER BY f.id ASC;");
+                            $query = mysqli_query($conn, "SELECT * from `film` as f join rating as r on r.id_rating=f.id_rating ORDER BY f.id ASC;");
                                 if (mysqli_num_rows($query) > 0) {
                                     while ($data = mysqli_fetch_array($query)) {
                                         if ($data["id_kategori"] == '3') {
@@ -202,8 +202,8 @@
                                             <div class="product__sidebar__view__item set-bg mix week years"
                                                 data-setbg="../<?php echo $data["gambar"] ?>">
                                                 <div class="ep">
-                                                    <?php echo $data["id_rating"] ?>
-                                                </div>
+                                <?php echo $data["rating_film"] ?>
+                            </div>
                                                 <h5><a href="#">
                                                         <?php echo $data["judul_film"] ?>
                                                     </a></h5>
@@ -212,7 +212,7 @@
                                         }
                                     }
                                 }
-                                $query = mysqli_query($conn, "SELECT * from film as f ORDER BY f.id ASC;");
+                            $query = mysqli_query($conn, "SELECT * from `film` as f join rating as r on r.id_rating=f.id_rating ORDER BY f.id ASC;");
                                 if (mysqli_num_rows($query) > 0) {
                                     while ($data = mysqli_fetch_array($query)) {
                                         if ($data["id_kategori"] == '4') {
@@ -220,8 +220,8 @@
                                             <div class="product__sidebar__view__item set-bg mix years month"
                                                 data-setbg="../<?php echo $data["gambar"] ?>">
                                                 <div class="ep">
-                                                    <?php echo $data["id_rating"] ?>
-                                                </div>
+                                <?php echo $data["rating_film"] ?>
+                            </div>
                                                 <h5><a href="#">
                                                         <?php echo $data["judul_film"] ?>
                                                     </a></h5>
@@ -230,7 +230,7 @@
                                         }
                                     }
                                 }
-                                $query = mysqli_query($conn, "SELECT * from film as f ORDER BY f.id ASC;");
+                            $query = mysqli_query($conn, "SELECT * from `film` as f join rating as r on r.id_rating=f.id_rating ORDER BY f.id ASC;");
                                 if (mysqli_num_rows($query) > 0) {
                                     while ($data = mysqli_fetch_array($query)) {
                                         if ($data["id_kategori"] == '5') {
@@ -238,8 +238,8 @@
                                             <div class="product__sidebar__view__item set-bg mix day"
                                                 data-setbg="../<?php echo $data["gambar"] ?>">
                                                 <div class="ep">
-                                                    <?php echo $data["id_rating"] ?>
-                                                </div>
+                                <?php echo $data["rating_film"] ?>
+                            </div>
                                                 <h5><a href="#">
                                                         <?php echo $data["judul_film"] ?>
                                                     </a></h5>

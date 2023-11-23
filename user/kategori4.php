@@ -73,7 +73,7 @@
                         </div>
                         <div class="row">
                             <?php
-                            $query = mysqli_query($conn, "SELECT * from film as f ORDER BY f.id ASC;");
+                            $query = mysqli_query($conn, "SELECT * from `film` as f join rating as r on r.id_rating=f.id_rating ORDER BY f.id ASC;");
                             tampilkanProduk4($query);
                             ?>
                         </div>
