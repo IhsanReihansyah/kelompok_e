@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 23, 2023 at 08:20 AM
+-- Generation Time: Nov 23, 2023 at 08:40 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -54,7 +54,9 @@ INSERT INTO `film` (`id`, `judul_film`, `tahun_rilis`, `sinopsis`, `id_kategori`
 (11, 'Sword art online alicization war of underworld', '2023-11-08', 'qwe', 4, 2, 8, 'Romance,Advanture', 'qwe', 'img/sidebar/tv-3.jpg'),
 (12, 'Fate/stay night: Heavens Feel I. presage flower', '2023-11-08', 'qwe', 4, 2, 8, 'Romance,Advanture', 'qwe', 'img/sidebar/tv-4.jpg'),
 (13, 'Fate stay night unlimited blade works', '2023-11-08', 'qwe', 4, 2, 8, 'Romance,Advanture', 'qwe', 'img/sidebar/tv-5.jpg'),
-(14, 'qwe', '2023-11-07', 'qwe', 6, 2, 3, 'Romance,Horor,Advanture,Action,Comedi,Drama', 'qwe', 'qwe');
+(14, 'qwe', '2023-11-07', 'qwe', 6, 2, 3, 'Romance,Horor,Advanture,Action,Comedi,Drama', 'qwe', 'qwe'),
+(15, 'THE CREATOR', '2023-10-27', 'Dengan latar belakang perang antara manusia dan robot dengan kecerdasan buatan, seorang mantan tentara menemukan senjata rahasia, robot dalam bentuk anak kecil.\r\n', 6, 4, 7, 'Advanture,Action,Drama', 'Gemma Chan, John David Washington, Madeleine Yuna Voyles', 'images/film-the-creator-2023-lk21-d21.jpg.webp'),
+(16, 'CREATION OF THE GODS I: KINGDOM OF STORMS', '2023-07-20', 'Epik fantasi tinggi timur yang luar biasa yang menciptakan kembali perang mitos berkepanjangan antara manusia, makhluk abadi, dan monster, yang terjadi lebih dari tiga ribu tahun yang lalu.\r\n', 3, 5, 7, 'Advanture,Drama', 'Huang Bo, Kris Phillips, Xuejian Li', 'images/film-creation-of-the-gods-i-kingdom-of-storms-2023-lk21-d21.jpg.webp');
 
 -- --------------------------------------------------------
 
@@ -127,7 +129,8 @@ INSERT INTO `sutradara` (`id_sutradara`, `nama_sutradara`, `tanggal_lahir`, `neg
 (1, 'Ihsan Reihansyah', NULL, NULL),
 (2, 'Albert', NULL, NULL),
 (3, 'Joss Whedon', '1964-06-23', 'Amerika Serikat'),
-(4, 'Taika Watiti', '1975-08-16', 'Selandia Baru');
+(4, 'Taika Watiti', '1975-08-16', 'Selandia Baru'),
+(5, 'Wuershan', '1972-06-10', 'china');
 
 -- --------------------------------------------------------
 
@@ -198,7 +201,7 @@ ALTER TABLE `ulasan`
 -- AUTO_INCREMENT for table `film`
 --
 ALTER TABLE `film`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `kategori`
@@ -216,7 +219,7 @@ ALTER TABLE `rating`
 -- AUTO_INCREMENT for table `sutradara`
 --
 ALTER TABLE `sutradara`
-  MODIFY `id_sutradara` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_sutradara` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `ulasan`
