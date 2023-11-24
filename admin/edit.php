@@ -170,7 +170,6 @@
                                 </div><br>
 
                                 <div class="form-group">
-<<<<<<< HEAD
                                     <label for="rating">Rating Film:</label>                                    
                                     <select id="rating" name="rating" class="form-control">
                                     <option value="">Default</option>
@@ -184,24 +183,6 @@
                                     <option value="8" <?php if ($rating_film == '8') echo 'selected'; ?>>8/10</option>
                                     <option value="9" <?php if ($rating_film == '9') echo 'selected'; ?>>9/10</option>
                                     <option value="10" <?php if ($rating_film == '10') echo 'selected'; ?>>10/10</option>
-=======
-                                    <label for="rating">Rating Film:</label>
-                                    <select class="form-control" id="rating" name="rating">
-                                        <?php
-                                        $queryrating = mysqli_query($conn, "SELECT * FROM rating");
-                                        if (mysqli_num_rows($queryrating) > 0) {
-                                            while ($datarating = mysqli_fetch_array($queryrating)) {
-                                                $selected = ($datarating['id_rating'] == $rating_film) ? 'selected' : ''; // Perubahan di sini
-                                                echo "<option value='" . $datarating["id_rating"] . "' $selected>" . $datarating["rating_film"] . "</option>";
-                                            }
-                                        } else {
-                                            echo "<option value=''>Tidak ada item tersedia</option>";
-                                        }
-                                        ?>
-                                        </select>
-</div><br>
-
->>>>>>> e81a69e14a946b1d43d0431554218f4f8e0d2bf4
                                     </select>
                                 </div><br>
                                 <input type="submit" class="btn btn-primary" name="Submit" value="Simpan">

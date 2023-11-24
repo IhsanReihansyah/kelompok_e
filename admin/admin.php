@@ -11,9 +11,25 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
     <link href="css/styles.css" rel="stylesheet" />
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha384-vG9JMLSRdtpZ9kHFVzBkHjs4zg4Jzfs4lyd82BYCg/DfOdwQZh6v02ssUnTEmA0i" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
 <body class="sb-nav-fixed">
+    <style>
+    .btn i {
+      margin-right: 8px; /* Mengatur margin antara ikon dan teks */
+    }
+    
+    .btn-warning i {
+      color: #ffc107; /* Warna ikon "Ubah" */
+    }
+    
+    .btn-danger i {
+      color: #dc3545; /* Warna ikon "Delete" */
+    }
+</style>
+
     <?php
     include 'koneksi.php';
     $query = mysqli_query($conn, "SELECT f.id, f.judul_film, f.tahun_rilis,f.sinopsis,f.genre,f.nama_pemain,f.gambar,k.kategori,s.nama_sutradara,r.rating_film FROM `film` AS f JOIN kategori AS k ON k.id_kategori = f.id_kategori JOIN sutradara AS s ON s.id_sutradara=f.id_sutradara JOIN rating AS r ON r.id_rating=f.id_rating ORDER BY f.id ASC;");
@@ -102,13 +118,15 @@
                                             <?php echo $data["rating_film"]; ?>
                                         </td>
                                         <td>
-                                            <center>
+                                            <div class="btn-group" role="group">
                                                 <a href="edit.php?id=<?php echo $data["id"] ?>" class="btn btn-warning btn-sm">
-                                                    Ubah </a>&nbsp;
-                                                <a href="proses_hapus.php?id=<?php echo $data["id"] ?>"
-                                                    onclick="return confirm('Yakin Ingin Menghapus Data?')"
-                                                    class="btn btn-danger btn-sm">Delete </a>
-                                            </center>
+                                                <i class="fas fa-pencil-alt"></i>
+                                            </a>
+                                            <a href="proses_hapus.php?id=<?php echo $data["id"] ?>"
+                                            onclick="return confirm('Yakin Ingin Menghapus Data?')"
+                                            class="btn btn-danger btn-sm">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </a>
                                         </td>
                                     </tr>
                                     <?php $no++;
