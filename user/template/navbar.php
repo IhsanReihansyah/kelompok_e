@@ -4,7 +4,7 @@
                 <div class="col-lg-2">
                     <div class="header__logo">
                         <a href="./index.php">
-                            <img src="img/logo.png" alt="">
+                            <img src="../img/logo.png" alt="">
                         </a>
                     </div>
                 </div>
@@ -32,12 +32,6 @@
                                 <li><a href="#">Contacts</a></li>
                             </ul>
                         </nav>
-                    </div>
-                </div>
-                <div class="col-lg-2">
-                    <div class="header__right">
-                        <a href="#" class="search-switch"><span class="icon_search"></span></a>
-                        <a href="./login.php"><span class="icon_profile"></span></a>
                     </div>
                 </div>
             </div>

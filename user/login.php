@@ -19,15 +19,14 @@
     />
 
     <!-- Css Styles -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
-    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" />
-    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css" />
-    <link rel="stylesheet" href="css/plyr.css" type="text/css" />
-    <link rel="stylesheet" href="css/nice-select.css" type="text/css" />
-    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css" />
-    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css" />
-    <link rel="stylesheet" href="css/style.css" type="text/css" />
-  </head>
+    <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="../css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="../css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="../css/plyr.css" type="text/css">
+    <link rel="stylesheet" href="../css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="../css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="../css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="../css/style.css" type="text/css">
 
   <body>
     <!-- Page Preloder -->
@@ -35,7 +34,6 @@
       <div class="loader"></div>
     </div>
 
-<<<<<<< HEAD:login.html
     <!-- Header Section Begin -->
     <header class="header">
       <div class="container">
@@ -85,10 +83,6 @@
         <div id="mobile-menu-wrap"></div>
       </div>
     </header>
-=======
-   <!-- Header Section Begin -->
-   <?php include "template/navbar.php"?>
->>>>>>> 26ec64c13fe407eb3d5af857f2d7daf64d27f547:login.php
     <!-- Header End -->
 
     <!-- Normal Breadcrumb Begin -->
@@ -221,6 +215,20 @@
     <!-- Search model end -->
 
     <!-- Js Plugins -->
+<<<<<<< HEAD:user/login.php
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/player.js"></script>
+    <script src="../js/jquery.nice-select.min.js"></script>
+    <script src="../js/mixitup.min.js"></script>
+    <script src="../js/jquery.slicknav.js"></script>
+    <script src="../js/owl.carousel.min.js"></script>
+    <script src="../js/main.js"></script>
+
+</body>
+
+</html>
+=======
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/player.js"></script>
@@ -231,3 +239,4 @@
     <script src="js/main.js"></script>
   </body>
 </html>
+>>>>>>> 246a8d35d72c13157aa328d83b08feac87b7a128:login.php
