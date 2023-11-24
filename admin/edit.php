@@ -50,18 +50,7 @@
                 class="fas fa-bars"></i></button>
     </nav>
     <div id="layoutSidenav">
-        <div id="layoutSidenav_nav">
-            <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
-                <div class="sb-sidenav-menu">
-                    <div class="nav">
-                        <a class="nav-link" href="admin.php">
-                            <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                            Data Film
-                        </a>
-                    </div>
-                </div>
-            </nav>
-        </div>
+    <?php include "template/navbar.php" ?>
         <div id="layoutSidenav_content">
             <main>
                 <div class="container-fluid px-4">
