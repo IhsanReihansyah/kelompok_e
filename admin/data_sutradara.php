@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
     <link href="css/styles.css" rel="stylesheet" />
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 </head>
 
 <body class="sb-nav-fixed">
@@ -25,15 +28,16 @@
         <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i
                 class="fas fa-bars" style="color: #ffffff;"></i></button>
         <!-- Navbar-->
-        <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+        <ul class="navbar-nav ml-auto ms-md-0 me-3 me-lg-4">
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown"
-                    aria-expanded="false" style="color: #ffffff;"><i class="fas fa-user fa-fw"></i></a>
+                aria-expanded="false" style="color: #ffffff;"><i class="fas fa-user fa-fw"></i></a>
                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="#!" style="color: #ffffff;">Logout</a></li>
+                    <li><a class="dropdown-item" href="#!" style="color: #000000;">Logout</a></li>
                 </ul>
             </li>
         </ul>
+
     </nav>
     <div id="layoutSidenav">
         <?php include "template/navbar.php" ?>
@@ -41,8 +45,8 @@
             <main>
                 <div class="container-fluid px-4">
                     <h1 class="mt-4">Data Sutradara</h1>
-                    <div class="card mb-4">
-                        <div class="card-body">
+                    <div class="card mb-4" style="background-color: #9EA9B1;">
+                        <div class="card-body" style="color: black; font-weight: bold;">
                             Halaman ini Khusus CRUD Sutradara
                         </div>
                     </div>
@@ -117,8 +121,13 @@
     <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
     <script src="js/scripts.js"></script>
     <script>
+        document.getElementById("navbarDropdown").addEventListener("click", function () {
+        document.getElementById("navbarDropdown").classList.toggle("show");
+        document.getElementById("navbarDropdown").setAttribute("aria-expanded", "true");
+        document.getElementById("navbarDropdown").nextElementSibling.classList.toggle("show");
+    });
         $(document).ready(function () {
-            $('#sutradara').DataTable();
+            $('#film').DataTable();
         });
     </script>
 </body>

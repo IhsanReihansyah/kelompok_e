@@ -13,6 +13,8 @@
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha384-vG9JMLSRdtpZ9kHFVzBkHjs4zg4Jzfs4lyd82BYCg/DfOdwQZh6v02ssUnTEmA0i" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 </head>
 
 <body class="sb-nav-fixed">
@@ -43,12 +45,12 @@
         </button>
 
         <!-- Navbar-->
-        <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+        <ul class="navbar-nav ml-auto ms-md-0 me-3 me-lg-4">
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown"
                 aria-expanded="false" style="color: #ffffff;"><i class="fas fa-user fa-fw"></i></a>
                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="#!" style="color: #ffffff;">Logout</a></li>
+                    <li><a class="dropdown-item" href="#!" style="color: #000000;">Logout</a></li>
                 </ul>
             </li>
         </ul>
@@ -60,9 +62,9 @@
             <main>
                 <div class="container-fluid px-4">
                     <h1 class="mt-4">Data Film</h1>
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            Halaman ini Khusus Admin
+                    <div class="card mb-4" style="background-color: #9EA9B1;">
+                        <div class="card-body" style="color: black; font-weight: bold;">
+                            Halaman ini Khusus Data Film
                         </div>
                     </div>
                     <table id="film" class="table table-striped table-bordered">
@@ -159,6 +161,11 @@
     <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
     <script src="js/scripts.js"></script>
     <script>
+        document.getElementById("navbarDropdown").addEventListener("click", function () {
+        document.getElementById("navbarDropdown").classList.toggle("show");
+        document.getElementById("navbarDropdown").setAttribute("aria-expanded", "true");
+        document.getElementById("navbarDropdown").nextElementSibling.classList.toggle("show");
+    });
         $(document).ready(function () {
             $('#film').DataTable();
         });
