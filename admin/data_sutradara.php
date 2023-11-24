@@ -43,18 +43,18 @@
                     <h1 class="mt-4">Data Sutradara</h1>
                     <div class="card mb-4">
                         <div class="card-body">
-                            Halaman ini Khusus Sutradara
+                            Halaman ini Khusus CRUD Sutradara
                         </div>
                     </div>
                     <table id="sutradara" class="table table-striped table-bordered">
                         <thead>
                             <tr>
-                                <th>No</th>
-                                <th>ID Sutradara</th>
-                                <th>Nama</th>
-                                <th>Tanggal Lahir</th>
-                                <th>Negara</th>
-                                <th>Aksi</th>
+                            <th style="background-color: #00237A; color: #ffffff; text-align: center;">No</th>
+                            <th style="background-color: #00237A; color: #ffffff; text-align: center;">ID Sutradara</th>
+                            <th style="background-color: #00237A; color: #ffffff; text-align: center;">Nama</th>
+                            <th style="background-color: #00237A; color: #ffffff; text-align: center;">Tanggal Lahir</th>
+                            <th style="background-color: #00237A; color: #ffffff; text-align: center;">Negara</th>
+                            <th style="background-color: #00237A; color: #ffffff; text-align: center;">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -79,13 +79,14 @@
                                         <td>
                                             <?php echo $data["negara"]; ?>
                                         </td>
-                                        <td>
-                                            <center>
-                                                <a href="edit_sutradara.php?id_sutradara=<?php echo $data["id_sutradara"] ?>" class="btn btn-warning btn-sm">
-                                                    Ubah </a>&nbsp;
+                                        <td><center>
+                                        <div class="btn-group" role="group">
+                                        <a href="edit_sutradara.php?id_sutradara=<?php echo $data["id_sutradara"] ?>" class="btn btn-warning btn-md">
+                                                <i class="fas fa-pencil-alt"></i>
+                                            </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                 <a href="proses_hapus_sutradara.php?id_sutradara=<?php echo $data["id_sutradara"] ?>"
                                                     onclick="return confirm('Yakin Ingin Menghapus Data?')"
-                                                    class="btn btn-danger btn-sm">Delete </a>
+                                                    class="btn btn-danger btn-md"><i class="fas fa-trash-alt"></i></a>
                                             </center>
                                         </td>
                                     </tr>
