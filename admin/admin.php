@@ -65,18 +65,18 @@
                     <table id="film" class="table table-striped table-bordered">
                         <thead>
                             <tr>
-                                <th>No</th>
-                                <th>ID Film</th>
-                                <th>Judul Film</th>
-                                <th>Tahun Rilis</th>
-                                <th>Sinopsis</th>
-                                <th>Genre</th>
-                                <th>Nama Pemain</th>
-                                <th>Gambar</th>
-                                <th>kategori</th>
-                                <th>Nama Sutradara</th>
-                                <th>Rating Film</th>
-                                <th>Aksi</th>
+                                <th style="background-color: #00237A; color: #ffffff; text-align: center;">No</th>
+                                <th style="background-color: #00237A; color: #ffffff; text-align: center;">ID Film</th>
+                                <th style="background-color: #00237A; color: #ffffff; text-align: center;">Judul Film</th>
+                                <th style="background-color: #00237A; color: #ffffff; text-align: center;">Tahun Rilis</th>
+                                <th style="background-color: #00237A; color: #ffffff; text-align: center;">Sinopsis</th>
+                                <th style="background-color: #00237A; color: #ffffff; text-align: center;">Genre</th>
+                                <th style="background-color: #00237A; color: #ffffff; text-align: center;">Nama Pemain</th>
+                                <th style="background-color: #00237A; color: #ffffff; text-align: center;">Gambar</th>
+                                <th style="background-color: #00237A; color: #ffffff; text-align: center;">kategori</th>
+                                <th style="background-color: #00237A; color: #ffffff; text-align: center;">Nama Sutradara</th>
+                                <th style="background-color: #00237A; color: #ffffff; text-align: center;">Rating Film</th>
+                                <th style="background-color: #00237A; color: #ffffff; text-align: center;">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
