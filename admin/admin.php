@@ -11,29 +11,48 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
     <link href="css/styles.css" rel="stylesheet" />
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha384-vG9JMLSRdtpZ9kHFVzBkHjs4zg4Jzfs4lyd82BYCg/DfOdwQZh6v02ssUnTEmA0i" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
 <body class="sb-nav-fixed">
+    <style>
+    .btn i {
+      margin-right: 8px; /* Mengatur margin antara ikon dan teks */
+    }
+    
+    .btn-warning i {
+      color: #ffc107; /* Warna ikon "Ubah" */
+    }
+    
+    .btn-danger i {
+      color: #dc3545; /* Warna ikon "Delete" */
+    }
+</style>
+
     <?php
     include 'koneksi.php';
     $query = mysqli_query($conn, "SELECT f.id, f.judul_film, f.tahun_rilis,f.sinopsis,f.genre,f.nama_pemain,f.gambar,k.kategori,s.nama_sutradara,r.rating_film FROM `film` AS f JOIN kategori AS k ON k.id_kategori = f.id_kategori JOIN sutradara AS s ON s.id_sutradara=f.id_sutradara JOIN rating AS r ON r.id_rating=f.id_rating ORDER BY f.id ASC;");
     ?>
-    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+    <nav class="sb-topnav navbar navbar-expand navbar-dark" style="background-color: #00237A;">
         <!-- Navbar Brand-->
-        <a class="navbar-brand ps-3">Dream Movie</a>
+        <a class="navbar-brand ps-3" style="color: #ffffff;">Dream Movie</a>        
         <!-- Sidebar Toggle-->
-        <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i
-                class="fas fa-bars"></i></button>
+        <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!">
+            <i class="fas fa-bars" style="color: #ffffff;"></i>
+        </button>
+
         <!-- Navbar-->
         <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown"
-                    aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+                aria-expanded="false" style="color: #ffffff;"><i class="fas fa-user fa-fw"></i></a>
                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="#!">Logout</a></li>
+                    <li><a class="dropdown-item" href="#!" style="color: #ffffff;">Logout</a></li>
                 </ul>
             </li>
         </ul>
+
     </nav>
     <div id="layoutSidenav">
         <?php include "template/navbar.php" ?>
@@ -49,18 +68,18 @@
                     <table id="film" class="table table-striped table-bordered">
                         <thead>
                             <tr>
-                                <th>No</th>
-                                <th>ID Film</th>
-                                <th>Judul Film</th>
-                                <th>Tahun Rilis</th>
-                                <th>Sinopsis</th>
-                                <th>Genre</th>
-                                <th>Nama Pemain</th>
-                                <th>Gambar</th>
-                                <th>kategori</th>
-                                <th>Nama Sutradara</th>
-                                <th>Rating Film</th>
-                                <th>Aksi</th>
+                                <th style="background-color: #00237A; color: #ffffff; text-align: center;">No</th>
+                                <th style="background-color: #00237A; color: #ffffff; text-align: center;">ID Film</th>
+                                <th style="background-color: #00237A; color: #ffffff; text-align: center;">Judul Film</th>
+                                <th style="background-color: #00237A; color: #ffffff; text-align: center;">Tahun Rilis</th>
+                                <th style="background-color: #00237A; color: #ffffff; text-align: center;">Sinopsis</th>
+                                <th style="background-color: #00237A; color: #ffffff; text-align: center;">Genre</th>
+                                <th style="background-color: #00237A; color: #ffffff; text-align: center;">Nama Pemain</th>
+                                <th style="background-color: #00237A; color: #ffffff; text-align: center;">Gambar</th>
+                                <th style="background-color: #00237A; color: #ffffff; text-align: center;">kategori</th>
+                                <th style="background-color: #00237A; color: #ffffff; text-align: center;">Nama Sutradara</th>
+                                <th style="background-color: #00237A; color: #ffffff; text-align: center;">Rating Film</th>
+                                <th style="background-color: #00237A; color: #ffffff; text-align: center;">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -102,13 +121,15 @@
                                             <?php echo $data["rating_film"]; ?>
                                         </td>
                                         <td>
-                                            <center>
+                                            <div class="btn-group" role="group">
                                                 <a href="edit.php?id=<?php echo $data["id"] ?>" class="btn btn-warning btn-sm">
-                                                    Ubah </a>&nbsp;
-                                                <a href="proses_hapus.php?id=<?php echo $data["id"] ?>"
-                                                    onclick="return confirm('Yakin Ingin Menghapus Data?')"
-                                                    class="btn btn-danger btn-sm">Delete </a>
-                                            </center>
+                                                <i class="fas fa-pencil-alt"></i>
+                                            </a>
+                                            <a href="proses_hapus.php?id=<?php echo $data["id"] ?>"
+                                            onclick="return confirm('Yakin Ingin Menghapus Data?')"
+                                            class="btn btn-danger btn-sm">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </a>
                                         </td>
                                     </tr>
                                     <?php $no++;
