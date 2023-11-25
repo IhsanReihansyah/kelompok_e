@@ -116,7 +116,7 @@ $data = mysqli_fetch_array($query);
                     <?php include "template/review.php" ?>
                     <div class="anime__details__form">
                         <div class="section-title">
-                            <h5>Your Comment</h5>
+                            <h5>write your review</h5>
                         </div>
                         <form action="template/proses_review.php" method="post">
                             <input type="text" placeholder=" Your Name" name="nama_ulasan"><br><br>
