@@ -9,9 +9,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <<<<<<<<< Temporary merge branch 1
     <title>Dream Movie 2023</title>
-=========
-    <title>Anime</title>
->>>>>>>>> Temporary merge branch 2
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
