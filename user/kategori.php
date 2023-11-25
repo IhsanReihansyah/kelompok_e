@@ -139,8 +139,11 @@
                         <ul>
                             <li class="active"><a href="./index.html">Homepage</a></li>
                             <li><a href="./categories.html">Categories</a></li>
+<<<<<<< HEAD
                             <li><a href="./genre.html">Genre</a></li>
                             <li><a href="./blog.html">Our Blog</a></li>
+=======
+>>>>>>> b7691f466c9320c681a6f3a2b353137c886d5635
                             <li><a href="#">Contacts</a></li>
                         </ul>
                     </div>

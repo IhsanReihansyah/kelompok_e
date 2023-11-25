@@ -7,7 +7,11 @@
     <meta name="keywords" content="Anime, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<<<<<<< HEAD
     <title>Dream Movie 2023</title>
+=======
+    <title>Anime | China</title>
+>>>>>>> b7691f466c9320c681a6f3a2b353137c886d5635
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -102,7 +106,6 @@
                         <ul>
                             <li class="active"><a href="./index.html">Homepage</a></li>
                             <li><a href="./categories.html">Categories</a></li>
-                            <li><a href="./blog.html">Our Blog</a></li>
                             <li><a href="#">Contacts</a></li>
                         </ul>
                     </div>
