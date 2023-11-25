@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 23, 2023 at 04:21 PM
+-- Generation Time: Nov 24, 2023 at 03:49 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -20,6 +20,25 @@ SET time_zone = "+00:00";
 --
 -- Database: `eduwork_movie`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admin`
+--
+
+CREATE TABLE `admin` (
+  `id` int(11) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`id`, `username`, `password`) VALUES
+(1, 'myadminpage', '2003_2304');
 
 -- --------------------------------------------------------
 
@@ -45,8 +64,7 @@ CREATE TABLE `film` (
 --
 
 INSERT INTO `film` (`id`, `judul_film`, `tahun_rilis`, `sinopsis`, `id_kategori`, `id_sutradara`, `id_rating`, `genre`, `nama_pemain`, `gambar`) VALUES
-(5, 'Fate Stay Night: Unlimited Blade', '2019-10-02', 'Every human inhabiting the world of Alcia is branded by a “Count” or a number written on their body. For Hina’s mother, her total drops to 0 and she’s pulled into the Abyss, never to be seen again. But her mother’s last words send Hina on a quest to find a legendary hero from the Waste War - the fabled Ace!', 2, 1, 9, 'Advanture,Action,Drama', 'Tidak Ada', 'img/anime/details-pic.jpg'),
-(6, 'Sen to Chihiro no Kamikakushi', '2023-11-07', 'Every human inhabiting the world of Alcia is branded by a “Count” or a number written on their body. For Hina’s mother, her total drops to 0 and she’s pulled into the Abyss, never to be seen again. But her mother’s last words send Hina on a quest to find a legendary hero from the Waste War - the fabled Ace!', 1, 2, 6, 'Romance,Horor', 'asd', 'img/popular/popular-1.jpg'),
+(6, 'Sen to Chihiro no Kamikakushi', '2023-11-07', 'Every human inhabiting the world of Alcia is branded by a “Count” or a number written on their body. ', 1, 2, 6, 'Romance,Horor', 'asd', 'img/popular/popular-1.jpg'),
 (7, 'Great Teacher Onizuka', '2023-11-07', 'qwe', 3, 2, 9, 'Action', 'qwe', 'img/recent/recent-2.jpg'),
 (8, 'Shouwa Genroku Rakugo Shinjuu', '2023-11-07', 'qwe', 3, 2, 9, 'Action', 'qwe', 'img/recent/recent-1.jpg'),
 (9, 'Boruto: Naruto next generations', '2023-11-08', 'qwe', 4, 2, 8, 'Romance,Advanture', 'qwe', 'img/sidebar/tv-1.jpg'),
@@ -131,12 +149,12 @@ CREATE TABLE `sutradara` (
 INSERT INTO `sutradara` (`id_sutradara`, `nama_sutradara`, `tanggal_lahir`, `negara`) VALUES
 (1, 'Ihsan Reihansyah', NULL, NULL),
 (2, 'Albert', NULL, NULL),
-(3, 'Joss Whedon', '1964-06-23', 'Amerika Serikat'),
+(3, 'Joss Whedon', '1964-06-23', 'inggris'),
 (4, 'Taika Watiti', '1975-08-16', 'Selandia Baru'),
 (5, 'Wuershan', '1972-06-10', 'china'),
 (7, 'Joss Whedo', '1964-08-27', 'Amerika Serikat'),
 (8, 'Park Hoon-jung', '1981-04-27', 'Korea Selatan'),
-(10, 'Kim Yong-hwa', '1989-06-22', 'Korea Selatan'),
+(10, 'Kim Yong-hwa', '1989-06-22', 'seoul'),
 (11, 'Carol Danvers', '1989-10-10', 'Amerika Serikat');
 
 -- --------------------------------------------------------
@@ -167,6 +185,12 @@ INSERT INTO `ulasan` (`id`, `ulasan_id`, `nama_ulasan`, `ulasan`, `tanggal_ulasa
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `film`
@@ -207,10 +231,16 @@ ALTER TABLE `ulasan`
 --
 
 --
+-- AUTO_INCREMENT for table `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `film`
 --
 ALTER TABLE `film`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `kategori`
@@ -228,7 +258,7 @@ ALTER TABLE `rating`
 -- AUTO_INCREMENT for table `sutradara`
 --
 ALTER TABLE `sutradara`
-  MODIFY `id_sutradara` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_sutradara` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `ulasan`
