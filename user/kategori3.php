@@ -47,8 +47,9 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumb__links">
-                        <a href="./index.html"><i class="fa fa-home"></i> Home</a>
-                        <a href="./categories.html">Categories</a>
+                        <a href="./index.php"><i class="fa fa-home"></i> Home</a>
+                        <a href="./categories.php">Categories</a>
+                        <a href="./genre.php">Genre</a>
                     </div>
                 </div>
             </div>
@@ -109,10 +110,7 @@
                 <div class="col-lg-3">
                     <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                         Copyright &copy;
-                        <script>document.write(new Date().getFullYear());</script> All rights reserved | This template
-                        is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com"
-                            target="_blank">Colorlib</a>
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        <script>document.write(new Date().getFullYear());</script> All rights reserved | Dream Movie 2023
                     </p>
 
                 </div>
