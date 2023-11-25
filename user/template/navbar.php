@@ -28,6 +28,19 @@
                                         <li><a href="./login.php">Login</a></li> -->
                                     </ul>
                                 </li>
+                                <li><a href="./genre.php">Genre <span class="arrow_carrot-down"></span></a>
+                                    <ul class="dropdown">
+                                        <li><a href="./genre1.php">Romance</a></li>
+                                        <li><a href="./genre2.php">Horor</a></li>
+                                        <li><a href="./genre3.php">Advanture</a></li>
+                                        <li><a href="./genre4.php">Action</a></li>
+                                        <li><a href="./genre5.php">Comedi</a></li>
+                                        <li><a href="./genre6.php">Drama</a></li>
+                                        <li><a href="./genre7.php">Animation</a></li>
+                                        <li><a href="./genre8.php">Crime</a></li>
+                                        <li><a href="./genre9.php">Fantasy</a></li>
+                                    </ul>
+                                <li>
                                 <!-- <li><a href="./blog.php">Our Blog</a></li> -->
                                 <li><a href="#">Contacts</a></li>
                             </ul>

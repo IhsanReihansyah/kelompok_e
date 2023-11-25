@@ -7,7 +7,11 @@
     <meta name="keywords" content="Anime, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<<<<<<<<< Temporary merge branch 1
     <title>Dream Movie 2023</title>
+=========
+    <title>Anime | Indonesia</title>
+>>>>>>>>> Temporary merge branch 2
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -49,6 +53,7 @@
                     <div class="breadcrumb__links">
                         <a href="./index.html"><i class="fa fa-home"></i> Home</a>
                         <a href="./categories.html">Categories</a>
+                        <a href="./genre.html">Genre</a>
                     </div>
                 </div>
             </div>
@@ -93,14 +98,21 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="footer__logo">
-                        <a href="./index.html"><img src="img/logo.png" alt=""></a>
+                        <a href="./index.php"><img src="img/logo.png" alt=""></a>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="footer__nav">
                         <ul>
+<<<<<<< HEAD
+                            <li class="active"><a href="./index.php">Homepage</a></li>
+                            <li><a href="./categories.php">Categories</a></li>
+                            <li><a href="./genre.php">Genre</a></li>                            
+                            <li><a href="./blog.php">Our Blog</a></li>
+=======
                             <li class="active"><a href="./index.html">Homepage</a></li>
                             <li><a href="./categories.html">Categories</a></li>
+>>>>>>> b7691f466c9320c681a6f3a2b353137c886d5635
                             <li><a href="#">Contacts</a></li>
                         </ul>
                     </div>

@@ -49,6 +49,7 @@ $data = mysqli_fetch_array($query);
                     <div class="breadcrumb__links">
                         <a href="./index.php"><i class="fa fa-home"></i> Home</a>
                         <a href="./kategori.php">Categories</a>
+                        
                         <span>
                             <?php echo $data["kategori"] ?>
                         </span>

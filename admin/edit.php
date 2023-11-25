@@ -99,6 +99,15 @@
 
                                     <input type="checkbox" name = "genre[]" value="Comedi" <?php echo (in_array("Comedi", explode(',', $genre))) ? 'checked' : ''; ?>>
                                     <label>Comedi</label>
+
+                                    <input type="checkbox" name = "genre[]" value="Animation" <?php echo (in_array("Animation", explode(',', $genre))) ? 'checked' : ''; ?>>
+                                    <label>Animation</label>
+
+                                    <input type="checkbox" name = "genre[]" value="Crime" <?php echo (in_array("Crime", explode(',', $genre))) ? 'checked' : ''; ?>>
+                                    <label>Crime</label>
+
+                                    <input type="checkbox" name = "genre[]" value="Fantasy" <?php echo (in_array("Fantasy", explode(',', $genre))) ? 'checked' : ''; ?>>
+                                    <label>Fantasy</label>
                                     
                                 </div><br>
                                 <div class="form-group">
