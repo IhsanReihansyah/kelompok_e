@@ -179,16 +179,10 @@ function tampilkanProduktop($query)
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="hero__text">
-                                <div class="label">
-                                    <?php echo $data["genre"] ?>
-                                </div>
                                 <h2>
                                     <?php echo $data["judul_film"] ?>
                                 </h2>
-                                <p>
-                                    <?php echo $data["sinopsis"] ?>
-                                </p>
-                                <a href="#"><span>Watch Now</span> <i class="fa fa-angle-right"></i></a>
+                                <a href="anime-details.php?id=<?php echo $data["id"]?>"><span>Detail Now</span> <i class="fa fa-angle-right"></i></a>
                             </div>
                         </div>
                     </div>
