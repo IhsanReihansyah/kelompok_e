@@ -7,11 +7,9 @@
     <meta name="keywords" content="Anime, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<<<<<<<<< Temporary merge branch 1
-    <title>Dream Movie 2023</title>
-=========
-    <title>Anime | Indonesia</title>
->>>>>>>>> Temporary merge branch 2
+
+    <title>Dream Movie</title>
+
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -51,9 +49,9 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumb__links">
-                        <a href="./index.html"><i class="fa fa-home"></i> Home</a>
-                        <a href="./categories.html">Categories</a>
-                        <a href="./genre.html">Genre</a>
+                        <a href="./index.php"><i class="fa fa-home"></i> Home</a>
+                        <a href="./kategori.php">Movie</a>  
+                        <a href="#">Indonesia</a>
                     </div>
                 </div>
             </div>

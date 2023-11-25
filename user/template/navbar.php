@@ -28,7 +28,7 @@
                                         <li><a href="./login.php">Login</a></li> -->
                                     </ul>
                                 </li>
-                                <li><a href="./genre.php">Genre <span class="arrow_carrot-down"></span></a>
+                                <li><a href="#">Genre <span class="arrow_carrot-down"></span></a>
                                     <ul class="dropdown">
                                         <li><a href="./genre1.php">Romance</a></li>
                                         <li><a href="./genre2.php">Horor</a></li>
