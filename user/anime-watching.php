@@ -106,41 +106,7 @@
     <!-- Anime Section End -->
 
     <!-- Footer Section Begin -->
-    <footer class="footer">
-        <div class="page-up">
-            <a href="#" id="scrollToTopButton"><span class="arrow_carrot-up"></span></a>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3">
-                    <div class="footer__logo">
-                        <a href="./index.html"><img src="../img/logo.png" alt=""></a>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="footer__nav">
-                        <ul>
-<<<<<<< HEAD
-                            <li class="active"><a href="./index.php">Homepage</a></li>
-                            <li><a href="./categories.php">Categories</a></li>
-                            <li><a href="./genre.php">Genre</a></li>
-                            <li><a href="./blog.php">Our Blog</a></li>
-=======
-                            <li class="active"><a href="./index.html">Homepage</a></li>
-                            <li><a href="./categories.html">Categories</a></li>
->>>>>>> b7691f466c9320c681a6f3a2b353137c886d5635
-                            <li><a href="#">Contacts</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                    Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Dream Movie 2023
-
-                </div>
-            </div>
-        </div>
-    </footer>
+    <?php include "template/footer.php" ?>
     <!-- Footer Section End -->
 
     <!-- Search model Begin -->
