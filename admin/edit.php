@@ -157,23 +157,6 @@
                                         ?>
                                     </select>
                                 </div><br>
-
-                                <div class="form-group">
-                                    <label for="rating">Rating Film:</label>                                    
-                                    <select id="rating" name="rating" class="form-control">
-                                    <option value="">Default</option>
-                                    <option value="1" <?php if ($rating_film == '1') echo 'selected'; ?>>1/10</option>
-                                    <option value="2" <?php if ($rating_film == '2') echo 'selected'; ?>>2/10</option>
-                                    <option value="3" <?php if ($rating_film == '3') echo 'selected'; ?>>3/10</option>
-                                    <option value="4" <?php if ($rating_film == '4') echo 'selected'; ?>>4/10</option>
-                                    <option value="5" <?php if ($rating_film == '5') echo 'selected'; ?>>5/10</option>
-                                    <option value="6" <?php if ($rating_film == '6') echo 'selected'; ?>>6/10</option>
-                                    <option value="7" <?php if ($rating_film == '7') echo 'selected'; ?>>7/10</option>
-                                    <option value="8" <?php if ($rating_film == '8') echo 'selected'; ?>>8/10</option>
-                                    <option value="9" <?php if ($rating_film == '9') echo 'selected'; ?>>9/10</option>
-                                    <option value="10" <?php if ($rating_film == '10') echo 'selected'; ?>>10/10</option>
-                                    </select>
-                                </div><br>
                                 <input type="submit" class="btn btn-primary" name="Submit" value="Simpan">
                         </form>
                     </div>

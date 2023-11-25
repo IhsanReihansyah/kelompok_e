@@ -125,22 +125,6 @@
                                     ?>
                 </select>
             </div><br>
-            <div class="form-group">
-                <label for="rating">Rating Film:</label>
-                <select class="form-control" id="rating_film" name="rating_film" required>
-                <option selected>
-                                    <?php
-                                    $query = mysqli_query($conn, "SELECT * FROM rating");
-                                    if (mysqli_num_rows($query) > 0) {
-                                        while ($data = mysqli_fetch_array($query)) {
-                                            echo "<option value='" . $data["id_rating"] . "'>" . $data["rating_film"] . "</option>";
-                                        }
-                                    } else {
-                                        echo "<option value=''>No items available</option>";
-                                    }
-                                    ?>
-                </select>
-            </div><br>
             <input type="submit" class="btn btn-primary" name="Submit" value="Tambah Data">
                 </main>
                 <footer class="py-4 bg-light mt-auto">
