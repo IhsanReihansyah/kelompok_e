@@ -168,7 +168,7 @@
                                                 <div class="ep">
                                 <?php echo $data["rating_film"] ?>
                             </div>
-                                                <h5><a href="#">
+                                                <h5><a href="anime-details.php?id=<?php echo $data["id"]?>">
                                                         <?php echo $data["judul_film"] ?>
                                                     </a></h5>
                                             </div>
@@ -186,7 +186,7 @@
                                                 <div class="ep">
                                 <?php echo $data["rating_film"] ?>
                             </div>
-                                                <h5><a href="#">
+                                                <h5><a href="anime-details.php?id=<?php echo $data["id"]?>">
                                                         <?php echo $data["judul_film"] ?>
                                                     </a></h5>
                                             </div>
@@ -204,7 +204,7 @@
                                                 <div class="ep">
                                 <?php echo $data["rating_film"] ?>
                             </div>
-                                                <h5><a href="#">
+                                                <h5><a href="anime-details.php?id=<?php echo $data["id"]?>">
                                                         <?php echo $data["judul_film"] ?>
                                                     </a></h5>
                                             </div>
@@ -222,7 +222,7 @@
                                                 <div class="ep">
                                 <?php echo $data["rating_film"] ?>
                             </div>
-                                                <h5><a href="#">
+                                                <h5><a href="anime-details.php?id=<?php echo $data["id"]?>">
                                                         <?php echo $data["judul_film"] ?>
                                                     </a></h5>
                                             </div>
@@ -240,7 +240,7 @@
                                                 <div class="ep">
                                 <?php echo $data["rating_film"] ?>
                             </div>
-                                                <h5><a href="#">
+                                                <h5><a href="anime-details.php?id=<?php echo $data["id"]?>">
                                                         <?php echo $data["judul_film"] ?>
                                                     </a></h5>
                                             </div>
@@ -275,7 +275,6 @@
                         <ul>
                             <li class="active"><a href="./index.html">Homepage</a></li>
                             <li><a href="./categories.html">Categories</a></li>
-                            <li><a href="./blog.html">Our Blog</a></li>
                             <li><a href="#">Contacts</a></li>
                         </ul>
                     </div>

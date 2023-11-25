@@ -66,8 +66,6 @@ $data = mysqli_fetch_array($query);
                 <div class="row">
                     <div class="col-lg-3">
                         <div class="anime__details__pic set-bg" data-setbg="../<?php echo $data["gambar"] ?>">
-                            <div class="comment"><i class="fa fa-comments"></i> 11</div>
-                            <div class="view"><i class="fa fa-eye"></i> 9141</div>
                         </div>
                     </div>
                     <div class="col-lg-9">
@@ -109,7 +107,6 @@ $data = mysqli_fetch_array($query);
                                 </div>
                             </div>
                             <div class="anime__details__btn">
-                                <a href="#" class="follow-btn"><i class="fa fa-heart-o"></i> Follow</a>
                                 <a href="anime-watching.php?id= <?php echo $data["id"] ?>" class="watch-btn"><span>Watch
                                         Now</span> <i class="fa fa-angle-right"></i></a>
                             </div>
@@ -119,7 +116,7 @@ $data = mysqli_fetch_array($query);
                     <?php include "template/review.php" ?>
                     <div class="anime__details__form">
                         <div class="section-title">
-                            <h5>Your Comment</h5>
+                            <h5>write your review</h5>
                         </div>
                         <form action="template/proses_review.php" method="post">
                             <input type="text" placeholder=" Your Name" name="nama_ulasan"><br><br>

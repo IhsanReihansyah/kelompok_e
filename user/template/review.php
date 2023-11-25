@@ -7,11 +7,11 @@ $query = mysqli_query($conn, "SELECT * FROM `ulasan` as u join film as f on f.id
         <h5>Reviews</h5>
     </div>
     <div class="anime__details__review">
+    <?php
+        if (mysqli_num_rows($query) > 0) {
+        while ($data = mysqli_fetch_array($query)) {
+    ?>
         <div class="anime__review__item">
-            <?php
-            if (mysqli_num_rows($query) > 0) {
-                while ($data = mysqli_fetch_array($query)) {
-                    ?>
                     <div class="anime__review__item__pic">
                         <img src="../img/anime/review-1.jpg" alt="">
                     </div>
