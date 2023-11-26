@@ -48,7 +48,7 @@ $data = mysqli_fetch_array($query);
                 <div class="col-lg-12">
                     <div class="breadcrumb__links">
                         <a href="./index.php"><i class="fa fa-home"></i> Home</a>
-                        <a href="./kategori.php">Movie</a>                     
+                        <a href="./kategori.php">Movie</a>
                         <span>
                             <?php echo $data["judul_film"] ?>
                         </span>
@@ -65,7 +65,7 @@ $data = mysqli_fetch_array($query);
             <div class="anime__details__content">
                 <div class="row">
                     <div class="col-lg-3">
-                        <div class="anime__details__pic set-bg" data-setbg="../<?php echo $data["gambar"] ?>">
+                        <div class="anime__details__pic set-bg" data-setbg="../admin/<?php echo $data["gambar"] ?>">
                         </div>
                     </div>
                     <div class="col-lg-9">
@@ -76,9 +76,9 @@ $data = mysqli_fetch_array($query);
                                 </h3>
                             </div>
                             <div class="anime__details__rating">
-                                <span> Rate
+                                <!-- <span> Rate
                                     <?php echo $data["id_rating"] ?> / 10
-                                </span>
+                                </span> -->
                             </div>
                             <p>
                                 <?php echo $data["sinopsis"] ?>
@@ -113,20 +113,34 @@ $data = mysqli_fetch_array($query);
                         </div>
                     </div>
                 </div>
-                    <?php include "template/review.php" ?>
-                    <div class="anime__details__form">
-                        <div class="section-title">
-                            <h5>write your review</h5>
-                        </div>
-                        <form action="template/proses_review.php" method="post">
-                            <input type="text" placeholder=" Your Name" name="nama_ulasan"><br><br>
-                            <input type="hidden" value="<?php echo $id ?>" name="ulasan_id">
-                            <textarea placeholder="Your Comment" name="ulasan"></textarea>
-                            <button type="submit" name="simpan"><i class="fa fa-location-arrow"></i> Review</button>
-                        </form>
+                <?php include "template/review.php" ?>
+                <div class="anime__details__form">
+                    <div class="section-title">
+                        <h5>write your review</h5>
                     </div>
+                    <form action="template/proses_review.php" method="post">
+                        <input type="text" placeholder=" Your Name" name="nama_ulasan"><br><br>
+                        <input type="hidden" value="<?php echo $id ?>" name="ulasan_id">
+                        <select name="ulasan_rating">
+                            <option value="">0/10</option>
+                            <option value="1">1/10</option>
+                            <option value="2">2/10</option>
+                            <option value="3">3/10</option>
+                            <option value="4">4/10</option>
+                            <option value="5">5/10</option>
+                            <option value="6">6/10</option>
+                            <option value="7">7/10</option>
+                            <option value="8">8/10</option>
+                            <option value="9">9/10</option>
+                            <option value="10">10/10</option>
+                        </select><br><br><br>
+                        <textarea placeholder="Your Comment" name="ulasan"></textarea>
+
+                        <button type="submit" name="simpan"><i class="fa fa-location-arrow"></i> Review</button>
+                    </form>
                 </div>
             </div>
+        </div>
         </div>
     </section>
     <!-- Anime Section End -->

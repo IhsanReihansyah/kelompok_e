@@ -42,7 +42,9 @@
                                     </ul>
                                 <li>
                                 <!-- <li><a href="./blog.php">Our Blog</a></li> -->
-                                <li><a href="#">Contacts</a></li>
+                                <li><a href="./about.php">About</a></li>
+                                <!-- <li><a href="./blog.php">Our Blog</a></li> -->
+                                <li><a href="./contact.php">Contact Us</a></li>
                             </ul>
                         </nav>
                     </div>

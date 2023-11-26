@@ -73,7 +73,7 @@
                         </div>
                         <div class="row">
                             <?php
-                            $query = mysqli_query($conn, "SELECT * from `film` as f join rating as r on r.id_rating=f.id_rating ORDER BY f.id ASC;");
+                            $query = mysqli_query($conn, "SELECT * from `film` as f join kategori as k on f.id_kategori=k.id_kategori ORDER BY f.id ASC;");
                             if (mysqli_num_rows($query) > 0) {
                                 while ($data = mysqli_fetch_array($query)) {
                                     ?>
@@ -81,10 +81,10 @@
                                     <div class="col-lg-4 col-md-6 col-sm-6">
                                         <div class="product__item">
                                             <div class="product__item__pic set-bg"
-                                                data-setbg="../<?php echo $data["gambar"] ?>">
-                                                <div class="ep">
+                                                data-setbg="../admin/<?php echo $data["gambar"] ?>">
+                                                <!-- <div class="ep">
                                                     <?php echo $data["rating_film"] ?>
-                                                </div>
+                                                </div> -->
                                                 <div class="comment"><i class=""></i>
                                                     <?php echo $data["genre"] ?>
                                                 </div>

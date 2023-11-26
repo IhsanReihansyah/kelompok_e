@@ -18,7 +18,7 @@ $query = mysqli_query($conn, "SELECT * FROM `ulasan` as u join film as f on f.id
                     <div class="anime__review__item__text">
                         <h6>
                             <?php echo $data["nama_ulasan"] ?> <span>
-                                <?php echo $data["tanggal_ulasan"] ?>
+                                <?php echo $data["tanggal_ulasan"] ?>&ensp;&ensp;&ensp;&ensp;&ensp;<?php echo $data["ulasan_rating"] ?>/10
                             </span>
                         </h6>
                         <p>

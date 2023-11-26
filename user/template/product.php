@@ -6,16 +6,16 @@ function tampilkanProduk1($query)
             if ($data["id_kategori"] == '1') {
                 ?>
 
-                <div class="col-lg-4 col-md-6 col-sm-6">
+<div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="product__item">
-                        <div class="product__item__pic set-bg" data-setbg="../<?php echo $data["gambar"] ?>">
-                            <div class="ep">
-                                <?php echo $data["rating_film"] ?>
-                            </div>
+                        <div class="product__item__pic set-bg" data-setbg="../admin/<?php echo $data["gambar"] ?>">
+                        <!-- <div class="ep">
+                                <?php echo $data["ulasan_rating"] ?>
+                            </div> -->
                             <div class="comment"><i class=""></i><?php echo $data["genre"] ?></div>
                         </div>
                         <div class="product__item__text">
-                            <h5><a href="anime-details.php?id=<?php echo $data["id"]?>">
+                        <h5><a href="anime-details.php?id=<?php echo $data["id"]?>">
                                     <?php echo $data["judul_film"] ?>
                                 </a></h5>
                         </div>
@@ -36,10 +36,10 @@ function tampilkanProduk2($query)
 
                 <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="product__item">
-                        <div class="product__item__pic set-bg" data-setbg="../<?php echo $data["gambar"] ?>">
-                        <div class="ep">
-                                <?php echo $data["rating_film"] ?>
-                            </div>
+                        <div class="product__item__pic set-bg" data-setbg="../admin/<?php echo $data["gambar"] ?>">
+                        <!-- <div class="ep">
+                                <?php echo $data["ulasan_rating"] ?>
+                            </div> -->
                             <div class="comment"><i class=""></i><?php echo $data["genre"] ?></div>
                         </div>
                         <div class="product__item__text">
@@ -65,10 +65,10 @@ function tampilkanProduk3($query)
 
                 <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="product__item">
-                        <div class="product__item__pic set-bg" data-setbg="../<?php echo $data["gambar"] ?>">
-                        <div class="ep">
+                        <div class="product__item__pic set-bg" data-setbg="../admin/<?php echo $data["gambar"] ?>">
+                        <!-- <div class="ep">
                                 <?php echo $data["rating_film"] ?>
-                            </div>
+                            </div> -->
                             <div class="comment"><i class=""></i><?php echo $data["genre"] ?></div>
                         </div>
                         <div class="product__item__text">
@@ -93,10 +93,10 @@ function tampilkanProduk4($query)
 
                 <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="product__item">
-                        <div class="product__item__pic set-bg" data-setbg="../<?php echo $data["gambar"] ?>">
-                        <div class="ep">
-                                <?php echo $data["rating_film"] ?>
-                            </div>
+                        <div class="product__item__pic set-bg" data-setbg="../admin/<?php echo $data["gambar"] ?>">
+                        <!-- <div class="ep">
+                                <?php echo $data["ulasan_rating"] ?>
+                            </div> -->
                             <div class="comment"><i class=""></i><?php echo $data["genre"] ?></div>
                         </div>
                         <div class="product__item__text">
@@ -121,10 +121,10 @@ function tampilkanProduk5($query)
 
                 <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="product__item">
-                        <div class="product__item__pic set-bg" data-setbg="../<?php echo $data["gambar"] ?>">
-                        <div class="ep">
+                        <div class="product__item__pic set-bg" data-setbg="../admin/<?php echo $data["gambar"] ?>">
+                        <!-- <div class="ep">
                                 <?php echo $data["rating_film"] ?>
-                            </div>
+                            </div> -->
                             <div class="comment"><i class=""></i><?php echo $data["genre"] ?></div>
                         </div>
                         <div class="product__item__text">
@@ -149,10 +149,10 @@ function tampilkanProduk6($query)
 
         <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="product__item">
-                        <div class="product__item__pic set-bg" data-setbg="../<?php echo $data["gambar"] ?>">
-                        <div class="ep">
+                        <div class="product__item__pic set-bg" data-setbg="../admin/<?php echo $data["gambar"] ?>">
+                        <!-- <div class="ep">
                                 <?php echo $data["rating_film"] ?>
-                            </div>
+                            </div> -->
                             <div class="comment"><i class=""></i><?php echo $data["genre"] ?></div>
                         </div>
                         <div class="product__item__text">
@@ -175,7 +175,7 @@ function tampilkanProduktop($query)
         while ($data = mysqli_fetch_array($query)) {
             if ($data["id_kategori"] == '4') {
                 ?>
-                <div class="hero__items set-bg" data-setbg="../<?php echo $data["gambar"] ?>">
+                <div class="hero__items set-bg" data-setbg="../admin/<?php echo $data["gambar"] ?>">
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="hero__text">
@@ -202,10 +202,10 @@ function tampilkanGenre($query)
 
                 <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="product__item">
-                        <div class="product__item__pic set-bg" data-setbg="../<?php echo $data["gambar"] ?>">
-                            <div class="ep">
-                                <?php echo $data["id_rating"] ?>
-                            </div>
+                        <div class="product__item__pic set-bg" data-setbg="../admin/<?php echo $data["gambar"] ?>">
+                            <!-- <div class="ep">
+                                <?php echo $data["ulasan_rating"] ?>
+                            </div> -->
                             <div class="comment"><i class=""></i><?php echo $data["genre"] ?></div>
                         </div>
                         <div class="product__item__text">
