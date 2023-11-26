@@ -52,7 +52,7 @@
                   ><i class="fa fa-facebook-square"></i> Facebook</a
                 >
                 <a href="#" class="pinterest"
-                  ><i class="fa fa-pinterest"></i> Pinterest</a
+                  ><i class="fa fa-instagram"></i> Instagram</a
                 >
                 <a href="#" class="linkedin"
                   ><i class="fa fa-linkedin-square"></i> Linkedin</a
