@@ -46,6 +46,7 @@
                     <section>
                         <form action="" method="POST">
 
+<<<<<<< HEAD
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="inputGroup-sizing-default">Name</span>
                                 <input type="text" name="name" class="form-control" aria-label="Sizing example input"
@@ -73,6 +74,36 @@
             </div>
         </div>
     </div>
+=======
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-default">Name</span>
+                <input type="text" name="name" class="form-control" aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-default">
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-default">Email</span>
+                <input type="email" name="email" class="form-control" aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-default">
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-default">Message</span>
+                <textarea name="massage" class="form-control" aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-default">
+                </textarea>
+            </div>
+
+            <div class="col-lg-12">
+            <button type="submit" class="site-btn" value="Send Message" name="send"><i class="fa fa-location-arrow"></i>
+                        Send
+            </button>
+            </div>
+        </form>
+    </section>
+</div>
+</div>
+</div>
+</div>
+>>>>>>> ad5cf5cfbe7aa83e9246e29fea1df6bebc864ff3
 
     <!-- Footer Section Begin -->
     <?php include "template/footer.php" ?>
