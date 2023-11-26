@@ -63,7 +63,6 @@
     </section>
 
     <!-- Footer Section Begin -->
-<<<<<<< HEAD
     <footer class="footer">
         <div class="page-up">
             <a href="#" id="scrollToTopButton"><span class="arrow_carrot-up"></span></a>
@@ -98,9 +97,6 @@
             </div>
         </div>
     </footer>
-=======
-    <?php include "template/footer.php" ?>
->>>>>>> 23d81297b55754a8ee7f74a455510f3b85d257bc
     <!-- Footer Section End -->
 
 
