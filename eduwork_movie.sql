@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 26, 2023 at 12:56 PM
+-- Generation Time: Nov 26, 2023 at 07:03 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -18,8 +18,27 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `movie`
+-- Database: `eduwork_movie`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admin`
+--
+
+CREATE TABLE `admin` (
+  `id` int(11) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`id`, `username`, `password`) VALUES
+(1, 'myadminpage', '20032304');
 
 -- --------------------------------------------------------
 
@@ -44,8 +63,25 @@ CREATE TABLE `film` (
 --
 
 INSERT INTO `film` (`id`, `judul_film`, `tahun_rilis`, `sinopsis`, `id_kategori`, `id_sutradara`, `genre`, `nama_pemain`, `gambar`) VALUES
-(30, 'rehan', '2023-11-25', 'rehan', 2, 9, '', 'rehan', 'images/film-believer-2-2023-lk21-d21.jpg.webp'),
-(31, 'jfjf', '2023-11-04', 'jdj', 4, 9, '', 'rehan', 'images/hero-1.jpg');
+(32, 'Train to Busan', '2016-07-15', 'Diceritakan tokoh Seok-woo (Gong Yoo) adalah seorang workaholic yang bercerai. Dia tinggal bersama ibunya dan hampir tidak menghabiskan waktu dengan putrinya Su-an (Kim Su-an).', 2, 3, 'Romance,Horor,Advanture,Action,Comedi,Drama,Animation,Crime,Fantasy', 'Gong Yoo, Kim Su An', 'images/film-train-busan-2016.jpg.webp'),
+(33, 'Avengers: Age of Ultron', '2015-04-13', 'Tony Stark menciptakan Program Ultron untuk melindungi dunia, tetapi ketika program penjaga perdamaian tidak bersahabat, The Avengers bertindak untuk mencoba dan mengalahkan musuh yang hampir mustahil bersama-sama. Pahlawan-pahlawan terkuat di bumi harus bersatu kembali untuk melindungi dunia dari kepunahan global', 6, 3, 'Advanture,Action', 'Chris Evans, Chris Hemsworth, Mark Ruffalo, Robert Downey Jr.', 'images/film-avengers-age-of-ultron-2015.jpg.webp'),
+(34, 'TOY STORY', '1995-10-30', 'Seorang anak kecil bernama Andy senang berada di kamarnya sambil bermain-main dengan mainannya, terutama bonekanya yang bernama \"Woody\". Tapi, apa yang dilakukan mainan-mainan itu ketika Andy tidak bersama mereka, mainan-mainan itu menjadi hidup. Woody yakin hidupnya (sebagai mainan) baik. Namun, dia harus khawatir dengan kepindahan keluarga Andy, dan yang tidak diketahui Woody adalah tentang pesta ulang tahun Andy. Woody tidak menyadari bahwa ibu Andy memberinya action figure yang dikenal sebagai Buzz Lightyear, yang tidak percaya bahwa dia adalah mainan, dan dengan cepat menjadi mainan favorit Andy yang baru.', 6, 3, 'Advanture,Comedi,Animation', 'Don Rickles, Jim Varney, Tim Allen, Tom Hanks', 'images/film-toy-story-1995.jpg.webp'),
+(35, 'Justice League', '2017-11-15', 'Dipicu oleh kembalinya keyakinannya pada kemanusiaan dan terinspirasi oleh tindakan tanpa pamrih Superman, Bruce Wayne meminta bantuan sekutu barunya, Diana Prince, untuk menghadapi musuh yang lebih besar. Bersama-sama, Batman dan Wonder Woman bekerja cepat untuk menemukan dan merekrut tim manusia meta untuk melawan ancaman yang baru muncul ini. Namun terlepas dari terbentuknya liga pahlawan yang belum pernah terjadi sebelumnya – Batman, Wonder Woman, Aquaman, Cyborg, dan The Flash – mungkin sudah terlambat untuk menyelamatkan planet ini dari serangan bencana dalam skala besar.', 6, 3, 'Advanture,Action,Fantasy', 'Amy Adams, Ben Affleck, Ezra Miller, Gal Gadot, Henry Cavill', 'images/film-justice-league-2017.jpg.webp'),
+(36, 'The Moon', '2023-08-02', 'Seorang pria ditinggalkan di luar angkasa karena kecelakaan yang tidak menguntungkan sementara pria lain di Bumi berjuang untuk membawanya kembali dengan selamat.', 2, 15, 'Advanture,Drama', 'Kim Hee-ae, Kyung-soo Do, Sol Kyung-gu', 'images/film-the-moon-2023-lk21-d21.jpg.webp'),
+(37, 'ALONG WITH THE GODS: THE TWO WORLDS', '2017-12-20', 'Setelah meninggal secara tak terduga, petugas pemadam kebakaran Ja-hong dibawa ke alam baka oleh 3 penjaga alam baka. Hanya ketika dia melewati 7 persidangan selama 49 hari dan membuktikan bahwa dia tidak bersalah dalam kehidupan manusia, dia dapat bereinkarnasi, dan 3 penjaga akhirat berada di sisinya untuk membelanya dalam persidangan.', 2, 15, 'Drama,Fantasy', 'Hyang-gi Kim, Ji-hun Ju, Jung-jae Lee, Jung-woo Ha, Tae-hyun Cha', 'images/film-singwa-hamgge-2017.jpg.webp'),
+(38, '200 POUNDS BEAUTY', '2006-12-14', 'Han-na, seorang wanita gemuk dengan suara yang indah, memberikan vokal sesungguhnya untuk seorang bintang pop cantik yang tidak bisa membawakan lagu. Setelah pertemuan yang memalukan, Han-na menjalani operasi plastik dari kepala hingga kaki dan muncul kembali setahun kemudian sebagai penyanyi langsing Jenny.', 2, 15, 'Romance,Comedi,Drama', 'Ah-jung Kim, Dong-il Sung, Hyeon-sook Kim, Jin-mo Ju', 'images/film-200-pounds-beauty-2006.jpg.webp'),
+(39, 'Friendzone', '2019-02-14', 'Palm (Nine Naphat) terjebak dalam status Friend Zone oleh Gink (Baifern Pimchanok). Mereka sudah bersahabat selama 10 tahun dan Palm ingin mengutarakan perasaannya pada akhir masa sekolah. Namun Gink hanya menjawab “menjadi teman lebih baik.”', 5, 14, 'Romance,Comedi,Drama', 'Naphat Siangsomboon Pimchanok Luevisadpaibul', 'images/download.jpeg'),
+(40, 'may who?', '2015-10-01', 'berkisah tentang seorang remaja yang memiliki kekuatan super. Pong (Thiti Mahayotaruk) adalah seorang remaja yang gemar menghabiskan waktunya seorang diri. Di tengah kesibukannya di sekolah, Pong selalu menyempatkan diri untuk menyelesaikan komik buatannya. Pong mengarang kisah kehidupan pahlawan super dan seorang tokoh protagonis yang menjadi kekasihnya. Karakter tersebut merupakan gambaran dari Ming (Narikun Ketprapakorn), teman sekelas Pong yang membuatnya jatuh hati. Suatu hari, Pong tanpa sengaja mengumpulkan buku sketsa komiknya pada seorang guru. Buku ini kemudian jatuh ke tangan May Nhai (Sutatta Udomsilp) yang juga dikenal sebagai siswa penyendiri. Pong merasa kesal saat May memperlihatkan isi buku tersebut di hadapan teman-teman kelas mereka. Saat Pong berusaha mendapatkan sketsanya kembali, ia terkejut melihat respon May yang mengeluarkan aliran listrik dari tubuhnya.', 5, 14, 'Romance,Comedi,Drama', 'Sutatta Udomsilp, Narikun Ketprapakorn, Thanapob Leeratanakajorn, Thiti Mahayotaruk', 'images/may.jpeg'),
+(41, 'Suckseed', '2011-04-20', 'Ped adalah kutu buku di SD yang tidak memiliki minat musik. Sejak teman sekelasnya Ern berbagi kecintaannya pada musik dengannya, Ped jadi menyukai Ern. Tapi orang tua Ern membawanya pergi ke Bangkok membuat mereka berdua terpisah.', 5, 14, 'Comedi', 'Jirayu Laongmanee Pachara Chirathivat Thawat Pornrattanaprasert Nattasha Nauljam', 'images/SuckSeed'),
+(42, '127 Days', '2023-11-23', 'Film ini diadaptasi dari novel yang berjudul sama karya dari Nadzirah Shafa, diketahui kisah ini dituliskan oleh penulis berdasarkan kisahnya dengan sang suami. Kisah ini mengabadikan perjalanan hijrah dan kisah cintanya selama 172 hari bersama sang suami Amer Azzikra, yang kini telah meninggal dunia.', 1, 13, 'Romance,Drama', ' Bryan Domani Dan Yasmin Napper', 'images/169866489520398_287x421.jpg'),
+(43, 'Sijjin', '2023-11-09', 'Teror itu dibuat oleh Irma yang jatuh cinta kepada sepupunya sendiri yaitu Galang. Galang yang telah memiliki istri dan anak sangat sayang kepada mereka, dan menganggap Irma hanya sebagai sepupunya saja. Oleh karena itu, Irma sangat terobsesi ingin menjadi perempuan satu-satu nya di hidup Galang, bahkan ingin dinikahi. Pada suatu hari, Irma datang ke dukun untuk meminta bantuan agar dapat dinikahkan dengan Galang. Lalu si dukun menerima permohonan Irma yaitu dengan mengirim santet kepada istri Galang dalam 5 teror malam. Teror yang dialami oleh istri Galang ini sangat mengerikan, seperti kesurupan, gangguan mistis, percobaan bunuh diri, dan pada akhirnya kematian terjadi di rumah Galang. Namun tak disangka-sangka juga bahwa teror tersebut juga menghantui pada Irma sendiri.', 1, 13, 'Horor', 'Anggika Bölsterli Niken Anjani Ibrahim Risyad Delia Husein Messi Gusti', 'images/Poster_Sijjin.jpg'),
+(44, 'Merindu Cahaya de Amstel', '2022-01-20', 'Film ini menceritakan sosok gadis Belanda yang kemudian memeluk agama Islam, bernama Khadija Veenhoven dengan nama asli Marien Veenhoven. Sementara itu, sosok Khadija membuat penasaran Nico, seorang fotografer dan jurnalis, karena mengingatkannya pada sosok sang ibu.', 1, 13, 'Romance,Drama', 'Amanda Rawles Rachel Amanda Bryan Domani', 'images/Poster_film_Merindu_Cahaya_de_Amstel.jpeg'),
+(45, 'Septet: The Story of Hong Kong', '2020-10-21', 'terdapat 7 kisah mandiri yang sangat pribadi dari para sutradara film yang lahir di tahun 40-an dan 50-an untuk mencerminkan Hong Kong yang mereka kenal, dari kisah Sammo tentang pelatihan masa kecilnya dalam seni bela diri, juga mendiang Ringo Lam pada penghormatan pedih untuk kampung halamannya, ode diam-diamnya Ann Hui untuk para pendidik, dan komedi gelap Johnnie To tentang bonanza tiga teman, serta kisah Patrick Tam tentang dua kekasih yang dipisahkan karena satu pindah ke Inggris. ', 3, 16, 'Action,Drama', 'Sammo Hung Au Kin-yee Patrick Tam Yuen Woo-ping Ringo Lam Johnnie To Tsui Hark Yau Nai-hoi Roy Szeto Lou Shiu-wa Melvin Luk', 'images/Septet-_The_Story_of_Hong_Kong_-_Official_poster.jpg'),
+(46, 'Our Time Will Come', '2017-07-01', 'Dengan latar pada tahun 1940-an, film ini menceritakan kisah seorang perempuan legendaris \"Fang Gu\" (Zhou Xun), yang merupakan salah satu tokoh kunci selama pendudukan Jepang di Hong Kong. Film ini juga menggambarkan perlawanan dan perjuangan untuk kebebasan dan kemerdekaan oleh kaum muda kelompok perlawanan.', 3, 16, 'Action,Drama', 'Zhou Xun Eddie Peng Wallace Huo', 'images/our'),
+(47, 'Jade Goddess of Mercy', '2003-12-25', 'Ini bercerita tentang seorang gadis biasa yang menjadi polisi yang menyamar dalam regu narkoba.', 3, 16, 'Romance,Crime', 'Zhao Wei Nicholas Tse Liu Yunlong Chen Jianbin', 'images/Jade_Goddess_of_Mercy.jpeg'),
+(48, 'My Tomorrow Your Yesterday', '2016-12-17', 'kisah cinta biasa antara sepasang anak muda berusia 20 tahun, Takatoshi Minamiya (Sota Fukushi) jatuh cinta pada pandangan pertama kepada Emi Fukuju (Nana Komatsu) saat berada di satu gerbong kereta yang sama.', 4, 18, 'Romance,Fantasy', 'Sota Fukushi Nana Komatsu Masahiro Higashide Yuki Yamada Kaya Kiyohara Akira Otaka Yoshiko Miyazaki', 'images/Tomorro.jpeg'),
+(49, 'My Teacher', '2017-10-28', 'Siswa tahun kedua sekolah menengah dan pencinta olahraga memanah Hibiki Shimada tidak pernah merasakan cinta romantis seumur hidupnya. Ini terjadi meskipun berteman dengan Megumi Chigusa dan Kosuke Kawai, dua remaja yang saling mencintai yang tanpa malu-malu memamerkan perasaan mereka terhadap guru matematika dan seni visual sekolah, Masato Sekiya dan Sachiko Nakajima, masing-masing.', 4, 18, 'Romance,Comedi,Drama', 'Toma Ikuta Dan Suzu Hirose', 'images/My_Teacher_poster.jpg'),
+(50, 'Yell for the Blue Sky', '2016-08-20', 'Tsubasa Ono (diperankan oleh Tao Tsuchiya) berada di kelas pertama SMA Shirato di Sapporo, Jepang. SMA terkenal dengan tim bisbol dan band kuningan. Sementara Tsubasa Ono melihat trofi untuk band kuningan, ia bertemu Daisuke Yamada (diperankan oleh Ryoma Takeuchi) yang berdiri di sampingnya dan memandangi trofi untuk tim bisbol.', 4, 18, 'Romance,Drama', 'Tao Tsuchiya Ryoma Takeuchi Mirai Shida Juri Ueno', 'images/yell');
 
 -- --------------------------------------------------------
 
@@ -69,6 +105,26 @@ INSERT INTO `kategori` (`id_kategori`, `kategori`) VALUES
 (4, 'Jepang'),
 (5, 'Thailand'),
 (6, 'Amerika');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `kritikdansaran`
+--
+
+CREATE TABLE `kritikdansaran` (
+  `id` int(11) NOT NULL,
+  `nama` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `pesan` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `kritikdansaran`
+--
+
+INSERT INTO `kritikdansaran` (`id`, `nama`, `email`, `pesan`) VALUES
+(1, 'Rahma Khairani', 'pacarjeno@gmail.com', 'gak tau coba aja dulu');
 
 -- --------------------------------------------------------
 
@@ -115,15 +171,14 @@ CREATE TABLE `sutradara` (
 --
 
 INSERT INTO `sutradara` (`id_sutradara`, `nama_sutradara`, `tanggal_lahir`, `negara`) VALUES
-(1, 'Ihsan Reihansyah', NULL, NULL),
-(2, 'Albert', NULL, NULL),
 (3, 'Joss Whedon', '1964-06-23', 'Amerika Serikat'),
-(4, 'Taika Watiti', '1975-08-16', 'Selandia Baru'),
-(5, 'sutradara 1', '2023-11-23', 'Indonesia'),
-(7, 'Sutradara 3', '2023-11-23', 'Jepang'),
-(8, 'sutrdara 4', '2023-11-14', 'indoneisa'),
-(9, 'sutradra 9', '2023-11-11', 'papua'),
-(10, 'sutradra 9', '2023-11-09', 'papua');
+(11, 'Hanung Bramantyo', '1975-10-01', 'Indonesia'),
+(12, 'James Wan', '1977-02-26', 'Australia'),
+(13, ' Hadrah Daeng Ratu ', '1989-11-02', 'Indonesia'),
+(14, 'Chayanop Boonprakob', '1986-03-19', 'Thailand '),
+(15, 'Kim Yong-hwa', '1971-09-25', 'Korea Selatan'),
+(16, 'Ann Hui', '1947-05-23', 'Republic of China'),
+(18, 'Takahiro Miki', '1974-08-29', 'Jepang');
 
 -- --------------------------------------------------------
 
@@ -145,6 +200,12 @@ CREATE TABLE `ulasan` (
 --
 
 --
+-- Indexes for table `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `film`
 --
 ALTER TABLE `film`
@@ -157,6 +218,12 @@ ALTER TABLE `film`
 --
 ALTER TABLE `kategori`
   ADD PRIMARY KEY (`id_kategori`);
+
+--
+-- Indexes for table `kritikdansaran`
+--
+ALTER TABLE `kritikdansaran`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `rating`
@@ -183,16 +250,28 @@ ALTER TABLE `ulasan`
 --
 
 --
+-- AUTO_INCREMENT for table `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `film`
 --
 ALTER TABLE `film`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- AUTO_INCREMENT for table `kategori`
 --
 ALTER TABLE `kategori`
   MODIFY `id_kategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `kritikdansaran`
+--
+ALTER TABLE `kritikdansaran`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `rating`
@@ -204,7 +283,7 @@ ALTER TABLE `rating`
 -- AUTO_INCREMENT for table `sutradara`
 --
 ALTER TABLE `sutradara`
-  MODIFY `id_sutradara` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_sutradara` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `ulasan`
