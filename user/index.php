@@ -7,8 +7,7 @@
     <meta name="keywords" content="Anime, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-    <title>Dream Movie</title>
+    <title>Dream Movie 2023</title>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -260,7 +259,39 @@
     <!-- Product Section End -->
 
     <!-- Footer Section Begin -->
-    <?php include "template/footer.php" ?>
+    <footer class="footer">
+        <div class="page-up">
+            <a href="#" id="scrollToTopButton"><span class="arrow_carrot-up"></span></a>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="footer__logo">
+                        <a href="./index.php"><img src="../img/logo.png" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="footer__nav">
+                        <ul>
+                            <li class="active"><a href="./index.php">Homepage</a></li>
+                            <li><a href="./categories.php">Categories</a></li>
+                            <li><a href="./genre.php">Genre</a></li>
+                            <li><a href="./about.php">About</a></li>
+                            <li><a href="contact.php">Contact Us</a></li>
+                            <li><a href="./blog.php">Our Blog</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        Copyright &copy;
+                        <script>document.write(new Date().getFullYear());</script> All rights reserved | Dream Movie 2023
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </footer>
     <!-- Footer Section End -->
 
     <!-- Search model Begin -->
