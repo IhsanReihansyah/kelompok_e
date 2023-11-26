@@ -34,7 +34,7 @@
 
     <?php
     include 'koneksi.php';
-    $query = mysqli_query($conn, "SELECT f.id, f.judul_film, f.tahun_rilis,f.sinopsis,f.genre,f.nama_pemain,f.gambar,k.kategori,s.nama_sutradara,r.rating_film FROM `film` AS f JOIN kategori AS k ON k.id_kategori = f.id_kategori JOIN sutradara AS s ON s.id_sutradara=f.id_sutradara JOIN rating AS r ON r.id_rating=f.id_rating ORDER BY f.id ASC;");
+    $query = mysqli_query($conn, "SELECT f.id, f.judul_film, f.tahun_rilis,f.sinopsis,f.genre,f.nama_pemain,f.gambar,k.kategori,s.nama_sutradara FROM `film` AS f JOIN kategori AS k ON k.id_kategori = f.id_kategori JOIN sutradara AS s ON s.id_sutradara=f.id_sutradara ORDER BY f.id ASC;");
     ?>
     <nav class="sb-topnav navbar navbar-expand navbar-dark" style="background-color: #00237A;">
         <!-- Navbar Brand-->
@@ -80,7 +80,6 @@
                                 <th style="background-color: #00237A; color: #ffffff; text-align: center;">Gambar</th>
                                 <th style="background-color: #00237A; color: #ffffff; text-align: center;">kategori</th>
                                 <th style="background-color: #00237A; color: #ffffff; text-align: center;">Nama Sutradara</th>
-                                <th style="background-color: #00237A; color: #ffffff; text-align: center;">Rating Film</th>
                                 <th style="background-color: #00237A; color: #ffffff; text-align: center;">Aksi</th>
                             </tr>
                         </thead>
@@ -118,9 +117,6 @@
                                         </td>
                                         <td>
                                             <?php echo $data["nama_sutradara"]; ?>
-                                        </td>
-                                        <td>
-                                            <?php echo $data["rating_film"]; ?>
                                         </td>
                                         <td>
                                             <div class="btn-group" role="group">

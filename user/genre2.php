@@ -7,7 +7,7 @@
     <meta name="keywords" content="Anime, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Dream Movie 2023</title>
+    <title>Dream Movie</title>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -47,9 +47,10 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumb__links">
-                        <a href="./index.html"><i class="fa fa-home"></i> Home</a>
-                        <a href="./categories.html">Categories</a>
-                        <a href="./genre.html">Genre</a>
+                    <a href="./index.php"><i class="fa fa-home"></i> Home</a>
+                        <a href="./kategori.php">Movie</a>
+                        <a href="#">Genre</a>
+                        <a href="#">Horor</a>
                     </div>
                 </div>
             </div>
@@ -74,8 +75,8 @@
                         </div>
                         <div class="row">
                             <?php
-                            $query = mysqli_query($conn, "SELECT * from `film` as f join rating as r on r.id_rating=f.id_rating WHERE `genre` ORDER BY f.id ASC;");
-                            tampilkanGenre1($query);
+                           $query = mysqli_query($conn, "SELECT * FROM `film` WHERE FIND_IN_SET('Horor', `genre`) > 0");
+                           tampilkanGenre($query);
                             ?>
                         </div>
                     </div>
@@ -86,38 +87,7 @@
     <!-- Product Section End -->
 
     <!-- Footer Section Begin -->
-    <footer class="footer">
-        <div class="page-up">
-            <a href="#" id="scrollToTopButton"><span class="arrow_carrot-up"></span></a>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3">
-                    <div class="footer__logo">
-                        <a href="./index.html"><img src="img/logo.png" alt=""></a>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="footer__nav">
-                        <ul>
-                            <li class="active"><a href="./index.html">Homepage</a></li>
-                            <li><a href="./categories.html">Categories</a></li>
-                            <li><a href="./genre.html">Genre</a></li>                            
-                            <li><a href="./blog.html">Our Blog</a></li>
-                            <li><a href="#">Contacts</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        Copyright &copy;
-                        <script>document.write(new Date().getFullYear());</script> All rights reserved | Dream Movie 2023
-                    </p>
-
-                </div>
-            </div>
-        </div>
-    </footer>
+    <?php include "template/footer.php" ?>
     <!-- Footer Section End -->
 
     <!-- Search model Begin -->
