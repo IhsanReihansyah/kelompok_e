@@ -33,11 +33,6 @@
     include "template/product.php";
     ?>
 
-    <!-- Page Preloder -->
-    <div id="preloder">
-        <div class="loader"></div>
-    </div>
-
     <!-- Header Section Begin -->
     <?php include "template/navbar.php" ?>
     <!-- Header End -->
