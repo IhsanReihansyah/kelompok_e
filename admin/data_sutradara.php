@@ -20,10 +20,16 @@
     ?>
     <nav class="sb-topnav navbar navbar-expand navbar-dark" style="background-color: #00237A;">
         <!-- Navbar Brand-->
-        <a class="navbar-brand ps-3" style="color: #ffffff;">Dream Movie</a>
+        <a class="navbar-brand ps-3" style="color: #ffffff;" href="../user/index.php">Dream Movie</a>
         <!-- Sidebar Toggle-->
         <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i
                 class="fas fa-bars" style="color: #ffffff;"></i></button>
+                <ul class="navbar-nav ml-auto ms-md-0 me-3 me-lg-4">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" href="login.php" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false" style="color: #ffffff;"><i class="fas fa-user fa-fw"></i></a>
+            </li>
+        </ul>
     </nav>
     <div id="layoutSidenav">
         <?php include "template/navbar.php" ?>
@@ -31,8 +37,8 @@
             <main>
                 <div class="container-fluid px-4">
                     <h1 class="mt-4">Data Sutradara</h1>
-                    <div class="card mb-4">
-                        <div class="card-body">
+                    <div class="card mb-4" style="background-color: #9EA9B1;">
+                        <div class="card-body" style="color: black; font-weight: bold;">
                             Halaman ini Khusus CRUD Sutradara
                         </div>
                     </div>

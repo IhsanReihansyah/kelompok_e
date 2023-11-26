@@ -34,7 +34,7 @@
 
     <?php
     include 'koneksi.php';
-    $query = mysqli_query($conn, "SELECT f.id, f.judul_film, f.tahun_rilis,f.sinopsis,f.genre,f.nama_pemain,f.gambar,k.kategori,s.nama_sutradara FROM `film` AS f JOIN kategori AS k ON k.id_kategori = f.id_kategori JOIN sutradara AS s ON s.id_sutradara=f.id_sutradara ORDER BY f.id ASC;");
+    $query = mysqli_query($conn, "SELECT * FROM kritikdansaran;");
     ?>
     <nav class="sb-topnav navbar navbar-expand navbar-dark" style="background-color: #00237A;">
         <!-- Navbar Brand-->
@@ -61,26 +61,20 @@
         <div id="layoutSidenav_content">
             <main>
                 <div class="container-fluid px-4">
-                    <h1 class="mt-4">Data Film</h1>
+                    <h1 class="mt-4">Data Kritik Dan Saran</h1>
                     <div class="card mb-4" style="background-color: #9EA9B1;">
                         <div class="card-body" style="color: black; font-weight: bold;">
-                            Halaman ini Khusus Data Film
+                            Halaman ini Khusus kritik Dan Saran
                         </div>
                     </div>
                     <table id="film" class="table table-striped table-bordered">
                         <thead>
                             <tr>
                                 <th style="background-color: #00237A; color: #ffffff; text-align: center;">No</th>
-                                <th style="background-color: #00237A; color: #ffffff; text-align: center;">ID Film</th>
-                                <th style="background-color: #00237A; color: #ffffff; text-align: center;">Judul Film</th>
-                                <th style="background-color: #00237A; color: #ffffff; text-align: center;">Tahun Rilis</th>
-                                <th style="background-color: #00237A; color: #ffffff; text-align: center;">Sinopsis</th>
-                                <th style="background-color: #00237A; color: #ffffff; text-align: center;">Genre</th>
-                                <th style="background-color: #00237A; color: #ffffff; text-align: center;">Nama Pemain</th>
-                                <th style="background-color: #00237A; color: #ffffff; text-align: center;">Gambar</th>
-                                <th style="background-color: #00237A; color: #ffffff; text-align: center;">kategori</th>
-                                <th style="background-color: #00237A; color: #ffffff; text-align: center;">Nama Sutradara</th>
-                                <th style="background-color: #00237A; color: #ffffff; text-align: center;">Aksi</th>
+                                <th style="background-color: #00237A; color: #ffffff; text-align: center;">ID</th>
+                                <th style="background-color: #00237A; color: #ffffff; text-align: center;">Nama</th>
+                                <th style="background-color: #00237A; color: #ffffff; text-align: center;">Email</th>
+                                <th style="background-color: #00237A; color: #ffffff; text-align: center;">Pesan</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -97,37 +91,13 @@
                                             <?php echo $data["id"]; ?>
                                         </td>
                                         <td>
-                                            <?php echo $data["judul_film"]; ?>
+                                            <?php echo $data["nama"]; ?>
                                         </td>
                                         <td>
-                                            <?php echo $data["tahun_rilis"]; ?>
+                                            <?php echo $data["email"]; ?>
                                         </td>
                                         <td>
-                                            <?php echo $data["sinopsis"]; ?>
-                                        </td>
-                                        <td>
-                                            <?php echo $data["genre"]; ?>
-                                        </td>
-                                        <td>
-                                            <?php echo $data["nama_pemain"]; ?>
-                                        </td>
-                                        <td> <img src="<?php echo $data["gambar"] ?>" width="100"> </td>
-                                        <td>
-                                            <?php echo $data["kategori"]; ?>
-                                        </td>
-                                        <td>
-                                            <?php echo $data["nama_sutradara"]; ?>
-                                        </td>
-                                        <td>
-                                            <div class="btn-group" role="group">
-                                                <a href="edit.php?id=<?php echo $data["id"] ?>" class="btn btn-warning btn-sm">
-                                                <i class="fas fa-pencil-alt"></i>
-                                            </a>
-                                            <a href="proses_hapus.php?id=<?php echo $data["id"] ?>"
-                                            onclick="return confirm('Yakin Ingin Menghapus Data?')"
-                                            class="btn btn-danger btn-sm">
-                                            <i class="fas fa-trash-alt"></i>
-                                        </a>
+                                            <?php echo $data["pesan"]; ?>
                                         </td>
                                     </tr>
                                     <?php $no++;

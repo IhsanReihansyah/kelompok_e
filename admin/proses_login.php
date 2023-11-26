@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     } else {
         echo "<script>
-                alert('Maaf Passsword dan Username Tidak Pas');
+                alert('Maaf Passsword dan Username Salah Silahkan Masukkan Yang Benar');
                 window.location.href = 'login.php';
               </script>";
     }

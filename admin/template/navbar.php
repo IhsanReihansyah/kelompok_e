@@ -18,6 +18,10 @@
                                 <div class="sb-nav-link-icon text-white"><i class="fas fa-table"></i></div>
                                 Tambah Film
                             </a>
+                            <a class="nav-link text-white" href="ks.php">
+                                <div class="sb-nav-link-icon text-white"><i class="fas fa-book-open"></i></div>
+                                Kritik & Saran
+                            </a>
                         </div>
                     </div>
                 </nav>
