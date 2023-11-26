@@ -14,7 +14,7 @@
                         <ul>
                             <li class="active"><a href="./index.php">Homepage</a></li>
                             <li><a href="./kategori.php">Categories</a></li>
-                            <li><a href="#">Contacts</a></li>
+                            <li><a href="./about.php">About</a></li>
                         </ul>
                     </div>
                 </div>
