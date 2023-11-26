@@ -35,39 +35,40 @@
     <!-- Header Section Begin -->
     <?php include "template/navbar.php" ?>
     <!-- Header End -->
+
     <div class="container">
         <div class="row d-flex justify-content-center">
-          <div class="col-lg-8">
+            <div class="col-lg-8">
                 <div class="blog__details__form">
-    <header>
-        <h4>Contact Us</h4>
-    </header>
-    <section>
-        <form action="" method="POST">
+                    <header>
+                        <h3>Contact Us</h3>
+                    </header>
+                    <section>
+                        <form action="" method="POST">
 
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="inputGroup-sizing-default">Name</span>
-                <input type="text" name="name" class="form-control" aria-label="Sizing example input"
-                    aria-describedby="inputGroup-sizing-default">
-            </div>
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="inputGroup-sizing-default">Email</span>
-                <input type="email" name="email" class="form-control" aria-label="Sizing example input"
-                    aria-describedby="inputGroup-sizing-default">
-            </div>
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="inputGroup-sizing-default">Message</span>
-                <textarea name="massage" class="form-control" aria-label="Sizing example input"
-                    aria-describedby="inputGroup-sizing-default">
-                </textarea>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="inputGroup-sizing-default">Name</span>
+                                <input type="text" name="name" class="form-control" aria-label="Sizing example input"
+                                    aria-describedby="inputGroup-sizing-default">
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="inputGroup-sizing-default">Email</span>
+                                <input type="email" name="email" class="form-control" aria-label="Sizing example input"
+                                    aria-describedby="inputGroup-sizing-default">
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="inputGroup-sizing-default">Message</span>
+                                <textarea name="message" class="form-control" aria-label="Sizing example input"
+                                    aria-describedby="inputGroup-sizing-default"></textarea>
+                            </div>
 
-            <div class="col-lg-12">
-            <button type="submit" class="site-btn" value="Send Message" name="send"><i class="fa fa-location-arrow"></i>
-                        Send
-            </button>
-            </div>
-        </form>
-    </section>
+                            <div class="col-lg-12 d-flex justify-content-between">
+                                <button type="submit" class="site-btn primary-btn" value="Send Message" name="send">
+                                    <i class="fa fa-location-arrow"></i> Send
+                                </button>
+                            </div>
+                        </form>
+                    </section>
                 </div>
             </div>
         </div>
@@ -76,7 +77,6 @@
     <!-- Footer Section Begin -->
     <?php include "template/footer.php" ?>
     <!-- Footer Section End -->
-
 
     <script src="js/script.js"></script>
 

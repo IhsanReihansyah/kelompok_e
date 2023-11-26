@@ -46,7 +46,7 @@ h4,
 h5,
 h6 {
   margin: 0;
-  color: #111111;
+  color: #ffff;
   font-weight: 400;
   font-family: "Mulish", sans-serif;
 }
@@ -190,8 +190,17 @@ ol {
   letter-spacing: 2px;
   text-transform: uppercase;
   display: inline-block;
-  padding: 12px 30px;
+  padding: 10px 15px;
+  cursor: pointer;
 }
+
+.site-btn:hover {
+        background-color: #4CAF50;
+    }
+
+.primary-btn {
+        background-color: #e53637;
+    }
 
 /* Preloder */
 
@@ -1642,7 +1651,15 @@ ol {
 }
 
 .blog__details__form {
+  display: flex;
+  flex-direction: column;
   padding-top: 50px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.blog__details__form header {
+    margin-bottom: 20px;
 }
 
 .blog__details__form h4 {
@@ -1661,6 +1678,10 @@ ol {
   border-radius: 2px;
   border: none;
   margin-bottom: 30px;
+}
+
+.input-group {
+    margin-bottom: 15px;
 }
 
 .blog__details__form form input::-webkit-input-placeholder {
@@ -2346,74 +2367,5 @@ ol {
   }
 }
 
-p {
-    color: white;
-}
 
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
 
-        header {
-            background-color: transparent;
-            color: white;
-            padding: 10px;
-            text-align: center;
-        }
-
-        header h1 {
-            color: #ffffff; 
-            text-align: center;
-        }
-
-        section {
-            margin: 20px;
-            padding: 20px;
-        }
-
-        form {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .box {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-        }
-
-        .btn {
-            background-color: #333;
-            color: white;
-            padding: 10px 15px;
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn-primary {
-            background-color: #007bff; /* Change to your desired primary color */
-        }
-
-        .btn:hover {
-            background-color: #555;
-        }
-
-        form label {
-            color: white; /* Change the label text color to white */
-        }
-
-        .required {
-            color: red;
-            margin-left: 5px;
-        }
-
-        form .success {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px;
-            margin-top: 10px;
-            text-align: center;
-        }
