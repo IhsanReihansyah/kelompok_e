@@ -159,7 +159,7 @@
                                         if ($data["id_kategori"] == '1') {
                                             ?>
                                             <div class="product__sidebar__view__item set-bg mix day years"
-                                                data-setbg="../<?php echo $data["gambar"] ?>">
+                                                data-setbg="../admin/<?php echo $data["gambar"] ?>">
                                                 <!-- <div class="ep">
                                 <?php echo $data["rating_film"] ?>
                             </div> -->
@@ -177,7 +177,7 @@
                                         if ($data["id_kategori"] == '2') {
                                             ?>
                                             <div class="product__sidebar__view__item set-bg mix month week"
-                                                data-setbg="../<?php echo $data["gambar"] ?>">
+                                                data-setbg="../admin/<?php echo $data["gambar"] ?>">
                                                 <!-- <div class="ep">
                                 <?php echo $data["rating_film"] ?>
                             </div> -->
@@ -195,7 +195,7 @@
                                         if ($data["id_kategori"] == '3') {
                                             ?>
                                             <div class="product__sidebar__view__item set-bg mix week years"
-                                                data-setbg="../<?php echo $data["gambar"] ?>">
+                                                data-setbg="../admin/<?php echo $data["gambar"] ?>">
                                                 <!-- <div class="ep">
                                 <?php echo $data["rating_film"] ?>
                             </div> -->
@@ -213,7 +213,7 @@
                                         if ($data["id_kategori"] == '4') {
                                             ?>
                                             <div class="product__sidebar__view__item set-bg mix years month"
-                                                data-setbg="../<?php echo $data["gambar"] ?>">
+                                                data-setbg="../admin/<?php echo $data["gambar"] ?>">
                                                 <!-- <div class="ep">
                                 <?php echo $data["rating_film"] ?>
                             </div> -->
@@ -231,7 +231,7 @@
                                         if ($data["id_kategori"] == '5') {
                                             ?>
                                             <div class="product__sidebar__view__item set-bg mix day"
-                                                data-setbg="../<?php echo $data["gambar"] ?>">
+                                                data-setbg="../admin/<?php echo $data["gambar"] ?>">
                                                 <!-- <div class="ep">
                                 <?php echo $data["rating_film"] ?>
                             </div> -->

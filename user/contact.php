@@ -60,6 +60,7 @@
                 <textarea name="massage" class="form-control" aria-label="Sizing example input"
                     aria-describedby="inputGroup-sizing-default">
                 </textarea>
+            </div>
 
             <div class="col-lg-12">
             <button type="submit" class="site-btn" value="Send Message" name="send"><i class="fa fa-location-arrow"></i>
@@ -68,10 +69,10 @@
             </div>
         </form>
     </section>
-                </div>
-            </div>
-        </div>
-    </div>
+</div>
+</div>
+</div>
+</div>
 
     <!-- Footer Section Begin -->
     <?php include "template/footer.php" ?>
