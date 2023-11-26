@@ -35,9 +35,12 @@
     <!-- Header Section Begin -->
     <?php include "template/navbar.php" ?>
     <!-- Header End -->
-
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+          <div class="col-lg-8">
+                <div class="blog__details__form">
     <header>
-        <h1>Contact Us</h1>
+        <h4>Contact Us</h4>
     </header>
     <section>
         <form action="" method="POST">
@@ -58,49 +61,20 @@
                     aria-describedby="inputGroup-sizing-default">
                 </textarea>
 
-            <input type="submit" value="Send Message" name="send" class="btn btn-primary">
+            <div class="col-lg-12">
+            <button type="submit" class="site-btn" value="Send Message" name="send"><i class="fa fa-location-arrow"></i>
+                        Send
+            </button>
+            </div>
         </form>
     </section>
-
-    <!-- Footer Section Begin -->
-<<<<<<< HEAD
-    <footer class="footer">
-        <div class="page-up">
-            <a href="#" id="scrollToTopButton"><span class="arrow_carrot-up"></span></a>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3">
-                    <div class="footer__logo">
-                        <a href="./index.php"><img src="../img/logo.png" alt=""></a>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="footer__nav">
-                        <ul>
-                            <li class="active"><a href="./index.php">Homepage</a></li>
-                            <li><a href="./categories.php">Categories</a></li>
-                            <li><a href="./genre.php">Genre</a></li>
-                            <li><a href="./about.php">About</a></li>
-                            <li><a href="contact.php">Contact Us</a></li>
-                            <li><a href="./blog.php">Our Blog</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        Copyright &copy;
-                        <script>document.write(new Date().getFullYear());</script> All rights reserved | Dream Movie
-                        2023
-                    </p>
-
                 </div>
             </div>
         </div>
-    </footer>
-=======
+    </div>
+
+    <!-- Footer Section Begin -->
     <?php include "template/footer.php" ?>
->>>>>>> 23d81297b55754a8ee7f74a455510f3b85d257bc
     <!-- Footer Section End -->
 
 
