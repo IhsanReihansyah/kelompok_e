@@ -35,9 +35,12 @@
     <!-- Header Section Begin -->
     <?php include "template/navbar.php" ?>
     <!-- Header End -->
-
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+          <div class="col-lg-8">
+                <div class="blog__details__form">
     <header>
-        <h1>Contact Us</h1>
+        <h4>Contact Us</h4>
     </header>
     <section>
         <form action="" method="POST">
@@ -58,7 +61,11 @@
                     aria-describedby="inputGroup-sizing-default">
                 </textarea>
 
-            <input type="submit" value="Send Message" name="send" class="btn btn-primary">
+            <div class="col-lg-12">
+            <button type="submit" class="site-btn" value="Send Message" name="send"><i class="fa fa-location-arrow"></i>
+                        Send
+            </button>
+            </div>
         </form>
     </section>
 
