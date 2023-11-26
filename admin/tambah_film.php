@@ -78,15 +78,15 @@
     $query = mysqli_query($conn, "SELECT DISTINCT genre FROM film"); 
     $genres = array();
     while ($data = mysqli_fetch_array($query)) {
-    $genre = $data['genre'];
-    if (!empty($genre)) {
-    $genre_list = explode(',', $genre);
-    $genres = array_merge($genres, $genre_list);
+        $genre = $data['genre'];
+        if (!empty($genre)) {
+            $genre_list = explode(',', $genre);
+            $genres = array_merge($genres, $genre_list);
         }
     }
-
+    
     $genres = array_unique(array_map('trim', $genres));
-
+    
     foreach ($genres as $genre) {
         echo '<input type="checkbox" id="genre_' . $genre . '" name="genre[]" value="' . $genre . '">';
         echo '<label for="genre_' . $genre . '">' . $genre . '</label><br>';

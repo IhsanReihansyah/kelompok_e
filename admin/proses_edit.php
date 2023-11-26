@@ -7,7 +7,6 @@ $genre = $_POST["genre"];
 $nama_pemain = $_POST["nama_pemain"];
 $kategori = $_POST["kategori"];
 $nama_sutradara = $_POST["sutradara"];
-$rating_film = $_POST["rating"];
 
 if($_FILES["fileToUpload"]["size"]!=0){   // Jika browse image di tekan maka $_FILES akan terisi
     $target_dir = "images/"; // path directory image akan di simpan
@@ -17,7 +16,7 @@ if($_FILES["fileToUpload"]["size"]!=0){   // Jika browse image di tekan maka $_F
     } else {
         echo "Sorry, there was an error uploading your file.<br>";
     }
-    $result = mysqli_query($conn, "UPDATE `film` set `judul_film` = '$judul_film', `tahun_rilis` = '$tahun_rilis', `sinopsis` = '$sinopsis', `genre` = '$genre', `nama_pemain` = '$nama_pemain', `id_kategori` = '$kategori', `id_sutradara` = '$nama_sutradara', `id_rating` = '$rating_film', `gambar`= '$target_file' where `id` = '$_GET[id]'");
+    $result = mysqli_query($conn, "UPDATE `film` set `judul_film` = '$judul_film', `tahun_rilis` = '$tahun_rilis', `sinopsis` = '$sinopsis', `genre` = '$genre', `nama_pemain` = '$nama_pemain', `id_kategori` = '$kategori', `id_sutradara` = '$nama_sutradara', `gambar`= '$target_file' where `id` = '$_GET[id]'");
 }
 
 if (isset($_POST['genre']) && is_array($_POST['genre'])) {
@@ -27,7 +26,7 @@ if (isset($_POST['genre']) && is_array($_POST['genre'])) {
 }
 
 
-$result = mysqli_query($conn, "UPDATE `film` set `judul_film` = '$judul_film', `tahun_rilis` = '$tahun_rilis', `sinopsis` = '$sinopsis', `genre` ='$selected_genres', `nama_pemain` = '$nama_pemain', `id_kategori` = '$kategori', `id_sutradara` = '$nama_sutradara', `id_rating` = '$rating_film' where `id` = '$_GET[id]'");
+$result = mysqli_query($conn, "UPDATE `film` set `judul_film` = '$judul_film', `tahun_rilis` = '$tahun_rilis', `sinopsis` = '$sinopsis', `genre` ='$selected_genres', `nama_pemain` = '$nama_pemain', `id_kategori` = '$kategori', `id_sutradara` = '$nama_sutradara' where `id` = '$_GET[id]'");
 
 header("Location:admin.php");
 

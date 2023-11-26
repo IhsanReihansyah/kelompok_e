@@ -6,7 +6,6 @@ $sinopsis = $_POST["sinopsis"];
 $nama_pemain = $_POST["nama_pemain"];
 $kategori = $_POST["kategori"];
 $nama_sutradara = $_POST["nama_sutradara"];
-$rating_film = $_POST["rating_film"];
 
 $target_dir = "images/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
@@ -22,7 +21,7 @@ if (isset($_POST['genre']) && is_array($_POST['genre'])) {
     $selected_genres = ''; // Atur default jika tidak ada genre yang dipilih
 }
 
-$result = mysqli_query($conn, "INSERT INTO `film` (`judul_film`, `tahun_rilis`, `sinopsis`, `genre`, `nama_pemain`, `id_kategori`, `id_sutradara`, `id_rating`, `gambar`) VALUES ('$judul_film', '$tahun_rilis', '$sinopsis', '$selected_genres', '$nama_pemain', '$kategori', '$nama_sutradara', '$rating_film', '$target_file');");
+$result = mysqli_query($conn, "INSERT INTO `film` (`judul_film`, `tahun_rilis`, `sinopsis`, `genre`, `nama_pemain`, `id_kategori`, `id_sutradara`, `gambar`) VALUES ('$judul_film', '$tahun_rilis', '$sinopsis', '$selected_genres', '$nama_pemain', '$kategori', '$nama_sutradara', '$target_file');");
 
 header("Location: admin.php");
 ?>
