@@ -27,7 +27,7 @@
 </head>
 
 <body>
-<?php
+    <?php
     include 'koneksi.php';
     include "template/product.php";
     ?>
@@ -41,14 +41,22 @@
     </header>
     <section>
         <form action="" method="POST">
-            <label for="name">Name<span class="required">*</span> :</label>
-            <input type="text" name="name" class="box" required>
 
-            <label for="email">Email<span class="required">*</span> :</label>
-            <input type="email" name="email" class="box" required>
-
-            <label for="message">Message<span class="required">*</span> :</label>
-            <textarea name="message" class="box" required></textarea>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-default">Name</span>
+                <input type="text" name="name" class="form-control" aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-default">
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-default">Email</span>
+                <input type="email" name="email" class="form-control" aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-default">
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-default">Message</span>
+                <textarea name="massage" class="form-control" aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-default">
+                </textarea>
 
             <input type="submit" value="Send Message" name="send" class="btn btn-primary">
         </form>
@@ -81,7 +89,8 @@
                 <div class="col-lg-3">
                     <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                         Copyright &copy;
-                        <script>document.write(new Date().getFullYear());</script> All rights reserved | Dream Movie 2023
+                        <script>document.write(new Date().getFullYear());</script> All rights reserved | Dream Movie
+                        2023
                     </p>
 
                 </div>
