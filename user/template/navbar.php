@@ -50,7 +50,7 @@
             </div>
             <div class="col-lg-1">
                 <div class="header__logo">
-                    <a href="../admin/login.php"><span class="icon_profile"></span></a>
+                    <a href="../admin/login.php"><span class="icon_profile"></span>Admin</a>
                 </div>
             </div>
         </div>
