@@ -47,17 +47,17 @@
                         <form action="" method="POST">
 
                             <div class="input-group mb-3">
-                                <span class="input-group-text" id="inputGroup-sizing-default">Name</span>
+                                <span class="input-group-text" id="inputGroup-sizing-default">Name:</span>
                                 <input type="text" name="name" class="form-control" aria-label="Sizing example input"
                                     aria-describedby="inputGroup-sizing-default">
                             </div>
                             <div class="input-group mb-3">
-                                <span class="input-group-text" id="inputGroup-sizing-default">Email</span>
+                                <span class="input-group-text" id="inputGroup-sizing-default">Email:</span>
                                 <input type="email" name="email" class="form-control" aria-label="Sizing example input"
                                     aria-describedby="inputGroup-sizing-default">
                             </div>
                             <div class="input-group mb-3">
-                                <span class="input-group-text" id="inputGroup-sizing-default">Message</span>
+                                <span class="input-group-text" id="inputGroup-sizing-default">Message:</span>
                                 <textarea name="message" class="form-control" aria-label="Sizing example input"
                                     aria-describedby="inputGroup-sizing-default"></textarea>
                             </div>

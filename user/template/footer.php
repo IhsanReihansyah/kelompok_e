@@ -13,18 +13,17 @@
                     <div class="footer__nav">
                         <ul>
                             <li class="active"><a href="./index.php">Homepage</a></li>
+                            <li><a href="./kategori.php">Categories</a></li>
+                            <li><a href="./genre1.php">Genre</a></li>
                             <li><a href="./about.php">About</a></li>
                             <li><a href="./contact.php">Contact</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-3">
-                    <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    <p>
                         Copyright &copy;
-                        <script>document.write(new Date().getFullYear());</script> All rights reserved | This template
-                        is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com"
-                            target="_blank">Colorlib</a>
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        <script>document.write(new Date().getFullYear());</script> All rights reserved | Dream Movie 2023
                     </p>
 
                 </div>
