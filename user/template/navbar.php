@@ -12,7 +12,7 @@
                 <div class="header__nav">
                     <nav class="header__menu mobile-menu">
                         <ul>
-                            <li class="active"><a href="./index.php">Homepage</a></li>
+                            <li><a href="./index.php">Home</a></li>
                             <li><a href="./kategori.php">Categories <span class="arrow_carrot-down"></span></a>
                                 <ul class="dropdown">
                                     <li><a href="./kategoriIndonesia.php">Indonesia</a></li>
@@ -23,7 +23,7 @@
                                     <li><a href="./kategoriAmerika.php">Amerika</a></li>
                                 </ul>
                             </li>
-                            <li><a href="#">Genre <span class="arrow_carrot-down"></span></a>
+                            <li><a href="#">Genre<span class="arrow_carrot-down"></span></a>
                                 <ul class="dropdown">
                                     <li><a href="./genreRomance.php">Romance</a></li>
                                     <li><a href="./genreHoror.php">Horor</a></li>
@@ -36,10 +36,9 @@
                                     <li><a href="./genreFantasy.php">Fantasy</a></li>
                                 </ul>
                             <li><a href="./about.php">About</a></li>
-                            <li><a href="./contact.php">Contact</a></li>
                             <li>
                                 <form method="GET" action="kategori.php">
-                                    <input type="text" name="cari" placeholder="Search" value="<?php if (isset($_GET['cari'])) {
+                                    <input type="text" name="cari" placeholder="Search" size="15" class="rounded" value="<?php if (isset($_GET['cari'])) {
                                         echo $_GET['cari'];
                                     } ?>">
                                 </form>
@@ -50,7 +49,8 @@
             </div>
             <div class="col-lg-1">
                 <div class="header__logo">
-                    <a href="../admin/login.php"><span class="icon_profile"></span></a>
+                <a href="./contact.php"><span class="fa fa-paper-plane mr-4"></span></a>
+                <a href="../admin/login.php"><span class="icon_profile"></span></a>
                 </div>
             </div>
         </div>

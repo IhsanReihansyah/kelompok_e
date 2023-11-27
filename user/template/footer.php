@@ -12,7 +12,7 @@
                 <div class="col-lg-6">
                     <div class="footer__nav">
                         <ul>
-                            <li class="active"><a href="./index.php">Homepage</a></li>
+                            <li class="active"><a href="./index.php">Home</a></li>
                             <li><a href="./about.php">About</a></li>
                             <li><a href="./contact.php">Contact</a></li>
                         </ul>
