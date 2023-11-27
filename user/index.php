@@ -253,11 +253,7 @@
     </section>
     <!-- Product Section End -->
 
-<<<<<<< HEAD
 <!-- Footer Section Begin -->
-=======
-    <!-- Footer Section Begin -->
->>>>>>> b043e982ed9865145ff24cc6745de4fe7fdf077b
     <?php include "template/footer.php" ?>
     <!-- Footer Section End -->
 
