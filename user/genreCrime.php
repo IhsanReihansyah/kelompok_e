@@ -15,21 +15,21 @@
         rel="stylesheet">
 
     <!-- Css Styles -->
-    <link rel="stylesheet" href="../../css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="../../css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="../../css/elegant-icons.css" type="text/css">
-    <link rel="stylesheet" href="../../css/plyr.css" type="text/css">
-    <link rel="stylesheet" href="../../css/nice-select.css" type="text/css">
-    <link rel="stylesheet" href="../../css/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="../../css/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="../../css/style.css" type="text/css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="../css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="../css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="../css/plyr.css" type="text/css">
+    <link rel="stylesheet" href="../css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="../css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="../css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="../css/style.css" type="text/css">
 </head>
 
 <body>
 
     <?php
-    include '../koneksi.php';
-    include "../template/product.php";
+    include 'koneksi.php';
+    include "template/product.php";
     ?>
 
     <!-- Page Preloder -->
@@ -38,7 +38,7 @@
     </div>
 
     <!-- Header Section Begin -->
-    <?php include "../template/navbar.php" ?>
+    <?php include "template/navbar.php" ?>
     <!-- Header End -->
 
     <!-- Breadcrumb Begin -->
@@ -47,10 +47,10 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumb__links">
-                    <a href="../index.php"><i class="fa fa-home"></i> Home</a>
-                        <a href="../kategori/kategori.php">Movie</a>
+                    <a href="index.php"><i class="fa fa-home"></i> Home</a>
+                        <a href="kategori.php">Movie</a>
                         <a href="#">Genre</a>
-                        <a href="#">Animation</a>
+                        <a href="#">Crime</a>
                     </div>
                 </div>
             </div>
@@ -68,15 +68,15 @@
                             <div class="row">
                                 <div class="col-lg-8 col-md-8 col-sm-8">
                                     <div class="section-title">
-                                        <h4>Animation</h4>
+                                        <h4>Crime</h4>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <?php
-                           $query = mysqli_query($conn, "SELECT * FROM `film` WHERE FIND_IN_SET('Animation', `genre`) > 0");
-                           tampilkanGenre($query);
+                            $query = mysqli_query($conn, "SELECT * FROM `film` WHERE FIND_IN_SET('Crime', `genre`) > 0");
+                            tampilkanGenre($query);
                             ?>
                         </div>
                     </div>
@@ -87,7 +87,7 @@
     <!-- Product Section End -->
 
     <!-- Footer Section Begin -->
-    <?php include "../template/footer.php" ?>
+    <?php include "template/footer.php" ?>
     <!-- Footer Section End -->
 
     <!-- Search model Begin -->
@@ -102,14 +102,14 @@
     <!-- Search model end -->
 
     <!-- Js Plugins -->
-    <script src="../../js/jquery-3.3.1.min.js"></script>
-    <script src="../../js/bootstrap.min.js"></script>
-    <script src="../../js/player.js"></script>
-    <script src="../../js/jquery.nice-select.min.js"></script>
-    <script src="../../js/mixitup.min.js"></script>
-    <script src="../../js/jquery.slicknav.js"></script>
-    <script src="../../js/owl.carousel.min.js"></script>
-    <script src="../../js/main.js"></script>
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/player.js"></script>
+    <script src="../js/jquery.nice-select.min.js"></script>
+    <script src="../js/mixitup.min.js"></script>
+    <script src="../js/jquery.slicknav.js"></script>
+    <script src="../js/owl.carousel.min.js"></script>
+    <script src="../js/main.js"></script>
 </body>
 
 </html>
