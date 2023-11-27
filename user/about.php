@@ -72,6 +72,12 @@
             <div class="blog__details__content">
               <div class="blog__details__text">
                 <p>
+                Berkarya dalam Layar, Menghibur di Hati 
+                – Sambut Petualangan Sinematik Anda di Dream Movie!
+                </p>
+              </div>
+              <div class="blog__details__item__text">
+                <p>
                   Selamat datang di "Dream Movie" – destinasi utama Anda untuk
                   menemukan dan menikmati berbagai film berkualitas secara
                   online! Kami dengan bangga mempersembahkan platform streaming
@@ -79,7 +85,6 @@
                   Dengan koleksi film yang luas dan beragam, kami berkomitmen
                   untuk memberikan pengalaman menonton yang tak terlupakan.
                 </p>
-              </div>
               <div class="blog__details__item__text">
                 <p>
                   "Dream Movie" hadir dengan antarmuka yang ramah pengguna,

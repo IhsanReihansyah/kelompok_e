@@ -1,6 +1,6 @@
 <?php include "koneksi.php";
 $id = $_GET["id"]; //mendapatkan id
-$query = mysqli_query($conn, "SELECT * FROM `film` as f join kategori as k on f.id_kategori=k.id_kategori join sutradara as s on s.id_sutradara=f.id_sutradara where f.id = '$id'");
+$query = mysqli_query($conn, "SELECT *, AVG(ulasan_rating) AS avg_rating FROM `film` as f join kategori as k on f.id_kategori=k.id_kategori join sutradara as s on s.id_sutradara=f.id_sutradara join ulasan as u on u.ulasan_id=f.id where f.id = '$id'");
 $data = mysqli_fetch_array($query);
 ?>
 <!DOCTYPE html>
@@ -76,9 +76,10 @@ $data = mysqli_fetch_array($query);
                                 </h3>
                             </div>
                             <div class="anime__details__rating">
-                                <!-- <span> Rate
-                                    <?php echo $data["id_rating"] ?> / 10
-                                </span> -->
+                                <span> Rate
+                                <?php $averagerating = intval(str_replace(',', '', $data["avg_rating"]));
+                                     echo $averagerating ?> / 10
+                                </span>
                             </div>
                             <p>
                                 <?php echo $data["sinopsis"] ?>
@@ -122,7 +123,6 @@ $data = mysqli_fetch_array($query);
                         <input type="text" placeholder=" Your Name" name="nama_ulasan"><br><br>
                         <input type="hidden" value="<?php echo $id ?>" name="ulasan_id">
                         <select name="ulasan_rating">
-                            <option value="">0/10</option>
                             <option value="1">1/10</option>
                             <option value="2">2/10</option>
                             <option value="3">3/10</option>
