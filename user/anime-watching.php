@@ -51,7 +51,9 @@
                     <div class="breadcrumb__links">
                         <a href="./index.php"><i class="fa fa-home"></i> Home</a>
                         <a href="./kategori.php">Movie</a>
-                        <a href="#"><?php echo $data["judul_film"] ?></a>
+                        <span>
+                            <?php echo $data["judul_film"] ?>
+                        </span>
                         <a href="#">Watch</a>
                     </div>
                 </div>

@@ -116,27 +116,9 @@ $data = mysqli_fetch_array($query);
                 </div>
                 <div class="row">
                     <div class="col-lg-8 col-md-8">
-                        <div class="anime__details__review">
-                            <div class="section-title">
-                                <h5>Reviews</h5>
-                            </div>
-                            <div class="anime__review__item">
-                                <div class="anime__review__item__pic">
-                                    <img src="../img/anime/review-1.jpg" alt="">
-                                </div>
-                                <div class="anime__review__item__text">
-                                    <h6>
-                                        <?php echo $data["nama_ulasan"] ?> 
-                                    <span>
-                                        <?php echo $data["tanggal_ulasan"] ?>&ensp;&ensp;&ensp;&ensp;&ensp;<?php echo $data["ulasan_rating"] ?>/10
-                                    </span>
-                                    </h6>
-                                    <p>
-                                        <?php echo $data["ulasan"] ?>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+                        <?php
+                        include "template/review.php"; 
+                        ?>
                         <div class="anime__details__form">
                             <div class="section-title">
                                 <h5>write your review</h5>
