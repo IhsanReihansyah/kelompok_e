@@ -6,7 +6,7 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="footer__logo">
-                        <a href="./index.html"><img src="../img/logo.png" alt=""  width="100px" height="60px"></a>
+                        <a href="/msib5_ta_kelompok_e/user/index.php"><img src="../img/logo.png" alt=""  width="100px" height="60px"></a>
                     </div>
                 </div>
                 <div class="col-lg-6">
