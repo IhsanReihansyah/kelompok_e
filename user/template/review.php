@@ -3,14 +3,13 @@ $id = $_GET["id"]; //mendapatkan id
 $query = mysqli_query($conn, "SELECT * FROM `ulasan` as u join film as f on f.id=u.ulasan_id where f.id = '$id' ");
 ?>
 <div class="anime__details__review">
-    
-        <div class="section-title">
-            <h5>Reviews</h5>
-        </div>
-        <?php
+    <?php
         if (mysqli_num_rows($query) > 0) {
          while ($data = mysqli_fetch_array($query)) {
     ?>
+        <div class="section-title">
+            <h5>Reviews</h5>
+        </div>
     <div class="anime__review__item">
         <div class="anime__review__item__pic">
                 <img src="../img/anime/review-1.jpg" alt="">
@@ -26,11 +25,9 @@ $query = mysqli_query($conn, "SELECT * FROM `ulasan` as u join film as f on f.id
                 <?php echo $data["ulasan"] ?>
             </p>
         </div>
-        <br>
-        <?php
+    </div>
+    <?php
             }
         }
         ?>
-    </div>
-    
 </div>
