@@ -6,16 +6,18 @@ function tampilkanProduk1($query)
             if ($data["id_kategori"] == '1') {
                 ?>
 
-<div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="product__item">
-                        <div class="product__item__pic set-bg" data-setbg="../admin/<?php echo $data["gambar"] ?>">
-                        <!-- <div class="ep">
-                                <?php echo $data["ulasan_rating"] ?>
+                        <div class="product__item__pic set-bg" data-setbg="../../admin/<?php echo $data["gambar"] ?>">
+                            <!-- <div class="ep">
+                            <?php echo $data["rating_film"] ?>
                             </div> -->
-                            <div class="comment"><i class=""></i><?php echo $data["genre"] ?></div>
+                            <div class="comment"><i class=""></i>
+                                <?php echo $data["genre"] ?>
+                            </div>
                         </div>
                         <div class="product__item__text">
-                        <h5><a href="anime-details.php?id=<?php echo $data["id"]?>">
+                            <h5><a href="../anime-details.php?id=<?php echo $data["id"] ?>">
                                     <?php echo $data["judul_film"] ?>
                                 </a></h5>
                         </div>
@@ -36,14 +38,16 @@ function tampilkanProduk2($query)
 
                 <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="product__item">
-                        <div class="product__item__pic set-bg" data-setbg="../admin/<?php echo $data["gambar"] ?>">
-                        <!-- <div class="ep">
+                        <div class="product__item__pic set-bg" data-setbg="../../admin/<?php echo $data["gambar"] ?>">
+                            <!-- <div class="ep">
                                 <?php echo $data["ulasan_rating"] ?>
                             </div> -->
-                            <div class="comment"><i class=""></i><?php echo $data["genre"] ?></div>
+                            <div class="comment"><i class=""></i>
+                                <?php echo $data["genre"] ?>
+                            </div>
                         </div>
                         <div class="product__item__text">
-                        <h5><a href="anime-details.php?id=<?php echo $data["id"]?>">
+                            <h5><a href="../anime-details.php?id=<?php echo $data["id"] ?>">
                                     <?php echo $data["judul_film"] ?>
                                 </a></h5>
                         </div>
@@ -65,14 +69,16 @@ function tampilkanProduk3($query)
 
                 <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="product__item">
-                        <div class="product__item__pic set-bg" data-setbg="../admin/<?php echo $data["gambar"] ?>">
-                        <!-- <div class="ep">
+                        <div class="product__item__pic set-bg" data-setbg="../../admin/<?php echo $data["gambar"] ?>">
+                            <!-- <div class="ep">
                                 <?php echo $data["rating_film"] ?>
                             </div> -->
-                            <div class="comment"><i class=""></i><?php echo $data["genre"] ?></div>
+                            <div class="comment"><i class=""></i>
+                                <?php echo $data["genre"] ?>
+                            </div>
                         </div>
                         <div class="product__item__text">
-                        <h5><a href="anime-details.php?id=<?php echo $data["id"]?>">
+                            <h5><a href="../anime-details.php?id=<?php echo $data["id"] ?>">
                                     <?php echo $data["judul_film"] ?>
                                 </a></h5>
                         </div>
@@ -93,14 +99,16 @@ function tampilkanProduk4($query)
 
                 <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="product__item">
-                        <div class="product__item__pic set-bg" data-setbg="../admin/<?php echo $data["gambar"] ?>">
-                        <!-- <div class="ep">
+                        <div class="product__item__pic set-bg" data-setbg="../../admin/<?php echo $data["gambar"] ?>">
+                            <!-- <div class="ep">
                                 <?php echo $data["ulasan_rating"] ?>
                             </div> -->
-                            <div class="comment"><i class=""></i><?php echo $data["genre"] ?></div>
+                            <div class="comment"><i class=""></i>
+                                <?php echo $data["genre"] ?>
+                            </div>
                         </div>
                         <div class="product__item__text">
-                        <h5><a href="anime-details.php?id=<?php echo $data["id"]?>">
+                            <h5><a href="../anime-details.php?id=<?php echo $data["id"] ?>">
                                     <?php echo $data["judul_film"] ?>
                                 </a></h5>
                         </div>
@@ -121,14 +129,16 @@ function tampilkanProduk5($query)
 
                 <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="product__item">
-                        <div class="product__item__pic set-bg" data-setbg="../admin/<?php echo $data["gambar"] ?>">
-                        <!-- <div class="ep">
+                        <div class="product__item__pic set-bg" data-setbg="../../admin/<?php echo $data["gambar"] ?>">
+                            <!-- <div class="ep">
                                 <?php echo $data["rating_film"] ?>
                             </div> -->
-                            <div class="comment"><i class=""></i><?php echo $data["genre"] ?></div>
+                            <div class="comment"><i class=""></i>
+                                <?php echo $data["genre"] ?>
+                            </div>
                         </div>
                         <div class="product__item__text">
-                        <h5><a href="anime-details.php?id=<?php echo $data["id"]?>">
+                            <h5><a href="../anime-details.php?id=<?php echo $data["id"] ?>">
                                     <?php echo $data["judul_film"] ?>
                                 </a></h5>
                         </div>
@@ -147,16 +157,18 @@ function tampilkanProduk6($query)
             if ($data["id_kategori"] == '6') {
                 ?>
 
-        <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="product__item">
-                        <div class="product__item__pic set-bg" data-setbg="../admin/<?php echo $data["gambar"] ?>">
-                        <!-- <div class="ep">
+                        <div class="product__item__pic set-bg" data-setbg="../../admin/<?php echo $data["gambar"] ?>">
+                            <!-- <div class="ep">
                                 <?php echo $data["rating_film"] ?>
                             </div> -->
-                            <div class="comment"><i class=""></i><?php echo $data["genre"] ?></div>
+                            <div class="comment"><i class=""></i>
+                                <?php echo $data["genre"] ?>
+                            </div>
                         </div>
                         <div class="product__item__text">
-                        <h5><a href="anime-details.php?id=<?php echo $data["id"]?>">
+                            <h5><a href="../anime-details.php?id=<?php echo $data["id"] ?>">
                                     <?php echo $data["judul_film"] ?>
                                 </a></h5>
                         </div>
@@ -182,7 +194,8 @@ function tampilkanProduktop($query)
                                 <h2>
                                     <?php echo $data["judul_film"] ?>
                                 </h2>
-                                <a href="anime-details.php?id=<?php echo $data["id"]?>"><span>Detail Now</span> <i class="fa fa-angle-right"></i></a>
+                                <a href="anime-details.php?id=<?php echo $data["id"] ?>"><span>Detail Now</span> <i
+                                        class="fa fa-angle-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -198,26 +211,28 @@ function tampilkanGenre($query)
 {
     if (mysqli_num_rows($query) > 0) {
         while ($data = mysqli_fetch_array($query)) {
-                ?>
+            ?>
 
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="product__item">
-                        <div class="product__item__pic set-bg" data-setbg="../admin/<?php echo $data["gambar"] ?>">
-                            <!-- <div class="ep">
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="product__item">
+                    <div class="product__item__pic set-bg" data-setbg="../../admin/<?php echo $data["gambar"] ?>">
+                        <!-- <div class="ep">
                                 <?php echo $data["ulasan_rating"] ?>
                             </div> -->
-                            <div class="comment"><i class=""></i><?php echo $data["genre"] ?></div>
-                        </div>
-                        <div class="product__item__text">
-                            <h5><a href="anime-details.php?id=<?php echo $data["id"]?>">
-                                    <?php echo $data["judul_film"] ?>
-                                </a></h5>
+                        <div class="comment"><i class=""></i>
+                            <?php echo $data["genre"] ?>
                         </div>
                     </div>
+                    <div class="product__item__text">
+                        <h5><a href="../anime-details.php?id=<?php echo $data["id"] ?>">
+                                <?php echo $data["judul_film"] ?>
+                            </a></h5>
+                    </div>
                 </div>
+            </div>
 
-                <?php
-            
+            <?php
+
         }
     }
 }

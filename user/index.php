@@ -71,7 +71,33 @@
                         <div class="row">
                             <?php
                             $query = mysqli_query($conn, "SELECT * from `film` as f join kategori as k on f.id_kategori=k.id_kategori ORDER BY f.id ASC;");
-                            tampilkanProduk1($query);
+                            if (mysqli_num_rows($query) > 0) {
+                                while ($data = mysqli_fetch_array($query)) {
+                                    if ($data["id_kategori"] == '1') {
+                                        ?>
+                        
+                                        <div class="col-lg-4 col-md-6 col-sm-6">
+                                            <div class="product__item">
+                                                <div class="product__item__pic set-bg" data-setbg="../admin/<?php echo $data["gambar"] ?>">
+                                                    <!-- <div class="ep">
+                                                        <?php echo $data["rating_film"] ?>
+                                                    </div> -->
+                                                    <div class="comment"><i class=""></i>
+                                                        <?php echo $data["genre"] ?>
+                                                    </div>
+                                                </div>
+                                                <div class="product__item__text">
+                                                    <h5><a href="anime-details.php?id=<?php echo $data["id"] ?>">
+                                                            <?php echo $data["judul_film"] ?>
+                                                        </a></h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                        
+                                        <?php
+                                    }
+                                }
+                            }
                             ?>
                         </div>
                     </div>
@@ -92,7 +118,33 @@
                         <div class="row">
                             <?php
                             $query = mysqli_query($conn, "SELECT * from `film` as f join kategori as k on f.id_kategori=k.id_kategori ORDER BY f.id ASC;");
-                            tampilkanProduk2($query);
+                            if (mysqli_num_rows($query) > 0) {
+                                while ($data = mysqli_fetch_array($query)) {
+                                    if ($data["id_kategori"] == '2') {
+                                        ?>
+                        
+                                        <div class="col-lg-4 col-md-6 col-sm-6">
+                                            <div class="product__item">
+                                                <div class="product__item__pic set-bg" data-setbg="../admin/<?php echo $data["gambar"] ?>">
+                                                    <!-- <div class="ep">
+                                                        <?php echo $data["rating_film"] ?>
+                                                    </div> -->
+                                                    <div class="comment"><i class=""></i>
+                                                        <?php echo $data["genre"] ?>
+                                                    </div>
+                                                </div>
+                                                <div class="product__item__text">
+                                                    <h5><a href="anime-details.php?id=<?php echo $data["id"] ?>">
+                                                            <?php echo $data["judul_film"] ?>
+                                                        </a></h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                        
+                                        <?php
+                                    }
+                                }
+                            }
                             ?>
                         </div>
                     </div>
@@ -113,7 +165,33 @@
                         <div class="row">
                             <?php
                             $query = mysqli_query($conn, "SELECT * from `film` as f join kategori as k on f.id_kategori=k.id_kategori ORDER BY f.id ASC;");
-                            tampilkanProduk3($query);
+                            if (mysqli_num_rows($query) > 0) {
+                                while ($data = mysqli_fetch_array($query)) {
+                                    if ($data["id_kategori"] == '3') {
+                                        ?>
+                        
+                                        <div class="col-lg-4 col-md-6 col-sm-6">
+                                            <div class="product__item">
+                                                <div class="product__item__pic set-bg" data-setbg="../admin/<?php echo $data["gambar"] ?>">
+                                                    <!-- <div class="ep">
+                                                        <?php echo $data["rating_film"] ?>
+                                                    </div> -->
+                                                    <div class="comment"><i class=""></i>
+                                                        <?php echo $data["genre"] ?>
+                                                    </div>
+                                                </div>
+                                                <div class="product__item__text">
+                                                    <h5><a href="anime-details.php?id=<?php echo $data["id"] ?>">
+                                                            <?php echo $data["judul_film"] ?>
+                                                        </a></h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                        
+                                        <?php
+                                    }
+                                }
+                            }
                             ?>
                         </div>
                     </div>
@@ -134,7 +212,33 @@
                         <div class="row">
                             <?php
                             $query = mysqli_query($conn, "SELECT * from `film` as f join kategori as k on f.id_kategori=k.id_kategori ORDER BY f.id ASC;");
-                            tampilkanProduk4($query);
+                            if (mysqli_num_rows($query) > 0) {
+                                while ($data = mysqli_fetch_array($query)) {
+                                    if ($data["id_kategori"] == '4') {
+                                        ?>
+                        
+                                        <div class="col-lg-4 col-md-6 col-sm-6">
+                                            <div class="product__item">
+                                                <div class="product__item__pic set-bg" data-setbg="../admin/<?php echo $data["gambar"] ?>">
+                                                    <!-- <div class="ep">
+                                                        <?php echo $data["rating_film"] ?>
+                                                    </div> -->
+                                                    <div class="comment"><i class=""></i>
+                                                        <?php echo $data["genre"] ?>
+                                                    </div>
+                                                </div>
+                                                <div class="product__item__text">
+                                                    <h5><a href="anime-details.php?id=<?php echo $data["id"] ?>">
+                                                            <?php echo $data["judul_film"] ?>
+                                                        </a></h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                        
+                                        <?php
+                                    }
+                                }
+                            }
                             ?>
                         </div>
                     </div>
@@ -169,6 +273,7 @@
                                             </div>
                                             <?php
                                         }
+                                        
                                     }
                                 }
                                 $query = mysqli_query($conn, "SELECT * from `film` as f join kategori as k on f.id_kategori=k.id_kategori ORDER BY f.id ASC;");
