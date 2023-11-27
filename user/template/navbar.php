@@ -39,7 +39,7 @@
                             <li><a href="./contact.php">Contact</a></li>
                             <li>
                                 <form method="GET" action="kategori.php">
-                                    <input type="text" name="cari" value="<?php if (isset($_GET['cari'])) {
+                                    <input type="text" name="cari" placeholder="Search" value="<?php if (isset($_GET['cari'])) {
                                         echo $_GET['cari'];
                                     } ?>">
                                 </form>
@@ -50,7 +50,7 @@
             </div>
             <div class="col-lg-1">
                 <div class="header__logo">
-                    <a href="../admin/login.php"><span class="icon_profile"></span>Admin</a>
+                    <a href="../admin/login.php"><span class="icon_profile"></span></a>
                 </div>
             </div>
         </div>
