@@ -44,7 +44,7 @@
                         <h3>Contact Us</h3>
                     </header>
                     <section>
-                        <form action="" method="POST">
+                        <form action="index.php" method="POST">
 
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="inputGroup-sizing-default">Name:</span>

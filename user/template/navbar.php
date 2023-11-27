@@ -3,8 +3,8 @@
             <div class="row">
                 <div class="col-lg-2">
                     <div class="header__logo">
-                        <a href="/msib5_ta_kelompok_e/user/index.php">
-                            <img src="../img/logo.png" alt="">
+                        <a href="./index.php">
+                            <img src="../img/logo.png" alt="" width="110px" height="30px">
                         </a>
                     </div>
                 </div>
