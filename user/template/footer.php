@@ -13,8 +13,6 @@
                     <div class="footer__nav">
                         <ul>
                             <li class="active"><a href="./index.php">Homepage</a></li>
-                            <li><a href="./kategori.php">Categories</a></li>
-                            <li><a href="./genre1.php">Genre</a></li>
                             <li><a href="./about.php">About</a></li>
                             <li><a href="./contact.php">Contact</a></li>
                         </ul>
