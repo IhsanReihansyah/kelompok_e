@@ -1,6 +1,6 @@
 <?php include "koneksi.php";
 $id = $_GET["id"]; //mendapatkan id
-$query = mysqli_query($conn, "SELECT *, AVG(ulasan_rating) AS avg_rating FROM `film` as f join kategori as k on f.id_kategori=k.id_kategori join sutradara as s on s.id_sutradara=f.id_sutradara join ulasan as u on u.ulasan_id=f.id where f.id = '$id'");
+$query = mysqli_query($conn, "SELECT f.id,f.judul_film,f.tahun_rilis,f.sinopsis,f.id_kategori,f.id_sutradara,f.genre,f.genre,f.nama_pemain,f.gambar,u.nama_ulasan,u.ulasan,u.ulasan_rating,u.tanggal_ulasan,k.kategori,s.nama_sutradara, AVG(ulasan_rating) AS avg_rating FROM `film` as f join kategori as k on f.id_kategori=k.id_kategori join sutradara as s on s.id_sutradara=f.id_sutradara join ulasan as u on u.ulasan_id=f.id where f.id = '$id'");
 $data = mysqli_fetch_array($query);
 ?>
 <!DOCTYPE html>
@@ -108,7 +108,7 @@ $data = mysqli_fetch_array($query);
                                 </div>
                             </div>
                             <div class="anime__details__btn">
-                                <a href="anime-watching.php?id= <?php echo $data["id"] ?>" class="watch-btn"><span>Watch
+                                <a href="anime-watching.php?id=<?php echo $data["id"]?>" class="watch-btn"><span>Watch
                                         Now</span> <i class="fa fa-angle-right"></i></a>
                             </div>
                         </div>

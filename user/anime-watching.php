@@ -13,7 +13,7 @@
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&display=swap"
-    rel="stylesheet">
+        rel="stylesheet">
 
     <!-- Css Styles -->
     <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css">
@@ -29,8 +29,8 @@
 <body>
 
     <?php include "koneksi.php";
-    $id = $_GET["id"];//mendapatkan id
-    $query = mysqli_query($conn, "SELECT * FROM `film` as f join kategori as k on f.id_kategori=k.id_kategori join sutradara as s on s.id_sutradara=f.id_sutradara where id = '$id'");
+    $id = $_GET["id"]; //mendapatkan id
+    $query = mysqli_query($conn, "SELECT *, AVG(ulasan_rating) AS avg_rating FROM `film` as f join kategori as k on f.id_kategori=k.id_kategori join sutradara as s on s.id_sutradara=f.id_sutradara join ulasan as u on u.ulasan_id=f.id where f.id = '$id'");
     $data = mysqli_fetch_array($query);
     ?>
 
@@ -40,7 +40,7 @@
     </div>
 
     <!-- Header Section Begin -->
-    <?php include "template/navbar.php"?>
+    <?php include "template/navbar.php" ?>
     <!-- Header End -->
 
     <!-- Breadcrumb Begin -->
@@ -54,7 +54,6 @@
                         <span>
                             <?php echo $data["judul_film"] ?>
                         </span>
-                        <a href="#">Watch</a>
                     </div>
                 </div>
             </div>
@@ -68,42 +67,17 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="anime__video__player">
-                        <video id="player" playsinline controls data-poster="../<?php echo $data["gambar"] ?>">
-                            <source src="videos/1.mp4" type="video/mp4" />
+                        <video id="player" playsinline controls data-poster="../admin/<?php echo $data["gambar"] ?>">
+                            <source src="template/1.mp4" type="video/mp4" />
                             <!-- Captions are optional -->
                             <track kind="captions" label="English captions" src="#" srclang="en" default />
                         </video>
                     </div>
-                    <!-- <div class="anime__details__episodes">
-                        <div class="section-title">
-                            <h5>List Name</h5>
-                        </div>
-                        <a href="#">Ep 01</a>
-                        <a href="#">Ep 02</a>
-                        <a href="#">Ep 03</a>
-                        <a href="#">Ep 04</a>
-                        <a href="#">Ep 05</a>
-                        <a href="#">Ep 06</a>
-                        <a href="#">Ep 07</a>
-                        <a href="#">Ep 08</a>
-                        <a href="#">Ep 09</a>
-                        <a href="#">Ep 10</a>
-                        <a href="#">Ep 11</a>
-                        <a href="#">Ep 12</a>
-                        <a href="#">Ep 13</a>
-                        <a href="#">Ep 14</a>
-                        <a href="#">Ep 15</a>
-                        <a href="#">Ep 16</a>
-                        <a href="#">Ep 17</a>
-                        <a href="#">Ep 18</a>
-                        <a href="#">Ep 19</a>
-                    </div>
-                </div> -->
+                </div>
+                <?php
+                include "template/review.php";
+                ?>
             </div>
-            <?php
-            include "template/review.php";
-            ?>
-        </div>
     </section>
     <!-- Anime Section End -->
 
