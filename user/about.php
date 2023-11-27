@@ -45,8 +45,8 @@
         <div class="row d-flex justify-content-center">
           <div class="col-lg-8">
             <div class="blog__details__title">
-              <h6>Eduwork <span>- Project Akhir</span></h6>
-              <h2>Dream Movie</h2>
+              <h6>Eduwork <span>- FINAL PROJECT </span></h6>
+              <p><img src="../img/logo.png" alt=""></p>
               <div class="blog__details__social">
                 <a href="#" class="facebook"
                   ><i class="fa fa-facebook-square"></i> Facebook</a
