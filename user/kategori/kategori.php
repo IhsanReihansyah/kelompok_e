@@ -33,9 +33,9 @@
     ?>
 
     <!-- Page Preloder -->
-    <div id="preloder">
+    <!-- <div id="preloder">
         <div class="loader"></div>
-    </div>
+    </div> -->
 
     <!-- Header Section Begin -->
     <?php include "../template/navbar.php" ?>
@@ -47,7 +47,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumb__links">
-                    <a href="../index.php"><i class="fa fa-home"></i> Home</a>
+                        <a href="../index.php"><i class="fa fa-home"></i> Home</a>
                         <a href="./kategori.php">Movie</a>
                     </div>
                 </div>
@@ -73,11 +73,18 @@
                         </div>
                         <div class="row">
                             <?php
-                            $query = mysqli_query($conn, "SELECT * from `film` as f join kategori as k on f.id_kategori=k.id_kategori ORDER BY f.id ASC;");
-                            if (mysqli_num_rows($query) > 0) {
-                                while ($data = mysqli_fetch_array($query)) {
-                                    ?>
 
+                            if (isset($_GET['cari'])) {
+                                $pencarian = $_GET['cari'];
+                                $query = "SELECT * FROM `film` AS f JOIN kategori AS k ON f.id_kategori=k.id_kategori WHERE Judul_film LIKE '%" . $pencarian . "%' ORDER BY f.id ASC";
+                            } else {
+                                $query = "SELECT * FROM `film` AS f JOIN kategori AS k ON f.id_kategori=k.id_kategori ORDER BY f.id ASC";
+                            }
+
+                            $tampil = mysqli_query($conn, $query);
+                            if (mysqli_num_rows($tampil) > 0) {
+                                while ($data = mysqli_fetch_array($tampil)) {
+                                    ?>
                                     <div class="col-lg-4 col-md-6 col-sm-6">
                                         <div class="product__item">
                                             <div class="product__item__pic set-bg"

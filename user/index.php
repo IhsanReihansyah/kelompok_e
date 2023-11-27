@@ -63,7 +63,7 @@
                             </div>
                             <div class="col-lg-4 col-md-4 col-sm-4">
                                 <div class="btn__all">
-                                    <a href="kategori.php" class="primary-btn">View All <span
+                                    <a href="kategori/kategori.php" class="primary-btn">View All <span
                                             class="arrow_right"></span></a>
                                 </div>
                             </div>
@@ -75,10 +75,11 @@
                                 while ($data = mysqli_fetch_array($query)) {
                                     if ($data["id_kategori"] == '1') {
                                         ?>
-                        
+
                                         <div class="col-lg-4 col-md-6 col-sm-6">
                                             <div class="product__item">
-                                                <div class="product__item__pic set-bg" data-setbg="../admin/<?php echo $data["gambar"] ?>">
+                                                <div class="product__item__pic set-bg"
+                                                    data-setbg="../admin/<?php echo $data["gambar"] ?>">
                                                     <!-- <div class="ep">
                                                         <?php echo $data["rating_film"] ?>
                                                     </div> -->
@@ -93,7 +94,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                        
+
                                         <?php
                                     }
                                 }
@@ -110,7 +111,7 @@
                             </div>
                             <div class="col-lg-4 col-md-4 col-sm-4">
                                 <div class="btn__all">
-                                    <a href="kategori.php" class="primary-btn">View All <span
+                                    <a href="kategori/kategori.php" class="primary-btn">View All <span
                                             class="arrow_right"></span></a>
                                 </div>
                             </div>
@@ -122,10 +123,11 @@
                                 while ($data = mysqli_fetch_array($query)) {
                                     if ($data["id_kategori"] == '2') {
                                         ?>
-                        
+
                                         <div class="col-lg-4 col-md-6 col-sm-6">
                                             <div class="product__item">
-                                                <div class="product__item__pic set-bg" data-setbg="../admin/<?php echo $data["gambar"] ?>">
+                                                <div class="product__item__pic set-bg"
+                                                    data-setbg="../admin/<?php echo $data["gambar"] ?>">
                                                     <!-- <div class="ep">
                                                         <?php echo $data["rating_film"] ?>
                                                     </div> -->
@@ -140,7 +142,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                        
+
                                         <?php
                                     }
                                 }
@@ -157,7 +159,7 @@
                             </div>
                             <div class="col-lg-4 col-md-4 col-sm-4">
                                 <div class="btn__all">
-                                    <a href="kategori.php" class="primary-btn">View All <span
+                                    <a href="kategori/kategori.php" class="primary-btn">View All <span
                                             class="arrow_right"></span></a>
                                 </div>
                             </div>
@@ -169,10 +171,11 @@
                                 while ($data = mysqli_fetch_array($query)) {
                                     if ($data["id_kategori"] == '3') {
                                         ?>
-                        
+
                                         <div class="col-lg-4 col-md-6 col-sm-6">
                                             <div class="product__item">
-                                                <div class="product__item__pic set-bg" data-setbg="../admin/<?php echo $data["gambar"] ?>">
+                                                <div class="product__item__pic set-bg"
+                                                    data-setbg="../admin/<?php echo $data["gambar"] ?>">
                                                     <!-- <div class="ep">
                                                         <?php echo $data["rating_film"] ?>
                                                     </div> -->
@@ -187,7 +190,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                        
+
                                         <?php
                                     }
                                 }
@@ -204,7 +207,7 @@
                             </div>
                             <div class="col-lg-4 col-md-4 col-sm-4">
                                 <div class="btn__all">
-                                    <a href="kategori.php" class="primary-btn">View All <span
+                                    <a href="kategori/kategori.php" class="primary-btn">View All <span
                                             class="arrow_right"></span></a>
                                 </div>
                             </div>
@@ -216,10 +219,11 @@
                                 while ($data = mysqli_fetch_array($query)) {
                                     if ($data["id_kategori"] == '4') {
                                         ?>
-                        
+
                                         <div class="col-lg-4 col-md-6 col-sm-6">
                                             <div class="product__item">
-                                                <div class="product__item__pic set-bg" data-setbg="../admin/<?php echo $data["gambar"] ?>">
+                                                <div class="product__item__pic set-bg"
+                                                    data-setbg="../admin/<?php echo $data["gambar"] ?>">
                                                     <!-- <div class="ep">
                                                         <?php echo $data["rating_film"] ?>
                                                     </div> -->
@@ -234,7 +238,6 @@
                                                 </div>
                                             </div>
                                         </div>
-                        
                                         <?php
                                     }
                                 }
@@ -257,8 +260,8 @@
                             </ul>
                             <div class="filter__gallery">
                                 <?php
-                            $query = mysqli_query($conn, "SELECT * from `film` as f join kategori as k on f.id_kategori=k.id_kategori ORDER BY f.id ASC;");
-                            if (mysqli_num_rows($query) > 0) {
+                                $query = mysqli_query($conn, "SELECT * from `film` as f join kategori as k on f.id_kategori=k.id_kategori ORDER BY f.id ASC;");
+                                if (mysqli_num_rows($query) > 0) {
                                     while ($data = mysqli_fetch_array($query)) {
                                         if ($data["id_kategori"] == '1') {
                                             ?>
@@ -267,13 +270,13 @@
                                                 <!-- <div class="ep">
                                 <?php echo $data["rating_film"] ?>
                             </div> -->
-                                                <h5><a href="anime-details.php?id=<?php echo $data["id"]?>">
+                                                <h5><a href="anime-details.php?id=<?php echo $data["id"] ?>">
                                                         <?php echo $data["judul_film"] ?>
                                                     </a></h5>
                                             </div>
                                             <?php
                                         }
-                                        
+
                                     }
                                 }
                                 $query = mysqli_query($conn, "SELECT * from `film` as f join kategori as k on f.id_kategori=k.id_kategori ORDER BY f.id ASC;");
@@ -286,7 +289,7 @@
                                                 <!-- <div class="ep">
                                 <?php echo $data["rating_film"] ?>
                             </div> -->
-                                                <h5><a href="anime-details.php?id=<?php echo $data["id"]?>">
+                                                <h5><a href="anime-details.php?id=<?php echo $data["id"] ?>">
                                                         <?php echo $data["judul_film"] ?>
                                                     </a></h5>
                                             </div>
@@ -304,7 +307,7 @@
                                                 <!-- <div class="ep">
                                 <?php echo $data["rating_film"] ?>
                             </div> -->
-                                                <h5><a href="anime-details.php?id=<?php echo $data["id"]?>">
+                                                <h5><a href="anime-details.php?id=<?php echo $data["id"] ?>">
                                                         <?php echo $data["judul_film"] ?>
                                                     </a></h5>
                                             </div>
@@ -322,7 +325,7 @@
                                                 <!-- <div class="ep">
                                 <?php echo $data["rating_film"] ?>
                             </div> -->
-                                                <h5><a href="anime-details.php?id=<?php echo $data["id"]?>">
+                                                <h5><a href="anime-details.php?id=<?php echo $data["id"] ?>">
                                                         <?php echo $data["judul_film"] ?>
                                                     </a></h5>
                                             </div>
@@ -340,7 +343,7 @@
                                                 <!-- <div class="ep">
                                 <?php echo $data["rating_film"] ?>
                             </div> -->
-                                                <h5><a href="anime-details.php?id=<?php echo $data["id"]?>">
+                                                <h5><a href="anime-details.php?id=<?php echo $data["id"] ?>">
                                                         <?php echo $data["judul_film"] ?>
                                                     </a></h5>
                                             </div>
@@ -358,7 +361,7 @@
     </section>
     <!-- Product Section End -->
 
-<!-- Footer Section Begin -->
+    <!-- Footer Section Begin -->
     <?php include "template/footer.php" ?>
     <!-- Footer Section End -->
 
