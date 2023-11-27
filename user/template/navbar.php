@@ -38,6 +38,11 @@
                                 <li>
                                 <li><a href="./about.php">About</a></li>
                                 <li><a href="./contact.php">Contact</a></li>
+                                <li>
+                                    <form method="GET" action="kategori.php">
+                                    <a>Seacrh : <input type="text" name="cari" value="<?php if(isset($_GET['cari'])){ echo $_GET['cari']; } ?>"></a>
+                                    </form>
+                                </li>
                             </ul>
                         </nav>
                     </div>
