@@ -12,11 +12,11 @@
                 <div class="col-lg-6">
                     <div class="footer__nav">
                         <ul>
-                            <li class="active"><a href="./index.php">Homepage</a></li>
-                            <li><a href="./kategori.php">Categories</a></li>
-                            <li><a href="./genre1.php">Genre</a></li>
-                            <li><a href="./about.php">About</a></li>
-                            <li><a href="./contact.php">Contact</a></li>
+                            <li class="active"><a href="/msib5_ta_kelompok_e/user/index.php">Homepage</a></li>
+                            <li><a href="/msib5_ta_kelompok_e/user/kategori/kategori.php">Categories</a></li>
+                            <li><a href="/msib5_ta_kelompok_e/user/genre/genreRomance.php">Genre</a></li>
+                            <li><a href="/msib5_ta_kelompok_e/user/about.php">About</a></li>
+                            <li><a href="/msib5_ta_kelompok_e/user/contact.php">Contact</a></li>
                         </ul>
                     </div>
                 </div>
