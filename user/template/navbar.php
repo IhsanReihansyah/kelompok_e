@@ -41,10 +41,14 @@
                                         <li><a href="/msib5_ta_kelompok_e/user/genre/genreFantasy.php">Fantasy</a></li>
                                     </ul>
                                 </li>
-                                <!-- <li><a href="./blog.php">Our Blog</a></li> -->
                                 <li><a href="/msib5_ta_kelompok_e/user/about.php">About</a></li>
-                                <!-- <li><a href="./blog.php">Our Blog</a></li> -->
                                 <li><a href="/msib5_ta_kelompok_e/user/contact.php">Contact</a></li>
+                                <li>
+                                    <form method="GET" action="http://localhost/msib5_ta_kelompok_e/user/kategori/kategori.php">
+                                    <a>Seacrh <input type="text" name="cari" value="<?php if (isset($_GET['cari'])){ echo $_GET['cari']; } ?>"></a>  
+                                    </form>
+                                </li>
+
                             </ul>
                         </nav>
                     </div>
