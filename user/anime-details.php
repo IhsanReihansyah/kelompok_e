@@ -114,33 +114,56 @@ $data = mysqli_fetch_array($query);
                         </div>
                     </div>
                 </div>
-                <?php include "template/review.php" ?>
-                <div class="anime__details__form">
-                    <div class="section-title">
-                        <h5>write your review</h5>
-                    </div>
-                    <form action="template/proses_review.php" method="post">
-                        <input type="text" placeholder=" Your Name" name="nama_ulasan"><br><br>
-                        <input type="hidden" value="<?php echo $id ?>" name="ulasan_id">
-                        <select name="ulasan_rating">
-                            <option value="1">1/10</option>
-                            <option value="2">2/10</option>
-                            <option value="3">3/10</option>
-                            <option value="4">4/10</option>
-                            <option value="5">5/10</option>
-                            <option value="6">6/10</option>
-                            <option value="7">7/10</option>
-                            <option value="8">8/10</option>
-                            <option value="9">9/10</option>
-                            <option value="10">10/10</option>
-                        </select><br><br><br>
-                        <textarea placeholder="Your Comment" name="ulasan"></textarea>
+                <div class="row">
+                    <div class="col-lg-8 col-md-8">
+                        <div class="anime__details__review">
+                            <div class="section-title">
+                                <h5>Reviews</h5>
+                            </div>
+                            <div class="anime__review__item">
+                                <div class="anime__review__item__pic">
+                                    <img src="../img/anime/review-1.jpg" alt="">
+                                </div>
+                                <div class="anime__review__item__text">
+                                    <h6>
+                                        <?php echo $data["nama_ulasan"] ?> 
+                                    <span>
+                                        <?php echo $data["tanggal_ulasan"] ?>&ensp;&ensp;&ensp;&ensp;&ensp;<?php echo $data["ulasan_rating"] ?>/10
+                                    </span>
+                                    </h6>
+                                    <p>
+                                        <?php echo $data["ulasan"] ?>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="anime__details__form">
+                            <div class="section-title">
+                                <h5>write your review</h5>
+                            </div>
+                                <form action="template/proses_review.php" method="post">
+                                    <input type="text" placeholder=" Your Name" name="nama_ulasan"><br><br>
+                                    <input type="hidden" value="<?php echo $id ?>" name="ulasan_id">
+                                    <select name="ulasan_rating">
+                                        <option value="1">1/10</option>
+                                        <option value="2">2/10</option>
+                                        <option value="3">3/10</option>
+                                        <option value="4">4/10</option>
+                                        <option value="5">5/10</option>
+                                        <option value="6">6/10</option>
+                                        <option value="7">7/10</option>
+                                        <option value="8">8/10</option>
+                                        <option value="9">9/10</option>
+                                        <option value="10">10/10</option>
+                                    </select><br><br><br>
+                                    <textarea placeholder="Your Comment" name="ulasan"></textarea>
 
-                        <button type="submit" name="simpan"><i class="fa fa-location-arrow"></i> Review</button>
-                    </form>
+                                    <button type="submit" name="simpan"><i class="fa fa-location-arrow"></i> Review</button>
+                                </form>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
         </div>
     </section>
     <!-- Anime Section End -->
