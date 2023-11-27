@@ -47,12 +47,12 @@
                         <form action="index.php" method="POST">
 
                             <div class="input-group mb-3">
-                                <span class="input-group-text" id="inputGroup-sizing-default">Name:</span>
+                                <span class="input-group-text" style="padding-right: 36px;">Name:</span>
                                 <input type="text" name="name" class="form-control" aria-label="Sizing example input"
                                     aria-describedby="inputGroup-sizing-default">
                             </div>
                             <div class="input-group mb-3">
-                                <span class="input-group-text" id="inputGroup-sizing-default">Email:</span>
+                                <span class="input-group-text" style="padding-right: 40px;">Email:</span>
                                 <input type="email" name="email" class="form-control" aria-label="Sizing example input"
                                     aria-describedby="inputGroup-sizing-default">
                             </div>
@@ -62,7 +62,7 @@
                                     aria-describedby="inputGroup-sizing-default"></textarea>
                             </div>
 
-                            <div class="col-lg-12 d-flex justify-content-between">
+                            <div class="col-lg-12 d-flex" style="margin-left: -14px;">
                                 <button type="submit" class="site-btn primary-btn" value="Send Message" name="send">
                                     <i class="fa fa-location-arrow"></i> Send
                                 </button>
