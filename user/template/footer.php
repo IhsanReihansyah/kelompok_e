@@ -15,6 +15,7 @@
                             <li class="active"><a href="./index.php">Homepage</a></li>
                             <li><a href="./about.php">About</a></li>
                             <li><a href="./contact.php">Contact</a></li>
+                            <a href="../admin/login.php"><span class="icon_profile"></span></a>
                         </ul>
                     </div>
                 </div>
