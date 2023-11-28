@@ -73,7 +73,7 @@
                             $query = mysqli_query($conn, "SELECT * from `film` as f join kategori as k on f.id_kategori=k.id_kategori ORDER BY f.id ASC;");
                             if (mysqli_num_rows($query) > 0) {
                                 while ($data = mysqli_fetch_array($query)) {
-                                    if ($data["id_kategori"] == '1') {
+                                    if ($data["tag"] == 'Trending Now') {
                                         ?>
 
                                         <div class="col-lg-4 col-md-6 col-sm-6">
@@ -106,7 +106,7 @@
                         <div class="row">
                             <div class="col-lg-8 col-md-8 col-sm-8">
                                 <div class="section-title">
-                                    <h4>Popular Shows</h4>
+                                    <h4>Latest Film</h4>
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4 col-sm-4">
@@ -121,7 +121,7 @@
                             $query = mysqli_query($conn, "SELECT * from `film` as f join kategori as k on f.id_kategori=k.id_kategori ORDER BY f.id ASC;");
                             if (mysqli_num_rows($query) > 0) {
                                 while ($data = mysqli_fetch_array($query)) {
-                                    if ($data["id_kategori"] == '2') {
+                                    if ($data["tag"] == 'Latest Film') {
                                         ?>
 
                                         <div class="col-lg-4 col-md-6 col-sm-6">
@@ -154,7 +154,7 @@
                         <div class="row">
                             <div class="col-lg-8 col-md-8 col-sm-8">
                                 <div class="section-title">
-                                    <h4>Recently Added Shows</h4>
+                                    <h4>Most Repeat</h4>
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4 col-sm-4">
@@ -169,7 +169,7 @@
                             $query = mysqli_query($conn, "SELECT * from `film` as f join kategori as k on f.id_kategori=k.id_kategori ORDER BY f.id ASC;");
                             if (mysqli_num_rows($query) > 0) {
                                 while ($data = mysqli_fetch_array($query)) {
-                                    if ($data["id_kategori"] == '3') {
+                                    if ($data["tag"] == 'Most Repeat') {
                                         ?>
 
                                         <div class="col-lg-4 col-md-6 col-sm-6">
@@ -191,53 +191,6 @@
                                             </div>
                                         </div>
 
-                                        <?php
-                                    }
-                                }
-                            }
-                            ?>
-                        </div>
-                    </div>
-                    <div class="live__product">
-                        <div class="row">
-                            <div class="col-lg-8 col-md-8 col-sm-8">
-                                <div class="section-title">
-                                    <h4>Live Action</h4>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-sm-4">
-                                <div class="btn__all">
-                                    <a href="kategori.php" class="primary-btn">View All <span
-                                            class="arrow_right"></span></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <?php
-                            $query = mysqli_query($conn, "SELECT * from `film` as f join kategori as k on f.id_kategori=k.id_kategori ORDER BY f.id ASC;");
-                            if (mysqli_num_rows($query) > 0) {
-                                while ($data = mysqli_fetch_array($query)) {
-                                    if ($data["id_kategori"] == '4') {
-                                        ?>
-
-                                        <div class="col-lg-4 col-md-6 col-sm-6">
-                                            <div class="product__item">
-                                                <div class="product__item__pic set-bg"
-                                                    data-setbg="../admin/<?php echo $data["gambar"] ?>">
-                                                    <!-- <div class="ep">
-                                                        <?php echo $data["rating_film"] ?>
-                                                    </div> -->
-                                                    <div class="comment"><i class=""></i>
-                                                        <?php echo $data["genre"] ?>
-                                                    </div>
-                                                </div>
-                                                <div class="product__item__text">
-                                                    <h5><a href="anime-details.php?id=<?php echo $data["id"] ?>">
-                                                            <?php echo $data["judul_film"] ?>
-                                                        </a></h5>
-                                                </div>
-                                            </div>
-                                        </div>
                                         <?php
                                     }
                                 }
@@ -263,7 +216,7 @@
                                 $query = mysqli_query($conn, "SELECT * from `film` as f join kategori as k on f.id_kategori=k.id_kategori ORDER BY f.id ASC;");
                                 if (mysqli_num_rows($query) > 0) {
                                     while ($data = mysqli_fetch_array($query)) {
-                                        if ($data["id_kategori"] == '1') {
+                                        if ($data["tag"] == 'Top Views Day') {
                                             ?>
                                             <div class="product__sidebar__view__item set-bg mix day years"
                                                 data-setbg="../admin/<?php echo $data["gambar"] ?>">
@@ -282,7 +235,7 @@
                                 $query = mysqli_query($conn, "SELECT * from `film` as f join kategori as k on f.id_kategori=k.id_kategori ORDER BY f.id ASC;");
                                 if (mysqli_num_rows($query) > 0) {
                                     while ($data = mysqli_fetch_array($query)) {
-                                        if ($data["id_kategori"] == '2') {
+                                        if ($data["tag"] == 'Top Views Week') {
                                             ?>
                                             <div class="product__sidebar__view__item set-bg mix month week"
                                                 data-setbg="../admin/<?php echo $data["gambar"] ?>">
@@ -300,7 +253,7 @@
                                 $query = mysqli_query($conn, "SELECT * from `film` as f join kategori as k on f.id_kategori=k.id_kategori ORDER BY f.id ASC;");
                                 if (mysqli_num_rows($query) > 0) {
                                     while ($data = mysqli_fetch_array($query)) {
-                                        if ($data["id_kategori"] == '3') {
+                                        if ($data["tag"] == 'Top Views Month') {
                                             ?>
                                             <div class="product__sidebar__view__item set-bg mix week years"
                                                 data-setbg="../admin/<?php echo $data["gambar"] ?>">
@@ -318,7 +271,7 @@
                                 $query = mysqli_query($conn, "SELECT * from `film` as f join kategori as k on f.id_kategori=k.id_kategori ORDER BY f.id ASC;");
                                 if (mysqli_num_rows($query) > 0) {
                                     while ($data = mysqli_fetch_array($query)) {
-                                        if ($data["id_kategori"] == '4') {
+                                        if ($data["tag"] == 'Top Views Year') {
                                             ?>
                                             <div class="product__sidebar__view__item set-bg mix years month"
                                                 data-setbg="../admin/<?php echo $data["gambar"] ?>">
@@ -332,25 +285,7 @@
                                             <?php
                                         }
                                     }
-                                }
-                                $query = mysqli_query($conn, "SELECT * from `film` as f join kategori as k on f.id_kategori=k.id_kategori ORDER BY f.id ASC;");
-                                if (mysqli_num_rows($query) > 0) {
-                                    while ($data = mysqli_fetch_array($query)) {
-                                        if ($data["id_kategori"] == '5') {
-                                            ?>
-                                            <div class="product__sidebar__view__item set-bg mix day"
-                                                data-setbg="../admin/<?php echo $data["gambar"] ?>">
-                                                <!-- <div class="ep">
-                                <?php echo $data["rating_film"] ?>
-                            </div> -->
-                                                <h5><a href="anime-details.php?id=<?php echo $data["id"] ?>">
-                                                        <?php echo $data["judul_film"] ?>
-                                                    </a></h5>
-                                            </div>
-                                            <?php
-                                        }
-                                    }
-                                }
+                                }                                
                                 ?>
                             </div>
                         </div>
