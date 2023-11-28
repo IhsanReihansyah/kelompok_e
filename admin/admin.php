@@ -33,12 +33,6 @@
 </style>
 
     <?php
-    session_start();
-
-    if (!isset($_SESSION['username']) || $_SESSION['role'] !== 'admin') {
-        header("Location: login.php");
-        exit();
-    }
     include 'koneksi.php';
     $query = mysqli_query($conn, "SELECT f.id, f.judul_film, f.tahun_rilis,f.sinopsis,f.genre,f.nama_pemain,f.gambar,k.kategori,s.nama_sutradara FROM `film` AS f JOIN kategori AS k ON k.id_kategori = f.id_kategori JOIN sutradara AS s ON s.id_sutradara=f.id_sutradara ORDER BY f.id ASC;");
     ?>
