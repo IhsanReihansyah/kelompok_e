@@ -42,6 +42,9 @@
         $kategori = $f["id_kategori"];
         $id_sutradara = $f["id_sutradara"];
         $rating_film = $f["id_rating"];
+        $tag = $f ["tag"];
+        $video = $f ["video"];
+
     }
     ?>
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
@@ -123,6 +126,10 @@
                                     <td colspan="3"><img src="<?php echo $gambar ?>" width="100"></td>
                                 </div><br>
                                 <div class="form-group">
+                                <label for="video">video:</label>
+                                <input type="text" class="form-control" id="video" name="video" value="<?php echo $video ?>">
+                                </div><br>
+                                <div class="form-group">
                                     <label for="kategori">Kategori:</label>                                    
                                     <select id="kategori" name="kategori" class="form-control">
                                     <option value="">Default</option>
@@ -167,6 +174,22 @@
                                         ?>
                                     </select>
                                 </div><br>
+                                <div class="form-group">
+                 <label for="tag">Tag:</label>
+                 <select class="form-control" id="tag" name="tag">
+                                     <?php
+                                     $querytag = mysqli_query($conn, "SELECT DISTINCT tag FROM film");
+                                     if (mysqli_num_rows($querytag) > 0) {
+                                         while ($datatag = mysqli_fetch_array($querytag)) {
+                                         $selected = ($datatag['tag'] == $tag) ? 'selected' : '';
+                                         echo "<option value='" . $datatag["tag"] . "' $selected>" . $datatag["tag"] . "</option>";
+                                        }
+                                    } else {
+                                         echo "<option value=''>Tidak ada item tersedia</option>";
+                                    }
+                                     ?>
+    </select>
+            </div><br>
                                 <input type="submit" class="btn btn-primary" name="Submit" value="Simpan">
                         </form>
                     </div>

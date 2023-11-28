@@ -44,11 +44,11 @@
                         <h3>Contact Us</h3>
                     </header>
                     <section>
-                        <form action="index.php" method="POST">
+                        <form action="../admin/proses_tambah_ks.php" method="POST">
 
                             <div class="input-group mb-3">
                                 <span class="input-group-text" style="padding-right: 36px;">Name:</span>
-                                <input type="text" name="name" class="form-control" aria-label="Sizing example input"
+                                <input type="text" name="nama" class="form-control" aria-label="Sizing example input"
                                     aria-describedby="inputGroup-sizing-default">
                             </div>
                             <div class="input-group mb-3">
@@ -58,7 +58,7 @@
                             </div>
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="inputGroup-sizing-default">Message:</span>
-                                <textarea name="message" class="form-control" aria-label="Sizing example input"
+                                <textarea name="pesan" class="form-control" aria-label="Sizing example input"
                                     aria-describedby="inputGroup-sizing-default"></textarea>
                             </div>
 

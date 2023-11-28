@@ -39,7 +39,7 @@
 
     <?php
     include 'koneksi.php';
-    $query = mysqli_query($conn, "SELECT f.id, f.judul_film, f.tahun_rilis,f.sinopsis,f.genre,f.nama_pemain,f.gambar,k.kategori,s.nama_sutradara FROM `film` AS f JOIN kategori AS k ON k.id_kategori = f.id_kategori JOIN sutradara AS s ON s.id_sutradara=f.id_sutradara ORDER BY f.id ASC;");
+    $query = mysqli_query($conn, "SELECT f.id, f.judul_film, f.tahun_rilis,f.sinopsis,f.genre,f.nama_pemain,f.gambar,f.video,f.tag,k.kategori,s.nama_sutradara FROM `film` AS f JOIN kategori AS k ON k.id_kategori = f.id_kategori JOIN sutradara AS s ON s.id_sutradara=f.id_sutradara ORDER BY f.id ASC;");
     ?>
     <nav class="sb-topnav navbar navbar-expand navbar-dark" style="background-color: #00237A;">
         <!-- Navbar Brand-->
@@ -80,6 +80,8 @@
                                 <th style="background-color: #00237A; color: #ffffff; text-align: center;">Nama Pemain
                                 </th>
                                 <th style="background-color: #00237A; color: #ffffff; text-align: center;">Gambar</th>
+                                <th style="background-color: #00237A; color: #ffffff; text-align: center;">Video</th>
+                                <th style="background-color: #00237A; color: #ffffff; text-align: center;">Tag</th>
                                 <th style="background-color: #00237A; color: #ffffff; text-align: center;">kategori</th>
                                 <th style="background-color: #00237A; color: #ffffff; text-align: center;">Nama
                                     Sutradara</th>
@@ -115,6 +117,13 @@
                                             <?php echo $data["nama_pemain"]; ?>
                                         </td>
                                         <td> <img src="<?php echo $data["gambar"] ?>" width="100"> </td>
+                                        <td>
+                                            <?php echo $data["video"]; ?>
+                                        </td>
+
+                                        <td>
+                                            <?php echo $data["tag"]; ?>
+                                        </td>
                                         <td>
                                             <?php echo $data["kategori"]; ?>
                                         </td>

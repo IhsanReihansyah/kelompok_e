@@ -98,6 +98,10 @@
                 <input type="file" class="form-control-file" name="fileToUpload" id="fileToUpload" accept="image/*" required>
             </div><br>
             <div class="form-group">
+                <label for="video">Link Youtube:</label>
+                <input type="text" class="form-control" id="video" name="video" required>
+            </div><br>
+            <div class="form-group">
                 <label for="kategori">Kategori:</label>
                 <select class="form-control" id="kategori" name="kategori" required>
                 <option selected>
@@ -122,6 +126,22 @@
                                     if (mysqli_num_rows($query) > 0) {
                                         while ($data = mysqli_fetch_array($query)) {
                                             echo "<option value='" . $data["id_sutradara"] . "'>" . $data["nama_sutradara"] . "</option>";
+                                        }
+                                    } else {
+                                        echo "<option value=''>No items available</option>";
+                                    }
+                                    ?>
+                </select>
+            </div><br>
+            <div class="form-group">
+                <label for="tag">Tag:</label>
+                <select class="form-control" id="tag" name="tag" required>
+                <option selected>
+                                    <?php
+                                    $query = mysqli_query($conn, "SELECT DISTINCT tag FROM film");
+                                    if (mysqli_num_rows($query) > 0) {
+                                        while ($data = mysqli_fetch_array($query)) {
+                                            echo "<option value='" . $data["tag"] . "'>" . $data["tag"] . "</option>";
                                         }
                                     } else {
                                         echo "<option value=''>No items available</option>";
