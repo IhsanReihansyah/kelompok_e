@@ -14,6 +14,24 @@
 </head>
 
 <body class="sb-nav-fixed">
+    
+    <style>
+        .btn i {
+            margin-right: 8px;
+            /* Mengatur margin antara ikon dan teks */
+        }
+
+        .btn-warning i {
+            color: #ffc107;
+            /* Warna ikon "Ubah" */
+        }
+
+        .btn-danger i {
+            color: #dc3545;
+            /* Warna ikon "Delete" */
+        }
+    </style>
+
     <?php
     include 'koneksi.php';
     $query = mysqli_query($conn, "SELECT * FROM sutradara;");
@@ -22,14 +40,15 @@
         <!-- Navbar Brand-->
         <a class="navbar-brand ps-3" style="color: #ffffff;" href="../user/index.php">Dream Movie</a>
         <!-- Sidebar Toggle-->
-        <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i
-                class="fas fa-bars" style="color: #ffffff;"></i></button>
-                <ul class="navbar-nav ml-auto ms-md-0 me-3 me-lg-4">
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" id="navbarDropdown" href="login.php" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false" style="color: #ffffff;"><i class="fas fa-user fa-fw"></i></a>
-            </li>
-        </ul>
+        <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!">
+            <i class="fas fa-bars" style="color: #ffffff;"></i>
+        </button>
+
+        <!-- Navbar-->
+        <?php
+        include "template/navbar2.php";
+        ?>
+
     </nav>
     <div id="layoutSidenav">
         <?php include "template/navbar.php" ?>
@@ -45,12 +64,14 @@
                     <table id="sutradara" class="table table-striped table-bordered">
                         <thead>
                             <tr>
-                            <th style="background-color: #00237A; color: #ffffff; text-align: center;">No</th>
-                            <th style="background-color: #00237A; color: #ffffff; text-align: center;">ID Sutradara</th>
-                            <th style="background-color: #00237A; color: #ffffff; text-align: center;">Nama</th>
-                            <th style="background-color: #00237A; color: #ffffff; text-align: center;">Tanggal Lahir</th>
-                            <th style="background-color: #00237A; color: #ffffff; text-align: center;">Negara</th>
-                            <th style="background-color: #00237A; color: #ffffff; text-align: center;">Aksi</th>
+                                <th style="background-color: #00237A; color: #ffffff; text-align: center;">No</th>
+                                <th style="background-color: #00237A; color: #ffffff; text-align: center;">ID Sutradara
+                                </th>
+                                <th style="background-color: #00237A; color: #ffffff; text-align: center;">Nama</th>
+                                <th style="background-color: #00237A; color: #ffffff; text-align: center;">Tanggal Lahir
+                                </th>
+                                <th style="background-color: #00237A; color: #ffffff; text-align: center;">Negara</th>
+                                <th style="background-color: #00237A; color: #ffffff; text-align: center;">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -75,14 +96,16 @@
                                         <td>
                                             <?php echo $data["negara"]; ?>
                                         </td>
-                                        <td><center>
-                                        <div class="btn-group" role="group">
-                                        <a href="edit_sutradara.php?id_sutradara=<?php echo $data["id_sutradara"] ?>" class="btn btn-warning btn-md">
-                                                <i class="fas fa-pencil-alt"></i>
-                                            </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                <a href="proses_hapus_sutradara.php?id_sutradara=<?php echo $data["id_sutradara"] ?>"
-                                                    onclick="return confirm('Yakin Ingin Menghapus Data?')"
-                                                    class="btn btn-danger btn-md"><i class="fas fa-trash-alt"></i></a>
+                                        <td>
+                                            <center>
+                                                <div class="btn-group" role="group">
+                                                    <a href="edit_sutradara.php?id_sutradara=<?php echo $data["id_sutradara"] ?>"
+                                                        class="btn btn-warning btn-md">
+                                                        <i class="fas fa-pencil-alt"></i>
+                                                    </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                    <a href="proses_hapus_sutradara.php?id_sutradara=<?php echo $data["id_sutradara"] ?>"
+                                                        onclick="return confirm('Yakin Ingin Menghapus Data?')"
+                                                        class="btn btn-danger btn-md"><i class="fas fa-trash-alt"></i></a>
                                             </center>
                                         </td>
                                     </tr>

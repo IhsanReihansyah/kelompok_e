@@ -16,7 +16,7 @@ $query = mysqli_query($conn, "SELECT * FROM `ulasan` as u join film as f on f.id
             ?>
             <div class="anime__review__item">
                 <div class="anime__review__item__pic">
-                    <img src="../img/anime/review-1.jpg" alt="">
+                    <img src="../img/anime/topi.png" alt="">
                 </div>
                 <div class="anime__review__item__text">
                     <h6>
@@ -36,8 +36,13 @@ $query = mysqli_query($conn, "SELECT * FROM `ulasan` as u join film as f on f.id
     } else {
         // Tampilkan pesan jika tidak ada review
         ?>
-        <br><br>
-        <p>No reviews available.</p>
+        <div class="anime__details__review">
+            <div class="section-title">
+                <h5>Reviews</h5>
+            </div>
+            <div class="anime__review__item">
+            </div>
+        </div>
         <?php
     }
     ?>
