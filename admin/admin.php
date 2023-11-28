@@ -11,26 +11,31 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
     <link href="css/styles.css" rel="stylesheet" />
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha384-vG9JMLSRdtpZ9kHFVzBkHjs4zg4Jzfs4lyd82BYCg/DfOdwQZh6v02ssUnTEmA0i" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha384-vG9JMLSRdtpZ9kHFVzBkHjs4zg4Jzfs4lyd82BYCg/DfOdwQZh6v02ssUnTEmA0i" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 </head>
 
 <body class="sb-nav-fixed">
     <style>
-    .btn i {
-      margin-right: 8px; /* Mengatur margin antara ikon dan teks */
-    }
-    
-    .btn-warning i {
-      color: #ffc107; /* Warna ikon "Ubah" */
-    }
-    
-    .btn-danger i {
-      color: #dc3545; /* Warna ikon "Delete" */
-    }
-</style>
+        .btn i {
+            margin-right: 8px;
+            /* Mengatur margin antara ikon dan teks */
+        }
+
+        .btn-warning i {
+            color: #ffc107;
+            /* Warna ikon "Ubah" */
+        }
+
+        .btn-danger i {
+            color: #dc3545;
+            /* Warna ikon "Delete" */
+        }
+    </style>
 
     <?php
     include 'koneksi.php';
@@ -38,22 +43,16 @@
     ?>
     <nav class="sb-topnav navbar navbar-expand navbar-dark" style="background-color: #00237A;">
         <!-- Navbar Brand-->
-        <a class="navbar-brand ps-3" style="color: #ffffff;" href="../user/index.php">Dream Movie</a>        
+        <a class="navbar-brand ps-3" style="color: #ffffff;" href="../user/index.php">Dream Movie</a>
         <!-- Sidebar Toggle-->
         <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!">
             <i class="fas fa-bars" style="color: #ffffff;"></i>
         </button>
 
         <!-- Navbar-->
-        <ul class="navbar-nav ml-auto ms-md-0 me-3 me-lg-4">
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false" style="color: #ffffff;"><i class="fas fa-user fa-fw"></i></a>
-                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="login.php" style="color: #000000;">Logout</a></li>
-                </ul>
-            </li>
-        </ul>
+        <?php
+        include "template/navbar2.php";
+        ?>
 
     </nav>
     <div id="layoutSidenav">
@@ -72,14 +71,18 @@
                             <tr>
                                 <th style="background-color: #00237A; color: #ffffff; text-align: center;">No</th>
                                 <th style="background-color: #00237A; color: #ffffff; text-align: center;">ID Film</th>
-                                <th style="background-color: #00237A; color: #ffffff; text-align: center;">Judul Film</th>
-                                <th style="background-color: #00237A; color: #ffffff; text-align: center;">Tahun Rilis</th>
+                                <th style="background-color: #00237A; color: #ffffff; text-align: center;">Judul Film
+                                </th>
+                                <th style="background-color: #00237A; color: #ffffff; text-align: center;">Tahun Rilis
+                                </th>
                                 <th style="background-color: #00237A; color: #ffffff; text-align: center;">Sinopsis</th>
                                 <th style="background-color: #00237A; color: #ffffff; text-align: center;">Genre</th>
-                                <th style="background-color: #00237A; color: #ffffff; text-align: center;">Nama Pemain</th>
+                                <th style="background-color: #00237A; color: #ffffff; text-align: center;">Nama Pemain
+                                </th>
                                 <th style="background-color: #00237A; color: #ffffff; text-align: center;">Gambar</th>
                                 <th style="background-color: #00237A; color: #ffffff; text-align: center;">kategori</th>
-                                <th style="background-color: #00237A; color: #ffffff; text-align: center;">Nama Sutradara</th>
+                                <th style="background-color: #00237A; color: #ffffff; text-align: center;">Nama
+                                    Sutradara</th>
                                 <th style="background-color: #00237A; color: #ffffff; text-align: center;">Aksi</th>
                             </tr>
                         </thead>
@@ -121,13 +124,13 @@
                                         <td>
                                             <div class="btn-group" role="group">
                                                 <a href="edit.php?id=<?php echo $data["id"] ?>" class="btn btn-warning btn-sm">
-                                                <i class="fas fa-pencil-alt"></i>
-                                            </a>
-                                            <a href="proses_hapus.php?id=<?php echo $data["id"] ?>"
-                                            onclick="return confirm('Yakin Ingin Menghapus Data?')"
-                                            class="btn btn-danger btn-sm">
-                                            <i class="fas fa-trash-alt"></i>
-                                        </a>
+                                                    <i class="fas fa-pencil-alt"></i>
+                                                </a>
+                                                <a href="proses_hapus.php?id=<?php echo $data["id"] ?>"
+                                                    onclick="return confirm('Yakin Ingin Menghapus Data?')"
+                                                    class="btn btn-danger btn-sm">
+                                                    <i class="fas fa-trash-alt"></i>
+                                                </a>
                                         </td>
                                     </tr>
                                     <?php $no++;
@@ -158,10 +161,10 @@
     <script src="js/scripts.js"></script>
     <script>
         document.getElementById("navbarDropdown").addEventListener("click", function () {
-        document.getElementById("navbarDropdown").classList.toggle("show");
-        document.getElementById("navbarDropdown").setAttribute("aria-expanded", "true");
-        document.getElementById("navbarDropdown").nextElementSibling.classList.toggle("show");
-    });
+            document.getElementById("navbarDropdown").classList.toggle("show");
+            document.getElementById("navbarDropdown").setAttribute("aria-expanded", "true");
+            document.getElementById("navbarDropdown").nextElementSibling.classList.toggle("show");
+        });
         $(document).ready(function () {
             $('#film').DataTable();
         });
