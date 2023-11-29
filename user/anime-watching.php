@@ -53,6 +53,8 @@
                         <a href="./kategori.php">Movie</a>
                         <span>
                             <?php echo $data["judul_film"] ?>
+
+
                         </span>
                     </div>
                 </div>
@@ -65,15 +67,11 @@
     <section class="anime-details spad">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12">
-                    <div class="anime__video__player">
-                        <video id="player" playsinline controls data-poster="../admin/<?php echo $data["gambar"] ?>">
-                            <source src="template/1.mp4" type="video/mp4" />
-                            <!-- Captions are optional -->
-                            <track kind="captions" label="English captions" src="#" srclang="en" default />
-                        </video>
-                    </div>
-                </div>
+                <?php
+                echo '<iframe width="1160" height="635" src="https://www.youtube.com/embed/' . $data["video"] . '" 
+                                title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+                                encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>'
+                    ?>
                 <?php
                 include "template/review.php";
                 ?>
