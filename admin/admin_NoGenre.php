@@ -90,7 +90,6 @@
                                 <th style="background-color: #00237A; color: #ffffff; text-align: center;">Tahun Rilis
                                 </th>
                                 <th style="background-color: #00237A; color: #ffffff; text-align: center;">Sinopsis</th>
-                                <th style="background-color: #00237A; color: #ffffff; text-align: center;">Genre</th>
                                 <th style="background-color: #00237A; color: #ffffff; text-align: center;">Nama Pemain
                                 </th>
                                 <th style="background-color: #00237A; color: #ffffff; text-align: center;">Gambar</th>
@@ -123,9 +122,6 @@
                                         </td>
                                         <td>
                                             <?php echo $data["sinopsis"]; ?>
-                                        </td>
-                                        <td>
-                                            <?php echo $data["genre"]; ?>
                                         </td>
                                         <td>
                                             <?php echo $data["nama_pemain"]; ?>
