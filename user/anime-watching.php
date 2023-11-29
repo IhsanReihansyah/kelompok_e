@@ -53,8 +53,6 @@
                         <a href="./kategori.php">Movie</a>
                         <span>
                             <?php echo $data["judul_film"] ?>
-
-
                         </span>
                     </div>
                 </div>
@@ -68,7 +66,7 @@
         <div class="container">
             <div class="row">
                 <?php
-                echo '<iframe width="1160" height="635" src="https://www.youtube.com/embed/' . $data["video"] . '" 
+                echo '<iframe width="1160" height="550" src="https://www.youtube.com/embed/' . $data["video"] . '" 
                                 title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
                                 encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>'
                     ?>
