@@ -25,6 +25,11 @@
                     <div class="sb-nav-link-icon text-white"><i class="fas fa-book-open"></i></div>
                     Kritik & Saran
                 </a>
+                <a class="nav-link text-white" href="Login.php">
+                    <div class="sb-nav-link-icon text-white"><i class="fas fa-user fa-fw"></i></div>
+                    Logout
+                </a>
+                
             </div>
         </div>
     </nav>

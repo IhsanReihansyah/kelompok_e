@@ -19,10 +19,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-</head>
-
-<body class="sb-nav-fixed">
-    <style>
+        <style>
         .btn i {
             margin-right: 8px;
             /* Mengatur margin antara ikon dan teks */
@@ -38,25 +35,14 @@
             /* Warna ikon "Delete" */
         }
     </style>
+</head>
 
+<body class="sb-nav-fixed">
     <?php
     include 'koneksi.php';
     $query = mysqli_query($conn, "SELECT f.id, f.judul_film, f.tahun_rilis,f.sinopsis,f.genre,f.nama_pemain,f.gambar,f.video,f.tag,k.kategori,s.nama_sutradara FROM `film` AS f JOIN kategori AS k ON k.id_kategori = f.id_kategori JOIN sutradara AS s ON s.id_sutradara=f.id_sutradara ORDER BY f.id ASC;");
     ?>
-    <nav class="sb-topnav navbar navbar-expand navbar-dark" style="background-color: #00237A;">
-        <!-- Navbar Brand-->
-        <a class="navbar-brand ps-3" style="color: #ffffff;" href="../user/index.php">Dream Movie</a>
-        <!-- Sidebar Toggle-->
-        <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!">
-            <i class="fas fa-bars" style="color: #ffffff;"></i>
-        </button>
-
-        <!-- Navbar-->
-        <?php
-        include "template/navbar2.php";
-        ?>
-
-    </nav>
+    <?php include "template/navbar2.php" ?>
     <div id="layoutSidenav">
         <?php include "template/navbar.php" ?>
         <div id="layoutSidenav_content">
