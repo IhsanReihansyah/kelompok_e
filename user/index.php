@@ -41,7 +41,7 @@
         <div class="container">
             <div class="hero__slider owl-carousel">
                 <?php
-                $query = mysqli_query($conn, "SELECT * from film as f ORDER BY f.id ASC;");
+                $query = mysqli_query($conn, "SELECT * FROM `film` WHERE FIND_IN_SET('Slide', `tag`) > 0 ORDER BY id ASC");
                 tampilkanProduktop($query);
                 ?>
             </div>
@@ -70,35 +70,8 @@
                         </div>
                         <div class="row">
                             <?php
-                            $query = mysqli_query($conn, "SELECT * from `film` as f join kategori as k on f.id_kategori=k.id_kategori ORDER BY f.id ASC;");
-                            if (mysqli_num_rows($query) > 0) {
-                                while ($data = mysqli_fetch_array($query)) {
-                                    if ($data["tag"] == 'Trending Now') {
-                                        ?>
-
-                                        <div class="col-lg-4 col-md-6 col-sm-6">
-                                            <div class="product__item">
-                                                <div class="product__item__pic set-bg"
-                                                    data-setbg="../admin/<?php echo $data["gambar"] ?>">
-                                                    <!-- <div class="ep">
-                                                        <?php echo $data["rating_film"] ?>
-                                                    </div> -->
-                                                    <div class="comment"><i class=""></i>
-                                                        <?php echo $data["genre"] ?>
-                                                    </div>
-                                                </div>
-                                                <div class="product__item__text">
-                                                    <h5><a href="anime-details.php?id=<?php echo $data["id"] ?>">
-                                                            <?php echo $data["judul_film"] ?>
-                                                        </a></h5>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <?php
-                                    }
-                                }
-                            }
+                            $query = mysqli_query($conn, "SELECT * FROM `film` WHERE FIND_IN_SET('Trending Now', `tag`) > 0 ORDER BY id ASC");
+                            tampilkantag($query);
                             ?>
                         </div>
                     </div>
@@ -118,35 +91,8 @@
                         </div>
                         <div class="row">
                             <?php
-                            $query = mysqli_query($conn, "SELECT * from `film` as f join kategori as k on f.id_kategori=k.id_kategori ORDER BY f.id ASC;");
-                            if (mysqli_num_rows($query) > 0) {
-                                while ($data = mysqli_fetch_array($query)) {
-                                    if ($data["tag"] == 'Latest Film') {
-                                        ?>
-
-                                        <div class="col-lg-4 col-md-6 col-sm-6">
-                                            <div class="product__item">
-                                                <div class="product__item__pic set-bg"
-                                                    data-setbg="../admin/<?php echo $data["gambar"] ?>">
-                                                    <!-- <div class="ep">
-                                                        <?php echo $data["rating_film"] ?>
-                                                    </div> -->
-                                                    <div class="comment"><i class=""></i>
-                                                        <?php echo $data["genre"] ?>
-                                                    </div>
-                                                </div>
-                                                <div class="product__item__text">
-                                                    <h5><a href="anime-details.php?id=<?php echo $data["id"] ?>">
-                                                            <?php echo $data["judul_film"] ?>
-                                                        </a></h5>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <?php
-                                    }
-                                }
-                            }
+                            $query = mysqli_query($conn, "SELECT * FROM `film` WHERE FIND_IN_SET('Latest Film', `tag`) > 0 ORDER BY id ASC");
+                            tampilkantag($query);
                             ?>
                         </div>
                     </div>
@@ -166,35 +112,8 @@
                         </div>
                         <div class="row">
                             <?php
-                            $query = mysqli_query($conn, "SELECT * from `film` as f join kategori as k on f.id_kategori=k.id_kategori ORDER BY f.id ASC;");
-                            if (mysqli_num_rows($query) > 0) {
-                                while ($data = mysqli_fetch_array($query)) {
-                                    if ($data["tag"] == 'Most Repeat') {
-                                        ?>
-
-                                        <div class="col-lg-4 col-md-6 col-sm-6">
-                                            <div class="product__item">
-                                                <div class="product__item__pic set-bg"
-                                                    data-setbg="../admin/<?php echo $data["gambar"] ?>">
-                                                    <!-- <div class="ep">
-                                                        <?php echo $data["rating_film"] ?>
-                                                    </div> -->
-                                                    <div class="comment"><i class=""></i>
-                                                        <?php echo $data["genre"] ?>
-                                                    </div>
-                                                </div>
-                                                <div class="product__item__text">
-                                                    <h5><a href="anime-details.php?id=<?php echo $data["id"] ?>">
-                                                            <?php echo $data["judul_film"] ?>
-                                                        </a></h5>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <?php
-                                    }
-                                }
-                            }
+                            $query = mysqli_query($conn, "SELECT * FROM `film` WHERE FIND_IN_SET('Most Repeat', `tag`) > 0 ORDER BY id ASC");
+                            tampilkantag($query);
                             ?>
                         </div>
                     </div>
@@ -206,19 +125,18 @@
                                 <h5>Top Views</h5>
                             </div>
                             <ul class="filter__controls">
-                                <li class="active" data-filter="*">Day</li>
+                                <li class="active" data-filter=".day">Day</li>
                                 <li data-filter=".week">Week</li>
                                 <li data-filter=".month">Month</li>
                                 <li data-filter=".years">Years</li>
                             </ul>
                             <div class="filter__gallery">
                                 <?php
-                                $query = mysqli_query($conn, "SELECT * from `film` as f join kategori as k on f.id_kategori=k.id_kategori ORDER BY f.id ASC;");
+                                $query = mysqli_query($conn, "SELECT * FROM `film` WHERE FIND_IN_SET('Top Views Day', `tag`) > 0 ORDER BY id ASC");
                                 if (mysqli_num_rows($query) > 0) {
                                     while ($data = mysqli_fetch_array($query)) {
-                                        if ($data["tag"] == 'Top Views Day') {
                                             ?>
-                                            <div class="product__sidebar__view__item set-bg mix day years"
+                                            <div class="product__sidebar__view__item set-bg mix day"
                                                 data-setbg="../admin/<?php echo $data["gambar"] ?>">
                                                 <!-- <div class="ep">
                                 <?php echo $data["rating_film"] ?>
@@ -228,16 +146,14 @@
                                                     </a></h5>
                                             </div>
                                             <?php
-                                        }
 
                                     }
                                 }
-                                $query = mysqli_query($conn, "SELECT * from `film` as f join kategori as k on f.id_kategori=k.id_kategori ORDER BY f.id ASC;");
+                                $query = mysqli_query($conn, "SELECT * FROM `film` WHERE FIND_IN_SET('Top Views Week', `tag`) > 0 ORDER BY id ASC");
                                 if (mysqli_num_rows($query) > 0) {
                                     while ($data = mysqli_fetch_array($query)) {
-                                        if ($data["tag"] == 'Top Views Week') {
                                             ?>
-                                            <div class="product__sidebar__view__item set-bg mix month week"
+                                            <div class="product__sidebar__view__item set-bg mix week"
                                                 data-setbg="../admin/<?php echo $data["gambar"] ?>">
                                                 <!-- <div class="ep">
                                 <?php echo $data["rating_film"] ?>
@@ -247,15 +163,13 @@
                                                     </a></h5>
                                             </div>
                                             <?php
-                                        }
                                     }
                                 }
-                                $query = mysqli_query($conn, "SELECT * from `film` as f join kategori as k on f.id_kategori=k.id_kategori ORDER BY f.id ASC;");
+                                $query = mysqli_query($conn, "SELECT * FROM `film` WHERE FIND_IN_SET('Top Views Month', `tag`) > 0 ORDER BY id ASC");
                                 if (mysqli_num_rows($query) > 0) {
                                     while ($data = mysqli_fetch_array($query)) {
-                                        if ($data["tag"] == 'Top Views Month') {
                                             ?>
-                                            <div class="product__sidebar__view__item set-bg mix week years"
+                                            <div class="product__sidebar__view__item set-bg mix month"
                                                 data-setbg="../admin/<?php echo $data["gambar"] ?>">
                                                 <!-- <div class="ep">
                                 <?php echo $data["rating_film"] ?>
@@ -265,15 +179,13 @@
                                                     </a></h5>
                                             </div>
                                             <?php
-                                        }
                                     }
                                 }
-                                $query = mysqli_query($conn, "SELECT * from `film` as f join kategori as k on f.id_kategori=k.id_kategori ORDER BY f.id ASC;");
+                                $query = mysqli_query($conn, "SELECT * FROM `film` WHERE FIND_IN_SET('Top Views Year', `tag`) > 0 ORDER BY id ASC");
                                 if (mysqli_num_rows($query) > 0) {
                                     while ($data = mysqli_fetch_array($query)) {
-                                        if ($data["tag"] == 'Top Views Year') {
                                             ?>
-                                            <div class="product__sidebar__view__item set-bg mix years month"
+                                            <div class="product__sidebar__view__item set-bg mix years"
                                                 data-setbg="../admin/<?php echo $data["gambar"] ?>">
                                                 <!-- <div class="ep">
                                 <?php echo $data["rating_film"] ?>
@@ -283,7 +195,6 @@
                                                     </a></h5>
                                             </div>
                                             <?php
-                                        }
                                     }
                                 }                                
                                 ?>

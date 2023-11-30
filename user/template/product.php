@@ -185,7 +185,6 @@ function tampilkanProduktop($query)
 {
     if (mysqli_num_rows($query) > 0) {
         while ($data = mysqli_fetch_array($query)) {
-            if ($data["id_kategori"] == '4') {
                 ?>
                 <div class="hero__items set-bg" data-setbg="../admin/<?php echo $data["gambar"] ?>">
                     <div class="row">
@@ -202,7 +201,6 @@ function tampilkanProduktop($query)
                 </div>
 
                 <?php
-            }
         }
     }
 }
@@ -233,6 +231,36 @@ function tampilkanGenre($query)
 
             <?php
 
+        }
+    }
+}
+
+function tampilkantag($query)
+{
+    if (mysqli_num_rows($query) > 0) {
+        while ($data = mysqli_fetch_array($query)) {
+                ?>
+
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="product__item">
+                        <div class="product__item__pic set-bg"
+                            data-setbg="../admin/<?php echo $data["gambar"] ?>">
+                            <!-- <div class="ep">
+                                <?php echo $data["rating_film"] ?>
+                            </div> -->
+                            <div class="comment"><i class=""></i>
+                                <?php echo $data["genre"] ?>
+                            </div>
+                        </div>
+                        <div class="product__item__text">
+                            <h5><a href="anime-details.php?id=<?php echo $data["id"] ?>">
+                                    <?php echo $data["judul_film"] ?>
+                                </a></h5>
+                        </div>
+                    </div>
+                </div>
+
+                <?php
         }
     }
 }
