@@ -6,5 +6,5 @@ $email = $_POST["email"];
 $pesan = $_POST["pesan"];
 
 $result = mysqli_query($conn, "INSERT INTO `kritikdansaran` (`nama`, `email`, `pesan`) VALUES ('$nama', '$email', '$pesan');");
-header("Location:../user/contact.php");
+header("Location:../user/index.php");
 ?>

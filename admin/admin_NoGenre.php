@@ -11,17 +11,12 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
     <link href="css/styles.css" rel="stylesheet" />
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
-        integrity="sha384-vG9JMLSRdtpZ9kHFVzBkHjs4zg4Jzfs4lyd82BYCg/DfOdwQZh6v02ssUnTEmA0i" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 
 <body class="sb-nav-fixed">
+    
     <style>
         .btn i {
             margin-right: 8px;
@@ -43,20 +38,9 @@
     include 'koneksi.php';
     $query = mysqli_query($conn, "SELECT f.id, f.judul_film, f.tahun_rilis,f.sinopsis,f.genre,f.nama_pemain,f.gambar,f.video,f.tag,k.kategori,s.nama_sutradara FROM `film` AS f JOIN kategori AS k ON k.id_kategori = f.id_kategori JOIN sutradara AS s ON s.id_sutradara=f.id_sutradara ORDER BY f.id ASC;");
     ?>
-    <nav class="sb-topnav navbar navbar-expand navbar-dark" style="background-color: #00237A;">
-        <!-- Navbar Brand-->
-        <a class="navbar-brand ps-3" style="color: #ffffff;" href="../user/index.php">Dream Movie</a>
-        <!-- Sidebar Toggle-->
-        <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!">
-            <i class="fas fa-bars" style="color: #ffffff;"></i>
-        </button>
-
-        <!-- Navbar-->
-        <?php
+    <?php
         include "template/navbar2.php";
         ?>
-
-    </nav>
     <div id="layoutSidenav">
         <?php include "template/navbar.php" ?>
         <div id="layoutSidenav_content">
@@ -79,9 +63,8 @@
                             <li><a class="dropdown-item" href="admin_Both.php">Both</a></li>
                         </ul>
                     </div>
-                    <br>
-                    <table id="film" class="table table-striped table-bordered">
-                        <thead>
+                    <table id="sutradara" class="table table-striped table-bordered">
+                    <thead>
                             <tr>
                                 <th style="background-color: #00237A; color: #ffffff; text-align: center;">No</th>
                                 <th style="background-color: #00237A; color: #ffffff; text-align: center;">ID Film</th>
@@ -123,6 +106,7 @@
                                         <td>
                                             <?php echo $data["sinopsis"]; ?>
                                         </td>
+                                   
                                         <td>
                                             <?php echo $data["nama_pemain"]; ?>
                                         </td>
@@ -178,21 +162,12 @@
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
     <script src="js/scripts.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
-
     <script>
-        document.getElementById("navbarDropdown").addEventListener("click", function () {
-            document.getElementById("navbarDropdown").classList.toggle("show");
-            document.getElementById("navbarDropdown").setAttribute("aria-expanded", "true");
-            document.getElementById("navbarDropdown").nextElementSibling.classList.toggle("show");
-        });
         $(document).ready(function () {
-            $('#film').DataTable();
+            $('#sutradara').DataTable();
         });
     </script>
 </body>
