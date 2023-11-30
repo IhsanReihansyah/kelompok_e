@@ -51,10 +51,10 @@
                 <a href="#" class="facebook"
                   ><i class="fa fa-facebook-square"></i> Facebook</a
                 >
-                <a href="#" class="pinterest"
+                <a href="https://www.instagram.com/ihsanreihaa/" class="pinterest"
                   ><i class="fa fa-instagram"></i> Instagram</a
                 >
-                <a href="#" class="linkedin"
+                <a href="https://www.linkedin.com/in/yesicha-audria/" class="linkedin"
                   ><i class="fa fa-linkedin-square"></i> Linkedin</a
                 >
                 <a href="#" class="twitter"
