@@ -222,7 +222,7 @@
                                   <a class="dropdown-item" href="edit_film.php?id=<?php echo $data["id"] ?>"
                                     ><i class="bx bx-edit-alt me-2"></i> Edit</a
                                   >
-                                  <a class="dropdown-item" href="javascript:void(0);"
+                                  <a class="dropdown-item" href="proses_hapus.php?id=<?php echo $data["id"] ?>"
                                     ><i class="bx bx-trash me-2"></i> Delete</a
                                   >
                                 </div>
