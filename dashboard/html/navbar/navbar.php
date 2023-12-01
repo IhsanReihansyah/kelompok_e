@@ -47,11 +47,6 @@
               </a>
               <ul class="menu-sub">
                 <li class="menu-item">
-                  <a href="#" class="menu-link">
-                    <div data-i18n="Vertical Form">Vertical Form</div>
-                  </a>
-                </li>
-                <li class="menu-item">
                   <a href="tambah_film.php" class="menu-link">
                     <div data-i18n="Horizontal Form">Tambah Film</div>
                   </a>

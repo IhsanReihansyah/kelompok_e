@@ -42,14 +42,14 @@
         $kategori = $f["id_kategori"];
         $id_sutradara = $f["id_sutradara"];
         $rating_film = $f["id_rating"];
-        $tag = $f ["tag"];
-        $video = $f ["video"];
+        $tag = $f["tag"];
+        $video = $f["video"];
 
     }
     ?>
     <?php include "template/navbar2.php" ?>
     <div id="layoutSidenav">
-    <?php include "template/navbar.php" ?>
+        <?php include "template/navbar.php" ?>
         <div id="layoutSidenav_content">
             <main>
                 <div class="container-fluid px-4">
@@ -81,33 +81,33 @@
                                 </div><br>
                                 <div class="form-group">
                                     <label>Genre Film:</label><br>
-                                    <input type="checkbox" name = "genre[]" value="Advanture" <?php echo (in_array("Advanture", explode(',', $genre))) ? 'checked' : ''; ?>>
+                                    <input type="checkbox" name="genre[]" value="Advanture" <?php echo (in_array("Advanture", explode(',', $genre))) ? 'checked' : ''; ?>>
                                     <label>Advanture</label>
 
-                                    <input type="checkbox" name = "genre[]" value="Action" <?php echo (in_array("Action", explode(',', $genre))) ? 'checked' : ''; ?>>
+                                    <input type="checkbox" name="genre[]" value="Action" <?php echo (in_array("Action", explode(',', $genre))) ? 'checked' : ''; ?>>
                                     <label>Action</label>
 
-                                    <input type="checkbox" name = "genre[]" value="Drama" <?php echo (in_array("Drama", explode(',', $genre))) ? 'checked' : ''; ?>>
+                                    <input type="checkbox" name="genre[]" value="Drama" <?php echo (in_array("Drama", explode(',', $genre))) ? 'checked' : ''; ?>>
                                     <label>Drama</label>
 
-                                    <input type="checkbox" name = "genre[]" value="Romance" <?php echo (in_array("Romance", explode(',', $genre))) ? 'checked' : ''; ?>>
+                                    <input type="checkbox" name="genre[]" value="Romance" <?php echo (in_array("Romance", explode(',', $genre))) ? 'checked' : ''; ?>>
                                     <label>Romance</label>
 
-                                    <input type="checkbox" name = "genre[]" value="Horor" <?php echo (in_array("Horor", explode(',', $genre))) ? 'checked' : ''; ?>>
+                                    <input type="checkbox" name="genre[]" value="Horor" <?php echo (in_array("Horor", explode(',', $genre))) ? 'checked' : ''; ?>>
                                     <label>Horor</label>
 
-                                    <input type="checkbox" name = "genre[]" value="Comedi" <?php echo (in_array("Comedi", explode(',', $genre))) ? 'checked' : ''; ?>>
+                                    <input type="checkbox" name="genre[]" value="Comedi" <?php echo (in_array("Comedi", explode(',', $genre))) ? 'checked' : ''; ?>>
                                     <label>Comedi</label>
 
-                                    <input type="checkbox" name = "genre[]" value="Animation" <?php echo (in_array("Animation", explode(',', $genre))) ? 'checked' : ''; ?>>
+                                    <input type="checkbox" name="genre[]" value="Animation" <?php echo (in_array("Animation", explode(',', $genre))) ? 'checked' : ''; ?>>
                                     <label>Animation</label>
 
-                                    <input type="checkbox" name = "genre[]" value="Crime" <?php echo (in_array("Crime", explode(',', $genre))) ? 'checked' : ''; ?>>
+                                    <input type="checkbox" name="genre[]" value="Crime" <?php echo (in_array("Crime", explode(',', $genre))) ? 'checked' : ''; ?>>
                                     <label>Crime</label>
 
-                                    <input type="checkbox" name = "genre[]" value="Fantasy" <?php echo (in_array("Fantasy", explode(',', $genre))) ? 'checked' : ''; ?>>
+                                    <input type="checkbox" name="genre[]" value="Fantasy" <?php echo (in_array("Fantasy", explode(',', $genre))) ? 'checked' : ''; ?>>
                                     <label>Fantasy</label>
-                                    
+
                                 </div><br>
                                 <div class="form-group">
                                     <label for="nama_pemain">Nama Pemain:</label>
@@ -121,19 +121,28 @@
                                     <td colspan="3"><img src="<?php echo $gambar ?>" width="100"></td>
                                 </div><br>
                                 <div class="form-group">
-                                <label for="video">video:</label>
-                                <input type="text" class="form-control" id="video" name="video" value="<?php echo $video ?>">
+                                    <label for="video">video:</label>
+                                    <input type="text" class="form-control" id="video" name="video"
+                                        value="<?php echo $video ?>">
                                 </div><br>
                                 <div class="form-group">
-                                    <label for="kategori">Kategori:</label>                                    
+                                    <label for="kategori">Kategori:</label>
                                     <select id="kategori" name="kategori" class="form-control">
-                                    <option value="">Default</option>
-                                    <option value="1" <?php if ($kategori == '1') echo 'selected'; ?>>Indonesia</option>
-                                    <option value="2" <?php if ($kategori == '2') echo 'selected'; ?>>Korea</option>
-                                    <option value="3" <?php if ($kategori == '3') echo 'selected'; ?>>China</option>
-                                    <option value="4" <?php if ($kategori == '4') echo 'selected'; ?>>Jepang</option>
-                                    <option value="5" <?php if ($kategori == '5') echo 'selected'; ?>>Thailand</option>
-                                    <option value="6" <?php if ($kategori == '6') echo 'selected'; ?>>Amerika</option>
+                                        <option value="">Default</option>
+                                        <option value="1" <?php if ($kategori == '1')
+                                            echo 'selected'; ?>>Indonesia
+                                        </option>
+                                        <option value="2" <?php if ($kategori == '2')
+                                            echo 'selected'; ?>>Korea</option>
+                                        <option value="3" <?php if ($kategori == '3')
+                                            echo 'selected'; ?>>China</option>
+                                        <option value="4" <?php if ($kategori == '4')
+                                            echo 'selected'; ?>>Jepang</option>
+                                        <option value="5" <?php if ($kategori == '5')
+                                            echo 'selected'; ?>>Thailand
+                                        </option>
+                                        <option value="6" <?php if ($kategori == '6')
+                                            echo 'selected'; ?>>Amerika</option>
                                     </select>
                                     <!-- <div class="col-md-12">
                                         <select class="form-select" id="kategori" required name="kategori">
@@ -157,7 +166,7 @@
                                     <select class="form-control" id="sutradara" name="sutradara">
                                         <?php
                                         $querysutradara = mysqli_query($conn, "SELECT * FROM sutradara");
-                                        
+
                                         if (mysqli_num_rows($querysutradara) > 0) {
                                             while ($datasutradara = mysqli_fetch_array($querysutradara)) {
                                                 $selected = ($datasutradara['id_sutradara'] == $id_sutradara) ? 'selected' : '';
@@ -170,21 +179,21 @@
                                     </select>
                                 </div><br>
                                 <div class="form-group">
-                 <label for="tag">Tag:</label>
-                 <select class="form-control" id="tag" name="tag">
-                                     <?php
-                                     $querytag = mysqli_query($conn, "SELECT DISTINCT tag FROM film");
-                                     if (mysqli_num_rows($querytag) > 0) {
-                                         while ($datatag = mysqli_fetch_array($querytag)) {
-                                         $selected = ($datatag['tag'] == $tag) ? 'selected' : '';
-                                         echo "<option value='" . $datatag["tag"] . "' $selected>" . $datatag["tag"] . "</option>";
+                                    <label for="tag">Tag:</label>
+                                    <select class="form-control" id="tag" name="tag">
+                                        <?php
+                                        $querytag = mysqli_query($conn, "SELECT DISTINCT tag FROM film");
+                                        if (mysqli_num_rows($querytag) > 0) {
+                                            while ($datatag = mysqli_fetch_array($querytag)) {
+                                                $selected = ($datatag['tag'] == $tag) ? 'selected' : '';
+                                                echo "<option value='" . $datatag["tag"] . "' $selected>" . $datatag["tag"] . "</option>";
+                                            }
+                                        } else {
+                                            echo "<option value=''>Tidak ada item tersedia</option>";
                                         }
-                                    } else {
-                                         echo "<option value=''>Tidak ada item tersedia</option>";
-                                    }
-                                     ?>
-    </select>
-            </div><br>
+                                        ?>
+                                    </select>
+                                </div><br>
                                 <input type="submit" class="btn btn-primary" name="Submit" value="Simpan">
                         </form>
                     </div>

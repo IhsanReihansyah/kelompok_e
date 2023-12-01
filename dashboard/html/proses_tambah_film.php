@@ -25,5 +25,5 @@ if (isset($_POST['genre']) && is_array($_POST['genre'])) {
 
 $result = mysqli_query($conn, "INSERT INTO `film` (`judul_film`, `tahun_rilis`, `sinopsis`, `genre`, `nama_pemain`, `video`, `tag`,`id_kategori`, `id_sutradara`, `gambar`) VALUES ('$judul_film', '$tahun_rilis', '$sinopsis', '$selected_genres', '$nama_pemain','$video','$tag', '$kategori', '$nama_sutradara', '$target_file');");
 
-header("Location: admin.php");
+header("Location: index.php");
 ?>

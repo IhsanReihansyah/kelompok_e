@@ -61,6 +61,18 @@
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="../assets/js/config.js"></script>
+    <script>
+        function confirmUpdate() {
+            var confirmation = confirm("Yakin ingin mengubah data?");
+            if (confirmation) {
+                // Jika pengguna mengkonfirmasi (klik OK), maka formulir akan dikirim
+                return true;
+            } else {
+                // Jika pengguna membatalkan (klik Batal), formulir tidak akan dikirim
+                return false;
+            }
+        }
+    </script>
   </head>
 
   <body>
@@ -82,9 +94,9 @@
           $kategori = $f["id_kategori"];
           $id_sutradara = $f["id_sutradara"];
           $rating_film = $f["id_rating"];
-          $tag = $f ["tag"];
-          $video = $f ["video"];
-        
+          $tag = $f["tag"];
+          $video = $f["video"];
+
         }
         ?>
           <!-- Navbar -->
@@ -195,33 +207,32 @@
                       <h5 class="mb-0">Edit Film</h5>
                     </div>
                     <div class="card-body">
-                      <form>
-                        <!-- Form untuk menambah data -->
-                        <form action="proses_edit.php?id=<?php echo $id ?>" method="post" enctype="multipart/form-data"
+                    <form action="proses_edit.php?id=<?php echo $id ?>" method="post" enctype="multipart/form-data"
                             onsubmit="return confirmUpdate();">
+                        <!-- Form untuk menambah data -->
                         <div class="row mb-3">
                           <label class="col-sm-2 col-form-label" for="basic-default-name">ID Film</label>
                           <div class="col-sm-10">
-                          <input type="text" class="form-control" id="id" name="id" disabled>
+                          <input type="text" class="form-control" id="id" name="id" disabled value="<?php echo $id ?>">
                           </div>
                         </div>
                         <div class="row mb-3">
                           <label class="col-sm-2 col-form-label" for="basic-default-name">Judul Film</label>
                           <div class="col-sm-10">
-                          <input type="text" class="form-control" id="judul_film" name="judul_film" required>
+                          <input type="text" class="form-control" id="judul_film" name="judul_film" required value="<?php echo $judul_film ?>">
                           </div>
                         </div>
                         <div class="row mb-3">
                           <label class="col-sm-2 col-form-label" for="basic-default-company">Tahun Rilis</label>
                           <div class="col-sm-10">
-                          <input type="date" class="form-control" id="tahun_rilis" name="tahun_rilis" required>
+                          <input type="date" class="form-control" id="tahun_rilis" name="tahun_rilis" required value="<?php echo $tahun_rilis ?>">
                           </div>
                         </div>
                         <div class="row mb-3">
                           <label class="col-sm-2 col-form-label" for="basic-default-email">Sinopsis</label>
                           <div class="col-sm-10">
                             <div class="input-group input-group-merge">
-                            <textarea id="sinopsis" name="sinopsis" rows="4" cols="50" class="form-control" required></textarea>
+                            <textarea id="sinopsis" name="sinopsis" rows="4" cols="50" class="form-control" required><?php echo $sinopsis; ?></textarea>
                               <span class="input-group-text" id="basic-default-email2"></span>
                             </div>
                           </div>
@@ -229,40 +240,131 @@
                         <div class="row mb-3">
                           <label class="col-sm-2 col-form-label" for="basic-default-phone">Nama Pemain</label>
                           <div class="col-sm-10">                
-                            <input type="text" class="form-control" id="nama_pemain" name="nama_pemain" required>
+                            <input type="text" class="form-control" id="nama_pemain" name="nama_pemain" required value="<?php echo $nama_pemain ?>">
                           </div>
                         </div>
                         <div class="row mb-3">
-                          <label class="col-sm-2 col-form-label" for="basic-default-message">Genre Film</label>
-                          <div class="col-sm-10">
-                          <?php
-                                $query = mysqli_query($conn, "SELECT DISTINCT genre FROM film");
-                                $genres = array();
-                                while ($data = mysqli_fetch_array($query)) {
-                                    $genre = $data['genre'];
-                                    if (!empty($genre)) {
-                                        $genre_list = explode(',', $genre);
-                                        $genres = array_merge($genres, $genre_list);
-                                    }
-                                }
+                          <label class="col-sm-2 col-form-label" for="basic-default-phone">Genre</label> 
+                        <div class="form-group col-sm-10">
+                                    <input type="checkbox" name = "genre[]" value="Advanture" <?php echo (in_array("Advanture", explode(',', $genre))) ? 'checked' : ''; ?>>
+                                    <label>Advanture</label>
 
-                                $genres = array_unique(array_map('trim', $genres));
+                                    <input type="checkbox" name = "genre[]" value="Action" <?php echo (in_array("Action", explode(',', $genre))) ? 'checked' : ''; ?>>
+                                    <label>Action</label>
 
-                                foreach ($genres as $genre) {
-                                    echo '<input type="checkbox" id="genre_' . $genre . '" name="genre[]" value="' . $genre . '">';
-                                    echo '<label for="genre_' . $genre . '">' . $genre . '</label><br>';
-                                }
-                                ?>
-                          </div>
+                                    <input type="checkbox" name = "genre[]" value="Drama" <?php echo (in_array("Drama", explode(',', $genre))) ? 'checked' : ''; ?>>
+                                    <label>Drama</label>
+
+                                    <input type="checkbox" name = "genre[]" value="Romance" <?php echo (in_array("Romance", explode(',', $genre))) ? 'checked' : ''; ?>>
+                                    <label>Romance</label>
+
+                                    <input type="checkbox" name = "genre[]" value="Horor" <?php echo (in_array("Horor", explode(',', $genre))) ? 'checked' : ''; ?>>
+                                    <label>Horor</label>
+
+                                    <input type="checkbox" name = "genre[]" value="Comedi" <?php echo (in_array("Comedi", explode(',', $genre))) ? 'checked' : ''; ?>>
+                                    <label>Comedi</label>
+
+                                    <input type="checkbox" name = "genre[]" value="Animation" <?php echo (in_array("Animation", explode(',', $genre))) ? 'checked' : ''; ?>>
+                                    <label>Animation</label>
+
+                                    <input type="checkbox" name = "genre[]" value="Crime" <?php echo (in_array("Crime", explode(',', $genre))) ? 'checked' : ''; ?>>
+                                    <label>Crime</label>
+
+                                    <input type="checkbox" name = "genre[]" value="Fantasy" <?php echo (in_array("Fantasy", explode(',', $genre))) ? 'checked' : ''; ?>>
+                                    <label>Fantasy</label>
+                                    
+                                    </div>
                         </div>
+                                
                         <div class="row mb-3">
                           <label class="col-sm-2 col-form-label" for="basic-default-phone">Upload Gambar</label>
                           <div class="col-sm-10">                
-                          <input type="file" class="form-control-file" name="fileToUpload" id="fileToUpload"accept="image/*" required>                          </div>
+                          <input type="file" class="form-control-file" name="fileToUpload" id="fileToUpload" accept="image/*">
+                          <td colspan="3"><img src="<?php echo $gambar ?>" width="100"></td>
+                         </div>
+                        </div>
+                        <div class="row mb-3">
+                          <label class="col-sm-2 col-form-label" for="basic-default-phone">Video</label>
+                          <div class="col-sm-10">                
+                            <input type="text" class="form-control" id="video" name="video" value="<?php echo $video ?>">
+                          </div>
+                        </div>
+                        <div class="row mb-3">
+                          <label class="col-sm-2 col-form-label" for="basic-default-phone">Kategori</label> 
+                        <div class="form-group col-sm-10">
+                                    <select id="kategori" name="kategori" class="form-control">
+                                    <option value="">Default</option>
+                                    <option value="1" <?php if ($kategori == '1')
+                                      echo 'selected'; ?>>Indonesia</option>
+                                    <option value="2" <?php if ($kategori == '2')
+                                      echo 'selected'; ?>>Korea</option>
+                                    <option value="3" <?php if ($kategori == '3')
+                                      echo 'selected'; ?>>China</option>
+                                    <option value="4" <?php if ($kategori == '4')
+                                      echo 'selected'; ?>>Jepang</option>
+                                    <option value="5" <?php if ($kategori == '5')
+                                      echo 'selected'; ?>>Thailand</option>
+                                    <option value="6" <?php if ($kategori == '6')
+                                      echo 'selected'; ?>>Amerika</option>
+                                    </select>
+                                    <!-- <div class="col-md-12">
+                                        <select class="form-select" id="kategori" required name="kategori">
+                                            <option selected>
+                                                <?php
+                                                $query = mysqli_query($conn, "SELECT * FROM kategori");
+                                                if (mysqli_num_rows($query) > 0) {
+                                                  while ($data = mysqli_fetch_array($query)) {
+                                                    echo "<option value='" . $data["kategori"] . "' if ($kategori == '" . $data["id_kategori"] . "') echo 'selected'; >" . $data["kategori"] . "</option>";
+                                                  }
+                                                } else {
+                                                  echo "<option value=''>No items available</option>";
+                                                }
+                                                ?>
+                                            </option>
+                                        </select>
+                                    </div> -->
+                                </div>
+                        </div>
+                        <div class="row mb-3">
+                          <label class="col-sm-2 col-form-label" for="basic-default-phone">Kategori</label> 
+                        <div class="form-group col-sm-10">
+                                    <select class="form-control" id="sutradara" name="sutradara">
+                                        <?php
+                                        $querysutradara = mysqli_query($conn, "SELECT * FROM sutradara");
+
+                                        if (mysqli_num_rows($querysutradara) > 0) {
+                                          while ($datasutradara = mysqli_fetch_array($querysutradara)) {
+                                            $selected = ($datasutradara['id_sutradara'] == $id_sutradara) ? 'selected' : '';
+                                            echo "<option value='" . $datasutradara["id_sutradara"] . "' $selected>" . $datasutradara["nama_sutradara"] . "</option>";
+                                          }
+                                        } else {
+                                          echo "<option value=''>Tidak ada item tersedia</option>";
+                                        }
+                                        ?>
+                                    </select>
+                                </div>
+                        </div>
+                        <div class="row mb-3">
+                          <label class="col-sm-2 col-form-label" for="basic-default-phone">Tag</label> 
+                          <div class="form-group col-sm-10">
+                            <select class="form-control" id="tag" name="tag">
+                                     <?php
+                                     $querytag = mysqli_query($conn, "SELECT DISTINCT tag FROM film");
+                                     if (mysqli_num_rows($querytag) > 0) {
+                                       while ($datatag = mysqli_fetch_array($querytag)) {
+                                         $selected = ($datatag['tag'] == $tag) ? 'selected' : '';
+                                         echo "<option value='" . $datatag["tag"] . "' $selected>" . $datatag["tag"] . "</option>";
+                                       }
+                                     } else {
+                                       echo "<option value=''>Tidak ada item tersedia</option>";
+                                     }
+                                     ?>
+                              </select>
+                            </div>
                         </div>
                         <div class="row justify-content-end">
                           <div class="col-sm-10">
-                            <button type="submit" class="btn btn-primary">Send</button>
+                            <button type="submit" name="Submit" class="btn btn-primary">Send</button>
                           </div>
                         </div>
                       </form>

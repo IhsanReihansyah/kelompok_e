@@ -177,7 +177,7 @@
                       <h5 class="mb-0">Tambah Film</h5>
                     </div>
                     <div class="card-body">
-                      <form>
+                      <form action="proses_tambah_film.php" method="POST">
                         <div class="row mb-3">
                           <label class="col-sm-2 col-form-label" for="basic-default-name">Judul Film</label>
                           <div class="col-sm-10">
@@ -209,23 +209,23 @@
                           <label class="col-sm-2 col-form-label" for="basic-default-message">Genre Film</label>
                           <div class="col-sm-10">
                           <?php
-                                $query = mysqli_query($conn, "SELECT DISTINCT genre FROM film");
-                                $genres = array();
-                                while ($data = mysqli_fetch_array($query)) {
-                                    $genre = $data['genre'];
-                                    if (!empty($genre)) {
-                                        $genre_list = explode(',', $genre);
-                                        $genres = array_merge($genres, $genre_list);
-                                    }
-                                }
+                          $query = mysqli_query($conn, "SELECT DISTINCT genre FROM film");
+                          $genres = array();
+                          while ($data = mysqli_fetch_array($query)) {
+                            $genre = $data['genre'];
+                            if (!empty($genre)) {
+                              $genre_list = explode(',', $genre);
+                              $genres = array_merge($genres, $genre_list);
+                            }
+                          }
 
-                                $genres = array_unique(array_map('trim', $genres));
+                          $genres = array_unique(array_map('trim', $genres));
 
-                                foreach ($genres as $genre) {
-                                    echo '<input type="checkbox" id="genre_' . $genre . '" name="genre[]" value="' . $genre . '">';
-                                    echo '<label for="genre_' . $genre . '">' . $genre . '</label><br>';
-                                }
-                                ?>
+                          foreach ($genres as $genre) {
+                            echo '<input type="checkbox" id="genre_' . $genre . '" name="genre[]" value="' . $genre . '">';
+                            echo '<label for="genre_' . $genre . '">' . $genre . '</label><br>';
+                          }
+                          ?>
                           </div>
                         </div>
                         
@@ -234,9 +234,69 @@
                           <div class="col-sm-10">                
                           <input type="file" class="form-control-file" name="fileToUpload" id="fileToUpload"accept="image/*" required>                          </div>
                         </div>
+                        <div class="row mb-3">
+                          <label class="col-sm-2 col-form-label" for="basic-default-phone">Link youtube</label>
+                          <div class="col-sm-10">                
+                            <input type="text" class="form-control" id="video" name="video" required>
+                          </div>
+                        </div>
+                        <div class="row mb-3">
+                                <label class="col-sm-2 col-form-label" for="kategori">Kategori</label>
+                                <div class="col-sm-10">  
+                                <select class="form-control" id="kategori" name="kategori" required>
+                                    <option selected>
+                                        <?php
+                                        $query = mysqli_query($conn, "SELECT * FROM kategori");
+                                        if (mysqli_num_rows($query) > 0) {
+                                          while ($data = mysqli_fetch_array($query)) {
+                                            echo "<option value='" . $data["id_kategori"] . "'>" . $data["kategori"] . "</option>";
+                                          }
+                                        } else {
+                                          echo "<option value=''>No items available</option>";
+                                        }
+                                        ?>
+                                </select>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label class="col-sm-2 col-form-label" for="kategori">Sutradara</label>
+                                <div class="col-sm-10">  
+                                <select class="form-control" id="nama_sutradara" name="nama_sutradara" required>
+                                    <option selected>
+                                        <?php
+                                        $query = mysqli_query($conn, "SELECT * FROM sutradara");
+                                        if (mysqli_num_rows($query) > 0) {
+                                          while ($data = mysqli_fetch_array($query)) {
+                                            echo "<option value='" . $data["id_sutradara"] . "'>" . $data["nama_sutradara"] . "</option>";
+                                          }
+                                        } else {
+                                          echo "<option value=''>No items available</option>";
+                                        }
+                                        ?>
+                                </select>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label class="col-sm-2 col-form-label" for="kategori">Tag</label>
+                                <div class="col-sm-10">  
+                                <select class="form-control" id="tag" name="tag" required>
+                                    <option selected>
+                                        <?php
+                                        $query = mysqli_query($conn, "SELECT DISTINCT tag FROM film");
+                                        if (mysqli_num_rows($query) > 0) {
+                                          while ($data = mysqli_fetch_array($query)) {
+                                            echo "<option value='" . $data["tag"] . "'>" . $data["tag"] . "</option>";
+                                          }
+                                        } else {
+                                          echo "<option value=''>No items available</option>";
+                                        }
+                                        ?>
+                                </select>
+                                </div>
+                            </div>
                         <div class="row justify-content-end">
                           <div class="col-sm-10">
-                            <button type="submit" class="btn btn-primary">Send</button>
+                            <button type="submit" name="Submit" class="btn btn-primary">Send</button>
                           </div>
                         </div>
                       </form>

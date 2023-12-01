@@ -30,5 +30,5 @@ if (isset($_POST['genre']) && is_array($_POST['genre'])) {
 
 $result = mysqli_query($conn, "UPDATE `film` set `judul_film` = '$judul_film', `tahun_rilis` = '$tahun_rilis', `sinopsis` = '$sinopsis', `genre` ='$selected_genres', `nama_pemain` = '$nama_pemain',`tag` = '$tag',`video` = '$video', `id_kategori` = '$kategori', `id_sutradara` = '$nama_sutradara' where `id` = '$_GET[id]'");
 
-header("Location:admin.php");
+header("Location: index.php");
 
