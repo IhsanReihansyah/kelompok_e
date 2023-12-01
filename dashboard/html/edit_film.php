@@ -93,7 +93,7 @@
           $gambar = $f["gambar"];
           $kategori = $f["id_kategori"];
           $id_sutradara = $f["id_sutradara"];
-          $rating_film = $f["id_rating"];
+          // $rating_film = $f["id_rating"];
           $tag = $f["tag"];
           $video = $f["video"];
 
@@ -207,9 +207,9 @@
                       <h5 class="mb-0">Edit Film</h5>
                     </div>
                     <div class="card-body">
+                    <!-- Form untuk menambah data -->
                     <form action="proses_edit.php?id=<?php echo $id ?>" method="post" enctype="multipart/form-data"
                             onsubmit="return confirmUpdate();">
-                        <!-- Form untuk menambah data -->
                         <div class="row mb-3">
                           <label class="col-sm-2 col-form-label" for="basic-default-name">ID Film</label>
                           <div class="col-sm-10">

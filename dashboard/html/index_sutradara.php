@@ -180,7 +180,7 @@
                     <thead>
                     <tr>
                                 <th>No</th>
-                                <th>ID Sutradara
+                                <th>ID Sutadara
                                 </th>
                                 <th>Nama</th>
                                 <th>Tanggal Lahir
@@ -207,12 +207,10 @@
                                   <i class="bx bx-dots-vertical-rounded"></i>
                                 </button>
                                 <div class="dropdown-menu">
-                                  <a class="dropdown-item" href="javascript:void(0);"
-                                    ><i class="bx bx-edit-alt me-2"></i> Edit</a
-                                  >
-                                  <a class="dropdown-item" href="javascript:void(0);"
-                                    ><i class="bx bx-trash me-2"></i> Delete</a
-                                  >
+                                  <a class="dropdown-item" href="edit_sutradara.php?id_sutradara=<?php echo $data["id_sutradara"] ?>"
+                                    ><i class="bx bx-edit-alt me-2"></i> Edit</a>
+                                  <a class="dropdown-item" href="proses_hapus_sutradara.php?id_sutradara=<?php echo $data["id_sutradara"] ?>"
+                                    ><i class="bx bx-trash me-2"></i> Delete</a>
                                 </div>
                               </div>
                             </td>
