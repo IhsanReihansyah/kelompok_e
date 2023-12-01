@@ -68,7 +68,25 @@
 
         <!-- Layout container -->
         <div class="layout-page">
-        <?php include 'koneksi.php'; ?>
+        <?php include 'koneksi.php';
+        $film = mysqli_query($conn, "SELECT * from film where id='$_GET[id]'");
+
+        while ($f = mysqli_fetch_array($film)) {
+          $id = $f["id"];
+          $judul_film = $f["judul_film"];
+          $tahun_rilis = $f["tahun_rilis"];
+          $sinopsis = $f["sinopsis"];
+          $genre = $f["genre"];
+          $nama_pemain = $f["nama_pemain"];
+          $gambar = $f["gambar"];
+          $kategori = $f["id_kategori"];
+          $id_sutradara = $f["id_sutradara"];
+          $rating_film = $f["id_rating"];
+          $tag = $f ["tag"];
+          $video = $f ["video"];
+        
+        }
+        ?>
           <!-- Navbar -->
 
           <nav
@@ -174,10 +192,19 @@
                 <div class="col-xxl">
                   <div class="card mb-4">
                     <div class="card-header d-flex align-items-center justify-content-between">
-                      <h5 class="mb-0">Tambah Film</h5>
+                      <h5 class="mb-0">Edit Film</h5>
                     </div>
                     <div class="card-body">
                       <form>
+                        <!-- Form untuk menambah data -->
+                        <form action="proses_edit.php?id=<?php echo $id ?>" method="post" enctype="multipart/form-data"
+                            onsubmit="return confirmUpdate();">
+                        <div class="row mb-3">
+                          <label class="col-sm-2 col-form-label" for="basic-default-name">ID Film</label>
+                          <div class="col-sm-10">
+                          <input type="text" class="form-control" id="id" name="id" disabled>
+                          </div>
+                        </div>
                         <div class="row mb-3">
                           <label class="col-sm-2 col-form-label" for="basic-default-name">Judul Film</label>
                           <div class="col-sm-10">
@@ -228,7 +255,6 @@
                                 ?>
                           </div>
                         </div>
-                        
                         <div class="row mb-3">
                           <label class="col-sm-2 col-form-label" for="basic-default-phone">Upload Gambar</label>
                           <div class="col-sm-10">                

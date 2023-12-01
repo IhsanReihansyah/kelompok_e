@@ -30,6 +30,12 @@
                 <div data-i18n="Analytics">Sutradara</div>
               </a>
             </li>
+            <li class="menu-item">
+              <a href="ks.php" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-home-circle"></i>
+                <div data-i18n="Analytics">Kritik dan Saran</div>
+              </a>
+            </li>
 
             <!-- Forms & Tables -->
             <li class="menu-header small text-uppercase"><span class="menu-header-text">Forms</span></li>
@@ -47,7 +53,11 @@
                 </li>
                 <li class="menu-item">
                   <a href="tambah_film.php" class="menu-link">
-                    <div data-i18n="Horizontal Form">Horizontal Form</div>
+                    <div data-i18n="Horizontal Form">Tambah Film</div>
+                  </a>
+                </li><li class="menu-item">
+                  <a href="tambah_sutradara.php" class="menu-link">
+                    <div data-i18n="Horizontal Form">Tambah Sutradara</div>
                   </a>
                 </li>
               </ul>

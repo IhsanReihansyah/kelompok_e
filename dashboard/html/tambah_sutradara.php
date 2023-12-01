@@ -174,65 +174,27 @@
                 <div class="col-xxl">
                   <div class="card mb-4">
                     <div class="card-header d-flex align-items-center justify-content-between">
-                      <h5 class="mb-0">Tambah Film</h5>
+                      <h5 class="mb-0">Tambah Sutradara</h5>
                     </div>
                     <div class="card-body">
                       <form>
                         <div class="row mb-3">
-                          <label class="col-sm-2 col-form-label" for="basic-default-name">Judul Film</label>
+                          <label class="col-sm-2 col-form-label" for="basic-default-name">Nama :</label>
                           <div class="col-sm-10">
-                          <input type="text" class="form-control" id="judul_film" name="judul_film" required>
+                          <input type="text" class="form-control" id="nama_sutradara" name="nama_sutradara" required>
                           </div>
                         </div>
                         <div class="row mb-3">
-                          <label class="col-sm-2 col-form-label" for="basic-default-company">Tahun Rilis</label>
+                          <label class="col-sm-2 col-form-label" for="basic-default-company">Tanggal Lahir:</label>
                           <div class="col-sm-10">
-                          <input type="date" class="form-control" id="tahun_rilis" name="tahun_rilis" required>
+                          <input type="date" class="form-control" id="tanggal_lahir" name="tanggal_lahir" required>
                           </div>
                         </div>
                         <div class="row mb-3">
-                          <label class="col-sm-2 col-form-label" for="basic-default-email">Sinopsis</label>
+                          <label class="col-sm-2 col-form-label" for="basic-default-email">Negara :</label>
                           <div class="col-sm-10">
-                            <div class="input-group input-group-merge">
-                            <textarea id="sinopsis" name="sinopsis" rows="4" cols="50" class="form-control" required></textarea>
-                              <span class="input-group-text" id="basic-default-email2"></span>
-                            </div>
+                            <input type="text" class="form-control" id="negara" name="negara" required>
                           </div>
-                        </div>
-                        <div class="row mb-3">
-                          <label class="col-sm-2 col-form-label" for="basic-default-phone">Nama Pemain</label>
-                          <div class="col-sm-10">                
-                            <input type="text" class="form-control" id="nama_pemain" name="nama_pemain" required>
-                          </div>
-                        </div>
-                        <div class="row mb-3">
-                          <label class="col-sm-2 col-form-label" for="basic-default-message">Genre Film</label>
-                          <div class="col-sm-10">
-                          <?php
-                                $query = mysqli_query($conn, "SELECT DISTINCT genre FROM film");
-                                $genres = array();
-                                while ($data = mysqli_fetch_array($query)) {
-                                    $genre = $data['genre'];
-                                    if (!empty($genre)) {
-                                        $genre_list = explode(',', $genre);
-                                        $genres = array_merge($genres, $genre_list);
-                                    }
-                                }
-
-                                $genres = array_unique(array_map('trim', $genres));
-
-                                foreach ($genres as $genre) {
-                                    echo '<input type="checkbox" id="genre_' . $genre . '" name="genre[]" value="' . $genre . '">';
-                                    echo '<label for="genre_' . $genre . '">' . $genre . '</label><br>';
-                                }
-                                ?>
-                          </div>
-                        </div>
-                        
-                        <div class="row mb-3">
-                          <label class="col-sm-2 col-form-label" for="basic-default-phone">Upload Gambar</label>
-                          <div class="col-sm-10">                
-                          <input type="file" class="form-control-file" name="fileToUpload" id="fileToUpload"accept="image/*" required>                          </div>
                         </div>
                         <div class="row justify-content-end">
                           <div class="col-sm-10">

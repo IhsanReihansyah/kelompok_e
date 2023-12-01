@@ -27,7 +27,7 @@
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
 
-    <title>Horizontal Layouts - Forms | Sneat - Bootstrap 5 HTML Admin Template - Pro</title>
+    <title>Tables - Basic Tables | Sneat - Bootstrap 5 HTML Admin Template - Pro</title>
 
     <meta name="description" content="" />
 
@@ -68,7 +68,10 @@
 
         <!-- Layout container -->
         <div class="layout-page">
-        <?php include 'koneksi.php'; ?>
+        <?php
+        include 'koneksi.php';
+        $query = mysqli_query($conn, "SELECT * FROM kritikdansaran;");
+        ?>
           <!-- Navbar -->
 
           <nav
@@ -167,83 +170,53 @@
             <!-- Content -->
 
             <div class="container-xxl flex-grow-1 container-p-y">
+              <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Tables /</span> Basic Tables</h4>
 
-              <!-- Basic Layout & Basic with Icons -->
-              <div class="row">
-                <!-- Basic Layout -->
-                <div class="col-xxl">
-                  <div class="card mb-4">
-                    <div class="card-header d-flex align-items-center justify-content-between">
-                      <h5 class="mb-0">Tambah Film</h5>
-                    </div>
-                    <div class="card-body">
-                      <form>
-                        <div class="row mb-3">
-                          <label class="col-sm-2 col-form-label" for="basic-default-name">Judul Film</label>
-                          <div class="col-sm-10">
-                          <input type="text" class="form-control" id="judul_film" name="judul_film" required>
-                          </div>
-                        </div>
-                        <div class="row mb-3">
-                          <label class="col-sm-2 col-form-label" for="basic-default-company">Tahun Rilis</label>
-                          <div class="col-sm-10">
-                          <input type="date" class="form-control" id="tahun_rilis" name="tahun_rilis" required>
-                          </div>
-                        </div>
-                        <div class="row mb-3">
-                          <label class="col-sm-2 col-form-label" for="basic-default-email">Sinopsis</label>
-                          <div class="col-sm-10">
-                            <div class="input-group input-group-merge">
-                            <textarea id="sinopsis" name="sinopsis" rows="4" cols="50" class="form-control" required></textarea>
-                              <span class="input-group-text" id="basic-default-email2"></span>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="row mb-3">
-                          <label class="col-sm-2 col-form-label" for="basic-default-phone">Nama Pemain</label>
-                          <div class="col-sm-10">                
-                            <input type="text" class="form-control" id="nama_pemain" name="nama_pemain" required>
-                          </div>
-                        </div>
-                        <div class="row mb-3">
-                          <label class="col-sm-2 col-form-label" for="basic-default-message">Genre Film</label>
-                          <div class="col-sm-10">
-                          <?php
-                                $query = mysqli_query($conn, "SELECT DISTINCT genre FROM film");
-                                $genres = array();
+              <!-- Responsive Table -->
+              <div class="card">
+                <h5 class="card-header">Data Kritik Dan Saran</h5>
+                <div class="table-responsive text-nowrap">
+                  <table class="table">
+                    <thead>
+                      <tr class="text-nowrap">
+                        <th>No</th>
+                        <th>Id</th>
+                        <th>Nama</th>
+                        <th>Email</th>
+                        <th>Pesan</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                            <?php if (mysqli_num_rows($query) > 0) { ?>
+                                <?php
+                                $no = 1;
                                 while ($data = mysqli_fetch_array($query)) {
-                                    $genre = $data['genre'];
-                                    if (!empty($genre)) {
-                                        $genre_list = explode(',', $genre);
-                                        $genres = array_merge($genres, $genre_list);
-                                    }
-                                }
-
-                                $genres = array_unique(array_map('trim', $genres));
-
-                                foreach ($genres as $genre) {
-                                    echo '<input type="checkbox" id="genre_' . $genre . '" name="genre[]" value="' . $genre . '">';
-                                    echo '<label for="genre_' . $genre . '">' . $genre . '</label><br>';
-                                }
-                                ?>
-                          </div>
-                        </div>
-                        
-                        <div class="row mb-3">
-                          <label class="col-sm-2 col-form-label" for="basic-default-phone">Upload Gambar</label>
-                          <div class="col-sm-10">                
-                          <input type="file" class="form-control-file" name="fileToUpload" id="fileToUpload"accept="image/*" required>                          </div>
-                        </div>
-                        <div class="row justify-content-end">
-                          <div class="col-sm-10">
-                            <button type="submit" class="btn btn-primary">Send</button>
-                          </div>
-                        </div>
-                      </form>
-                    </div>
-                  </div>
+                                    ?>
+                                    <tr>
+                                        <td>
+                                            <?php echo $no ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $data["id"]; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $data["nama"]; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $data["email"]; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $data["pesan"]; ?>
+                                        </td>
+                                    </tr>
+                                    <?php $no++;
+                                } ?>
+                            <?php } ?>
+                        </tbody>
+                  </table>
                 </div>
               </div>
+              <!--/ Responsive Table -->
             </div>
             <!-- / Content -->
 

@@ -10,7 +10,7 @@
 * Copyright ThemeSelection (https://themeselection.com)
 
 =========================================================
- -->
+-->
 <!-- beautify ignore:start -->
 <html
   lang="en"
@@ -197,17 +197,10 @@
                                     ?>
                           <tr>
                             <th scope="row"><?php echo $no ?></th>
-                            <td><?php echo $data["id"]; ?></td>
-                            <td><?php echo $data["judul_film"]; ?></td>
-                            <td><?php echo $data["tahun_rilis"]; ?></td>
-                            <td><?php echo $data["sinopsis"]; ?></td>
-                            <td><?php echo $data["genre"]; ?></td>
-                            <td><?php echo $data["nama_pemain"]; ?></td>
-                            <td> <img src="<?php echo $data["gambar"] ?>" width="100"> </td>
-                            <td><?php echo $data["video"]; ?></td>
-                            <td><?php echo $data["tag"]; ?></td>
-                            <td><?php echo $data["kategori"]; ?></td>
+                            <td><?php echo $data["id_sutradara"]; ?></td>
                             <td><?php echo $data["nama_sutradara"]; ?></td>
+                            <td><?php echo $data["tanggal_lahir"]; ?></td>
+                            <td><?php echo $data["negara"]; ?></td>
                             <td>
                               <div class="dropdown">
                                 <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
