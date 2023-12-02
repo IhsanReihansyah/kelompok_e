@@ -7,6 +7,6 @@ $negara = $_POST["negara"];
 
 $result = mysqli_query($conn, "UPDATE `sutradara` set `nama_sutradara` = '$nama_sutradara', `tanggal_lahir` = '$tanggal_lahir', `negara` = '$negara' where `id_sutradara` = '$_GET[id_sutradara]'");
 
-header("Location:data_sutradara.php");
+header("Location:index_sutradara.php");
 
 ?>
