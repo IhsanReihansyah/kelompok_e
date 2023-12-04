@@ -117,7 +117,7 @@
                             </div>
                           </div>
                           <div class="flex-grow-1">
-                            <span class="fw-semibold d-block">MyAdmin</span>
+                            <span class="fw-semibold d-block">Dirgham</span>
                             <small class="text-muted">Admin</small>
                           </div>
                         </div>
@@ -149,11 +149,11 @@
             <!-- Content -->
 
             <div class="container-xxl flex-grow-1 container-p-y">
-              <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Tables /</span> Basic Tables</h4>
+              <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Tables /</span> Data Sutradara</h4>
 
               <!-- Responsive Table -->
               <div class="card">
-                <h5 class="card-header">Data Film</h5>
+                <h5 class="card-header">Data Sutradara</h5>
                 <div class="table-responsive text-nowrap">
                   <table class="table">
                     <thead>

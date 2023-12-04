@@ -114,7 +114,7 @@
                             </div>
                           </div>
                           <div class="flex-grow-1">
-                            <span class="fw-semibold d-block">MyAdmin</span>
+                            <span class="fw-semibold d-block">Dirgham</span>
                             <small class="text-muted">Admin</small>
                           </div>
                         </div>
@@ -208,7 +208,7 @@
                         <div class="row mb-3">
                           <label class="col-sm-2 col-form-label" for="basic-default-phone">Upload Gambar</label>
                           <div class="col-sm-10">                
-                          <input type="file" class="form-control-file" name="fileToUpload" id="fileToUpload"accept="image/*" required>                          </div>
+                          <input type="file" class="form-control-file" name="fileToUpload" id="fileToUpload"accept="images/*" required>                          </div>
                         </div>
                         <div class="row mb-3">
                           <label class="col-sm-2 col-form-label" for="basic-default-phone">Link youtube</label>
@@ -253,34 +253,40 @@
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <label class="col-sm-2 col-form-label" for="kategori">Tag</label>
-                                <div class="col-sm-10">  
-                                <select class="form-control" id="tag" name="tag" required>
-                                    <option selected>
-                                        <?php
-                                        $query = mysqli_query($conn, "SELECT DISTINCT tag FROM film");
-                                        if (mysqli_num_rows($query) > 0) {
-                                          while ($data = mysqli_fetch_array($query)) {
-                                            echo "<option value='" . $data["tag"] . "'>" . $data["tag"] . "</option>";
-                                          }
-                                        } else {
-                                          echo "<option value=''>No items available</option>";
-                                        }
-                                        ?>
-                                </select>
+                              <label class="col-sm-2 col-form-label" for="basic-default-message">Tag</label>
+                              <div class="col-sm-10">
+                                <?php
+                                $query = mysqli_query($conn, "SELECT DISTINCT tag FROM film");
+                                $tags = array();
+                                while ($data = mysqli_fetch_array($query)) {
+                                  $tagData = $data['tag'];
+                                  if (!empty($tagData)) {
+                                    $tagList = explode(',', $tagData);
+                                    $tags = array_merge($tags, $tagList);
+                                  }
+                                }
+                                
+                                $tags = array_unique(array_map('trim', $tags));
+                                
+                                foreach ($tags as $tag) {
+                                  echo '<input type="checkbox" id="tag_' . $tag . '" name="tag[]" value="' . $tag . '">';
+                                  echo '<label for="tag_' . $tag . '">' . $tag . '</label><br>';
+                                }
+
+                                ?>
                                 </div>
-                            </div>
-                        <div class="row justify-content-end">
-                          <div class="col-sm-10">
-                            <button type="submit" name="Submit" class="btn btn-primary">Send</button>
+                              </div>
+                              <div class="row justify-content-end">
+                                <div class="col-sm-10">
+                                  <button type="submit" name="Submit" class="btn btn-primary">Send</button>
+                                </div>
+                              </div>
+                            </form>
                           </div>
                         </div>
-                      </form>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </div>
-            </div>
             <!-- / Content -->
 
     <!-- Core JS -->

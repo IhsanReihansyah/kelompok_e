@@ -258,7 +258,7 @@
                         <div class="row mb-3">
                           <label class="col-sm-2 col-form-label" for="basic-default-phone">Upload Gambar</label>
                           <div class="col-sm-10">                
-                          <input type="file" class="form-control-file" name="fileToUpload" id="fileToUpload" accept="image/*">
+                          <input type="file" class="form-control-file" name="fileToUpload" id="fileToUpload" accept="images/*">
                           <td colspan="3"><img src="<?php echo $gambar ?>" width="100"></td>
                          </div>
                         </div>
@@ -325,33 +325,40 @@
                         </div>
                         <div class="row mb-3">
                           <label class="col-sm-2 col-form-label" for="basic-default-phone">Tag</label> 
-                          <div class="form-group col-sm-10">
-                            <select class="form-control" id="tag" name="tag">
-                                     <?php
-                                     $querytag = mysqli_query($conn, "SELECT DISTINCT tag FROM film");
-                                     if (mysqli_num_rows($querytag) > 0) {
-                                       while ($datatag = mysqli_fetch_array($querytag)) {
-                                         $selected = ($datatag['tag'] == $tag) ? 'selected' : '';
-                                         echo "<option value='" . $datatag["tag"] . "' $selected>" . $datatag["tag"] . "</option>";
-                                       }
-                                     } else {
-                                       echo "<option value=''>Tidak ada item tersedia</option>";
-                                     }
-                                     ?>
-                              </select>
+                        <div class="form-group col-sm-10">
+                                    <input type="checkbox" name = "tag[]" value="Latest Film" <?php echo (in_array("Latest Film", explode(',', $tag))) ? 'checked' : ''; ?>>
+                                    <label>Latest Film</label>
+
+                                    <input type="checkbox" name = "tag[]" value="Trending Now" <?php echo (in_array("Trending Now", explode(',', $tag))) ? 'checked' : ''; ?>>
+                                    <label>Trending Now</label>
+
+                                    <input type="checkbox" name = "tag[]" value="Most Repeat" <?php echo (in_array("Most Repeat", explode(',', $tag))) ? 'checked' : ''; ?>>
+                                    <label>Most Repeat</label>
+
+                                    <input type="checkbox" name = "tag[]" value="Top Views Day" <?php echo (in_array("Top Views Day", explode(',', $tag))) ? 'checked' : ''; ?>>
+                                    <label>Top Views Day</label>
+
+                                    <input type="checkbox" name = "tag[]" value="Top Views Week" <?php echo (in_array("Top Views Week", explode(',', $tag))) ? 'checked' : ''; ?>>
+                                    <label>Top Views Week</label>
+
+                                    <input type="checkbox" name = "tag[]" value="Top Views Month" <?php echo (in_array("Top Views Month", explode(',', $tag))) ? 'checked' : ''; ?>>
+                                    <label>Top Views Month</label>
+
+                                    <input type="checkbox" name = "tag[]" value="Top Views Year" <?php echo (in_array("Top Views Year", explode(',', $tag))) ? 'checked' : ''; ?>>
+                                    <label>Top Views Year</label>    
+                                    </div>
+                                  </div>
+                                  <div class="row justify-content-end">
+                                    <div class="col-sm-10">
+                                      <button type="submit" name="Submit" class="btn btn-primary">Send</button>
+                                    </div>
+                                  </div>
+                                </form>
+                              </div>
                             </div>
-                        </div>
-                        <div class="row justify-content-end">
-                          <div class="col-sm-10">
-                            <button type="submit" name="Submit" class="btn btn-primary">Send</button>
                           </div>
                         </div>
-                      </form>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+</div>
             <!-- / Content -->
 
     <!-- Core JS -->

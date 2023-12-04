@@ -18,8 +18,7 @@
   dir="ltr"
   data-theme="theme-default"
   data-assets-path="../assets/"
-  data-template="vertical-menu-template-free"
->
+  data-template="vertical-menu-template-free">
   <head>
     <meta charset="utf-8" />
     <meta
@@ -68,10 +67,7 @@
 
         <!-- Layout container -->
         <div class="layout-page">
-        <?php
-        include 'koneksi.php';
-        $query = mysqli_query($conn, "SELECT f.id, f.judul_film, f.tahun_rilis,f.sinopsis,f.genre,f.nama_pemain,f.gambar,f.video,f.tag,k.kategori,s.nama_sutradara FROM `film` AS f JOIN kategori AS k ON k.id_kategori = f.id_kategori JOIN sutradara AS s ON s.id_sutradara=f.id_sutradara ORDER BY f.id ASC;");
-        ?>
+        <?php include 'koneksi.php'; ?>
           <!-- Navbar -->
 
           <nav
@@ -149,72 +145,45 @@
             <!-- Content -->
 
             <div class="container-xxl flex-grow-1 container-p-y">
-              <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Tables /</span> Basic Tables</h4>
 
-              <!-- Responsive Table -->
-              <div class="card">
-                <h5 class="card-header">Data Film</h5>
-                <div class="table-responsive text-nowrap">
-                  <table class="table">
-                    <thead>
-                      <tr class="text-nowrap">
-                        <th>No</th>
-                        <th>Id Film</th>
-                        <th>Judul Film</th>
-                        <th>Tahun Rilis</th>
-                        <th>Sinopsis</th>
-                        <th>Genre</th>
-                        <th>Nama Pemain</th>
-                        <th>Gambar</th>
-                        <th>Video</th>
-                        <th>Tag</th>
-                        <th>Kategori</th>
-                        <th>Nama Sutradara</th>
-                        <th>Aksi</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                    <?php if (mysqli_num_rows($query) > 0) { ?>
-                                  <?php
-                                  $no = 1;
-                                  while ($data = mysqli_fetch_array($query)) {
-                                    ?>
-                          <tr>
-                            <th scope="row"><?php echo $no ?></th>
-                            <td><?php echo $data["id"]; ?></td>
-                            <td><?php echo $data["judul_film"]; ?></td>
-                            <td><?php echo $data["tahun_rilis"]; ?></td>
-                            <td><?php echo $data["sinopsis"]; ?></td>
-                            <td><?php echo $data["genre"]; ?></td>
-                            <td><?php echo $data["nama_pemain"]; ?></td>
-                            <td> <img src="<?php echo $data["gambar"] ?>" width="100"> </td>
-                            <td><?php echo $data["video"]; ?></td>
-                            <td><?php echo $data["tag"]; ?></td>
-                            <td><?php echo $data["kategori"]; ?></td>
-                            <td><?php echo $data["nama_sutradara"]; ?></td>
-                            <td>
-                              <div class="dropdown">
-                                <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                                  <i class="bx bx-dots-vertical-rounded"></i>
-                                </button>
-                                <div class="dropdown-menu">
-                                  <a class="dropdown-item" href="edit_film.php?id=<?php echo $data["id"] ?>"
-                                    ><i class="bx bx-edit-alt me-2"></i> Edit</a>
-                                  <a class="dropdown-item" href="proses_hapus.php?id=<?php echo $data["id"] ?>"
-                                    ><i class="bx bx-trash me-2"></i> Delete</a
-                                  >
-                                </div>
-                              </div>
-                            </td>
-                          </tr>
-                          <?php $no++;
-                                  } ?>
-                            <?php } ?>
-                    </tbody>
-                  </table>
+              <!-- Basic Layout & Basic with Icons -->
+              <div class="row">
+                <!-- Basic Layout -->
+                <div class="col-xxl">
+                  <div class="card mb-4">
+                    <div class="card-header d-flex align-items-center justify-content-between">
+                      <h5 class="mb-0">Tambah Sutradara</h5>
+                    </div>
+                    <div class="card-body">
+                      <form>
+                        <div class="row mb-3">
+                          <label class="col-sm-2 col-form-label" for="basic-default-name">Nama :</label>
+                          <div class="col-sm-10">
+                          <input type="text" class="form-control" id="nama_sutradara" name="nama_sutradara" required>
+                          </div>
+                        </div>
+                        <div class="row mb-3">
+                          <label class="col-sm-2 col-form-label" for="basic-default-company">Tanggal Lahir:</label>
+                          <div class="col-sm-10">
+                          <input type="date" class="form-control" id="tanggal_lahir" name="tanggal_lahir" required>
+                          </div>
+                        </div>
+                        <div class="row mb-3">
+                          <label class="col-sm-2 col-form-label" for="basic-default-email">Negara :</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" id="negara" name="negara" required>
+                          </div>
+                        </div>
+                        <div class="row justify-content-end">
+                          <div class="col-sm-10">
+                            <button type="submit" name="Submit" class="btn btn-primary">Send</button>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <!--/ Responsive Table -->
             </div>
             <!-- / Content -->
 
