@@ -155,7 +155,7 @@
                       <h5 class="mb-0">Tambah Sutradara</h5>
                     </div>
                     <div class="card-body">
-                      <form>
+                      <form action="proses_tambah_sutradara.php" method="POST">
                         <div class="row mb-3">
                           <label class="col-sm-2 col-form-label" for="basic-default-name">Nama :</label>
                           <div class="col-sm-10">
