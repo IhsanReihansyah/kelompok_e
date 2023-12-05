@@ -153,7 +153,7 @@
                       <h5 class="mb-0">Tambah Film</h5>
                     </div>
                     <div class="card-body">
-                      <form action="proses_tambah_film.php" method="POST">
+                      <form action="proses_tambah_film.php" method="POST" enctype="multipart/form-data">
                         <div class="row mb-3">
                           <label class="col-sm-2 col-form-label" for="basic-default-name">Judul Film</label>
                           <div class="col-sm-10">
