@@ -89,12 +89,18 @@
               <div class="navbar-nav align-items-center">
                 <div class="nav-item d-flex align-items-center">
                   <i class="bx bx-search fs-4 lh-0"></i>
+                  <form method="GET" action="index_sutradara.php">
                   <input
                     type="text"
+                    name="cari"
                     class="form-control border-0 shadow-none"
                     placeholder="Search..."
                     aria-label="Search..."
+                    value="<?php if (isset($_GET['cari'])) {
+                      echo $_GET['cari'];
+                    } ?>"
                   />
+                  </form>
                 </div>
               </div>
               <!-- /Search -->
@@ -104,7 +110,7 @@
                 <li class="nav-item navbar-dropdown dropdown-user dropdown">
                   <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
                     <div class="avatar avatar-online">
-                      <img src="../assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                      <img src="images/1.png" alt class="w-px-40 h-auto rounded-circle" />
                     </div>
                   </a>
                   <ul class="dropdown-menu dropdown-menu-end">
@@ -113,11 +119,11 @@
                         <div class="d-flex">
                           <div class="flex-shrink-0 me-3">
                             <div class="avatar avatar-online">
-                              <img src="../assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                              <img src="images/1.png" alt class="w-px-40 h-auto rounded-circle" />
                             </div>
                           </div>
                           <div class="flex-grow-1">
-                            <span class="fw-semibold d-block">Dirgham</span>
+                            <span class="fw-semibold d-block">Admin</span>
                             <small class="text-muted">Admin</small>
                           </div>
                         </div>
@@ -169,10 +175,19 @@
                             </tr>
                     </thead>
                     <tbody>
-                    <?php if (mysqli_num_rows($query) > 0) { ?>
+                    <?php 
+                    if (isset($_GET['cari'])) {
+                      $pencarian = $_GET['cari'];
+                      $query = "SELECT * FROM sutradara WHERE nama_sutradara LIKE '%" . $pencarian . "%' ORDER BY id_sutradara ASC";
+                  } else {
+                    $query = "SELECT * FROM sutradara ORDER BY id_sutradara ASC";
+                  }
+
+                  $tampil = mysqli_query($conn, $query);
+                    if (mysqli_num_rows($tampil) > 0) { ?>
                                   <?php
                                   $no = 1;
-                                  while ($data = mysqli_fetch_array($query)) {
+                                  while ($data = mysqli_fetch_array($tampil)) {
                                     ?>
                           <tr>
                             <th scope="row"><?php echo $no ?></th>

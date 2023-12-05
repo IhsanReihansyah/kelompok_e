@@ -226,31 +226,31 @@
                           <label class="col-sm-2 col-form-label" for="basic-default-phone">Genre</label> 
                         <div class="form-group col-sm-10">
                                     <input type="checkbox" name = "genre[]" value="Advanture" <?php echo (in_array("Advanture", explode(',', $genre))) ? 'checked' : ''; ?>>
-                                    <label>Advanture</label>
+                                    <label>Advanture</label><br>
 
                                     <input type="checkbox" name = "genre[]" value="Action" <?php echo (in_array("Action", explode(',', $genre))) ? 'checked' : ''; ?>>
-                                    <label>Action</label>
+                                    <label>Action</label><br>
 
                                     <input type="checkbox" name = "genre[]" value="Drama" <?php echo (in_array("Drama", explode(',', $genre))) ? 'checked' : ''; ?>>
-                                    <label>Drama</label>
+                                    <label>Drama</label><br>
 
                                     <input type="checkbox" name = "genre[]" value="Romance" <?php echo (in_array("Romance", explode(',', $genre))) ? 'checked' : ''; ?>>
-                                    <label>Romance</label>
+                                    <label>Romance</label><br>
 
                                     <input type="checkbox" name = "genre[]" value="Horor" <?php echo (in_array("Horor", explode(',', $genre))) ? 'checked' : ''; ?>>
-                                    <label>Horor</label>
+                                    <label>Horor</label><br>
 
                                     <input type="checkbox" name = "genre[]" value="Comedi" <?php echo (in_array("Comedi", explode(',', $genre))) ? 'checked' : ''; ?>>
-                                    <label>Comedi</label>
+                                    <label>Comedi</label><br>
 
                                     <input type="checkbox" name = "genre[]" value="Animation" <?php echo (in_array("Animation", explode(',', $genre))) ? 'checked' : ''; ?>>
-                                    <label>Animation</label>
+                                    <label>Animation</label><br>
 
                                     <input type="checkbox" name = "genre[]" value="Crime" <?php echo (in_array("Crime", explode(',', $genre))) ? 'checked' : ''; ?>>
-                                    <label>Crime</label>
+                                    <label>Crime</label><br>
 
                                     <input type="checkbox" name = "genre[]" value="Fantasy" <?php echo (in_array("Fantasy", explode(',', $genre))) ? 'checked' : ''; ?>>
-                                    <label>Fantasy</label>
+                                    <label>Fantasy</label><br>
                                     
                                     </div>
                         </div>
@@ -327,25 +327,25 @@
                           <label class="col-sm-2 col-form-label" for="basic-default-phone">Tag</label> 
                         <div class="form-group col-sm-10">
                                     <input type="checkbox" name = "tag[]" value="Latest Film" <?php echo (in_array("Latest Film", explode(',', $tag))) ? 'checked' : ''; ?>>
-                                    <label>Latest Film</label>
+                                    <label>Latest Film</label><br>
 
                                     <input type="checkbox" name = "tag[]" value="Trending Now" <?php echo (in_array("Trending Now", explode(',', $tag))) ? 'checked' : ''; ?>>
-                                    <label>Trending Now</label>
+                                    <label>Trending Now</label><br>
 
                                     <input type="checkbox" name = "tag[]" value="Most Repeat" <?php echo (in_array("Most Repeat", explode(',', $tag))) ? 'checked' : ''; ?>>
-                                    <label>Most Repeat</label>
+                                    <label>Most Repeat</label><br>
 
                                     <input type="checkbox" name = "tag[]" value="Top Views Day" <?php echo (in_array("Top Views Day", explode(',', $tag))) ? 'checked' : ''; ?>>
-                                    <label>Top Views Day</label>
+                                    <label>Top Views Day</label><br>
 
                                     <input type="checkbox" name = "tag[]" value="Top Views Week" <?php echo (in_array("Top Views Week", explode(',', $tag))) ? 'checked' : ''; ?>>
-                                    <label>Top Views Week</label>
+                                    <label>Top Views Week</label><br>
 
                                     <input type="checkbox" name = "tag[]" value="Top Views Month" <?php echo (in_array("Top Views Month", explode(',', $tag))) ? 'checked' : ''; ?>>
-                                    <label>Top Views Month</label>
+                                    <label>Top Views Month</label><br>
 
                                     <input type="checkbox" name = "tag[]" value="Top Views Year" <?php echo (in_array("Top Views Year", explode(',', $tag))) ? 'checked' : ''; ?>>
-                                    <label>Top Views Year</label>    
+                                    <label>Top Views Year</label><br>    
                                     </div>
                                   </div>
                                   <div class="row justify-content-end">
