@@ -189,48 +189,63 @@
 
                   $tampil = mysqli_query($conn, $query);
                     if (mysqli_num_rows($tampil) > 0) { ?>
-                                          <?php
-                                          $no = 1;
-                                          while ($data = mysqli_fetch_array($tampil)) {
-                                            ?>
-                                          <tr>
-                                            <th scope="row"><?php echo $no ?></th>
-                                            <td><?php echo $data["id"]; ?></td>
-                                            <td><?php echo $data["judul_film"]; ?></td>
-                                            <td><?php echo $data["tahun_rilis"]; ?></td>
-                                            <td><?php echo $data["sinopsis"]; ?></td>
-                                            <td><?php echo $data["genre"]; ?></td>
-                                            <td><?php echo $data["nama_pemain"]; ?></td>
-                                            <td> <img src="<?php echo $data["gambar"] ?>" width="100"> </td>
-                                            <td><?php echo $data["video"]; ?></td>
-                                            <td><?php echo $data["tag"]; ?></td>
-                                            <td><?php echo $data["kategori"]; ?></td>
-                                            <td><?php echo $data["nama_sutradara"]; ?></td>
-                                            <td>
-                                              <div class="dropdown">
-                                                <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                                                  <i class="bx bx-dots-vertical-rounded"></i>
-                                                </button>
-                                                <div class="dropdown-menu">
-                                                  <a class="dropdown-item" href="edit_film.php?id=<?php echo $data["id"] ?>"
-                                                    ><i class="bx bx-edit-alt me-2"></i> Edit</a>
-                                                  <a class="dropdown-item" href="proses_hapus.php?id=<?php echo $data["id"] ?>"
-                                                    ><i class="bx bx-trash me-2"></i> Delete</a
-                                                  >
-                                                </div>
-                                              </div>
-                                            </td>
-                                          </tr>
-                                          <?php $no++;
-                                          } ?>
-                            <?php } ?>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-              <!--/ Responsive Table -->
+                    <?php
+                    $no = 1;
+                    while ($data = mysqli_fetch_array($tampil)) {
+                      ?>
+                      <tr>
+                        <th scope="row"><?php echo $no ?></th>
+                        <td><?php echo $data["id"]; ?></td>
+                        <td><?php echo $data["judul_film"]; ?></td>
+                        <td><?php echo $data["tahun_rilis"]; ?></td>
+                        <td>
+                          <?php
+                          $sinopsis = $data["sinopsis"];
+                          $words = explode(" ", $sinopsis);
+                          $truncated = implode(" ", array_slice($words, 0, 20));
+                          echo $truncated;
+                          if (count($words) > 20) {
+                            ?>
+                            <span id="dots<?php echo $no; ?>">...</span>
+                            <span id="more<?php echo $no; ?>" style="display: none;">
+                            <?php echo implode(" ", array_slice($words, 20)); ?>
+                          </span>
+                          <a href="javascript:void(0);" onclick="toggleSinopsis(<?php echo $no; ?>)" id="readMoreBtn<?php echo $no; ?>">Baca selengkapnya</a>
+                          <?php
+                          }
+                          ?>
+                        </td>
+                        <td><?php echo $data["genre"]; ?></td>
+                        <td><?php echo $data["nama_pemain"]; ?></td>
+                        <td> <img src="<?php echo $data["gambar"] ?>" width="100"> </td>
+                        <td><?php echo $data["video"]; ?></td>
+                        <td><?php echo $data["tag"]; ?></td>
+                        <td><?php echo $data["kategori"]; ?></td>
+                        <td><?php echo $data["nama_sutradara"]; ?></td>
+                        <td>
+                          <div class="dropdown">
+                            <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                              <i class="bx bx-dots-vertical-rounded"></i>
+                            </button>
+                          <div class="dropdown-menu">
+                            <a class="dropdown-item" href="edit_film.php?id=<?php echo $data["id"] ?>">
+                            <i class="bx bx-edit-alt me-2"></i> Edit</a>
+                            <a class="dropdown-item" href="proses_hapus.php?id=<?php echo $data["id"] ?>">
+                            <i class="bx bx-trash me-2"></i> Delete</a>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <?php $no++;
+                  } ?>
+                  <?php } ?>
+                </tbody>
+              </table>
             </div>
-            <!-- / Content -->
+          </div>
+          <!--/ Responsive Table -->
+        </div>
+        <!-- / Content -->
 
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
@@ -248,7 +263,23 @@
     <script src="../assets/js/main.js"></script>
 
     <!-- Page JS -->
+    <script>
+      function toggleSinopsis(index) {
+        var dots = document.getElementById("dots" + index);
+        var moreText = document.getElementById("more" + index);
+        var btnText = document.getElementById("readMoreBtn" + index);
 
+        if (dots.style.display === "none") {
+          dots.style.display = "inline";
+          btnText.innerHTML = "Baca selengkapnya";
+          moreText.style.display = "none";
+        } else {
+          dots.style.display = "none";
+          btnText.innerHTML = "Baca kurang";
+          moreText.style.display = "inline";
+        }
+      }
+    </script>
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
   </body>
