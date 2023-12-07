@@ -1,3 +1,12 @@
+<?php
+session_start();
+
+if (isset($_SESSION['isAdminLogin']) != true) {
+    header("Location: login.php");
+    exit();
+}
+include 'koneksi.php';
+?>
 <!DOCTYPE html>
 
 <!-- =========================================================
@@ -72,7 +81,6 @@
           <!-- / Navbar -->
         <div class="layout-page">
         <?php
-        include 'koneksi.php';
         $query = mysqli_query($conn, "SELECT * FROM kritikdansaran;");
         ?>
           <!-- Content wrapper -->
