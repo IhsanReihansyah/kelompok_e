@@ -1,3 +1,12 @@
+<?php
+session_start();
+
+if (isset($_SESSION['isAdminLogin']) != true) {
+    header("Location: login.php");
+    exit();
+}
+include 'koneksi.php';
+?>
 <!DOCTYPE html>
 
 <!-- =========================================================
@@ -80,7 +89,7 @@
 
         <!-- Layout container -->
         <div class="layout-page">
-        <?php include 'koneksi.php';
+        <?php 
         $film = mysqli_query($conn, "SELECT * from film where id='$_GET[id]'");
 
         while ($f = mysqli_fetch_array($film)) {
