@@ -11,7 +11,7 @@ include 'koneksi.php';
 // Proses login jika formulir dikirim
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'];
-    $password = $_POST['password'];
+    $password = hash('sha256', $_POST['password']);
 
     $sql = "SELECT * FROM admin WHERE username = '$username' AND password = '$password'";
     $result = $conn->query($sql);
