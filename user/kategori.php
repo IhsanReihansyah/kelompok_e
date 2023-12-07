@@ -88,7 +88,7 @@
                                     <div class="col-lg-4 col-md-6 col-sm-6">
                                         <div class="product__item">
                                             <div class="product__item__pic set-bg"
-                                                data-setbg="../admin/<?php echo $data["gambar"] ?>">
+                                            data-setbg="../dashboard/admin/<?php echo $data["gambar"] ?>">
                                                 <!-- <div class="ep">
                                                     <?php echo $data["rating_film"] ?>
                                                 </div> -->

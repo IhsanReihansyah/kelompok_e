@@ -8,7 +8,7 @@ function tampilkanProduk1($query)
 
                 <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="product__item">
-                        <div class="product__item__pic set-bg" data-setbg="../admin/<?php echo $data["gambar"] ?>">
+                        <div class="product__item__pic set-bg" data-setbg="../dashboard/admin/<?php echo $data["gambar"] ?>">
                             <!-- <div class="ep">
                             <?php echo $data["rating_film"] ?>
                             </div> -->
@@ -38,7 +38,7 @@ function tampilkanProduk2($query)
 
                 <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="product__item">
-                        <div class="product__item__pic set-bg" data-setbg="../admin/<?php echo $data["gambar"] ?>">
+                        <div class="product__item__pic set-bg" data-setbg="../dashboard/admin/<?php echo $data["gambar"] ?>">
                             <!-- <div class="ep">
                                 <?php echo $data["ulasan_rating"] ?>
                             </div> -->
@@ -69,7 +69,7 @@ function tampilkanProduk3($query)
 
                 <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="product__item">
-                        <div class="product__item__pic set-bg" data-setbg="../admin/<?php echo $data["gambar"] ?>">
+                        <div class="product__item__pic set-bg" data-setbg="../dashboard/admin/<?php echo $data["gambar"] ?>">
                             <!-- <div class="ep">
                                 <?php echo $data["rating_film"] ?>
                             </div> -->
@@ -99,7 +99,7 @@ function tampilkanProduk4($query)
 
                 <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="product__item">
-                        <div class="product__item__pic set-bg" data-setbg="../admin/<?php echo $data["gambar"] ?>">
+                        <div class="product__item__pic set-bg" data-setbg="../dashboard/admin/<?php echo $data["gambar"] ?>">
                             <!-- <div class="ep">
                                 <?php echo $data["ulasan_rating"] ?>
                             </div> -->
@@ -129,7 +129,7 @@ function tampilkanProduk5($query)
 
                 <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="product__item">
-                        <div class="product__item__pic set-bg" data-setbg="../admin/<?php echo $data["gambar"] ?>">
+                        <div class="product__item__pic set-bg" data-setbg="../dashboard/admin/<?php echo $data["gambar"] ?>">
                             <!-- <div class="ep">
                                 <?php echo $data["rating_film"] ?>
                             </div> -->
@@ -159,7 +159,7 @@ function tampilkanProduk6($query)
 
                 <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="product__item">
-                        <div class="product__item__pic set-bg" data-setbg="../admin/<?php echo $data["gambar"] ?>">
+                        <div class="product__item__pic set-bg" data-setbg="../dashboard/admin/<?php echo $data["gambar"] ?>">
                             <!-- <div class="ep">
                                 <?php echo $data["rating_film"] ?>
                             </div> -->
@@ -186,7 +186,7 @@ function tampilkanProduktop($query)
     if (mysqli_num_rows($query) > 0) {
         while ($data = mysqli_fetch_array($query)) {
                 ?>
-                <div class="hero__items set-bg" data-setbg="../admin/<?php echo $data["gambar"] ?>">
+                <div class="hero__items set-bg" data-setbg="../dashboard/admin/<?php echo $data["gambar"] ?>">
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="hero__text">
@@ -213,7 +213,7 @@ function tampilkanGenre($query)
 
             <div class="col-lg-4 col-md-6 col-sm-6">
                 <div class="product__item">
-                    <div class="product__item__pic set-bg" data-setbg="../admin/<?php echo $data["gambar"] ?>">
+                    <div class="product__item__pic set-bg" data-setbg="../dashboard/admin/<?php echo $data["gambar"] ?>">
                         <!-- <div class="ep">
                                 <?php echo $data["ulasan_rating"] ?>
                             </div> -->
@@ -244,7 +244,7 @@ function tampilkantag($query)
                 <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="product__item">
                         <div class="product__item__pic set-bg"
-                            data-setbg="../admin/<?php echo $data["gambar"] ?>">
+                            data-setbg="../dashboard/admin/<?php echo $data["gambar"] ?>">
                             <!-- <div class="ep">
                                 <?php echo $data["rating_film"] ?>
                             </div> -->

@@ -65,7 +65,7 @@ $data = mysqli_fetch_array($query);
             <div class="anime__details__content">
                 <div class="row">
                     <div class="col-lg-3">
-                        <div class="anime__details__pic set-bg" data-setbg="../admin/<?php echo $data["gambar"] ?>">
+                        <div class="anime__details__pic set-bg" data-setbg="../dashboard/admin/<?php echo $data["gambar"] ?>">
                         </div>
                     </div>
                     <div class="col-lg-9">

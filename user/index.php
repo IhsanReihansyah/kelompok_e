@@ -137,7 +137,7 @@
                                     while ($data = mysqli_fetch_array($query)) {
                                             ?>
                                             <div class="product__sidebar__view__item set-bg mix day"
-                                                data-setbg="../admin/<?php echo $data["gambar"] ?>">
+                                                data-setbg="../dashboard/admin/<?php echo $data["gambar"] ?>">
                                                 <!-- <div class="ep">
                                 <?php echo $data["rating_film"] ?>
                             </div> -->
@@ -154,7 +154,7 @@
                                     while ($data = mysqli_fetch_array($query)) {
                                             ?>
                                             <div class="product__sidebar__view__item set-bg mix week"
-                                                data-setbg="../admin/<?php echo $data["gambar"] ?>">
+                                                data-setbg="../dashboard/admin/<?php echo $data["gambar"] ?>">
                                                 <!-- <div class="ep">
                                 <?php echo $data["rating_film"] ?>
                             </div> -->
@@ -170,7 +170,7 @@
                                     while ($data = mysqli_fetch_array($query)) {
                                             ?>
                                             <div class="product__sidebar__view__item set-bg mix month"
-                                                data-setbg="../admin/<?php echo $data["gambar"] ?>">
+                                                data-setbg="../dashboard/admin/<?php echo $data["gambar"] ?>">
                                                 <!-- <div class="ep">
                                 <?php echo $data["rating_film"] ?>
                             </div> -->
@@ -186,7 +186,7 @@
                                     while ($data = mysqli_fetch_array($query)) {
                                             ?>
                                             <div class="product__sidebar__view__item set-bg mix years"
-                                                data-setbg="../admin/<?php echo $data["gambar"] ?>">
+                                                data-setbg="../dashboard/admin/<?php echo $data["gambar"] ?>">
                                                 <!-- <div class="ep">
                                 <?php echo $data["rating_film"] ?>
                             </div> -->
