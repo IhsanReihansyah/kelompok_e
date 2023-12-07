@@ -74,8 +74,8 @@
                         </div>
                         <div class="row">
                             <?php
-                            $query = mysqli_query($conn, "SELECT * from `film` as f join kategori as k on f.id_kategori=k.id_kategori ORDER BY f.id ASC;");
-                            tampilkanProduk4($query);
+                            $query = mysqli_query($conn, "SELECT * from `film` WHERE FIND_IN_SET('4', `id_kategori`) > 0 ORDER BY id ASC");
+                            tampilkantag($query);
                             ?>
                         </div>
                     </div>
