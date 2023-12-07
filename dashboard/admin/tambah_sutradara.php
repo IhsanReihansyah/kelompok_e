@@ -1,3 +1,12 @@
+<?php
+session_start();
+
+if (isset($_SESSION['isAdminLogin']) != true) {
+    header("Location: login.php");
+    exit();
+}
+include 'koneksi.php';
+?>
 <!DOCTYPE html>
 
 <!-- =========================================================
@@ -67,7 +76,6 @@
 
         <!-- Layout container -->
         <div class="layout-page">
-        <?php include 'koneksi.php'; ?>
 
           <!-- Content wrapper -->
           <div class="content-wrapper">

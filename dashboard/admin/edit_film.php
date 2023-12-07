@@ -1,3 +1,12 @@
+<?php
+session_start();
+
+if (isset($_SESSION['isAdminLogin']) != true) {
+    header("Location: login.php");
+    exit();
+}
+include 'koneksi.php';
+?>
 <!DOCTYPE html>
 
 <!-- =========================================================
@@ -80,7 +89,7 @@
 
         <!-- Layout container -->
         <div class="layout-page">
-        <?php include 'koneksi.php';
+        <?php 
         $film = mysqli_query($conn, "SELECT * from film where id='$_GET[id]'");
 
         while ($f = mysqli_fetch_array($film)) {
@@ -345,7 +354,10 @@
                                     <label>Top Views Month</label><br>
 
                                     <input type="checkbox" name = "tag[]" value="Top Views Year" <?php echo (in_array("Top Views Year", explode(',', $tag))) ? 'checked' : ''; ?>>
-                                    <label>Top Views Year</label><br>    
+                                    <label>Top Views Year</label><br> 
+                                    
+                                    <input type="checkbox" name = "tag[]" value="Slide" <?php echo (in_array("Slide", explode(',', $tag))) ? 'checked' : ''; ?>>
+                                    <label>Slide</label><br> 
                                     </div>
                                   </div>
                                   <div class="row justify-content-end">
