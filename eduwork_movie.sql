@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Dec 09, 2023 at 12:25 PM
+-- Generation Time: Dec 09, 2023 at 11:49 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
 
@@ -190,8 +190,7 @@ INSERT INTO `sutradara` (`id_sutradara`, `nama_sutradara`, `tanggal_lahir`, `neg
 
 CREATE TABLE `ulasan` (
   `id` int(11) NOT NULL,
-  `username` varchar(255) DEFAULT NULL,
-  `password` varchar(255) DEFAULT NULL,
+  `ulasan_user` int(11) DEFAULT NULL,
   `ulasan_id` int(11) DEFAULT NULL,
   `nama_ulasan` varchar(255) DEFAULT NULL,
   `ulasan` varchar(255) DEFAULT NULL,
@@ -203,8 +202,33 @@ CREATE TABLE `ulasan` (
 -- Dumping data for table `ulasan`
 --
 
-INSERT INTO `ulasan` (`id`, `username`, `password`, `ulasan_id`, `nama_ulasan`, `ulasan`, `ulasan_rating`, `tanggal_ulasan`) VALUES
-(73, 'rehan', 'rehan', 32, '', '', 8, '2023-12-09');
+INSERT INTO `ulasan` (`id`, `ulasan_user`, `ulasan_id`, `nama_ulasan`, `ulasan`, `ulasan_rating`, `tanggal_ulasan`) VALUES
+(85, 1, 48, 'ini akun pertama', '', 4, '2023-12-09'),
+(86, 1, 48, 'ini akun pertama', '', 6, '2023-12-09'),
+(87, 2, 48, 'ini akun kedua', '', 4, '2023-12-09'),
+(88, 2, 48, 'ini akun kedua', '', 4, '2023-12-09'),
+(89, 2, 39, 'ini akun kedua', '', 7, '2023-12-09');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+CREATE TABLE `user` (
+  `id` int(11) NOT NULL,
+  `nickname` varchar(255) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`id`, `nickname`, `username`, `password`) VALUES
+(1, 'r', 'r', 'r'),
+(2, '123', '123', '123');
 
 --
 -- Indexes for dumped tables
@@ -254,7 +278,14 @@ ALTER TABLE `sutradara`
 ALTER TABLE `ulasan`
   ADD PRIMARY KEY (`id`),
   ADD KEY `ulasan_id` (`ulasan_id`),
-  ADD KEY `ulasan_rating` (`ulasan_rating`);
+  ADD KEY `ulasan_rating` (`ulasan_rating`),
+  ADD KEY `ulasan_user` (`ulasan_user`);
+
+--
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -300,7 +331,13 @@ ALTER TABLE `sutradara`
 -- AUTO_INCREMENT for table `ulasan`
 --
 ALTER TABLE `ulasan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=90;
+
+--
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Constraints for dumped tables
@@ -318,7 +355,8 @@ ALTER TABLE `film`
 --
 ALTER TABLE `ulasan`
   ADD CONSTRAINT `rating` FOREIGN KEY (`ulasan_rating`) REFERENCES `rating` (`id_rating`),
-  ADD CONSTRAINT `ulasan` FOREIGN KEY (`ulasan_id`) REFERENCES `film` (`id`) ON DELETE CASCADE;
+  ADD CONSTRAINT `ulasan` FOREIGN KEY (`ulasan_id`) REFERENCES `film` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `user` FOREIGN KEY (`ulasan_user`) REFERENCES `user` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
