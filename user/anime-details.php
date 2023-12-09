@@ -51,8 +51,11 @@ $data = mysqli_fetch_array($query);
                         <a href="./kategori.php">Movie</a>
                         <span>
                             <?php echo $data["judul_film"] ?>
+                            <div class="fb-share-button" 
+       data-href="http://localhost/msib5_ta_kelompok_e_new/user/anime-details.php?id=35" 
+       data-layout="button_count">
+  </div>
                         </span>
-                        <iframe src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Flocalhost%2Fmsib5_ta_kelompok_e_new%2Fuser%2Fanime-details.php&layout&size&width=77&height=20&appId" width="77" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
                     </div>
                 </div>
             </div>
@@ -215,7 +218,10 @@ $data = mysqli_fetch_array($query);
     <script src="../js/jquery.slicknav.js"></script>
     <script src="../js/owl.carousel.min.js"></script>
     <script src="../js/main.js"></script>
-
+    <script async defer crossorigin="anonymous" 
+          src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v11.0" 
+          nonce="pQaC4WUx">
+  </script>
 </body>
 
 </html>
