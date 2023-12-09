@@ -2,6 +2,7 @@
 $id = $_GET["id"]; //mendapatkan id
 $query = mysqli_query($conn, "SELECT f.id,f.judul_film,f.tahun_rilis,f.sinopsis,f.id_kategori,f.id_sutradara,f.genre,f.genre,f.nama_pemain,f.gambar,u.nama_ulasan,u.ulasan,u.ulasan_rating,u.tanggal_ulasan,k.kategori,s.nama_sutradara, AVG(ulasan_rating) AS avg_rating FROM `film` as f join kategori as k on f.id_kategori=k.id_kategori join sutradara as s on s.id_sutradara=f.id_sutradara join ulasan as u on u.ulasan_id=f.id where f.id = '$id'");
 $data = mysqli_fetch_array($query);
+
 ?>
 <!DOCTYPE html>
 <html lang="zxx">
@@ -65,7 +66,8 @@ $data = mysqli_fetch_array($query);
             <div class="anime__details__content">
                 <div class="row">
                     <div class="col-lg-3">
-                        <div class="anime__details__pic set-bg" data-setbg="../dashboard/admin/<?php echo $data["gambar"] ?>">
+                        <div class="anime__details__pic set-bg"
+                            data-setbg="../dashboard/admin/<?php echo $data["gambar"] ?>">
                         </div>
                     </div>
                     <div class="col-lg-9">
@@ -77,8 +79,8 @@ $data = mysqli_fetch_array($query);
                             </div>
                             <div class="anime__details__rating">
                                 <span> Rate
-                                <?php $averagerating = intval(str_replace(',', '', $data["avg_rating"]));
-                                     echo $averagerating ?> / 10
+                                    <?php $averagerating = intval(str_replace(',', '', $data["avg_rating"]));
+                                    echo $averagerating ?> / 10
                                 </span>
                             </div>
                             <p>
@@ -108,7 +110,7 @@ $data = mysqli_fetch_array($query);
                                 </div>
                             </div>
                             <div class="anime__details__btn">
-                                <a href="anime-watching.php?id=<?php echo $data["id"]?>" class="watch-btn"><span>Watch
+                                <a href="anime-watching.php?id=<?php echo $data["id"] ?>" class="watch-btn"><span>Watch
                                         Now</span> <i class="fa fa-angle-right"></i></a>
                             </div>
                         </div>
@@ -126,17 +128,18 @@ $data = mysqli_fetch_array($query);
                                 </div>
                             </div>
                             <?php
-                                $kategori_id = $data["id_kategori"];
-                                $related_query = mysqli_query($conn, "SELECT id, judul_film, gambar, genre FROM `film` WHERE id_kategori = '$kategori_id' AND id != '$id' LIMIT 3");
+                            $kategori_id = $data["id_kategori"];
+                            $related_query = mysqli_query($conn, "SELECT id, judul_film, gambar, genre FROM `film` WHERE id_kategori = '$kategori_id' AND id != '$id' LIMIT 3");
                             ?>
                             <div class="row">
                                 <?php
                                 if (mysqli_num_rows($related_query) > 0) {
                                     while ($related_data = mysqli_fetch_array($related_query)) {
-                                ?>
+                                        ?>
                                         <div class="col-lg-4 col-md-6 col-sm-6">
                                             <div class="product__item">
-                                                <div class="product__item__pic set-bg" data-setbg="../dashboard/admin/<?php echo $related_data["gambar"] ?>">
+                                                <div class="product__item__pic set-bg"
+                                                    data-setbg="../dashboard/admin/<?php echo $related_data["gambar"] ?>">
                                                     <div class="comment">
                                                         <?php echo $related_data["genre"] ?>
                                                     </div>
@@ -148,7 +151,7 @@ $data = mysqli_fetch_array($query);
                                                 </div>
                                             </div>
                                         </div>
-                                <?php
+                                        <?php
                                     }
                                 }
                                 ?>
@@ -156,32 +159,44 @@ $data = mysqli_fetch_array($query);
                         </div>
 
                         <?php
-                        include "template/review.php"; 
+                        include "template/review.php";
                         ?>
 
                         <div class="anime__details__form">
                             <div class="section-title">
                                 <h5>write your review</h5>
                             </div>
-                                <form action="template/proses_review.php" method="post">
-                                    <input type="text" placeholder=" Your Name" name="nama_ulasan"><br><br>
-                                    <input type="hidden" value="<?php echo $id ?>" name="ulasan_id">
-                                    <select name="ulasan_rating">
-                                        <option value="1">1/10</option>
-                                        <option value="2">2/10</option>
-                                        <option value="3">3/10</option>
-                                        <option value="4">4/10</option>
-                                        <option value="5">5/10</option>
-                                        <option value="6">6/10</option>
-                                        <option value="7">7/10</option>
-                                        <option value="8">8/10</option>
-                                        <option value="9">9/10</option>
-                                        <option value="10">10/10</option>
-                                    </select><br><br><br>
-                                    <textarea placeholder="Your Comment" name="ulasan"></textarea>
+                            <form action="template/proses_review.php" method="post">
+                                <input type="text" placeholder=" Your Name" name="nama_ulasan"><br><br>
+                                <input type="hidden" value="<?php echo $id ?>" name="ulasan_id">
+                                <select name="ulasan_rating">
+                                    <option value="1">1/10</option>
+                                    <option value="2">2/10</option>
+                                    <option value="3">3/10</option>
+                                    <option value="4">4/10</option>
+                                    <option value="5">5/10</option>
+                                    <option value="6">6/10</option>
+                                    <option value="7">7/10</option>
+                                    <option value="8">8/10</option>
+                                    <option value="9">9/10</option>
+                                    <option value="10">10/10</option>
+                                </select><br><br><br>
+                                <textarea placeholder="Your Comment" name="ulasan"></textarea>
 
-                                    <button type="submit" name="simpan"><i class="fa fa-location-arrow"></i> Review</button>
-                                </form>
+                                <?php
+                                $query = mysqli_query($conn, "SELECT id FROM `user`");
+
+                                if (mysqli_num_rows($query) > 0) {
+                                    while ($data = mysqli_fetch_array($query)) {
+                                        ?>
+                                        <input type="hidden" value="<?php echo $data["id"] ?>" name="ulasan_user">
+                                        <?php
+                                    }
+                                }
+                                ?>
+
+                                <button type="submit" name="simpan"><i class="fa fa-location-arrow"></i> Review</button>
+                            </form>
                         </div>
                     </div>
                 </div>

@@ -55,6 +55,12 @@
         </div>
         <div class="card-body">
             <form action="proses_tambah_user.php" method="POST" enctype="multipart/form-data">
+            <div class="row mb-3">
+                    <label class="col-sm-2 col-form-label" for="basic-default-name">Nickname</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="nickname" name="nickname" required>
+                    </div>
+                </div>
                 <div class="row mb-3">
                     <label class="col-sm-2 col-form-label" for="basic-default-name">Username</label>
                     <div class="col-sm-10">
