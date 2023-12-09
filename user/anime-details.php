@@ -29,6 +29,10 @@ $data = mysqli_fetch_array($query);
     <link rel="stylesheet" href="../css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="../css/style.css" type="text/css">
 
+    <script type="text/javascript" 
+    src="https://platform-api.sharethis.com/js/sharethis.js#property=657408d7088a0f0019878cf1&product=inline-share-buttons&source=platform"
+    async="async"></script>
+
 </head>
 
 <body>
@@ -52,6 +56,7 @@ $data = mysqli_fetch_array($query);
                         <span>
                             <?php echo $data["judul_film"] ?>
                         </span>
+                        <div class="sharethis-inline-share-buttons"></div> 
                     </div>
                 </div>
             </div>
@@ -109,7 +114,7 @@ $data = mysqli_fetch_array($query);
                             </div>
                             <div class="anime__details__btn">
                                 <a href="anime-watching.php?id=<?php echo $data["id"]?>" class="watch-btn"><span>Watch
-                                        Now</span> <i class="fa fa-angle-right"></i></a>
+                                        Now</span> <i class="fa fa-angle-right"></i></a> 
                             </div>
                         </div>
                     </div>
