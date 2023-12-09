@@ -52,7 +52,7 @@ $data = mysqli_fetch_array($query);
                         <span>
                             <?php echo $data["judul_film"] ?>
                         </span>
-                        <iframe src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Flocalhost%2Fmsib5_ta_kelompok_e_new%2Fuser%2Fanime-details.php%3Fid%3D35&layout&size&width=77&height=20&appId" width="77" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                        <iframe src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Flocalhost%2Fmsib5_ta_kelompok_e_new%2Fuser%2Fanime-details.php&layout&size&width=77&height=20&appId" width="77" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
                     </div>
                 </div>
             </div>
