@@ -354,7 +354,10 @@ include 'koneksi.php';
                                     <label>Top Views Month</label><br>
 
                                     <input type="checkbox" name = "tag[]" value="Top Views Year" <?php echo (in_array("Top Views Year", explode(',', $tag))) ? 'checked' : ''; ?>>
-                                    <label>Top Views Year</label><br>    
+                                    <label>Top Views Year</label><br> 
+                                    
+                                    <input type="checkbox" name = "tag[]" value="Slide" <?php echo (in_array("Slide", explode(',', $tag))) ? 'checked' : ''; ?>>
+                                    <label>Slide</label><br> 
                                     </div>
                                   </div>
                                   <div class="row justify-content-end">

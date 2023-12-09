@@ -37,9 +37,9 @@ $data = mysqli_fetch_array($query);
 
 <body>
     <!-- Page Preloder -->
-    <div id="preloder">
+    <!-- <div id="preloder">
         <div class="loader"></div>
-    </div>
+    </div> -->
 
     <!-- Header Section Begin -->
     <?php include "template/navbar.php" ?>
@@ -119,11 +119,51 @@ $data = mysqli_fetch_array($query);
                         </div>
                     </div>
                 </div>
+
                 <div class="row">
                     <div class="col-lg-8 col-md-8">
+                        <div class="trending__product">
+                            <div class="row">
+                                <div class="col-lg-8 col-md-8 col-sm-8"><br>
+                                    <div class="section-title">
+                                        <h4>Lihat Film dari negara yang sama</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <?php
+                                $kategori_id = $data["id_kategori"];
+                                $related_query = mysqli_query($conn, "SELECT id, judul_film, gambar, genre FROM `film` WHERE id_kategori = '$kategori_id' AND id != '$id' LIMIT 3");
+                            ?>
+                            <div class="row">
+                                <?php
+                                if (mysqli_num_rows($related_query) > 0) {
+                                    while ($related_data = mysqli_fetch_array($related_query)) {
+                                ?>
+                                        <div class="col-lg-4 col-md-6 col-sm-6">
+                                            <div class="product__item">
+                                                <div class="product__item__pic set-bg" data-setbg="../dashboard/admin/<?php echo $related_data["gambar"] ?>">
+                                                    <div class="comment">
+                                                        <?php echo $related_data["genre"] ?>
+                                                    </div>
+                                                </div>
+                                                <div class="product__item__text">
+                                                    <h5><a href="anime-details.php?id=<?php echo $related_data["id"] ?>">
+                                                            <?php echo $related_data["judul_film"] ?>
+                                                        </a></h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                <?php
+                                    }
+                                }
+                                ?>
+                            </div>
+                        </div>
+
                         <?php
                         include "template/review.php"; 
                         ?>
+
                         <div class="anime__details__form">
                             <div class="section-title">
                                 <h5>write your review</h5>
