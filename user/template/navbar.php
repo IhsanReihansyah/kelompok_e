@@ -49,10 +49,11 @@
             </div>
             <div class="col-lg-1">
                 <div class="header__logo">
-                <a href="./contact.php"><span class="fa fa-paper-plane mr-4"></span></a>
-                <a href="../dashboard/admin/login.php"><span class="icon_profile"></span></a>
+                    <a href="./contact.php"><span class="fa fa-paper-plane mr-4"></span></a>
+                    <a href="logout.php"><span class="icon_profile"></span></a>
                 </div>
             </div>
+
         </div>
         <div id="mobile-menu-wrap"></div>
     </div>
