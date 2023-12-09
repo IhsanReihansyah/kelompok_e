@@ -29,10 +29,6 @@ $data = mysqli_fetch_array($query);
     <link rel="stylesheet" href="../css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="../css/style.css" type="text/css">
 
-    <script type="text/javascript" 
-    src="https://platform-api.sharethis.com/js/sharethis.js#property=657408d7088a0f0019878cf1&product=inline-share-buttons&source=platform"
-    async="async"></script>
-
 </head>
 
 <body>
@@ -56,7 +52,7 @@ $data = mysqli_fetch_array($query);
                         <span>
                             <?php echo $data["judul_film"] ?>
                         </span>
-                        <div class="sharethis-inline-share-buttons"></div> 
+                        <iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2Fhttp%3A%2F%2Flocalhost%2Fmsib5_ta_kelompok_e_new%2Fuser%2Fanime-details.php&layout&size&width=77&height=20&appId" width="77" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
                     </div>
                 </div>
             </div>
