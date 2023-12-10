@@ -52,7 +52,7 @@ $data = mysqli_fetch_array($query);
                         <span>
                             <?php echo $data["judul_film"] ?>
                             <iframe
-                                src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fkelompok5e.com&layout&size&width=200&height=50&appId"
+                                src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2FDreamMovie.com&layout&size&width=200&height=50&appId"
                                 width="200" height="50" style="border:none;overflow:hidden" scrolling="no"
                                 frameborder="0" allowfullscreen="true"
                                 allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
