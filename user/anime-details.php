@@ -29,7 +29,6 @@ $data = mysqli_fetch_array($query);
     <link rel="stylesheet" href="../css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="../css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="../css/style.css" type="text/css">
-
 </head>
 
 <body>
@@ -52,10 +51,11 @@ $data = mysqli_fetch_array($query);
                         <a href="./kategori.php">Movie</a>
                         <span>
                             <?php echo $data["judul_film"] ?>
-                            <div class="fb-share-button" 
-       data-href="http://localhost/msib5_ta_kelompok_e_new/user/anime-details.php?id=35" 
-       data-layout="button_count">
-  </div>
+                            <iframe
+                                src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fkelompok5e.com&layout&size&width=200&height=50&appId"
+                                width="200" height="50" style="border:none;overflow:hidden" scrolling="no"
+                                frameborder="0" allowfullscreen="true"
+                                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
                         </span>
                     </div>
                 </div>
@@ -115,12 +115,17 @@ $data = mysqli_fetch_array($query);
                             </div>
                             <div class="anime__details__btn">
 <<<<<<< HEAD
+<<<<<<< HEAD
                                 <a href="anime-watching.php?id=<?php echo $data["id"]?>" class="watch-btn"><span>Watch
                                         Now</span> <i class="fa fa-angle-right"></i></a> 
 =======
                                 <a href="anime-watching.php?id=<?php echo $data["id"] ?>" class="watch-btn"><span>Watch
                                         Now</span> <i class="fa fa-angle-right"></i></a>
 >>>>>>> 969b8a5cbf1b2bc0bf3e9c159a9c0a403ba0d37f
+=======
+                                <a href="anime-watching.php?id=<?php echo $data["id"] ?>" class="watch-btn"><span>Watch
+                                        Now</span> <i class="fa fa-angle-right"></i></a>
+>>>>>>> 413826fcf0f2664cd93fed2b0a88877f6a8f26bb
                             </div>
                         </div>
                     </div>
@@ -145,22 +150,22 @@ $data = mysqli_fetch_array($query);
                                 if (mysqli_num_rows($related_query) > 0) {
                                     while ($related_data = mysqli_fetch_array($related_query)) {
                                         ?>
-                                        <div class="col-lg-4 col-md-6 col-sm-6">
-                                            <div class="product__item">
-                                                <div class="product__item__pic set-bg"
-                                                    data-setbg="../dashboard/admin/<?php echo $related_data["gambar"] ?>">
-                                                    <div class="comment">
-                                                        <?php echo $related_data["genre"] ?>
-                                                    </div>
-                                                </div>
-                                                <div class="product__item__text">
-                                                    <h5><a href="anime-details.php?id=<?php echo $related_data["id"] ?>">
-                                                            <?php echo $related_data["judul_film"] ?>
-                                                        </a></h5>
-                                                </div>
+                                <div class="col-lg-4 col-md-6 col-sm-6">
+                                    <div class="product__item">
+                                        <div class="product__item__pic set-bg"
+                                            data-setbg="../dashboard/admin/<?php echo $related_data["gambar"] ?>">
+                                            <div class="comment">
+                                                <?php echo $related_data["genre"] ?>
                                             </div>
                                         </div>
-                                        <?php
+                                        <div class="product__item__text">
+                                            <h5><a href="anime-details.php?id=<?php echo $related_data["id"] ?>">
+                                                    <?php echo $related_data["judul_film"] ?>
+                                                </a></h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <?php
                                     }
                                 }
                                 ?>
@@ -198,8 +203,8 @@ $data = mysqli_fetch_array($query);
                                 if (mysqli_num_rows($query) > 0) {
                                     while ($data = mysqli_fetch_array($query)) {
                                         ?>
-                                        <input type="hidden" value="<?php echo $data["id"] ?>" name="ulasan_user">
-                                        <?php
+                                <input type="hidden" value="<?php echo $data["id"] ?>" name="ulasan_user">
+                                <?php
                                     }
                                 }
                                 ?>
@@ -238,10 +243,6 @@ $data = mysqli_fetch_array($query);
     <script src="../js/jquery.slicknav.js"></script>
     <script src="../js/owl.carousel.min.js"></script>
     <script src="../js/main.js"></script>
-    <script async defer crossorigin="anonymous" 
-          src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v11.0" 
-          nonce="pQaC4WUx">
-  </script>
 </body>
 
 </html>
