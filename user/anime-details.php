@@ -28,7 +28,6 @@ $data = mysqli_fetch_array($query);
     <link rel="stylesheet" href="../css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="../css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="../css/style.css" type="text/css">
-
 </head>
 
 <body>
@@ -52,6 +51,11 @@ $data = mysqli_fetch_array($query);
                         <span>
                             <?php echo $data["judul_film"] ?>
                         </span>
+                        <iframe
+                                src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fkelompok5e.com&layout&size&width=200&height=50&appId"
+                                width="200" height="50" style="border:none;overflow:hidden" scrolling="no"
+                                frameborder="0" allowfullscreen="true"
+                                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
                     </div>
                 </div>
             </div>
@@ -65,7 +69,8 @@ $data = mysqli_fetch_array($query);
             <div class="anime__details__content">
                 <div class="row">
                     <div class="col-lg-3">
-                        <div class="anime__details__pic set-bg" data-setbg="../dashboard/admin/<?php echo $data["gambar"] ?>">
+                        <div class="anime__details__pic set-bg"
+                            data-setbg="../dashboard/admin/<?php echo $data["gambar"] ?>">
                         </div>
                     </div>
                     <div class="col-lg-9">
@@ -77,7 +82,7 @@ $data = mysqli_fetch_array($query);
                             </div>
                             <div class="anime__details__rating">
                                 <span> Rate
-                                <?php $averagerating = intval(str_replace(',', '', $data["avg_rating"]));
+                                    <?php $averagerating = intval(str_replace(',', '', $data["avg_rating"]));
                                      echo $averagerating ?> / 10
                                 </span>
                             </div>
@@ -109,7 +114,7 @@ $data = mysqli_fetch_array($query);
                             </div>
                             <div class="anime__details__btn">
                                 <a href="anime-watching.php?id=<?php echo $data["id"]?>" class="watch-btn"><span>Watch
-                                        Now</span> <i class="fa fa-angle-right"></i></a> 
+                                        Now</span> <i class="fa fa-angle-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -134,20 +139,21 @@ $data = mysqli_fetch_array($query);
                                 if (mysqli_num_rows($related_query) > 0) {
                                     while ($related_data = mysqli_fetch_array($related_query)) {
                                 ?>
-                                        <div class="col-lg-4 col-md-6 col-sm-6">
-                                            <div class="product__item">
-                                                <div class="product__item__pic set-bg" data-setbg="../dashboard/admin/<?php echo $related_data["gambar"] ?>">
-                                                    <div class="comment">
-                                                        <?php echo $related_data["genre"] ?>
-                                                    </div>
-                                                </div>
-                                                <div class="product__item__text">
-                                                    <h5><a href="anime-details.php?id=<?php echo $related_data["id"] ?>">
-                                                            <?php echo $related_data["judul_film"] ?>
-                                                        </a></h5>
-                                                </div>
+                                <div class="col-lg-4 col-md-6 col-sm-6">
+                                    <div class="product__item">
+                                        <div class="product__item__pic set-bg"
+                                            data-setbg="../dashboard/admin/<?php echo $related_data["gambar"] ?>">
+                                            <div class="comment">
+                                                <?php echo $related_data["genre"] ?>
                                             </div>
                                         </div>
+                                        <div class="product__item__text">
+                                            <h5><a href="anime-details.php?id=<?php echo $related_data["id"] ?>">
+                                                    <?php echo $related_data["judul_film"] ?>
+                                                </a></h5>
+                                        </div>
+                                    </div>
+                                </div>
                                 <?php
                                     }
                                 }
@@ -163,25 +169,25 @@ $data = mysqli_fetch_array($query);
                             <div class="section-title">
                                 <h5>write your review</h5>
                             </div>
-                                <form action="template/proses_review.php" method="post">
-                                    <input type="text" placeholder=" Your Name" name="nama_ulasan"><br><br>
-                                    <input type="hidden" value="<?php echo $id ?>" name="ulasan_id">
-                                    <select name="ulasan_rating">
-                                        <option value="1">1/10</option>
-                                        <option value="2">2/10</option>
-                                        <option value="3">3/10</option>
-                                        <option value="4">4/10</option>
-                                        <option value="5">5/10</option>
-                                        <option value="6">6/10</option>
-                                        <option value="7">7/10</option>
-                                        <option value="8">8/10</option>
-                                        <option value="9">9/10</option>
-                                        <option value="10">10/10</option>
-                                    </select><br><br><br>
-                                    <textarea placeholder="Your Comment" name="ulasan"></textarea>
+                            <form action="template/proses_review.php" method="post">
+                                <input type="text" placeholder=" Your Name" name="nama_ulasan"><br><br>
+                                <input type="hidden" value="<?php echo $id ?>" name="ulasan_id">
+                                <select name="ulasan_rating">
+                                    <option value="1">1/10</option>
+                                    <option value="2">2/10</option>
+                                    <option value="3">3/10</option>
+                                    <option value="4">4/10</option>
+                                    <option value="5">5/10</option>
+                                    <option value="6">6/10</option>
+                                    <option value="7">7/10</option>
+                                    <option value="8">8/10</option>
+                                    <option value="9">9/10</option>
+                                    <option value="10">10/10</option>
+                                </select><br><br><br>
+                                <textarea placeholder="Your Comment" name="ulasan"></textarea>
 
-                                    <button type="submit" name="simpan"><i class="fa fa-location-arrow"></i> Review</button>
-                                </form>
+                                <button type="submit" name="simpan"><i class="fa fa-location-arrow"></i> Review</button>
+                            </form>
                         </div>
                     </div>
                 </div>
