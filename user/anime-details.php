@@ -29,7 +29,6 @@ $data = mysqli_fetch_array($query);
     <link rel="stylesheet" href="../css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="../css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="../css/style.css" type="text/css">
-
 </head>
 
 <body>
@@ -52,6 +51,11 @@ $data = mysqli_fetch_array($query);
                         <a href="./kategori.php">Movie</a>
                         <span>
                             <?php echo $data["judul_film"] ?>
+                            <iframe
+                                src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fkelompok5e.com&layout&size&width=200&height=50&appId"
+                                width="200" height="50" style="border:none;overflow:hidden" scrolling="no"
+                                frameborder="0" allowfullscreen="true"
+                                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
                         </span>
                     </div>
                 </div>
@@ -80,7 +84,11 @@ $data = mysqli_fetch_array($query);
                             <div class="anime__details__rating">
                                 <span> Rate
                                     <?php $averagerating = intval(str_replace(',', '', $data["avg_rating"]));
+<<<<<<< HEAD
                                     echo $averagerating ?> / 10
+                                    =======
+                                    echo $averagerating ?> / 10
+                                    >>>>>>> 22771e9605e01948b4283df94d66f6300c44cc6c
                                 </span>
                             </div>
                             <p>
@@ -135,23 +143,43 @@ $data = mysqli_fetch_array($query);
                                 <?php
                                 if (mysqli_num_rows($related_query) > 0) {
                                     while ($related_data = mysqli_fetch_array($related_query)) {
+<<<<<<< HEAD
                                         ?>
-                                        <div class="col-lg-4 col-md-6 col-sm-6">
-                                            <div class="product__item">
-                                                <div class="product__item__pic set-bg"
-                                                    data-setbg="../dashboard/admin/<?php echo $related_data["gambar"] ?>">
-                                                    <div class="comment">
-                                                        <?php echo $related_data["genre"] ?>
-                                                    </div>
-                                                </div>
-                                                <div class="product__item__text">
-                                                    <h5><a href="anime-details.php?id=<?php echo $related_data["id"] ?>">
-                                                            <?php echo $related_data["judul_film"] ?>
-                                                        </a></h5>
-                                                </div>
+                                <div class="col-lg-4 col-md-6 col-sm-6">
+                                    <div class="product__item">
+                                        <div class="product__item__pic set-bg"
+                                            data-setbg="../dashboard/admin/<?php echo $related_data["gambar"] ?>">
+                                            <div class="comment">
+                                                <?php echo $related_data["genre"] ?>
                                             </div>
                                         </div>
-                                        <?php
+                                        <div class="product__item__text">
+                                            <h5><a href="anime-details.php?id=<?php echo $related_data["id"] ?>">
+                                                    <?php echo $related_data["judul_film"] ?>
+                                                </a></h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <?php
+=======
+                                ?>
+                                <div class="col-lg-4 col-md-6 col-sm-6">
+                                    <div class="product__item">
+                                        <div class="product__item__pic set-bg"
+                                            data-setbg="../dashboard/admin/<?php echo $related_data["gambar"] ?>">
+                                            <div class="comment">
+                                                <?php echo $related_data["genre"] ?>
+                                            </div>
+                                        </div>
+                                        <div class="product__item__text">
+                                            <h5><a href="anime-details.php?id=<?php echo $related_data["id"] ?>">
+                                                    <?php echo $related_data["judul_film"] ?>
+                                                </a></h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <?php
+>>>>>>> 22771e9605e01948b4283df94d66f6300c44cc6c
                                     }
                                 }
                                 ?>
@@ -189,8 +217,8 @@ $data = mysqli_fetch_array($query);
                                 if (mysqli_num_rows($query) > 0) {
                                     while ($data = mysqli_fetch_array($query)) {
                                         ?>
-                                        <input type="hidden" value="<?php echo $data["id"] ?>" name="ulasan_user">
-                                        <?php
+                                <input type="hidden" value="<?php echo $data["id"] ?>" name="ulasan_user">
+                                <?php
                                     }
                                 }
                                 ?>
@@ -229,7 +257,6 @@ $data = mysqli_fetch_array($query);
     <script src="../js/jquery.slicknav.js"></script>
     <script src="../js/owl.carousel.min.js"></script>
     <script src="../js/main.js"></script>
-
 </body>
 
 </html>
