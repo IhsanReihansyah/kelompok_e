@@ -4,6 +4,6 @@ $_SESSION = [];
 session_unset();
 session_destroy();
 
-header("Location: ../../user/awal.php");
+header("Location: awal.php");
 exit;
 ?>

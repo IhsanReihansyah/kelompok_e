@@ -1,6 +1,6 @@
 <?php
 $id = $_GET["id"]; //mendapatkan id
-$query = mysqli_query($conn, "SELECT * FROM `ulasan` as u join film as f on f.id=u.ulasan_id where f.id = '$id' ");
+$query = mysqli_query($conn, "SELECT * FROM `ulasan` as u join film as f on f.id=u.ulasan_id join user as us on us.id=u.ulasan_user where f.id = '$id' ");
 ?>
 <div class="anime__details__review">
     <?php
@@ -20,7 +20,7 @@ $query = mysqli_query($conn, "SELECT * FROM `ulasan` as u join film as f on f.id
                 </div>
                 <div class="anime__review__item__text">
                     <h6>
-                        <?php echo $data["nama_ulasan"] ?>
+                        <?php echo $data["nickname"] ?>
                         <span>
                             <?php echo $data["tanggal_ulasan"] ?>&ensp;&ensp;&ensp;&ensp;&ensp; Rate
                             <?php echo $data["ulasan_rating"] ?> / 10
