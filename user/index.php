@@ -1,3 +1,13 @@
+<?php
+session_start();
+
+if (isset($_SESSION['isUserLogin']) != true) {
+    header("Location: login_user.php");
+    exit();
+}
+include 'koneksi.php';
+?>
+
 <!DOCTYPE html>
 <html lang="zxx">
 

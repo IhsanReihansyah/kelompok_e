@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Waktu pembuatan: 07 Des 2023 pada 12.44
--- Versi server: 10.4.28-MariaDB
--- Versi PHP: 8.2.4
+-- Host: localhost
+-- Generation Time: Dec 09, 2023 at 11:49 PM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.0.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `admin`
+-- Table structure for table `admin`
 --
 
 CREATE TABLE `admin` (
@@ -34,7 +34,7 @@ CREATE TABLE `admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `admin`
+-- Dumping data for table `admin`
 --
 
 INSERT INTO `admin` (`id`, `username`, `password`) VALUES
@@ -43,7 +43,7 @@ INSERT INTO `admin` (`id`, `username`, `password`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `film`
+-- Table structure for table `film`
 --
 
 CREATE TABLE `film` (
@@ -61,7 +61,7 @@ CREATE TABLE `film` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `film`
+-- Dumping data for table `film`
 --
 
 INSERT INTO `film` (`id`, `judul_film`, `tahun_rilis`, `sinopsis`, `tag`, `id_kategori`, `id_sutradara`, `genre`, `nama_pemain`, `gambar`, `video`) VALUES
@@ -88,7 +88,7 @@ INSERT INTO `film` (`id`, `judul_film`, `tahun_rilis`, `sinopsis`, `tag`, `id_ka
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kategori`
+-- Table structure for table `kategori`
 --
 
 CREATE TABLE `kategori` (
@@ -97,7 +97,7 @@ CREATE TABLE `kategori` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `kategori`
+-- Dumping data for table `kategori`
 --
 
 INSERT INTO `kategori` (`id_kategori`, `kategori`) VALUES
@@ -111,7 +111,7 @@ INSERT INTO `kategori` (`id_kategori`, `kategori`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kritikdansaran`
+-- Table structure for table `kritikdansaran`
 --
 
 CREATE TABLE `kritikdansaran` (
@@ -122,7 +122,7 @@ CREATE TABLE `kritikdansaran` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `kritikdansaran`
+-- Dumping data for table `kritikdansaran`
 --
 
 INSERT INTO `kritikdansaran` (`id`, `nama`, `email`, `pesan`) VALUES
@@ -131,7 +131,7 @@ INSERT INTO `kritikdansaran` (`id`, `nama`, `email`, `pesan`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `rating`
+-- Table structure for table `rating`
 --
 
 CREATE TABLE `rating` (
@@ -140,7 +140,7 @@ CREATE TABLE `rating` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `rating`
+-- Dumping data for table `rating`
 --
 
 INSERT INTO `rating` (`id_rating`, `rating_film`) VALUES
@@ -158,7 +158,7 @@ INSERT INTO `rating` (`id_rating`, `rating_film`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `sutradara`
+-- Table structure for table `sutradara`
 --
 
 CREATE TABLE `sutradara` (
@@ -169,7 +169,7 @@ CREATE TABLE `sutradara` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `sutradara`
+-- Dumping data for table `sutradara`
 --
 
 INSERT INTO `sutradara` (`id_sutradara`, `nama_sutradara`, `tanggal_lahir`, `negara`) VALUES
@@ -185,30 +185,63 @@ INSERT INTO `sutradara` (`id_sutradara`, `nama_sutradara`, `tanggal_lahir`, `neg
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `ulasan`
+-- Table structure for table `ulasan`
 --
 
 CREATE TABLE `ulasan` (
   `id` int(11) NOT NULL,
-  `ulasan_id` int(11) NOT NULL,
-  `nama_ulasan` varchar(255) NOT NULL,
-  `ulasan` varchar(255) NOT NULL,
-  `ulasan_rating` int(11) NOT NULL,
-  `tanggal_ulasan` date NOT NULL
+  `ulasan_user` int(11) DEFAULT NULL,
+  `ulasan_id` int(11) DEFAULT NULL,
+  `nama_ulasan` varchar(255) DEFAULT NULL,
+  `ulasan` varchar(255) DEFAULT NULL,
+  `ulasan_rating` int(11) DEFAULT NULL,
+  `tanggal_ulasan` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `ulasan`
+--
+
+INSERT INTO `ulasan` (`id`, `ulasan_user`, `ulasan_id`, `nama_ulasan`, `ulasan`, `ulasan_rating`, `tanggal_ulasan`) VALUES
+(85, 1, 48, 'ini akun pertama', '', 4, '2023-12-09'),
+(86, 1, 48, 'ini akun pertama', '', 6, '2023-12-09'),
+(87, 2, 48, 'ini akun kedua', '', 4, '2023-12-09'),
+(88, 2, 48, 'ini akun kedua', '', 4, '2023-12-09'),
+(89, 2, 39, 'ini akun kedua', '', 7, '2023-12-09');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+CREATE TABLE `user` (
+  `id` int(11) NOT NULL,
+  `nickname` varchar(255) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`id`, `nickname`, `username`, `password`) VALUES
+(1, 'r', 'r', 'r'),
+(2, '123', '123', '123');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indeks untuk tabel `admin`
+-- Indexes for table `admin`
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `film`
+-- Indexes for table `film`
 --
 ALTER TABLE `film`
   ADD PRIMARY KEY (`id`),
@@ -216,100 +249,114 @@ ALTER TABLE `film`
   ADD KEY `sutradara` (`id_sutradara`);
 
 --
--- Indeks untuk tabel `kategori`
+-- Indexes for table `kategori`
 --
 ALTER TABLE `kategori`
   ADD PRIMARY KEY (`id_kategori`);
 
 --
--- Indeks untuk tabel `kritikdansaran`
+-- Indexes for table `kritikdansaran`
 --
 ALTER TABLE `kritikdansaran`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `rating`
+-- Indexes for table `rating`
 --
 ALTER TABLE `rating`
   ADD PRIMARY KEY (`id_rating`);
 
 --
--- Indeks untuk tabel `sutradara`
+-- Indexes for table `sutradara`
 --
 ALTER TABLE `sutradara`
   ADD PRIMARY KEY (`id_sutradara`);
 
 --
--- Indeks untuk tabel `ulasan`
+-- Indexes for table `ulasan`
 --
 ALTER TABLE `ulasan`
   ADD PRIMARY KEY (`id`),
   ADD KEY `ulasan_id` (`ulasan_id`),
-  ADD KEY `ulasan_rating` (`ulasan_rating`);
+  ADD KEY `ulasan_rating` (`ulasan_rating`),
+  ADD KEY `ulasan_user` (`ulasan_user`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `admin`
+-- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT untuk tabel `film`
+-- AUTO_INCREMENT for table `film`
 --
 ALTER TABLE `film`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 
 --
--- AUTO_INCREMENT untuk tabel `kategori`
+-- AUTO_INCREMENT for table `kategori`
 --
 ALTER TABLE `kategori`
   MODIFY `id_kategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT untuk tabel `kritikdansaran`
+-- AUTO_INCREMENT for table `kritikdansaran`
 --
 ALTER TABLE `kritikdansaran`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT untuk tabel `rating`
+-- AUTO_INCREMENT for table `rating`
 --
 ALTER TABLE `rating`
   MODIFY `id_rating` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT untuk tabel `sutradara`
+-- AUTO_INCREMENT for table `sutradara`
 --
 ALTER TABLE `sutradara`
   MODIFY `id_sutradara` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
--- AUTO_INCREMENT untuk tabel `ulasan`
+-- AUTO_INCREMENT for table `ulasan`
 --
 ALTER TABLE `ulasan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=90;
 
 --
--- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- Constraints for dumped tables
 --
 
 --
--- Ketidakleluasaan untuk tabel `film`
+-- Constraints for table `film`
 --
 ALTER TABLE `film`
   ADD CONSTRAINT `kategori` FOREIGN KEY (`id_kategori`) REFERENCES `kategori` (`id_kategori`),
   ADD CONSTRAINT `sutradara` FOREIGN KEY (`id_sutradara`) REFERENCES `sutradara` (`id_sutradara`) ON DELETE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `ulasan`
+-- Constraints for table `ulasan`
 --
 ALTER TABLE `ulasan`
   ADD CONSTRAINT `rating` FOREIGN KEY (`ulasan_rating`) REFERENCES `rating` (`id_rating`),
-  ADD CONSTRAINT `ulasan` FOREIGN KEY (`ulasan_id`) REFERENCES `film` (`id`) ON DELETE CASCADE;
+  ADD CONSTRAINT `ulasan` FOREIGN KEY (`ulasan_id`) REFERENCES `film` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `user` FOREIGN KEY (`ulasan_user`) REFERENCES `user` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
