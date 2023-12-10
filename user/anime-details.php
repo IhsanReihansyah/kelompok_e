@@ -1,6 +1,14 @@
-<?php include "koneksi.php";
+<?php 
+session_start();
+include "koneksi.php";
 $id = $_GET["id"]; //mendapatkan id
-$query = mysqli_query($conn, "SELECT f.id,f.judul_film,f.tahun_rilis,f.sinopsis,f.id_kategori,f.id_sutradara,f.genre,f.genre,f.nama_pemain,f.gambar,u.nama_ulasan,u.ulasan,u.ulasan_rating,u.tanggal_ulasan,k.kategori,s.nama_sutradara, AVG(ulasan_rating) AS avg_rating FROM `film` as f join kategori as k on f.id_kategori=k.id_kategori join sutradara as s on s.id_sutradara=f.id_sutradara join ulasan as u on u.ulasan_id=f.id where f.id = '$id'");
+$query = mysqli_query($conn, "SELECT f.id,f.judul_film,f.tahun_rilis,f.sinopsis,f.id_kategori,f.id_sutradara,f.genre,f.genre,f.nama_pemain,f.gambar,u.nama_ulasan,u.ulasan,u.ulasan_rating,u.tanggal_ulasan,k.kategori,s.nama_sutradara, AVG(ulasan_rating) AS avg_rating, COUNT(l.id) AS like_count
+                              FROM `film` as f
+                              JOIN kategori as k on f.id_kategori=k.id_kategori
+                              JOIN sutradara as s on s.id_sutradara=f.id_sutradara
+                              JOIN ulasan as u on u.ulasan_id=f.id
+                              LEFT JOIN film_like as l on f.id = l.film_id
+                              WHERE f.id = '$id'");
 $data = mysqli_fetch_array($query);
 
 ?>
@@ -110,6 +118,9 @@ $data = mysqli_fetch_array($query);
                                             <li><span>Pemain:</span>
                                                 <?php echo $data["nama_pemain"] ?>
                                             </li>
+                                            <li><span>Like:</span>
+                                                <span id="likeCount"><?php echo $data['like_count']; ?></span>
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -117,6 +128,18 @@ $data = mysqli_fetch_array($query);
                             <div class="anime__details__btn">
                                 <a href="anime-watching.php?id=<?php echo $data["id"] ?>" class="watch-btn"><span>Watch
                                         Now</span> <i class="fa fa-angle-right"></i></a>
+
+                                        <?php $idUser = $_SESSION['userId'];
+                                        $check_like_query = mysqli_query($conn, "SELECT * FROM film_like WHERE film_id = '$id' AND user_id = '$idUser'");
+                                        $user_has_liked = mysqli_num_rows($check_like_query) > 0;
+                                        ?>
+                                        <form action="proses_like.php" method="post" id="likeForm">
+                                            <input type="hidden" name="filmId" value="<?php echo $data['id']; ?>">
+                                            <input type="hidden" name="userId" value="<?php echo $user_id; ?>">
+                                            <button type="submit" name="likeAction" id="likeButton">
+                                                <?php echo ($user_has_liked) ? 'Unlike' : 'Like'; ?>
+                                            </button>
+                                        </form>
                             </div>
                         </div>
                     </div>
