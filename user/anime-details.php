@@ -29,10 +29,6 @@ $data = mysqli_fetch_array($query);
     <link rel="stylesheet" href="../css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="../css/style.css" type="text/css">
 
-    <script type="text/javascript" 
-    src="https://platform-api.sharethis.com/js/sharethis.js#property=657408d7088a0f0019878cf1&product=inline-share-buttons&source=platform"
-    async="async"></script>
-
 </head>
 
 <body>
@@ -55,8 +51,11 @@ $data = mysqli_fetch_array($query);
                         <a href="./kategori.php">Movie</a>
                         <span>
                             <?php echo $data["judul_film"] ?>
+                            <div class="fb-share-button" 
+       data-href="http://localhost/msib5_ta_kelompok_e_new/user/anime-details.php?id=35" 
+       data-layout="button_count">
+  </div>
                         </span>
-                        <div class="sharethis-inline-share-buttons"></div> 
                     </div>
                 </div>
             </div>
@@ -219,7 +218,10 @@ $data = mysqli_fetch_array($query);
     <script src="../js/jquery.slicknav.js"></script>
     <script src="../js/owl.carousel.min.js"></script>
     <script src="../js/main.js"></script>
-
+    <script async defer crossorigin="anonymous" 
+          src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v11.0" 
+          nonce="pQaC4WUx">
+  </script>
 </body>
 
 </html>
