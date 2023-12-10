@@ -15,7 +15,8 @@
         rel="stylesheet">
 
     <!-- Css Styles -->
-    <link rel="stylesheet" href="../dashboard/assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="../dashboard/assets/vendor/css/theme-default.css"
+        class="template-customizer-theme-css" />
     <link rel="stylesheet" href="../dashboard/assets/css/demo.css" />
     <link rel="stylesheet" href="../dashboard/assets/vendor/css/core.css" class="template-customizer-core-css" />
     <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css">
@@ -30,8 +31,8 @@
     <link rel="stylesheet" href="../dashboard/assets/vendor/fonts/boxicons.css" />
 
     <!-- Core CSS -->
-    
-    
+
+
 
     <!-- Vendors CSS -->
     <link rel="stylesheet" href="../dashboard/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
@@ -109,7 +110,7 @@
                                     <div class="col-lg-4 col-md-6 col-sm-6">
                                         <div class="product__item">
                                             <div class="product__item__pic set-bg"
-                                            data-setbg="../dashboard/admin/<?php echo $data["gambar"] ?>">
+                                                data-setbg="../dashboard/admin/<?php echo $data["gambar"] ?>">
                                                 <!-- <div class="ep">
                                                     <?php echo $data["rating_film"] ?>
                                                 </div> -->
@@ -131,14 +132,6 @@
                             ?>
                         </div>
                     </div>
-                    <!-- <div class="product__pagination">
-                        <a href="#" class="current-page">1</a>
-                        <a href="#">2</a>
-                        <a href="#">3</a>
-                        <a href="#">4</a>
-                        <a href="#">5</a>
-                        <a href="#"><i class="fa fa-angle-double-right"></i></a>
-                    </div> -->
                 </div>
             </div>
         </div>
