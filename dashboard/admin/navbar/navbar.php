@@ -31,6 +31,12 @@
                     </a>
                 </li>
                 <li class="menu-item">
+                    <a href="data_user.php" class="menu-link">
+                        <i class="menu-icon tf-icons bx bxs-user-detail"></i>
+                        <div data-i18n="Analytics"> Data User</div>
+                    </a>
+                </li>
+                <li class="menu-item">
                     <a href="ks.php" class="menu-link">
                         <i class="menu-icon tf-icons bx bxs-spreadsheet"></i>
                         <div data-i18n="Analytics">Kritik dan Saran</div>

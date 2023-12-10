@@ -138,108 +138,98 @@ include 'koneksi.php';
 
             <div class="container-xxl flex-grow-1 container-p-y">
                 <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Tables /</span> Data Like User</h4>
-                <div class="col-sm-6">
-                    <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="../../data.php">Home</a></li>
-                        <li class="breadcrumb-item active">Data Like User</li>
-                    </ol>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Header Content End -->
 
-    <!-- Main Content Start -->
-    <section class="content">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-12">
-                    <div class="card">
-                        <div class="card-body">
-                            <a href="tambah_admin.php" class="btn btn-primary mb-3"><i
-                                    class="fa-solid fa-circle-plus"></i></a>
+                <!-- Main Content Start -->
+                <section class="content">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <a href="tambah_admin.php" class="btn btn-primary mb-3"><i
+                                                class="fa-solid fa-circle-plus"></i></a>
 
-                            <!-- Tabel Start -->
-                            <table id="example" class="table table-bordered table-striped">
-                                <thead>
-                                    <tr class="text-center">
-                                        <th>No</th>
-                                        <th>Judul Film</th>
-                                        <th>Genre</th>
-                                        <th>Jumlah Like</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php
+                                        <!-- Tabel Start -->
+                                        <table id="example" class="table table-bordered table-striped">
+                                            <thead>
+                                                <tr class="text-center">
+                                                    <th>No</th>
+                                                    <th>Judul Film</th>
+                                                    <th>Genre</th>
+                                                    <th>Jumlah Like</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <?php
                                             $no = 1;
-                                            $query = mysqli_query($connect, "SELECT * FROM film_like WHERE film_id = '$filmId' AND user_id = '$idUser', total_likes FROM film_like as f JOIN film as f ON f.id, f.judul_film JOIN user_like as ul ON ul.id_travel_like = f.id GROUP BY f.id ORDER BY total_likes DESC");                                            
+                                            $query = mysqli_query($connect, "SELECT * FROM film_like WHERE film_id = '$filmId' AND user_id = '$idUser', total_likes FROM film_like as f JOIN film as f ON f.id, f.judul_film JOIN film_like WHERE film_id = '$filmId' AND user_id = '$idUser' ORDER BY total_likes DESC");                                            
                                             while ($data = mysqli_fetch_array($query)) {
                                             ?>
-                                    <tr>
-                                        <td><?php echo $no++; ?></td>
-                                        <td><?php echo $data['nama_tempat']; ?></td>
-                                        <td><?php echo $data['nama_daerah']; ?></td>
-                                        <td><?php echo $data['total_like'] ?></td>
-                                    </tr>
-                                    <?php
+                                                <tr>
+                                                    <td><?php echo $no++; ?></td>
+                                                    <td><?php echo $data['judul_film']; ?></td>
+                                                    <td><?php echo $data['genre']; ?></td>
+                                                    <td><?php echo $data['total_like'] ?></td>
+                                                </tr>
+                                                <?php
                                             }
                                             ?>
-                                </tbody>
-                            </table>
-                            <!-- Tabel End -->
+                                            </tbody>
+                                        </table>
+                                        <!-- Tabel End -->
 
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </section>
+                <!-- Main Content End -->
+
             </div>
+            <!-- Content Wrapper Page End -->
         </div>
-    </section>
-    <!-- Main Content End -->
 
-    </div>
-    <!-- Content Wrapper Page End -->
-    </div>
+        <!-- jQuery -->
+        <script src="../../components/js/jquery.min.js"></script>
+        <!-- jQuery UI 1.11.4 -->
+        <script src="../../components/js/jquery-ui.min.js"></script>
+        <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+        <script>
+        $.widget.bridge('uibutton', $.ui.button)
+        </script>
+        <!-- Bootstrap 4 -->
+        <script src="../../components/js/bootstrap.bundle.min.js"></script>
+        <!-- ChartJS -->
+        <script src="../../components/js/Chart.min.js"></script>
+        <!-- Sparkline -->
+        <script src="../../components/js/sparkline.js"></script>
+        <!-- JQVMap -->
+        <script src="../../components/js/jquery.vmap.min.js"></script>
+        <script src="../../components/js/jquery.vmap.usa.js"></script>
+        <!-- jQuery Knob Chart -->
+        <script src="../../components/js/jquery.knob.min.js"></script>
+        <!-- daterangepicker -->
+        <script src="../../components/js/moment.min.js"></script>
+        <script src="../../components/js/daterangepicker.js"></script>
+        <!-- Tempusdominus Bootstrap 4 -->
+        <script src="../../components/js/tempusdominus-bootstrap-4.min.js"></script>
+        <!-- Summernote -->
+        <script src="../../components/js/summernote-bs4.min.js"></script>
+        <!-- overlayScrollbars -->
+        <script src="../../components/js/jquery.overlayScrollbars.min.js"></script>
+        <!-- AdminLTE App -->
+        <script src="../../components/js/adminlte.js"></script>
+        <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+        <script src="../../components/js/dashboard.js"></script>
 
-    <!-- jQuery -->
-    <script src="../../components/js/jquery.min.js"></script>
-    <!-- jQuery UI 1.11.4 -->
-    <script src="../../components/js/jquery-ui.min.js"></script>
-    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-    <script>
-    $.widget.bridge('uibutton', $.ui.button)
-    </script>
-    <!-- Bootstrap 4 -->
-    <script src="../../components/js/bootstrap.bundle.min.js"></script>
-    <!-- ChartJS -->
-    <script src="../../components/js/Chart.min.js"></script>
-    <!-- Sparkline -->
-    <script src="../../components/js/sparkline.js"></script>
-    <!-- JQVMap -->
-    <script src="../../components/js/jquery.vmap.min.js"></script>
-    <script src="../../components/js/jquery.vmap.usa.js"></script>
-    <!-- jQuery Knob Chart -->
-    <script src="../../components/js/jquery.knob.min.js"></script>
-    <!-- daterangepicker -->
-    <script src="../../components/js/moment.min.js"></script>
-    <script src="../../components/js/daterangepicker.js"></script>
-    <!-- Tempusdominus Bootstrap 4 -->
-    <script src="../../components/js/tempusdominus-bootstrap-4.min.js"></script>
-    <!-- Summernote -->
-    <script src="../../components/js/summernote-bs4.min.js"></script>
-    <!-- overlayScrollbars -->
-    <script src="../../components/js/jquery.overlayScrollbars.min.js"></script>
-    <!-- AdminLTE App -->
-    <script src="../../components/js/adminlte.js"></script>
-    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-    <script src="../../components/js/dashboard.js"></script>
-
-    <!-- DataTables  & Plugins -->
-    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
-    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>
-    <script>
-    new DataTable('#example');
-    </script>
+        <!-- DataTables  & Plugins -->
+        <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+        <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>
+        <script>
+        new DataTable('#example');
+        </script>
 </body>
 
 </html>

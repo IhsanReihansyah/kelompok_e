@@ -60,8 +60,8 @@ $data = mysqli_fetch_array($query);
                             <?php echo $data["judul_film"] ?>
                             <iframe
                                 src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2FDreamMovie.com&layout&size&width=89&height=15&appId"
-                                width="70" height="13" style="margin-left:700px; " scrolling="no"
-                                frameborder="0" allowfullscreen="true"
+                                width="70" height="13" style="margin-left:700px; " scrolling="no" frameborder="0"
+                                allowfullscreen="true"
                                 allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
                         </span>
                     </div>
@@ -118,7 +118,7 @@ $data = mysqli_fetch_array($query);
                                                 <?php echo $data["nama_pemain"] ?>
                                             </li>
                                             <li><span>Like:</span>
-                                                    <?php
+                                                <?php
                                                     $filmId = $data["id"];
                                                     $countLikesQuery = mysqli_query($conn, "SELECT COUNT(*) as totalLikes FROM film_like WHERE film_id = '$filmId'");
                                                     $likesData = mysqli_fetch_assoc($countLikesQuery);
@@ -135,33 +135,20 @@ $data = mysqli_fetch_array($query);
                                 </div>
                             </div>
                             <div class="anime__details__btn">
-<<<<<<< HEAD
-<<<<<<< HEAD
                                 <a href="anime-watching.php?id=<?php echo $data["id"]?>" class="watch-btn"><span>Watch
-                                        Now</span> <i class="fa fa-angle-right"></i></a> 
-=======
-                                <a href="anime-watching.php?id=<?php echo $data["id"] ?>" class="watch-btn"><span>Watch
                                         Now</span> <i class="fa fa-angle-right"></i></a>
-<<<<<<< HEAD
->>>>>>> 969b8a5cbf1b2bc0bf3e9c159a9c0a403ba0d37f
-=======
-                                <a href="anime-watching.php?id=<?php echo $data["id"] ?>" class="watch-btn"><span>Watch
-                                        Now</span> <i class="fa fa-angle-right"></i></a>
->>>>>>> 413826fcf0f2664cd93fed2b0a88877f6a8f26bb
-=======
 
-                                        <?php $idUser = $_SESSION['userId'];
+                                <?php $idUser = $_SESSION['userId'];
                                         $check_like_query = mysqli_query($conn, "SELECT * FROM film_like WHERE film_id = '$id' AND user_id = '$idUser'");
                                         $user_has_liked = mysqli_num_rows($check_like_query) > 0;
                                         ?>
-                                        <form action="proses_like.php" method="post" id="likeForm">
-                                            <input type="hidden" name="filmId" value="<?php echo $data['id']; ?>">
-                                            <input type="hidden" name="userId" value="<?php echo $user_id; ?>">
-                                            <button type="submit" name="likeAction" id="likeButton">
-                                                <?php echo ($user_has_liked) ? 'Unlike' : 'Like'; ?>
-                                            </button>
-                                        </form>
->>>>>>> 26e0c7fd8537579ea01fb4738713694edea13b1d
+                                <form action="proses_like.php" method="post" id="likeForm">
+                                    <input type="hidden" name="filmId" value="<?php echo $data['id']; ?>">
+                                    <input type="hidden" name="userId" value="<?php echo $user_id; ?>">
+                                    <button type="submit" name="likeAction" id="likeButton">
+                                        <?php echo ($user_has_liked) ? 'Unlike' : 'Like'; ?>
+                                    </button>
+                                </form>
                             </div>
                         </div>
                     </div>
