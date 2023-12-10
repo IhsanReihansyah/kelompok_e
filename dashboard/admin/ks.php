@@ -70,6 +70,7 @@ include 'koneksi.php';
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="../assets/js/config.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
   </head>
 
   <body>
@@ -94,7 +95,7 @@ include 'koneksi.php';
               <div class="card">
                 <h5 class="card-header">Data Kritik Dan Saran</h5>
                 <div class="table-responsive text-nowrap">
-                  <table class="table">
+                <table id="ks" class="table table-striped table-bordered">
                     <thead>
                       <tr class="text-nowrap">
                         <th>No</th>
@@ -169,5 +170,11 @@ include 'koneksi.php';
 
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#ks').DataTable();
+        });
+    </script>
   </body>
 </html>
