@@ -2,12 +2,11 @@
 session_start();
 include "koneksi.php";
 $id = $_GET["id"]; //mendapatkan id
-$query = mysqli_query($conn, "SELECT f.id,f.judul_film,f.tahun_rilis,f.sinopsis,f.id_kategori,f.id_sutradara,f.genre,f.genre,f.nama_pemain,f.gambar,u.nama_ulasan,u.ulasan,u.ulasan_rating,u.tanggal_ulasan,k.kategori,s.nama_sutradara, AVG(ulasan_rating) AS avg_rating, COUNT(l.id) AS like_count
+$query = mysqli_query($conn, "SELECT f.id,f.judul_film,f.tahun_rilis,f.sinopsis,f.id_kategori,f.id_sutradara,f.genre,f.genre,f.nama_pemain,f.gambar,u.nama_ulasan,u.ulasan,u.ulasan_rating,u.tanggal_ulasan,k.kategori,s.nama_sutradara, AVG(ulasan_rating) AS avg_rating
                               FROM `film` as f
                               JOIN kategori as k on f.id_kategori=k.id_kategori
                               JOIN sutradara as s on s.id_sutradara=f.id_sutradara
                               JOIN ulasan as u on u.ulasan_id=f.id
-                              LEFT JOIN film_like as l on f.id = l.film_id
                               WHERE f.id = '$id'");
 $data = mysqli_fetch_array($query);
 
@@ -119,7 +118,17 @@ $data = mysqli_fetch_array($query);
                                                 <?php echo $data["nama_pemain"] ?>
                                             </li>
                                             <li><span>Like:</span>
-                                                <span id="likeCount"><?php echo $data['like_count']; ?></span>
+                                                    <?php
+                                                    $filmId = $data["id"];
+                                                    $countLikesQuery = mysqli_query($conn, "SELECT COUNT(*) as totalLikes FROM film_like WHERE film_id = '$filmId'");
+                                                    $likesData = mysqli_fetch_assoc($countLikesQuery);
+                                                    
+                                                    if ($likesData && isset($likesData['totalLikes'])) {
+                                                        echo $likesData['totalLikes'];
+                                                    } else {
+                                                        echo 'Belum ada like.';
+                                                    }
+                                                    ?>
                                             </li>
                                         </ul>
                                     </div>
