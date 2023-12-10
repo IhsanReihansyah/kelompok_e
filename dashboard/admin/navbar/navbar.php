@@ -36,6 +36,12 @@
                         <div data-i18n="Analytics">Kritik dan Saran</div>
                     </a>
                 </li>
+                <li class="menu-item">
+                    <a href="data_like.php" class="menu-link">
+                        <i class="menu-icon tf-icons bx bxs-heart" style="color: grey;"></i>
+                        <div data-i18n="Analytics">Like</div>
+                    </a>
+                </li>
 
                 <!-- Forms & Tables -->
                 <li class="menu-header small text-uppercase"><span class="menu-header-text">Forms Tambah</span></li>
@@ -62,8 +68,3 @@
             </ul>
         </aside>
         <!-- / Menu -->
-        
-        
-    
-
-        

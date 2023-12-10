@@ -6,7 +6,10 @@ if ($_POST["password"] == $_POST["re-password"]) {
     $username = $_POST["username"];
     $password = $_POST["password"];
 
-    $result = mysqli_query($conn, "INSERT INTO `user` (`nickname`, `username`, `password`) VALUES ('$nickname', '$username', '$password');");
+    //ngehash password
+    $hashed_password = hash('sha256', $password);
+
+    $result = mysqli_query($conn, "INSERT INTO `user` (`nickname`, `username`, `password`) VALUES ('$nickname', '$username', '$hashed_password');");
 
     header("Location: login_user.php");
     exit();

@@ -1,6 +1,13 @@
-<?php include "koneksi.php";
+<?php 
+session_start();
+include "koneksi.php";
 $id = $_GET["id"]; //mendapatkan id
-$query = mysqli_query($conn, "SELECT f.id,f.judul_film,f.tahun_rilis,f.sinopsis,f.id_kategori,f.id_sutradara,f.genre,f.genre,f.nama_pemain,f.gambar,u.nama_ulasan,u.ulasan,u.ulasan_rating,u.tanggal_ulasan,k.kategori,s.nama_sutradara, AVG(ulasan_rating) AS avg_rating FROM `film` as f join kategori as k on f.id_kategori=k.id_kategori join sutradara as s on s.id_sutradara=f.id_sutradara join ulasan as u on u.ulasan_id=f.id where f.id = '$id'");
+$query = mysqli_query($conn, "SELECT f.id,f.judul_film,f.tahun_rilis,f.sinopsis,f.id_kategori,f.id_sutradara,f.genre,f.genre,f.nama_pemain,f.gambar,u.nama_ulasan,u.ulasan,u.ulasan_rating,u.tanggal_ulasan,k.kategori,s.nama_sutradara, AVG(ulasan_rating) AS avg_rating
+                              FROM `film` as f
+                              JOIN kategori as k on f.id_kategori=k.id_kategori
+                              JOIN sutradara as s on s.id_sutradara=f.id_sutradara
+                              JOIN ulasan as u on u.ulasan_id=f.id
+                              WHERE f.id = '$id'");
 $data = mysqli_fetch_array($query);
 
 ?>
@@ -52,8 +59,8 @@ $data = mysqli_fetch_array($query);
                         <span>
                             <?php echo $data["judul_film"] ?>
                             <iframe
-                                src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fkelompok5e.com&layout&size&width=200&height=50&appId"
-                                width="200" height="50" style="border:none;overflow:hidden" scrolling="no"
+                                src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2FDreamMovie.com&layout&size&width=89&height=15&appId"
+                                width="70" height="13" style="margin-left:700px; " scrolling="no"
                                 frameborder="0" allowfullscreen="true"
                                 allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
                         </span>
@@ -83,8 +90,9 @@ $data = mysqli_fetch_array($query);
                             </div>
                             <div class="anime__details__rating">
                                 <span> Rate
-                                    <?php $averagerating = intval(str_replace(',', '', $data["avg_rating"]));
-                                    echo $averagerating ?> / 10
+                                    <?php $averagerating = floatval(str_replace(',', '', $data["avg_rating"]));
+                                    $formattedRating = number_format($averagerating, 1);
+                                    echo $formattedRating ?> / 10
                                 </span>
                             </div>
                             <p>
@@ -109,6 +117,19 @@ $data = mysqli_fetch_array($query);
                                             <li><span>Pemain:</span>
                                                 <?php echo $data["nama_pemain"] ?>
                                             </li>
+                                            <li><span>Like:</span>
+                                                    <?php
+                                                    $filmId = $data["id"];
+                                                    $countLikesQuery = mysqli_query($conn, "SELECT COUNT(*) as totalLikes FROM film_like WHERE film_id = '$filmId'");
+                                                    $likesData = mysqli_fetch_assoc($countLikesQuery);
+                                                    
+                                                    if ($likesData && isset($likesData['totalLikes'])) {
+                                                        echo $likesData['totalLikes'];
+                                                    } else {
+                                                        echo 'Belum ada like.';
+                                                    }
+                                                    ?>
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -121,11 +142,26 @@ $data = mysqli_fetch_array($query);
 =======
                                 <a href="anime-watching.php?id=<?php echo $data["id"] ?>" class="watch-btn"><span>Watch
                                         Now</span> <i class="fa fa-angle-right"></i></a>
+<<<<<<< HEAD
 >>>>>>> 969b8a5cbf1b2bc0bf3e9c159a9c0a403ba0d37f
 =======
                                 <a href="anime-watching.php?id=<?php echo $data["id"] ?>" class="watch-btn"><span>Watch
                                         Now</span> <i class="fa fa-angle-right"></i></a>
 >>>>>>> 413826fcf0f2664cd93fed2b0a88877f6a8f26bb
+=======
+
+                                        <?php $idUser = $_SESSION['userId'];
+                                        $check_like_query = mysqli_query($conn, "SELECT * FROM film_like WHERE film_id = '$id' AND user_id = '$idUser'");
+                                        $user_has_liked = mysqli_num_rows($check_like_query) > 0;
+                                        ?>
+                                        <form action="proses_like.php" method="post" id="likeForm">
+                                            <input type="hidden" name="filmId" value="<?php echo $data['id']; ?>">
+                                            <input type="hidden" name="userId" value="<?php echo $user_id; ?>">
+                                            <button type="submit" name="likeAction" id="likeButton">
+                                                <?php echo ($user_has_liked) ? 'Unlike' : 'Like'; ?>
+                                            </button>
+                                        </form>
+>>>>>>> 26e0c7fd8537579ea01fb4738713694edea13b1d
                             </div>
                         </div>
                     </div>
@@ -181,7 +217,6 @@ $data = mysqli_fetch_array($query);
                                 <h5>write your review</h5>
                             </div>
                             <form action="template/proses_review.php" method="post">
-                                <input type="text" placeholder=" Your Name" name="nama_ulasan"><br><br>
                                 <input type="hidden" value="<?php echo $id ?>" name="ulasan_id">
                                 <select name="ulasan_rating">
                                     <option value="1">1/10</option>
@@ -197,17 +232,6 @@ $data = mysqli_fetch_array($query);
                                 </select><br><br><br>
                                 <textarea placeholder="Your Comment" name="ulasan"></textarea>
 
-                                <?php
-                                $query = mysqli_query($conn, "SELECT id FROM `user`");
-
-                                if (mysqli_num_rows($query) > 0) {
-                                    while ($data = mysqli_fetch_array($query)) {
-                                        ?>
-                                <input type="hidden" value="<?php echo $data["id"] ?>" name="ulasan_user">
-                                <?php
-                                    }
-                                }
-                                ?>
 
                                 <button type="submit" name="simpan"><i class="fa fa-location-arrow"></i> Review</button>
                             </form>

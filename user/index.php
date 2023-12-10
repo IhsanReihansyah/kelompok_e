@@ -146,16 +146,16 @@ include 'koneksi.php';
                                 if (mysqli_num_rows($query) > 0) {
                                     while ($data = mysqli_fetch_array($query)) {
                                             ?>
-                                            <div class="product__sidebar__view__item set-bg mix day"
-                                                data-setbg="../dashboard/admin/<?php echo $data["gambar"] ?>">
-                                                <!-- <div class="ep">
+                                <div class="product__sidebar__view__item set-bg mix day"
+                                    data-setbg="../dashboard/admin/<?php echo $data["gambar"] ?>">
+                                    <!-- <div class="ep">
                                 <?php echo $data["rating_film"] ?>
                             </div> -->
-                                                <h5><a href="anime-details.php?id=<?php echo $data["id"] ?>">
-                                                        <?php echo $data["judul_film"] ?>
-                                                    </a></h5>
-                                            </div>
-                                            <?php
+                                    <h5><a href="anime-details.php?id=<?php echo $data["id"] ?>">
+                                            <?php echo $data["judul_film"] ?>
+                                        </a></h5>
+                                </div>
+                                <?php
 
                                     }
                                 }
@@ -163,48 +163,48 @@ include 'koneksi.php';
                                 if (mysqli_num_rows($query) > 0) {
                                     while ($data = mysqli_fetch_array($query)) {
                                             ?>
-                                            <div class="product__sidebar__view__item set-bg mix week"
-                                                data-setbg="../dashboard/admin/<?php echo $data["gambar"] ?>">
-                                                <!-- <div class="ep">
+                                <div class="product__sidebar__view__item set-bg mix week"
+                                    data-setbg="../dashboard/admin/<?php echo $data["gambar"] ?>">
+                                    <!-- <div class="ep">
                                 <?php echo $data["rating_film"] ?>
                             </div> -->
-                                                <h5><a href="anime-details.php?id=<?php echo $data["id"] ?>">
-                                                        <?php echo $data["judul_film"] ?>
-                                                    </a></h5>
-                                            </div>
-                                            <?php
+                                    <h5><a href="anime-details.php?id=<?php echo $data["id"] ?>">
+                                            <?php echo $data["judul_film"] ?>
+                                        </a></h5>
+                                </div>
+                                <?php
                                     }
                                 }
                                 $query = mysqli_query($conn, "SELECT * FROM `film` WHERE FIND_IN_SET('Top Views Month', `tag`) > 0 ORDER BY id ASC");
                                 if (mysqli_num_rows($query) > 0) {
                                     while ($data = mysqli_fetch_array($query)) {
                                             ?>
-                                            <div class="product__sidebar__view__item set-bg mix month"
-                                                data-setbg="../dashboard/admin/<?php echo $data["gambar"] ?>">
-                                                <!-- <div class="ep">
+                                <div class="product__sidebar__view__item set-bg mix month"
+                                    data-setbg="../dashboard/admin/<?php echo $data["gambar"] ?>">
+                                    <!-- <div class="ep">
                                 <?php echo $data["rating_film"] ?>
                             </div> -->
-                                                <h5><a href="anime-details.php?id=<?php echo $data["id"] ?>">
-                                                        <?php echo $data["judul_film"] ?>
-                                                    </a></h5>
-                                            </div>
-                                            <?php
+                                    <h5><a href="anime-details.php?id=<?php echo $data["id"] ?>">
+                                            <?php echo $data["judul_film"] ?>
+                                        </a></h5>
+                                </div>
+                                <?php
                                     }
                                 }
                                 $query = mysqli_query($conn, "SELECT * FROM `film` WHERE FIND_IN_SET('Top Views Year', `tag`) > 0 ORDER BY id ASC");
                                 if (mysqli_num_rows($query) > 0) {
                                     while ($data = mysqli_fetch_array($query)) {
                                             ?>
-                                            <div class="product__sidebar__view__item set-bg mix years"
-                                                data-setbg="../dashboard/admin/<?php echo $data["gambar"] ?>">
-                                                <!-- <div class="ep">
+                                <div class="product__sidebar__view__item set-bg mix years"
+                                    data-setbg="../dashboard/admin/<?php echo $data["gambar"] ?>">
+                                    <!-- <div class="ep">
                                 <?php echo $data["rating_film"] ?>
                             </div> -->
-                                                <h5><a href="anime-details.php?id=<?php echo $data["id"] ?>">
-                                                        <?php echo $data["judul_film"] ?>
-                                                    </a></h5>
-                                            </div>
-                                            <?php
+                                    <h5><a href="anime-details.php?id=<?php echo $data["id"] ?>">
+                                            <?php echo $data["judul_film"] ?>
+                                        </a></h5>
+                                </div>
+                                <?php
                                     }
                                 }                                
                                 ?>
