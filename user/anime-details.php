@@ -83,8 +83,9 @@ $data = mysqli_fetch_array($query);
                             </div>
                             <div class="anime__details__rating">
                                 <span> Rate
-                                    <?php $averagerating = intval(str_replace(',', '', $data["avg_rating"]));
-                                    echo $averagerating ?> / 10
+                                    <?php $averagerating = floatval(str_replace(',', '', $data["avg_rating"]));
+                                    $formattedRating = number_format($averagerating, 1);
+                                    echo $formattedRating ?> / 10
                                 </span>
                             </div>
                             <p>
@@ -171,7 +172,6 @@ $data = mysqli_fetch_array($query);
                                 <h5>write your review</h5>
                             </div>
                             <form action="template/proses_review.php" method="post">
-                                <input type="text" placeholder=" Your Name" name="nama_ulasan"><br><br>
                                 <input type="hidden" value="<?php echo $id ?>" name="ulasan_id">
                                 <select name="ulasan_rating">
                                     <option value="1">1/10</option>
@@ -187,17 +187,6 @@ $data = mysqli_fetch_array($query);
                                 </select><br><br><br>
                                 <textarea placeholder="Your Comment" name="ulasan"></textarea>
 
-                                <?php
-                                $query = mysqli_query($conn, "SELECT id FROM `user`");
-
-                                if (mysqli_num_rows($query) > 0) {
-                                    while ($data = mysqli_fetch_array($query)) {
-                                        ?>
-                                <input type="hidden" value="<?php echo $data["id"] ?>" name="ulasan_user">
-                                <?php
-                                    }
-                                }
-                                ?>
 
                                 <button type="submit" name="simpan"><i class="fa fa-location-arrow"></i> Review</button>
                             </form>

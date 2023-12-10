@@ -11,7 +11,7 @@ include 'koneksi.php';
 // Proses login jika formulir dikirim
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'];
-    $password = $_POST['password'];
+    $password = hash('sha256', $_POST['password']);
 
     $sql = "SELECT * FROM user WHERE username = '$username' AND password = '$password'";
     $result = $conn->query($sql);
@@ -19,6 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($result->num_rows == 1) {
         // Login berhasil
         $_SESSION['isUserLogin'] = true; // Simpan username dalam session
+        $_SESSION['userId'] = $result->fetch_assoc()['id']; //simpan id dalam session
         // Arahkan ke halaman dashboard atau halaman lainnya
         header("Location: index.php");
         exit();
