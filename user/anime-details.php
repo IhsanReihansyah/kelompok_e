@@ -113,11 +113,6 @@ $data = mysqli_fetch_array($query);
                         <a href="./kategori.php">Movie</a>
                         <span>
                             <?php echo $data["judul_film"] ?>
-                            <iframe
-                                src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2FDreamMovie.com&layout&size&width=89&height=15&appId"
-                                width="70" height="13" style="margin-left:700px; " scrolling="no" frameborder="0"
-                                allowfullscreen="true"
-                                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
                         </span>
                     </div>
                 </div>
@@ -173,37 +168,49 @@ $data = mysqli_fetch_array($query);
                                                 <?php echo $data["nama_pemain"] ?>
                                             </li>
                                             <li><span>Like:</span>
-                                                    <?php
-                                                    $filmId = $data["id"];
-                                                    $countLikesQuery = mysqli_query($conn, "SELECT COUNT(*) as totalLikes FROM film_like WHERE film_id = '$filmId'");
-                                                    $likesData = mysqli_fetch_assoc($countLikesQuery);
-                                                    
-                                                    if ($likesData && isset($likesData['totalLikes'])) {
-                                                        echo $likesData['totalLikes'];
-                                                    } else {
-                                                        echo 'Belum ada like.';
-                                                    }
-                                                    ?>
+                                                <?php
+                                                $filmId = $data["id"];
+                                                $countLikesQuery = mysqli_query($conn, "SELECT COUNT(*) as totalLikes FROM film_like WHERE film_id = '$filmId'");
+                                                $likesData = mysqli_fetch_assoc($countLikesQuery);
+
+                                                if ($likesData && isset($likesData['totalLikes'])) {
+                                                    echo $likesData['totalLikes'];
+                                                } else {
+                                                    echo 'Belum ada like.';
+                                                }
+                                                ?>
                                             </li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
-                            <div class="anime__details__btn">
-                                <a href="anime-watching.php?id=<?php echo $data["id"] ?>" class="watch-btn"><span>Watch
-                                        Now</span> <i class="fa fa-angle-right"></i></a>
 
-                                        <?php $idUser = $_SESSION['userId'];
-                                        $check_like_query = mysqli_query($conn, "SELECT * FROM film_like WHERE film_id = '$id' AND user_id = '$idUser'");
-                                        $user_has_liked = mysqli_num_rows($check_like_query) > 0;
-                                        ?>
-                                        <form action="proses_like.php" method="post" id="likeForm">
-                                            <input type="hidden" name="filmId" value="<?php echo $data['id']; ?>">
-                                            <input type="hidden" name="userId" value="<?php echo $user_id; ?>">
-                                            <button type="submit" name="likeAction" id="likeButton">
-                                                <?php echo ($user_has_liked) ? 'Unlike' : 'Like'; ?>
-                                            </button>
-                                        </form>
+                            <?php $idUser = $_SESSION['userId'];
+                            $check_like_query = mysqli_query($conn, "SELECT * FROM film_like WHERE film_id = '$id' AND user_id = '$idUser'");
+                            $user_has_liked = mysqli_num_rows($check_like_query) > 0;
+                            ?>
+
+                            <div class="anime__details__btn">
+                                <a href="anime-watching.php?id=<?php echo $data["id"] ?>" class="watch-btn">
+                                    <span>Watch Now</span>
+                                </a>
+                                <form action="proses_like.php" method="post" id="likeForm">
+                                    <input type="hidden" name="filmId" value="<?php echo $data['id']; ?>">
+                                    <input type="hidden" name="userId" value="<?php echo $user_id; ?>">
+                                    <button type="submit" name="likeAction" id="likeButton">
+                                        <?php if ($user_has_liked): ?>
+                                            <i class="fa fa-heart" aria-hidden="true" ></i>
+                                        <?php else: ?>
+                                            <i class="fa fa-heart-o" aria-hidden="true" ></i>
+                                        <?php endif; ?>
+                                        <?php echo ($user_has_liked) ? '' : ''; ?>
+                                    </button>
+                                </form>
+                                <iframe
+                                    src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2FDreamMovie.com&layout&size&width=89&height=15&appId"
+                                    width="70" height="13" style="margin-left:30px;" scrolling="no" frameborder="0"
+                                    allowfullscreen="true"
+                                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
                             </div>
 
                         </div>
