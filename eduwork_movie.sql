@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 10 Des 2023 pada 13.34
--- Versi server: 10.4.28-MariaDB
--- Versi PHP: 8.2.4
+-- Generation Time: Dec 12, 2023 at 11:47 AM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `admin`
+-- Table structure for table `admin`
 --
 
 CREATE TABLE `admin` (
@@ -34,7 +34,7 @@ CREATE TABLE `admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `admin`
+-- Dumping data for table `admin`
 --
 
 INSERT INTO `admin` (`id`, `username`, `password`) VALUES
@@ -43,7 +43,7 @@ INSERT INTO `admin` (`id`, `username`, `password`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `film`
+-- Table structure for table `film`
 --
 
 CREATE TABLE `film` (
@@ -62,7 +62,7 @@ CREATE TABLE `film` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `film`
+-- Dumping data for table `film`
 --
 
 INSERT INTO `film` (`id`, `judul_film`, `tahun_rilis`, `sinopsis`, `tag`, `id_kategori`, `id_sutradara`, `genre`, `nama_pemain`, `gambar`, `video`, `love_count`) VALUES
@@ -84,12 +84,13 @@ INSERT INTO `film` (`id`, `judul_film`, `tahun_rilis`, `sinopsis`, `tag`, `id_ka
 (47, 'Jade Goddess of Mercy', '2003-12-25', 'Ini bercerita tentang seorang gadis biasa yang menjadi polisi yang menyamar dalam regu narkoba.', 'Top Views Year', 3, 16, 'Romance,Crime', 'Zhao Wei Nicholas, Tse Liu Yunlong, Chen Jianbin', 'images/Jade_Goddess_of_Mercy.jpeg', 'Ov0za6Xb1LM', 0),
 (48, 'My Tomorrow Your Yesterday', '2016-12-17', 'kisah cinta biasa antara sepasang anak muda berusia 20 tahun, Takatoshi Minamiya (Sota Fukushi) jatuh cinta pada pandangan pertama kepada Emi Fukuju (Nana Komatsu) saat berada di satu gerbong kereta yang sama.', 'Top Views Year', 4, 18, 'Romance,Fantasy', 'Sota Fukushi, Nana Komatsu, Masahiro Higashide', 'images/Tomorro.jpeg', 'TLAX78nHQH4', 0),
 (49, 'My Teacher', '2017-10-28', 'Siswa tahun kedua sekolah menengah dan pencinta olahraga memanah Hibiki Shimada tidak pernah merasakan cinta romantis seumur hidupnya. Ini terjadi meskipun berteman dengan Megumi Chigusa dan Kosuke Kawai, dua remaja yang saling mencintai yang tanpa malu-malu memamerkan perasaan mereka terhadap guru matematika dan seni visual sekolah, Masato Sekiya dan Sachiko Nakajima, masing-masing.', NULL, 4, 18, 'Romance,Comedi,Drama', 'Toma Ikuta, Dan Suzu Hirose', 'images/My_Teacher_poster.jpg', 'HpYqkdn2ilU', 0),
-(50, 'Yell for the Blue Sky', '2016-08-20', 'Tsubasa Ono (diperankan oleh Tao Tsuchiya) berada di kelas pertama SMA Shirato di Sapporo, Jepang. SMA terkenal dengan tim bisbol dan band kuningan. Sementara Tsubasa Ono melihat trofi untuk band kuningan, ia bertemu Daisuke Yamada (diperankan oleh Ryoma Takeuchi) yang berdiri di sampingnya dan memandangi trofi untuk tim bisbol.', NULL, 4, 18, 'Romance,Drama', 'Tao Tsuchiya, Ryoma Takeuchi, Mirai Shida', 'images/yell', 'bbJUfD8CdnI', 0);
+(50, 'Yell for the Blue Sky', '2016-08-20', 'Tsubasa Ono (diperankan oleh Tao Tsuchiya) berada di kelas pertama SMA Shirato di Sapporo, Jepang. SMA terkenal dengan tim bisbol dan band kuningan. Sementara Tsubasa Ono melihat trofi untuk band kuningan, ia bertemu Daisuke Yamada (diperankan oleh Ryoma Takeuchi) yang berdiri di sampingnya dan memandangi trofi untuk tim bisbol.', NULL, 4, 18, 'Romance,Drama', 'Tao Tsuchiya, Ryoma Takeuchi, Mirai Shida', 'images/yell', 'bbJUfD8CdnI', 0),
+(59, 'rehan', '2023-12-12', 'rehan', 'Trending Now', 1, 3, 'Advanture', 'rehan', 'images/5.png', 'wT2aPdXwdt8', 0);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `film_like`
+-- Table structure for table `film_like`
 --
 
 CREATE TABLE `film_like` (
@@ -100,16 +101,17 @@ CREATE TABLE `film_like` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `film_like`
+-- Dumping data for table `film_like`
 --
 
 INSERT INTO `film_like` (`id`, `film_id`, `user_id`, `liked_at`) VALUES
-(8, 35, 7, '2023-12-10 12:31:45');
+(10, 59, 9, '2023-12-11 20:20:31'),
+(13, 37, 9, '2023-12-12 09:27:30');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kategori`
+-- Table structure for table `kategori`
 --
 
 CREATE TABLE `kategori` (
@@ -118,7 +120,7 @@ CREATE TABLE `kategori` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `kategori`
+-- Dumping data for table `kategori`
 --
 
 INSERT INTO `kategori` (`id_kategori`, `kategori`) VALUES
@@ -132,7 +134,7 @@ INSERT INTO `kategori` (`id_kategori`, `kategori`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kritikdansaran`
+-- Table structure for table `kritikdansaran`
 --
 
 CREATE TABLE `kritikdansaran` (
@@ -143,7 +145,7 @@ CREATE TABLE `kritikdansaran` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `kritikdansaran`
+-- Dumping data for table `kritikdansaran`
 --
 
 INSERT INTO `kritikdansaran` (`id`, `nama`, `email`, `pesan`) VALUES
@@ -152,7 +154,7 @@ INSERT INTO `kritikdansaran` (`id`, `nama`, `email`, `pesan`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `rating`
+-- Table structure for table `rating`
 --
 
 CREATE TABLE `rating` (
@@ -161,7 +163,7 @@ CREATE TABLE `rating` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `rating`
+-- Dumping data for table `rating`
 --
 
 INSERT INTO `rating` (`id_rating`, `rating_film`) VALUES
@@ -179,7 +181,7 @@ INSERT INTO `rating` (`id_rating`, `rating_film`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `sutradara`
+-- Table structure for table `sutradara`
 --
 
 CREATE TABLE `sutradara` (
@@ -190,7 +192,7 @@ CREATE TABLE `sutradara` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `sutradara`
+-- Dumping data for table `sutradara`
 --
 
 INSERT INTO `sutradara` (`id_sutradara`, `nama_sutradara`, `tanggal_lahir`, `negara`) VALUES
@@ -206,7 +208,7 @@ INSERT INTO `sutradara` (`id_sutradara`, `nama_sutradara`, `tanggal_lahir`, `neg
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `ulasan`
+-- Table structure for table `ulasan`
 --
 
 CREATE TABLE `ulasan` (
@@ -220,22 +222,21 @@ CREATE TABLE `ulasan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `ulasan`
+-- Dumping data for table `ulasan`
 --
 
 INSERT INTO `ulasan` (`id`, `ulasan_user`, `ulasan_id`, `nama_ulasan`, `ulasan`, `ulasan_rating`, `tanggal_ulasan`) VALUES
-(99, 7, 33, 'coba', 'filmnya bagus', 5, '2023-12-10'),
-(100, 7, 33, '', 'bagus', 6, '2023-12-10'),
 (101, 8, 33, '', 'coba', 1, '2023-12-10'),
-(102, 7, 33, '', 'bagus skali', 1, '2023-12-10'),
-(103, 7, 36, '', 'bagus', 3, '2023-12-10'),
-(104, 7, 36, '', 'bagus', 4, '2023-12-10'),
-(105, 8, 35, '', 'sss', 5, '2023-12-10');
+(105, 8, 35, '', 'sss', 5, '2023-12-10'),
+(106, 9, 59, '', 'rehan', 5, '2023-12-11'),
+(107, 9, 33, '', '', 1, '2023-12-11'),
+(108, 9, 33, '', '', 1, '2023-12-11'),
+(109, 9, 32, '', '', 1, '2023-12-11');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `user`
+-- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
@@ -246,25 +247,25 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `user`
+-- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`id`, `nickname`, `username`, `password`) VALUES
-(7, 'user', 'user', '04f8996da763b7a969b1028ee3007569eaf3a635486ddab211d512c85b9df8fb'),
-(8, 'gian', 'gian', '1dd060fb034399fe06e0fdf62a13de2eb3065f5da931fa7b58bd3faf4f15e87f');
+(8, 'gian', 'gian', '1dd060fb034399fe06e0fdf62a13de2eb3065f5da931fa7b58bd3faf4f15e87f'),
+(9, 'REHAN', 'rehan', 'c4cfd351a5c5ee058022e74356fc5483782a4a396d80b058b3358027a88821bb');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indeks untuk tabel `admin`
+-- Indexes for table `admin`
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `film`
+-- Indexes for table `film`
 --
 ALTER TABLE `film`
   ADD PRIMARY KEY (`id`),
@@ -272,7 +273,7 @@ ALTER TABLE `film`
   ADD KEY `sutradara` (`id_sutradara`);
 
 --
--- Indeks untuk tabel `film_like`
+-- Indexes for table `film_like`
 --
 ALTER TABLE `film_like`
   ADD PRIMARY KEY (`id`),
@@ -280,31 +281,31 @@ ALTER TABLE `film_like`
   ADD KEY `FK_userid` (`user_id`);
 
 --
--- Indeks untuk tabel `kategori`
+-- Indexes for table `kategori`
 --
 ALTER TABLE `kategori`
   ADD PRIMARY KEY (`id_kategori`);
 
 --
--- Indeks untuk tabel `kritikdansaran`
+-- Indexes for table `kritikdansaran`
 --
 ALTER TABLE `kritikdansaran`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `rating`
+-- Indexes for table `rating`
 --
 ALTER TABLE `rating`
   ADD PRIMARY KEY (`id_rating`);
 
 --
--- Indeks untuk tabel `sutradara`
+-- Indexes for table `sutradara`
 --
 ALTER TABLE `sutradara`
   ADD PRIMARY KEY (`id_sutradara`);
 
 --
--- Indeks untuk tabel `ulasan`
+-- Indexes for table `ulasan`
 --
 ALTER TABLE `ulasan`
   ADD PRIMARY KEY (`id`),
@@ -313,89 +314,89 @@ ALTER TABLE `ulasan`
   ADD KEY `ulasan_user` (`ulasan_user`);
 
 --
--- Indeks untuk tabel `user`
+-- Indexes for table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `admin`
+-- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT untuk tabel `film`
+-- AUTO_INCREMENT for table `film`
 --
 ALTER TABLE `film`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 
 --
--- AUTO_INCREMENT untuk tabel `film_like`
+-- AUTO_INCREMENT for table `film_like`
 --
 ALTER TABLE `film_like`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
--- AUTO_INCREMENT untuk tabel `kategori`
+-- AUTO_INCREMENT for table `kategori`
 --
 ALTER TABLE `kategori`
   MODIFY `id_kategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT untuk tabel `kritikdansaran`
+-- AUTO_INCREMENT for table `kritikdansaran`
 --
 ALTER TABLE `kritikdansaran`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT untuk tabel `rating`
+-- AUTO_INCREMENT for table `rating`
 --
 ALTER TABLE `rating`
   MODIFY `id_rating` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT untuk tabel `sutradara`
+-- AUTO_INCREMENT for table `sutradara`
 --
 ALTER TABLE `sutradara`
   MODIFY `id_sutradara` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
--- AUTO_INCREMENT untuk tabel `ulasan`
+-- AUTO_INCREMENT for table `ulasan`
 --
 ALTER TABLE `ulasan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=106;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=110;
 
 --
--- AUTO_INCREMENT untuk tabel `user`
+-- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+-- Constraints for dumped tables
 --
 
 --
--- Ketidakleluasaan untuk tabel `film`
+-- Constraints for table `film`
 --
 ALTER TABLE `film`
   ADD CONSTRAINT `kategori` FOREIGN KEY (`id_kategori`) REFERENCES `kategori` (`id_kategori`),
   ADD CONSTRAINT `sutradara` FOREIGN KEY (`id_sutradara`) REFERENCES `sutradara` (`id_sutradara`) ON DELETE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `film_like`
+-- Constraints for table `film_like`
 --
 ALTER TABLE `film_like`
   ADD CONSTRAINT `FK_filmid` FOREIGN KEY (`film_id`) REFERENCES `film` (`id`),
-  ADD CONSTRAINT `FK_userid` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`);
+  ADD CONSTRAINT `FK_userid` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `ulasan`
+-- Constraints for table `ulasan`
 --
 ALTER TABLE `ulasan`
   ADD CONSTRAINT `rating` FOREIGN KEY (`ulasan_rating`) REFERENCES `rating` (`id_rating`),
