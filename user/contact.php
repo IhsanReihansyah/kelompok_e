@@ -65,7 +65,7 @@
                         <h3>Contact Us</h3>
                     </header>
                     <section>
-                        <form action="../admin/proses_tambah_ks.php" method="POST">
+                        <form action="../dashboard/admin/proses_tambah_ks.php" method="POST">
 
                             <div class="input-group mb-3">
                                 <span class="input-group-text" style="padding-right: 36px;">Name:</span>
