@@ -90,19 +90,28 @@ include 'koneksi.php';
                         <div class="row">
                             <div class="col-lg-8 col-md-8 col-sm-8">
                                 <div class="section-title">
-                                    <h4>Trending Now</h4>
+                                    <h4>Most Likes</h4>
                                 </div>
                             </div>
-                            <!-- <div class="col-lg-4 col-md-4 col-sm-4">
-                                <div class="btn__all">
-                                    <a href="kategori.php" class="primary-btn">View All <span
-                                            class="arrow_right"></span></a>
-                                </div>
-                            </div> -->
                         </div>
                         <div class="row">
                             <?php
-                            $query = mysqli_query($conn, "SELECT * FROM `film` WHERE FIND_IN_SET('Trending Now', `tag`) > 0 ORDER BY id ASC");
+                            $query = mysqli_query($conn, "SELECT f.*, COUNT(fl.film_id) AS total_likes FROM `film_like` AS fl JOIN `film` AS f ON f.id = fl.film_id GROUP BY fl.film_id ORDER BY total_likes DESC LIMIT 3;");
+                            tampilkantag($query);
+                            ?>
+                        </div>
+                    </div>
+                    <div class="trending__product">
+                        <div class="row">
+                            <div class="col-lg-8 col-md-8 col-sm-8">
+                                <div class="section-title">
+                                    <h4>Trending Now</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <?php
+                            $query = mysqli_query($conn, "SELECT * FROM `film` WHERE FIND_IN_SET('Trending Now', `tag`) > 0 ORDER BY id ASC LIMIT 3");
                             tampilkantag($query);
                             ?>
                         </div>
@@ -123,7 +132,7 @@ include 'koneksi.php';
                         </div>
                         <div class="row">
                             <?php
-                            $query = mysqli_query($conn, "SELECT * FROM `film` WHERE FIND_IN_SET('Latest Film', `tag`) > 0 ORDER BY id ASC");
+                            $query = mysqli_query($conn, "SELECT * FROM `film` WHERE FIND_IN_SET('Latest Film', `tag`) > 0 ORDER BY id ASC LIMIT 3");
                             tampilkantag($query);
                             ?>
                         </div>
@@ -144,7 +153,7 @@ include 'koneksi.php';
                         </div>
                         <div class="row">
                             <?php
-                            $query = mysqli_query($conn, "SELECT * FROM `film` WHERE FIND_IN_SET('Most Repeat', `tag`) > 0 ORDER BY id ASC");
+                            $query = mysqli_query($conn, "SELECT * FROM `film` WHERE FIND_IN_SET('Most Repeat', `tag`) > 0 ORDER BY id ASC LIMIT 3");
                             tampilkantag($query);
                             ?>
                         </div>
@@ -164,7 +173,7 @@ include 'koneksi.php';
                             </ul>
                             <div class="filter__gallery">
                                 <?php
-                                $query = mysqli_query($conn, "SELECT * FROM `film` WHERE FIND_IN_SET('Top Views Day', `tag`) > 0 ORDER BY id ASC");
+                                $query = mysqli_query($conn, "SELECT * FROM `film` WHERE FIND_IN_SET('Top Views Day', `tag`) > 0 ORDER BY id ASC LIMIT 3");
                                 if (mysqli_num_rows($query) > 0) {
                                     while ($data = mysqli_fetch_array($query)) {
                                         ?>
@@ -181,7 +190,7 @@ include 'koneksi.php';
 
                                     }
                                 }
-                                $query = mysqli_query($conn, "SELECT * FROM `film` WHERE FIND_IN_SET('Top Views Week', `tag`) > 0 ORDER BY id ASC");
+                                $query = mysqli_query($conn, "SELECT * FROM `film` WHERE FIND_IN_SET('Top Views Week', `tag`) > 0 ORDER BY id ASC LIMIT 2");
                                 if (mysqli_num_rows($query) > 0) {
                                     while ($data = mysqli_fetch_array($query)) {
                                         ?>
@@ -197,7 +206,7 @@ include 'koneksi.php';
                                         <?php
                                     }
                                 }
-                                $query = mysqli_query($conn, "SELECT * FROM `film` WHERE FIND_IN_SET('Top Views Month', `tag`) > 0 ORDER BY id ASC");
+                                $query = mysqli_query($conn, "SELECT * FROM `film` WHERE FIND_IN_SET('Top Views Month', `tag`) > 0 ORDER BY id ASC LIMIT 3");
                                 if (mysqli_num_rows($query) > 0) {
                                     while ($data = mysqli_fetch_array($query)) {
                                         ?>
@@ -213,7 +222,7 @@ include 'koneksi.php';
                                         <?php
                                     }
                                 }
-                                $query = mysqli_query($conn, "SELECT * FROM `film` WHERE FIND_IN_SET('Top Views Year', `tag`) > 0 ORDER BY id ASC");
+                                $query = mysqli_query($conn, "SELECT * FROM `film` WHERE FIND_IN_SET('Top Views Year', `tag`) > 0 ORDER BY id ASC LIMIT 2");
                                 if (mysqli_num_rows($query) > 0) {
                                     while ($data = mysqli_fetch_array($query)) {
                                         ?>
