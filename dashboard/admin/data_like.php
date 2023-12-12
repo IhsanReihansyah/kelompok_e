@@ -1,8 +1,8 @@
 <?php
 session_start();
 
-if (isset($_SESSION['isUserLogin']) != true) {
-    header("Location: login_user.php");
+if (isset($_SESSION['isAdminLogin']) != true) {
+    header("Location: login.php");
     exit();
 }
 include 'koneksi.php';
@@ -79,8 +79,8 @@ include 'koneksi.php';
                         <form method="GET" action="index.php">
                             <input type="text" name="cari" class="form-control border-0 shadow-none"
                                 placeholder="Search..." aria-label="Search..." value="<?php if (isset($_GET['cari'])) {
-                      echo $_GET['cari'];
-                    } ?>" />
+                                    echo $_GET['cari'];
+                                } ?>" />
                         </form>
                     </div>
                 </div>
@@ -146,8 +146,8 @@ include 'koneksi.php';
                             <div class="col-12">
                                 <div class="card">
                                     <div class="card-body">
-                                        <a href="tambah_admin.php" class="btn btn-primary mb-3"><i
-                                                class="fa-solid fa-circle-plus"></i></a>
+                                        <!-- <a href="tambah_admin.php" class="btn btn-primary mb-3"><i
+                                                class="fa-solid fa-circle-plus"></i></a> -->
 
                                         <!-- Tabel Start -->
                                         <table id="example" class="table table-bordered table-striped">
@@ -161,19 +161,31 @@ include 'koneksi.php';
                                             </thead>
                                             <tbody>
                                                 <?php
-                                            $no = 1;
-                                            $query = mysqli_query($connect, "SELECT * FROM film_like WHERE film_id = '$filmId' AND user_id = '$idUser', total_likes FROM film_like as f JOIN film as f ON f.id, f.judul_film JOIN film_like WHERE film_id = '$filmId' AND user_id = '$idUser' ORDER BY total_likes DESC");                                            
-                                            while ($data = mysqli_fetch_array($query)) {
-                                            ?>
-                                                <tr>
-                                                    <td><?php echo $no++; ?></td>
-                                                    <td><?php echo $data['judul_film']; ?></td>
-                                                    <td><?php echo $data['genre']; ?></td>
-                                                    <td><?php echo $data['total_like'] ?></td>
-                                                </tr>
-                                                <?php
-                                            }
-                                            ?>
+                                                $no = 1;
+                                                
+                                                $query = mysqli_query($conn, "SELECT fl.*, f.*, u.*, (SELECT COUNT(*) FROM `film_like` WHERE film_id = fl.film_id) as totalLikes FROM film_like as fl JOIN film as f ON f.id = fl.film_id JOIN user as u ON fl.user_id = u.id GROUP BY film_id;");
+                                                
+                                                while ($data = mysqli_fetch_array($query)) {
+                                                    ?>
+                                                    <tr>
+                                                        <td>
+                                                            <?php echo $no++; ?>
+                                                        </td>
+                                                        <td>
+                                                            <?php echo $data['judul_film']; ?>
+                                                        </td>
+                                                        <td>
+                                                            <?php echo $data['genre']; ?>
+                                                        </td>
+                                                        <td>
+                                                            <?php
+                                                                echo $data['totalLikes'];
+                                                            ?>
+                                                        </td>
+                                                    </tr>
+                                                    <?php
+                                                }
+                                                ?>
                                             </tbody>
                                         </table>
                                         <!-- Tabel End -->
@@ -196,7 +208,7 @@ include 'koneksi.php';
         <script src="../../components/js/jquery-ui.min.js"></script>
         <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
         <script>
-        $.widget.bridge('uibutton', $.ui.button)
+            $.widget.bridge('uibutton', $.ui.button)
         </script>
         <!-- Bootstrap 4 -->
         <script src="../../components/js/bootstrap.bundle.min.js"></script>
@@ -228,7 +240,7 @@ include 'koneksi.php';
         <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
         <script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>
         <script>
-        new DataTable('#example');
+            new DataTable('#example');
         </script>
 </body>
 
