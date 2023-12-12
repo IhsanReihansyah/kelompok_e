@@ -163,7 +163,7 @@ include 'koneksi.php';
                                                 <?php
                                                 $no = 1;
                                                 
-                                                $query = mysqli_query($conn, "SELECT fl.*, f.*, u.*, (SELECT COUNT(*) FROM `film_like` WHERE film_id = fl.film_id) as totalLikes FROM film_like as fl JOIN film as f ON f.id = fl.film_id JOIN user as u ON fl.user_id = u.id GROUP BY film_id;");
+                                                $query = mysqli_query($conn, "SELECT fl.*, f.*, u.*, (SELECT COUNT(*) FROM `film_like` WHERE film_id = fl.film_id) as totalLikes FROM film_like as fl JOIN film as f ON f.id = fl.film_id JOIN user as u ON fl.user_id = u.id GROUP BY film_id DESC;");
                                                 
                                                 while ($data = mysqli_fetch_array($query)) {
                                                     ?>
