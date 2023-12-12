@@ -1,3 +1,6 @@
+<?php
+include "koneksi.php";
+?>
 <header class="header">
     <div class="container">
         <div class="row">
@@ -58,9 +61,14 @@
                                                             class="w-px-40 h-auto rounded-circle" />
                                                     </div>
                                                 </div>
+                                                <?php
+                                                $idUser = $_SESSION['userId'];
+                                                $query_user = mysqli_query($conn, "SELECT * FROM `user` WHERE id = '$idUser'");
+                                                $data_user = mysqli_fetch_array($query_user);
+                                                ?>
                                                 <div class="flex-grow-1">
-                                                    <span class="fw-semibold d-block text-dark">Nickname</span>
-                                                    <small class="text-muted">User</small>
+                                                    <span class="fw-semibold d-block text-dark"><?php echo $data_user["nickname"] ?></span>
+                                                    <small class="text-muted">user</small>
                                                 </div>
                                             </div>
                                         </a>

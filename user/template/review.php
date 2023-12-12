@@ -16,7 +16,7 @@ $query = mysqli_query($conn, "SELECT * FROM `ulasan` as u join film as f on f.id
             ?>
             <div class="anime__review__item">
                 <div class="anime__review__item__pic">
-                    <img src="../img/anime/topi.png" alt="">
+                    <img src="../dashboard/admin/images/1.png" alt="">
                 </div>
                 <div class="anime__review__item__text">
                     <h6>
