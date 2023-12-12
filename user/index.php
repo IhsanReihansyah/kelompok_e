@@ -111,7 +111,7 @@ include 'koneksi.php';
                         </div>
                         <div class="row">
                             <?php
-                            $query = mysqli_query($conn, "SELECT * FROM `film` WHERE FIND_IN_SET('Trending Now', `tag`) > 0 ORDER BY id ASC");
+                            $query = mysqli_query($conn, "SELECT * FROM `film` WHERE FIND_IN_SET('Trending Now', `tag`) > 0 ORDER BY id ASC LIMIT 3");
                             tampilkantag($query);
                             ?>
                         </div>
@@ -132,7 +132,7 @@ include 'koneksi.php';
                         </div>
                         <div class="row">
                             <?php
-                            $query = mysqli_query($conn, "SELECT * FROM `film` WHERE FIND_IN_SET('Latest Film', `tag`) > 0 ORDER BY id ASC");
+                            $query = mysqli_query($conn, "SELECT * FROM `film` WHERE FIND_IN_SET('Latest Film', `tag`) > 0 ORDER BY id ASC LIMIT 3");
                             tampilkantag($query);
                             ?>
                         </div>
@@ -153,7 +153,7 @@ include 'koneksi.php';
                         </div>
                         <div class="row">
                             <?php
-                            $query = mysqli_query($conn, "SELECT * FROM `film` WHERE FIND_IN_SET('Most Repeat', `tag`) > 0 ORDER BY id ASC");
+                            $query = mysqli_query($conn, "SELECT * FROM `film` WHERE FIND_IN_SET('Most Repeat', `tag`) > 0 ORDER BY id ASC LIMIT 3");
                             tampilkantag($query);
                             ?>
                         </div>
@@ -173,7 +173,7 @@ include 'koneksi.php';
                             </ul>
                             <div class="filter__gallery">
                                 <?php
-                                $query = mysqli_query($conn, "SELECT * FROM `film` WHERE FIND_IN_SET('Top Views Day', `tag`) > 0 ORDER BY id ASC");
+                                $query = mysqli_query($conn, "SELECT * FROM `film` WHERE FIND_IN_SET('Top Views Day', `tag`) > 0 ORDER BY id ASC LIMIT 3");
                                 if (mysqli_num_rows($query) > 0) {
                                     while ($data = mysqli_fetch_array($query)) {
                                         ?>
@@ -190,7 +190,7 @@ include 'koneksi.php';
 
                                     }
                                 }
-                                $query = mysqli_query($conn, "SELECT * FROM `film` WHERE FIND_IN_SET('Top Views Week', `tag`) > 0 ORDER BY id ASC");
+                                $query = mysqli_query($conn, "SELECT * FROM `film` WHERE FIND_IN_SET('Top Views Week', `tag`) > 0 ORDER BY id ASC LIMIT 2");
                                 if (mysqli_num_rows($query) > 0) {
                                     while ($data = mysqli_fetch_array($query)) {
                                         ?>
@@ -206,7 +206,7 @@ include 'koneksi.php';
                                         <?php
                                     }
                                 }
-                                $query = mysqli_query($conn, "SELECT * FROM `film` WHERE FIND_IN_SET('Top Views Month', `tag`) > 0 ORDER BY id ASC");
+                                $query = mysqli_query($conn, "SELECT * FROM `film` WHERE FIND_IN_SET('Top Views Month', `tag`) > 0 ORDER BY id ASC LIMIT 3");
                                 if (mysqli_num_rows($query) > 0) {
                                     while ($data = mysqli_fetch_array($query)) {
                                         ?>
@@ -222,7 +222,7 @@ include 'koneksi.php';
                                         <?php
                                     }
                                 }
-                                $query = mysqli_query($conn, "SELECT * FROM `film` WHERE FIND_IN_SET('Top Views Year', `tag`) > 0 ORDER BY id ASC");
+                                $query = mysqli_query($conn, "SELECT * FROM `film` WHERE FIND_IN_SET('Top Views Year', `tag`) > 0 ORDER BY id ASC LIMIT 2");
                                 if (mysqli_num_rows($query) > 0) {
                                     while ($data = mysqli_fetch_array($query)) {
                                         ?>
