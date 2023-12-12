@@ -286,9 +286,12 @@ include 'koneksi.php';
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
     <script>
-        $(document).ready(function () {
-            $('#film').DataTable();
+    $(document).ready(function () {
+        $('#film').DataTable({
+            searching: false
         });
-    </script>
+    });
+</script>
+
   </body>
 </html>
