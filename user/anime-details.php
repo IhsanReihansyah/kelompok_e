@@ -113,14 +113,6 @@ $data = mysqli_fetch_array($query);
                         <a href="./kategori.php">Movie</a>
                         <span>
                             <?php echo $data["judul_film"] ?>
-<<<<<<< HEAD
-=======
-                            <iframe
-                                src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2FDreamMovie.com&layout&size&width=89&height=15&appId"
-                                width="70" height="13" style="margin-left:700px; " scrolling="no" frameborder="0"
-                                allowfullscreen="true"
-                                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
->>>>>>> d8c5cbcc8c227f3e8a5295e5556dffd38ff753de
                         </span>
                     </div>
                 </div>
@@ -177,7 +169,6 @@ $data = mysqli_fetch_array($query);
                                             </li>
                                             <li><span>Like:</span>
                                                 <?php
-<<<<<<< HEAD
                                                 $filmId = $data["id"];
                                                 $countLikesQuery = mysqli_query($conn, "SELECT COUNT(*) as totalLikes FROM film_like WHERE film_id = '$filmId'");
                                                 $likesData = mysqli_fetch_assoc($countLikesQuery);
@@ -188,24 +179,11 @@ $data = mysqli_fetch_array($query);
                                                     echo 'Belum ada like.';
                                                 }
                                                 ?>
-=======
-                                                    $filmId = $data["id"];
-                                                    $countLikesQuery = mysqli_query($conn, "SELECT COUNT(*) as totalLikes FROM film_like WHERE film_id = '$filmId'");
-                                                    $likesData = mysqli_fetch_assoc($countLikesQuery);
-                                                    
-                                                    if ($likesData && isset($likesData['totalLikes'])) {
-                                                        echo $likesData['totalLikes'];
-                                                    } else {
-                                                        echo 'Belum ada like.';
-                                                    }
-                                                    ?>
->>>>>>> d8c5cbcc8c227f3e8a5295e5556dffd38ff753de
                                             </li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
-<<<<<<< HEAD
 
                             <?php $idUser = $_SESSION['userId'];
                             $check_like_query = mysqli_query($conn, "SELECT * FROM film_like WHERE film_id = '$id' AND user_id = '$idUser'");
@@ -216,21 +194,10 @@ $data = mysqli_fetch_array($query);
                                 <a href="anime-watching.php?id=<?php echo $data["id"] ?>" class="watch-btn">
                                     <span>Watch Now</span>
                                 </a>
-=======
-                            <div class="anime__details__btn">
-                                <a href="anime-watching.php?id=<?php echo $data["id"]?>" class="watch-btn"><span>Watch
-                                        Now</span> <i class="fa fa-angle-right"></i></a>
-
-                                <?php $idUser = $_SESSION['userId'];
-                                        $check_like_query = mysqli_query($conn, "SELECT * FROM film_like WHERE film_id = '$id' AND user_id = '$idUser'");
-                                        $user_has_liked = mysqli_num_rows($check_like_query) > 0;
-                                        ?>
->>>>>>> d8c5cbcc8c227f3e8a5295e5556dffd38ff753de
                                 <form action="proses_like.php" method="post" id="likeForm">
                                     <input type="hidden" name="filmId" value="<?php echo $data['id']; ?>">
                                     <input type="hidden" name="userId" value="<?php echo $user_id; ?>">
                                     <button type="submit" name="likeAction" id="likeButton">
-<<<<<<< HEAD
                                         <?php if ($user_has_liked): ?>
                                             <i class="fa fa-heart" aria-hidden="true" ></i>
                                         <?php else: ?>
@@ -244,11 +211,6 @@ $data = mysqli_fetch_array($query);
                                     width="70" height="13" style="margin-left:30px;" scrolling="no" frameborder="0"
                                     allowfullscreen="true"
                                     allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-=======
-                                        <?php echo ($user_has_liked) ? 'Unlike' : 'Like'; ?>
-                                    </button>
-                                </form>
->>>>>>> d8c5cbcc8c227f3e8a5295e5556dffd38ff753de
                             </div>
 
                         </div>
