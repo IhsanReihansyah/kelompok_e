@@ -2,7 +2,7 @@
 session_start();
 include "koneksi.php";
 $id = $_GET["id"]; //mendapatkan id
-$query = mysqli_query($conn, "SELECT f.id,f.judul_film,f.tahun_rilis,f.sinopsis,f.id_kategori,f.id_sutradara,f.genre,f.genre,f.nama_pemain,f.gambar,u.nama_ulasan,u.ulasan,u.ulasan_rating,u.tanggal_ulasan,k.kategori,s.nama_sutradara, AVG(ulasan_rating) AS avg_rating
+$query = mysqli_query($conn, "SELECT f.id,f.judul_film,f.tahun_rilis,f.sinopsis,f.id_kategori,f.id_sutradara,f.genre,f.genre,f.nama_pemain,f.gambar,u.ulasan,u.ulasan_rating,u.tanggal_ulasan,k.kategori,s.nama_sutradara, AVG(ulasan_rating) AS avg_rating
                               FROM `film` as f
                               JOIN kategori as k on f.id_kategori=k.id_kategori
                               JOIN sutradara as s on s.id_sutradara=f.id_sutradara
