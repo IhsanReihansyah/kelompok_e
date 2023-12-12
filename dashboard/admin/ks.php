@@ -153,7 +153,8 @@ include 'koneksi.php';
     <script>
     $(document).ready(function () {
         $('#ks').DataTable({
-            searching: false
+          searching: false, // Menonaktifkan fitur pencarian
+            // scrollX: true
         });
     });
 </script>

@@ -174,7 +174,8 @@ include 'koneksi.php';
         <script>
     $(document).ready(function () {
         $('#user').DataTable({
-            searching: false
+            searching: false, // Menonaktifkan fitur pencarian
+            // scrollX: true
         });
     });
 </script>

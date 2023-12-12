@@ -144,7 +144,7 @@ include 'koneksi.php';
               <!-- Responsive Table -->
               <div class="card">
                 <h5 class="card-header">Data Film</h5>
-                <div class="table-responsive text-nowrap">
+                <div class="table text-nowrap">
                   <table  id="film" class="table table-striped table-bordered">
                     <thead>
                       <tr class="text-nowrap">
@@ -288,7 +288,8 @@ include 'koneksi.php';
     <script>
     $(document).ready(function () {
         $('#film').DataTable({
-            searching: false
+            searching: false, // Menonaktifkan fitur pencarian
+            scrollX: true
         });
     });
 </script>

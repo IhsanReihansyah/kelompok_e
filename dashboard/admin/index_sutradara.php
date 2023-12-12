@@ -250,7 +250,8 @@ include 'koneksi.php';
     <script>
     $(document).ready(function () {
         $('#sutradara').DataTable({
-            searching: false
+            searching: false, // Menonaktifkan fitur pencarian
+            // scrollX: true
         });
     });
 </script>
