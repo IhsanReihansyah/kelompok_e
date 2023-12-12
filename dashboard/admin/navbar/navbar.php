@@ -53,7 +53,7 @@
                 <li class="menu-header small text-uppercase"><span class="menu-header-text">Forms Tambah</span></li>
                 <!-- Forms -->
                 <li class="menu-item">
-                    <a href="javascript:void(0);" class="menu-link menu-toggle">
+                    <a href="#" class="menu-link menu-toggle">
                         <i class="menu-icon tf-icons bx bx-detail"></i>
                         <div data-i18n="Form Tambah">Form Tambah</div>
                     </a>
