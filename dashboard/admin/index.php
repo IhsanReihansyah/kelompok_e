@@ -52,6 +52,8 @@ include 'koneksi.php';
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="../assets/js/config.js"></script>
 </head>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+  </head>
 
 <body>
     <?php include "navbar/navbar.php" ?>
@@ -139,30 +141,30 @@ include 'koneksi.php';
             <div class="container-xxl flex-grow-1 container-p-y">
                 <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Tables /</span> Data Film</h4>
 
-                <!-- Responsive Table -->
-                <div class="card">
-                    <h5 class="card-header">Data Film</h5>
-                    <div class="table-responsive text-nowrap">
-                        <table class="table">
-                            <thead>
-                                <tr class="text-nowrap">
-                                    <th>No</th>
-                                    <th>Id Film</th>
-                                    <th>Judul Film</th>
-                                    <th>Tahun Rilis</th>
-                                    <th>Sinopsis</th>
-                                    <th>Genre</th>
-                                    <th>Nama Pemain</th>
-                                    <th>Gambar</th>
-                                    <th>Video</th>
-                                    <th>Tag</th>
-                                    <th>Kategori</th>
-                                    <th>Nama Sutradara</th>
-                                    <th>Aksi</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php
+              <!-- Responsive Table -->
+              <div class="card">
+                <h5 class="card-header">Data Film</h5>
+                <div class="table-responsive text-nowrap">
+                  <table class="table">
+                    <thead>
+                      <tr class="text-nowrap">
+                        <th>No</th>
+                        <th>Id Film</th>
+                        <th>Judul Film</th>
+                        <th>Tahun Rilis</th>
+                        <th>Sinopsis</th>
+                        <th>Genre</th>
+                        <th>Nama Pemain</th>
+                        <th>Gambar</th>
+                        <th>Video</th>
+                        <th>Tag</th>
+                        <th>Kategori</th>
+                        <th>Nama Sutradara</th>
+                        <th>Aksi</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    <?php
                     if (isset($_GET['cari'])) {
                       $pencarian = $_GET['cari'];
                       $query = "SELECT f.id, f.judul_film, f.tahun_rilis,f.sinopsis,f.genre,f.nama_pemain,f.gambar,f.video,f.tag,k.kategori,s.nama_sutradara FROM `film` AS f JOIN kategori AS k ON k.id_kategori = f.id_kategori JOIN sutradara AS s ON s.id_sutradara=f.id_sutradara WHERE Judul_film LIKE '%" . $pencarian . "%' ORDER BY f.id ASC";
@@ -269,19 +271,18 @@ include 'koneksi.php';
                 var moreText = document.getElementById("more" + index);
                 var btnText = document.getElementById("readMoreBtn" + index);
 
-                if (dots.style.display === "none") {
-                    dots.style.display = "inline";
-                    btnText.innerHTML = "Baca selengkapnya";
-                    moreText.style.display = "none";
-                } else {
-                    dots.style.display = "none";
-                    btnText.innerHTML = "Baca kurang";
-                    moreText.style.display = "inline";
-                }
-            }
-            </script>
-            <!-- Place this tag in your head or just before your close body tag. -->
-            <script async defer src="https://buttons.github.io/buttons.js"></script>
-</body>
-
+        if (dots.style.display === "none") {
+          dots.style.display = "inline";
+          btnText.innerHTML = "Baca selengkapnya";
+          moreText.style.display = "none";
+        } else {
+          dots.style.display = "none";
+          btnText.innerHTML = "Baca kurang";
+          moreText.style.display = "inline";
+        }
+      }
+    </script>
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+  </body>
 </html>

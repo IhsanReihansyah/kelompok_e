@@ -43,10 +43,13 @@ include 'koneksi.php';
 
   <!-- Page CSS -->
 
-  <!-- Helpers -->
-  <script src="../assets/vendor/js/helpers.js"></script>
-  <script src="../assets/js/config.js"></script>
-</head>
+    <!-- Helpers -->
+    <script src="../assets/vendor/js/helpers.js"></script>
+
+    <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
+    <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
+    <script src="../assets/js/config.js"></script>
+  </head>
 
 <body>
   <?php include "navbar/navbar.php" ?>
@@ -66,65 +69,65 @@ include 'koneksi.php';
       <div class="container-xxl flex-grow-1 container-p-y">
         <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Tables /</span> Kritik Dan Saran</h4>
 
-        <!-- Responsive Table -->
-        <div class="card">
-          <h5 class="card-header">Data Kritik Dan Saran</h5>
-          <div class="table-responsive text-nowrap">
-            <table class="table">
-              <thead>
-                <tr class="text-nowrap">
-                  <th>No</th>
-                  <th>Id</th>
-                  <th>Nama</th>
-                  <th>Email</th>
-                  <th>Pesan</th>
-                </tr>
-              </thead>
-              <tbody>
-                <?php if (mysqli_num_rows($query) > 0) { ?>
-                  <?php
-                  $no = 1;
-                  while ($data = mysqli_fetch_array($query)) {
-                    ?>
-                    <tr>
-                      <td>
-                        <?php echo $no ?>
-                      </td>
-                      <td>
-                        <?php echo $data["id"]; ?>
-                      </td>
-                      <td>
-                        <?php echo $data["nama"]; ?>
-                      </td>
-                      <td>
-                        <?php echo $data["email"]; ?>
-                      </td>
-                      <td>
-                        <?php echo $data["pesan"]; ?>
-                      </td>
-                    </tr>
-                    <?php $no++;
-                  } ?>
-                <?php } ?>
-              </tbody>
-            </table>
-          </div>
-        </div>
-        <!--/ Responsive Table -->
-      </div>
-      <!-- / Content -->
-      <footer class="py-4 bg-light mt-auto">
-        <div class="container-fluid px-4">
-          <div class="d-flex align-items-center justify-content-between small">
-            <div class="text-muted">Copyright &copy; Dream Movie 2023</div>
-            <div>
-              <a href="#">Privacy Policy</a>
-              &middot;
-              <a href="#">Terms &amp; Conditions</a>
+              <!-- Responsive Table -->
+              <div class="card">
+                <h5 class="card-header">Data Kritik Dan Saran</h5>
+                <div class="table-responsive text-nowrap">
+                  <table class="table">
+                    <thead>
+                      <tr class="text-nowrap">
+                        <th>No</th>
+                        <th>Id</th>
+                        <th>Nama</th>
+                        <th>Email</th>
+                        <th>Pesan</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                            <?php if (mysqli_num_rows($query) > 0) { ?>
+                                <?php
+                                $no = 1;
+                                while ($data = mysqli_fetch_array($query)) {
+                                    ?>
+                                    <tr>
+                                        <td>
+                                            <?php echo $no ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $data["id"]; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $data["nama"]; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $data["email"]; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $data["pesan"]; ?>
+                                        </td>
+                                    </tr>
+                                    <?php $no++;
+                                } ?>
+                            <?php } ?>
+                        </tbody>
+                  </table>
+                </div>
+              </div>
+              <!--/ Responsive Table -->
             </div>
-          </div>
-        </div>
-      </footer>
+            <!-- / Content -->
+            <footer class="py-4 bg-light mt-auto">
+              <div class="container-fluid px-4">
+                <div class="d-flex align-items-center justify-content-between small">
+                  <div class="text-muted">Copyright &copy; Dream Movie 2023</div>
+                  <div>
+                    <a href="#">Privacy Policy</a>
+                    &middot;
+                    <a href="#">Terms &amp; Conditions</a>
+                  </div>
+                </div>
+              </div>
+            </footer>
 
       <!-- Core JS -->
       <!-- build:js assets/vendor/js/core.js -->
@@ -143,8 +146,7 @@ include 'koneksi.php';
 
       <!-- Page JS -->
 
-      <!-- Place this tag in your head or just before your close body tag. -->
-      <script async defer src="https://buttons.github.io/buttons.js"></script>
-</body>
-
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+  </body>
 </html>
