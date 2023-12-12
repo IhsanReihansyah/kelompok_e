@@ -1,3 +1,6 @@
+<?php
+include "koneksi.php";
+?>
 <header class="header">
     <div class="container">
         <div class="row">
@@ -43,6 +46,41 @@
                                     } ?>">
                                 </form>
                             </li>
+                            <li class="nav-item navbar-dropdown dropdown-user dropdown">
+                                <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);"
+                                    data-bs-toggle="dropdown">
+                                    <span class="icon_profile"></span>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end">
+                                    <li>
+                                        <a class="dropdown-item" href="#">
+                                            <div class="d-flex">
+                                                <div class="flex-shrink-0 me-3">
+                                                    <div class="avatar avatar-online">
+                                                        <img src="../dashboard/admin/images/1.png" alt
+                                                            class="w-px-40 h-auto rounded-circle" />
+                                                    </div>
+                                                </div>
+                                                <?php
+                                                $idUser = $_SESSION['userId'];
+                                                $query_user = mysqli_query($conn, "SELECT * FROM `user` WHERE id = '$idUser'");
+                                                $data_user = mysqli_fetch_array($query_user);
+                                                ?>
+                                                <div class="flex-grow-1">
+                                                    <span class="fw-semibold d-block text-dark"><?php echo $data_user["nickname"] ?></span>
+                                                    <small class="text-muted">user</small>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="logout.php">
+                                            <i class="bx bx-power-off me-2 text-dark"></i>
+                                            <span class="align-middle text-dark">Log Out</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
                         </ul>
                     </nav>
                 </div>
@@ -50,10 +88,8 @@
             <div class="col-lg-1">
                 <div class="header__logo">
                     <a href="./contact.php"><span class="fa fa-paper-plane mr-4"></span></a>
-                    <a href="logout.php"><span class="icon_profile"></span></a>
                 </div>
             </div>
-
         </div>
         <div id="mobile-menu-wrap"></div>
     </div>

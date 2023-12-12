@@ -15,6 +15,10 @@
         rel="stylesheet">
 
     <!-- Css Styles -->
+    <link rel="stylesheet" href="../dashboard/assets/vendor/css/theme-default.css"
+        class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="../dashboard/assets/css/demo.css" />
+    <link rel="stylesheet" href="../dashboard/assets/vendor/css/core.css" class="template-customizer-core-css" />
     <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="../css/font-awesome.min.css" type="text/css">
     <link rel="stylesheet" href="../css/elegant-icons.css" type="text/css">
@@ -23,6 +27,24 @@
     <link rel="stylesheet" href="../css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="../css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="../css/style.css" type="text/css">
+    <!-- Icons. Uncomment required icon fonts -->
+    <link rel="stylesheet" href="../dashboard/assets/vendor/fonts/boxicons.css" />
+
+    <!-- Core CSS -->
+
+
+
+    <!-- Vendors CSS -->
+    <link rel="stylesheet" href="../dashboard/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+
+    <!-- Page CSS -->
+
+    <!-- Helpers -->
+    <script src="../dashboard/assets/vendor/js/helpers.js"></script>
+
+    <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
+    <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
+    <script src="../dashboard/assets/js/config.js"></script>
 </head>
 
 <body>
@@ -88,7 +110,7 @@
                                     <div class="col-lg-4 col-md-6 col-sm-6">
                                         <div class="product__item">
                                             <div class="product__item__pic set-bg"
-                                            data-setbg="../dashboard/admin/<?php echo $data["gambar"] ?>">
+                                                data-setbg="../dashboard/admin/<?php echo $data["gambar"] ?>">
                                                 <!-- <div class="ep">
                                                     <?php echo $data["rating_film"] ?>
                                                 </div> -->
@@ -110,14 +132,6 @@
                             ?>
                         </div>
                     </div>
-                    <!-- <div class="product__pagination">
-                        <a href="#" class="current-page">1</a>
-                        <a href="#">2</a>
-                        <a href="#">3</a>
-                        <a href="#">4</a>
-                        <a href="#">5</a>
-                        <a href="#"><i class="fa fa-angle-double-right"></i></a>
-                    </div> -->
                 </div>
             </div>
         </div>
@@ -152,6 +166,19 @@
     <script src="../js/jquery.slicknav.js"></script>
     <script src="../js/owl.carousel.min.js"></script>
     <script src="../js/main.js"></script>
+    <!-- build:js assets/vendor/js/core.js -->
+    <script src="../dashboard/assets/vendor/libs/jquery/jquery.js"></script>
+    <script src="../dashboard/assets/vendor/libs/popper/popper.js"></script>
+    <script src="../dashboard/assets/vendor/js/bootstrap.js"></script>
+    <script src="../dashboard/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+
+    <script src="../dashboard/assets/vendor/js/menu.js"></script>
+    <!-- endbuild -->
+
+    <!-- Vendors JS -->
+
+    <!-- Main JS -->
+    <script src="../dashboard/assets/js/main.js"></script>
 
 </body>
 

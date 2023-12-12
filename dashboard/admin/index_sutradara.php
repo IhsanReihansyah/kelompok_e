@@ -2,25 +2,12 @@
 session_start();
 
 if (isset($_SESSION['isAdminLogin']) != true) {
-    header("Location: login.php");
-    exit();
+  header("Location: login.php");
+  exit();
 }
 include 'koneksi.php';
 ?>
 <!DOCTYPE html>
-
-<!-- =========================================================
-* Sneat - Bootstrap 5 HTML Admin Template - Pro | v1.0.0
-==============================================================
-
-* Product Page: https://themeselection.com/products/sneat-bootstrap-html-admin-template/
-* Created by: ThemeSelection
-* License: You must have a valid license purchased in order to legally use the theme for your project.
-* Copyright ThemeSelection (https://themeselection.com)
-
-=========================================================
--->
-<!-- beautify ignore:start -->
 <html
   lang="en"
   class="light-style layout-menu-fixed"
@@ -70,6 +57,7 @@ include 'koneksi.php';
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="../assets/js/config.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
   </head>
 
   <body>
@@ -169,7 +157,7 @@ include 'koneksi.php';
               <div class="card">
                 <h5 class="card-header">Data Sutradara</h5>
                 <div class="table-responsive text-nowrap">
-                  <table class="table">
+                <table id="sutradara" class="table table-striped table-bordered">
                     <thead>
                     <tr>
                                 <th>No</th>
@@ -183,42 +171,42 @@ include 'koneksi.php';
                             </tr>
                     </thead>
                     <tbody>
-                    <?php 
+                    <?php
                     if (isset($_GET['cari'])) {
                       $pencarian = $_GET['cari'];
                       $query = "SELECT * FROM sutradara WHERE nama_sutradara LIKE '%" . $pencarian . "%' ORDER BY id_sutradara ASC";
-                  } else {
-                    $query = "SELECT * FROM sutradara ORDER BY id_sutradara ASC";
-                  }
+                    } else {
+                      $query = "SELECT * FROM sutradara ORDER BY id_sutradara ASC";
+                    }
 
-                  $tampil = mysqli_query($conn, $query);
+                    $tampil = mysqli_query($conn, $query);
                     if (mysqli_num_rows($tampil) > 0) { ?>
-                                  <?php
-                                  $no = 1;
-                                  while ($data = mysqli_fetch_array($tampil)) {
-                                    ?>
-                          <tr>
-                            <th scope="row"><?php echo $no ?></th>
-                            <td><?php echo $data["id_sutradara"]; ?></td>
-                            <td><?php echo $data["nama_sutradara"]; ?></td>
-                            <td><?php echo $data["tanggal_lahir"]; ?></td>
-                            <td><?php echo $data["negara"]; ?></td>
-                            <td>
-                              <div class="dropdown">
-                                <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                                  <i class="bx bx-dots-vertical-rounded"></i>
-                                </button>
-                                <div class="dropdown-menu">
-                                  <a class="dropdown-item" href="edit_sutradara.php?id_sutradara=<?php echo $data["id_sutradara"] ?>"
-                                    ><i class="bx bx-edit-alt me-2"></i> Edit</a>
-                                  <a class="dropdown-item" href="proses_hapus_sutradara.php?id_sutradara=<?php echo $data["id_sutradara"] ?>"
-                                    ><i class="bx bx-trash me-2"></i> Delete</a>
-                                </div>
-                              </div>
-                            </td>
-                          </tr>
-                          <?php $no++;
-                                  } ?>
+                                    <?php
+                                    $no = 1;
+                                    while ($data = mysqli_fetch_array($tampil)) {
+                                      ?>
+                              <tr>
+                                <th scope="row"><?php echo $no ?></th>
+                                <td><?php echo $data["id_sutradara"]; ?></td>
+                                <td><?php echo $data["nama_sutradara"]; ?></td>
+                                <td><?php echo $data["tanggal_lahir"]; ?></td>
+                                <td><?php echo $data["negara"]; ?></td>
+                                <td>
+                                  <div class="dropdown">
+                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                                      <i class="bx bx-dots-vertical-rounded"></i>
+                                    </button>
+                                    <div class="dropdown-menu">
+                                      <a class="dropdown-item" href="edit_sutradara.php?id_sutradara=<?php echo $data["id_sutradara"] ?>"
+                                        ><i class="bx bx-edit-alt me-2"></i> Edit</a>
+                                      <a class="dropdown-item" href="proses_hapus_sutradara.php?id_sutradara=<?php echo $data["id_sutradara"] ?>"
+                                        ><i class="bx bx-trash me-2"></i> Delete</a>
+                                    </div>
+                                  </div>
+                                </td>
+                              </tr>
+                              <?php $no++;
+                                    } ?>
                             <?php } ?>
                     </tbody>
                   </table>
@@ -258,5 +246,14 @@ include 'koneksi.php';
 
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <script>
+    $(document).ready(function () {
+        $('#sutradara').DataTable({
+            searching: false
+        });
+    });
+</script>
+
   </body>
 </html>
