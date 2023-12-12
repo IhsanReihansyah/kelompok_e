@@ -51,6 +51,7 @@ include 'koneksi.php';
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="../assets/js/config.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
 </head>
 
 <body>
@@ -150,7 +151,7 @@ include 'koneksi.php';
                                                 class="fa-solid fa-circle-plus"></i></a> -->
 
                                         <!-- Tabel Start -->
-                                        <table id="example" class="table table-bordered table-striped">
+                                        <table  id="like" class="table table-striped table-bordered">
                                             <thead>
                                                 <tr class="text-center">
                                                     <th>No</th>
@@ -238,10 +239,12 @@ include 'koneksi.php';
         <!-- DataTables  & Plugins -->
         <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
         <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
-        <script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>
-        <script>
-            new DataTable('#example');
-        </script>
+        <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#like').DataTable();
+        });
+    </script>
 </body>
 
 </html>
