@@ -2,8 +2,8 @@
 session_start();
 
 if (isset($_SESSION['isAdminLogin']) != true) {
-    header("Location: login.php");
-    exit();
+  header("Location: login.php");
+  exit();
 }
 include 'koneksi.php';
 ?>
@@ -171,42 +171,42 @@ include 'koneksi.php';
                             </tr>
                     </thead>
                     <tbody>
-                    <?php 
+                    <?php
                     if (isset($_GET['cari'])) {
                       $pencarian = $_GET['cari'];
                       $query = "SELECT * FROM sutradara WHERE nama_sutradara LIKE '%" . $pencarian . "%' ORDER BY id_sutradara ASC";
-                  } else {
-                    $query = "SELECT * FROM sutradara ORDER BY id_sutradara ASC";
-                  }
+                    } else {
+                      $query = "SELECT * FROM sutradara ORDER BY id_sutradara ASC";
+                    }
 
-                  $tampil = mysqli_query($conn, $query);
+                    $tampil = mysqli_query($conn, $query);
                     if (mysqli_num_rows($tampil) > 0) { ?>
-                                  <?php
-                                  $no = 1;
-                                  while ($data = mysqli_fetch_array($tampil)) {
-                                    ?>
-                          <tr>
-                            <th scope="row"><?php echo $no ?></th>
-                            <td><?php echo $data["id_sutradara"]; ?></td>
-                            <td><?php echo $data["nama_sutradara"]; ?></td>
-                            <td><?php echo $data["tanggal_lahir"]; ?></td>
-                            <td><?php echo $data["negara"]; ?></td>
-                            <td>
-                              <div class="dropdown">
-                                <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                                  <i class="bx bx-dots-vertical-rounded"></i>
-                                </button>
-                                <div class="dropdown-menu">
-                                  <a class="dropdown-item" href="edit_sutradara.php?id_sutradara=<?php echo $data["id_sutradara"] ?>"
-                                    ><i class="bx bx-edit-alt me-2"></i> Edit</a>
-                                  <a class="dropdown-item" href="proses_hapus_sutradara.php?id_sutradara=<?php echo $data["id_sutradara"] ?>"
-                                    ><i class="bx bx-trash me-2"></i> Delete</a>
-                                </div>
-                              </div>
-                            </td>
-                          </tr>
-                          <?php $no++;
-                                  } ?>
+                                    <?php
+                                    $no = 1;
+                                    while ($data = mysqli_fetch_array($tampil)) {
+                                      ?>
+                              <tr>
+                                <th scope="row"><?php echo $no ?></th>
+                                <td><?php echo $data["id_sutradara"]; ?></td>
+                                <td><?php echo $data["nama_sutradara"]; ?></td>
+                                <td><?php echo $data["tanggal_lahir"]; ?></td>
+                                <td><?php echo $data["negara"]; ?></td>
+                                <td>
+                                  <div class="dropdown">
+                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                                      <i class="bx bx-dots-vertical-rounded"></i>
+                                    </button>
+                                    <div class="dropdown-menu">
+                                      <a class="dropdown-item" href="edit_sutradara.php?id_sutradara=<?php echo $data["id_sutradara"] ?>"
+                                        ><i class="bx bx-edit-alt me-2"></i> Edit</a>
+                                      <a class="dropdown-item" href="proses_hapus_sutradara.php?id_sutradara=<?php echo $data["id_sutradara"] ?>"
+                                        ><i class="bx bx-trash me-2"></i> Delete</a>
+                                    </div>
+                                  </div>
+                                </td>
+                              </tr>
+                              <?php $no++;
+                                    } ?>
                             <?php } ?>
                     </tbody>
                   </table>
