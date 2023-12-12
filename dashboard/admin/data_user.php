@@ -1,11 +1,10 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['isUserLogin']) || $_SESSION['isUserLogin'] !== true) {
-    header("Location: login_user.php");
+if (isset($_SESSION['isAdminLogin']) != true) {
+    header("Location: login.php");
     exit();
 }
-
 include 'koneksi.php';
 ?>
 
@@ -34,6 +33,8 @@ include 'koneksi.php';
 
     <!-- Icons. Uncomment required icon fonts -->
     <link rel="stylesheet" href="../assets/vendor/fonts/boxicons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
 
     <!-- Core CSS -->
     <link rel="stylesheet" href="../assets/vendor/css/core.css" class="template-customizer-core-css">
@@ -92,21 +93,31 @@ include 'koneksi.php';
                                             <tbody>
                                                 <?php
                                                 $no = 1;
-                                                $query = mysqli_query($connect, "SELECT * FROM user ORDER BY id ASC;");
+                                                $query = mysqli_query($conn, "SELECT * FROM user ORDER BY id ASC;");
                                                 while ($data = mysqli_fetch_array($query)) {
-                                                ?>
-                                                <tr>
-                                                    <td><?php echo $no++ ?></td>
-                                                    <td><?php echo $data['nickname']; ?></td>
-                                                    <td><?php echo $data['username']; ?></td>
-                                                    <td>
-                                                        <a href="f_hapus_user.php?id=<?php echo $data["id"] ?>"
-                                                            class="btn btn-danger d-inline"
-                                                            onclick="return confirm('Data Akan Dihapus?')"><i
-                                                                class="fa-solid fa-trash"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <?php
+                                                    ?>
+                                                    <tr>
+                                                        <td>
+                                                            <?php echo $no++ ?>
+                                                        </td>
+                                                        <td>
+                                                            <?php echo $data['nickname']; ?>
+                                                        </td>
+                                                        <td>
+                                                            <?php echo $data['username']; ?>
+                                                        </td>
+                                                        <td>
+                                                            <center>
+                                                                <a href="hapus_user.php?id=<?php echo $data["id"] ?>"
+                                                                    class="btn btn-danger d-inline"
+                                                                    onclick="return confirm('Data Akan Dihapus?')">
+                                                                    <i class="fa fa-trash" style="color: white;"></i>
+                                                                </a>
+                                                            </center>
+                                                        </td>
+
+                                                    </tr>
+                                                    <?php
                                                 }
                                                 ?>
                                             </tbody>
@@ -131,7 +142,7 @@ include 'koneksi.php';
         <script src="../../components/js/jquery-ui.min.js"></script>
         <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
         <script>
-        $.widget.bridge('uibutton', $.ui.button)
+            $.widget.bridge('uibutton', $.ui.button)
         </script>
         <!-- Bootstrap 4 -->
         <script src="../../components/js/bootstrap.bundle.min.js"></script>
@@ -163,9 +174,9 @@ include 'koneksi.php';
         <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
         <script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>
         <script>
-        $(document).ready(function() {
-            $('#example').DataTable();
-        });
+            $(document).ready(function () {
+                $('#example').DataTable();
+            });
         </script>
 </body>
 
