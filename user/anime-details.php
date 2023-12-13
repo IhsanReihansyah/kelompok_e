@@ -204,7 +204,15 @@ $data = mysqli_fetch_array($query);
                                 </div>
                             </div>
 
-                            <?php $idUser = $_SESSION['userId'];
+                            <?php 
+                                // Mengambil judul_film dari tabel film
+                                $judul_films=$data["judul_film"];
+                            
+                                // Mengolah judul_film agar menjadi URL
+                                $url = strtolower(str_replace(' ', '-', $judul_films));
+                            
+                            
+                            $idUser = $_SESSION['userId'];
                             $check_like_query = mysqli_query($conn, "SELECT * FROM film_like WHERE film_id = '$id' AND user_id = '$idUser'");
                             $user_has_liked = mysqli_num_rows($check_like_query) > 0;
                             ?>
@@ -226,7 +234,7 @@ $data = mysqli_fetch_array($query);
                                     <span>Watch Now</span>
                                 </a>
                                 
-                                <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2FDreamMovie.com"
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2FDreamMovie.com%2F<?= $url ?>"
                                     target="_blank" rel="noopener noreferrer" id="facebookBtn" class="facebook"><i
                                         class="fa fa-facebook-square"> Facebook</i></a>
                             </div>
