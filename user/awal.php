@@ -47,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <link rel="icon" type="image/x-icon" href="../img/logo.png">
 
 
-    <title>Login Admin</title>
+    <title>Login</title>
 </head>
 
 <body>
