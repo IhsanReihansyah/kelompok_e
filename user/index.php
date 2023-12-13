@@ -2,7 +2,7 @@
 session_start();
 
 if (isset($_SESSION['isUserLogin']) != true) {
-    header("Location: login_user.php");
+    header("Location: awal.php");
     exit();
 }
 include 'koneksi.php';
@@ -42,6 +42,7 @@ include 'koneksi.php';
 
     <!-- Core CSS -->
 
+    <link rel="icon" type="image/x-icon" href="../img/logo.png">
 
 
     <!-- Vendors CSS -->

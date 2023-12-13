@@ -2,7 +2,7 @@
 session_start();
 
 if (isset($_SESSION['isAdminLogin']) != true) {
-  header("Location: login.php");
+  header("Location: ../../user/awal.php");
   exit();
 }
 include 'koneksi.php';
@@ -23,7 +23,7 @@ include 'koneksi.php';
   <meta name="description" content="" />
 
   <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="../assets/img/favicon/favicon.ico" />
+  <link rel="icon" type="image/x-icon" href="../../img/logo.png">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />

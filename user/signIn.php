@@ -30,6 +30,7 @@
     <link rel="stylesheet" href="../dashboard/assets/vendor/css/theme-default.css"
         class="template-customizer-theme-css" />
     <link rel="stylesheet" href="../dashboard/assets/css/demo.css" />
+    <link rel="icon" type="image/x-icon" href="../img/logo.png">
 
     <!-- Vendors CSS -->
     <link rel="stylesheet" href="../dashboard/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />

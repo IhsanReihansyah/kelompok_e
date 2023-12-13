@@ -1,6 +1,12 @@
 <?php
 session_start();
-include "koneksi.php";
+
+if (isset($_SESSION['isUserLogin']) != true) {
+    header("Location: awal.php");
+    exit();
+}
+include 'koneksi.php';
+
 $id = $_GET["id"]; //mendapatkan id
 $query = mysqli_query($conn, "SELECT f.id,f.judul_film,f.tahun_rilis,f.sinopsis,f.id_kategori,f.id_sutradara,f.genre,f.genre,f.nama_pemain,f.gambar,u.ulasan,u.ulasan_rating,u.tanggal_ulasan,k.kategori,s.nama_sutradara, AVG(ulasan_rating) AS avg_rating
                               FROM `film` as f
@@ -44,7 +50,8 @@ $data = mysqli_fetch_array($query);
 
     <!-- Core CSS -->
     
-    
+    <link rel="icon" type="image/x-icon" href="../img/logo.png">
+
 
     <!-- Vendors CSS -->
     <link rel="stylesheet" href="../dashboard/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />

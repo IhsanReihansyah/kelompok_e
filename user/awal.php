@@ -44,6 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" href="../dashboard/admin/cslogin/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <link rel="icon" type="image/x-icon" href="../img/logo.png">
 
 
     <title>Login Admin</title>
@@ -56,20 +57,37 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="col-md-6 contents position-absolute top-50 start-50 translate-middle">
                     <div class="row justify-content-center">
                         <div class="d-grid gap-2">
-                            <img src="../dashboard/admin/images/undraw_remotely_2j6y.svg" alt="Image" class="img-fluid">
-                            <a href="../dashboard/admin/login.php" class="btn btn-primary" role="button"><p class="fs-5" style="color: white;">Login With Admin</p></a>
-                            <a href="login_user.php" class="btn btn-primary" role="button"><p class="fs-5" style="color: white;">Login With User</p></a>
+                            <div style="text-align: center;">
+                                <img src="../dashboard/admin/images/undraw_remotely_2j6y.svg" alt="Image"
+                                    class="img-fluid"
+                                    style="width: 400px; height: 300px; margin: auto; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                            </div>
+                            <div class="text-center">
+                                <a href="../dashboard/admin/login.php" class="btn btn-primary mb-3" role="button"
+                                    style="transition: 0.3s;">
+                                    <i class="fas fa-user-shield me-2"></i>
+                                    <span class="fs-5 text-white">Login With Admin</span>
+                                </a>
+                                <a href="login_user.php" class="btn btn-primary mb-3" role="button"
+                                    style="transition: 0.3s;">
+                                    <i class="fas fa-user-shield me-2"></i>
+                                    <span class="fs-5 text-white">Login With User</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <script src="../dashboard/admin/jslogin/jquery-3.3.1.min.js"></script>
-            <script src="../dashboard/admin/jslogin/popper.min.js"></script>
-            <script src="../dashboard/admin/jslogin/bootstrap.min.js"></script>
-            <script src="../dashboard/admin/jslogin/main.js"></script>
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-                integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-                crossorigin="anonymous"></script>
+        </div>
+    </div>
+
+    <script src="../dashboard/admin/jslogin/jquery-3.3.1.min.js"></script>
+    <script src="../dashboard/admin/jslogin/popper.min.js"></script>
+    <script src="../dashboard/admin/jslogin/bootstrap.min.js"></script>
+    <script src="../dashboard/admin/jslogin/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

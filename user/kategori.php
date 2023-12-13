@@ -1,5 +1,11 @@
 <?php
 session_start();
+
+if (isset($_SESSION['isUserLogin']) != true) {
+    header("Location: awal.php");
+    exit();
+}
+include 'koneksi.php';
 ?>
 <!DOCTYPE html>
 <html lang="zxx">
@@ -34,6 +40,7 @@ session_start();
     <link rel="stylesheet" href="../dashboard/assets/vendor/fonts/boxicons.css" />
 
     <!-- Core CSS -->
+    <link rel="icon" type="image/x-icon" href="../img/logo.png">
 
 
 
