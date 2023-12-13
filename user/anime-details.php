@@ -213,11 +213,8 @@ $data = mysqli_fetch_array($query);
                                         <?php echo ($user_has_liked) ? '' : ''; ?>
                                     </button>
                                 </form>
-                                <iframe
-                                    src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2FDreamMovie.com&layout&size&width=89&height=15&appId"
-                                    width="70" height="13" style="margin-left:30px;" scrolling="no" frameborder="0"
-                                    allowfullscreen="true"
-                                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                            <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2FDreamMovie.com" target="_blank" rel="noopener noreferrer" class="facebook"
+                                            ><i class="fa fa-facebook-square"></i> Share to Facebook</a>
                             </div>
 
                         </div>
