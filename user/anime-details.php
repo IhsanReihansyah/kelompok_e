@@ -209,7 +209,15 @@ $data = mysqli_fetch_array($query);
                                 </div>
                             </div>
 
-                            <?php $idUser = $_SESSION['userId'];
+                            <?php 
+                                // Mengambil judul_film dari tabel film
+                                $judul_films=$data["judul_film"];
+                            
+                                // Mengolah judul_film agar menjadi URL
+                                $url = strtolower(str_replace(' ', '-', $judul_films));
+                            
+                            
+                            $idUser = $_SESSION['userId'];
                             $check_like_query = mysqli_query($conn, "SELECT * FROM film_like WHERE film_id = '$id' AND user_id = '$idUser'");
                             $user_has_liked = mysqli_num_rows($check_like_query) > 0;
                             ?>
