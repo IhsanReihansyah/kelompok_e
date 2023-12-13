@@ -89,7 +89,6 @@ include 'koneksi.php';
                                         <table  id="like" class="table table-striped table-bordered">
                                             <thead>
                                                 <tr class="text-center">
-                                                    <th>No</th>
                                                     <th>Judul Film</th>
                                                     <th>Genre</th>
                                                     <th>Jumlah Like</th>
@@ -97,16 +96,12 @@ include 'koneksi.php';
                                             </thead>
                                             <tbody>
                                                 <?php
-                                                $no = 1;
                                                 
                                                 $query = mysqli_query($conn, "SELECT fl.*, f.*, u.*, (SELECT COUNT(*) FROM `film_like` WHERE film_id = fl.film_id) as totalLikes FROM film_like as fl JOIN film as f ON f.id = fl.film_id JOIN user as u ON fl.user_id = u.id GROUP BY film_id;");
                                                 
                                                 while ($data = mysqli_fetch_array($query)) {
                                                     ?>
                                                     <tr>
-                                                        <td>
-                                                            <?php echo $no++; ?>
-                                                        </td>
                                                         <td>
                                                             <?php echo $data['judul_film']; ?>
                                                         </td>
@@ -125,7 +120,6 @@ include 'koneksi.php';
                                             </tbody>
                                         </table>
                                         <!-- Tabel End -->
-
                                     </div>
                                 </div>
                             </div>
