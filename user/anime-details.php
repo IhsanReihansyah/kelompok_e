@@ -96,18 +96,23 @@ $data = mysqli_fetch_array($query);
 
         #facebookBtn {
             display: inline-block;
-            background-color: #3b5998; /* Warna biru Facebook */
-            color: #ffffff; /* Warna teks putih */
+            background-color: #3b5998;
+            /* Warna biru Facebook */
+            color: #ffffff;
+            /* Warna teks putih */
             text-decoration: none;
-            padding: 10px 20px; /* Sesuaikan padding sesuai kebutuhan */
-            border-radius: 5px; /* Untuk sudut yang melengkung */
+            padding: 10px 20px;
+            /* Sesuaikan padding sesuai kebutuhan */
+            border-radius: 5px;
+            /* Untuk sudut yang melengkung */
             font-size: 19px;
             margin-left: 25px;
             /* Sesuaikan propertinya sesuai kebutuhan */
         }
 
         #facebookBtn i {
-            margin-right: 8px; /* Jarak antara ikon dan teks */
+            margin-right: 8px;
+            /* Jarak antara ikon dan teks */
         }
     </style>
 </head>
@@ -210,7 +215,7 @@ $data = mysqli_fetch_array($query);
                             ?>
 
                             <div class="anime__details__btn">
-                            <form action="proses_like.php" method="post" id="likeForm">
+                                <form action="proses_like.php" method="post" id="likeForm">
                                     <input type="hidden" name="filmId" value="<?php echo $data['id']; ?>">
                                     <input type="hidden" name="userId" value="<?php echo $user_id; ?>">
                                     <button type="submit" name="likeAction" id="likeButton">
@@ -225,10 +230,11 @@ $data = mysqli_fetch_array($query);
                                 <a href="anime-watching.php?id=<?php echo $data["id"] ?>" class="watch-btn">
                                     <span>Watch Now</span>
                                 </a>
-                                
-                                <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2FDreamMovie.com"
-                                    target="_blank" rel="noopener noreferrer" id="facebookBtn" class="facebook"><i
-                                        class="fa fa-facebook-square"> Facebook</i></a>
+
+                                <a href="https://www.facebook.com/dialog/share?app_id=1026040262151566&display=popup&href=https%3A%2F%2FDreamMovie.com&redirect_uri=https%3A%2F%2Fdevelopers.facebook.com%2Ftools%2Fexplorer"
+                                    target="_blank" rel="noopener noreferrer" id="facebookBtn" class="facebook">
+                                    <i class="fa fa-facebook-square"></i> Facebook
+                                </a>
                             </div>
 
                         </div>
