@@ -34,7 +34,8 @@ $data = mysqli_fetch_array($query);
         rel="stylesheet">
 
     <!-- Css Styles -->
-    <link rel="stylesheet" href="../dashboard/assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="../dashboard/assets/vendor/css/theme-default.css"
+        class="template-customizer-theme-css" />
     <link rel="stylesheet" href="../dashboard/assets/css/demo.css" />
     <link rel="stylesheet" href="../dashboard/assets/vendor/css/core.css" class="template-customizer-core-css" />
     <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css">
@@ -49,7 +50,7 @@ $data = mysqli_fetch_array($query);
     <link rel="stylesheet" href="../dashboard/assets/vendor/fonts/boxicons.css" />
 
     <!-- Core CSS -->
-    
+
     <link rel="icon" type="image/x-icon" href="../img/logo.png">
 
 
@@ -65,39 +66,50 @@ $data = mysqli_fetch_array($query);
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="../dashboard/assets/js/config.js"></script>
     <style>
-    .anime__details__btn {
-        display: flex;
-        align-items: center;
-        justify-content: flex-start; /* Menggunakan flex-start untuk tetap dekat satu sama lain */
-    }
+        .anime__details__btn {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            /* Menggunakan flex-start untuk tetap dekat satu sama lain */
+        }
 
-    #likeForm {
-        display: flex;
-        align-items: center;
-    }
+        #likeForm {
+            display: flex;
+            align-items: center;
+        }
 
-    #likeButton {
-        margin-left: 30px;
-        background: none;
-        border: none;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-    }
+        #likeButton {
+            margin-right: 30px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
 
-    #likeButton i {
-        font-size: 24px;
-        color: red;
-        margin-right: 5px; /* Jarak antara ikon hati dan teks */
-    }
+        #likeButton i {
+            font-size: 24px;
+            color: red;
+            margin-right: 5px;
+            /* Jarak antara ikon hati dan teks */
+        }
 
-    #facebookBtn {
-        font-size: 24px;
-        width: 120px; /* Sesuaikan lebar sesuai kebutuhan */
-        height: 40px; /* Sesuaikan tinggi sesuai kebutuhan */
-        margin-left: 10px; /* Jarak antara tombol Like dan iframe Facebook */
-    }
-</style>
+        #facebookBtn {
+            display: inline-block;
+            background-color: #3b5998; /* Warna biru Facebook */
+            color: #ffffff; /* Warna teks putih */
+            text-decoration: none;
+            padding: 10px 20px; /* Sesuaikan padding sesuai kebutuhan */
+            border-radius: 5px; /* Untuk sudut yang melengkung */
+            font-size: 19px;
+            margin-left: 25px;
+            /* Sesuaikan propertinya sesuai kebutuhan */
+        }
+
+        #facebookBtn i {
+            margin-right: 8px; /* Jarak antara ikon dan teks */
+        }
+    </style>
 </head>
 
 <body>
@@ -198,23 +210,25 @@ $data = mysqli_fetch_array($query);
                             ?>
 
                             <div class="anime__details__btn">
-                                <a href="anime-watching.php?id=<?php echo $data["id"] ?>" class="watch-btn">
-                                    <span>Watch Now</span>
-                                </a>
-                                <form action="proses_like.php" method="post" id="likeForm">
+                            <form action="proses_like.php" method="post" id="likeForm">
                                     <input type="hidden" name="filmId" value="<?php echo $data['id']; ?>">
                                     <input type="hidden" name="userId" value="<?php echo $user_id; ?>">
                                     <button type="submit" name="likeAction" id="likeButton">
                                         <?php if ($user_has_liked): ?>
-                                            <i class="fa fa-heart" aria-hidden="true" ></i>
+                                            <i class="fa fa-heart" aria-hidden="true"></i>
                                         <?php else: ?>
-                                            <i class="fa fa-heart-o" aria-hidden="true" ></i>
+                                            <i class="fa fa-heart-o" aria-hidden="true"></i>
                                         <?php endif; ?>
                                         <?php echo ($user_has_liked) ? '' : ''; ?>
                                     </button>
                                 </form>
-                            <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2FDreamMovie.com" target="_blank" rel="noopener noreferrer" class="facebook"
-                                            ><i class="fa fa-facebook-square"></i> Share to Facebook</a>
+                                <a href="anime-watching.php?id=<?php echo $data["id"] ?>" class="watch-btn">
+                                    <span>Watch Now</span>
+                                </a>
+                                
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2FDreamMovie.com"
+                                    target="_blank" rel="noopener noreferrer" id="facebookBtn" class="facebook"><i
+                                        class="fa fa-facebook-square"> Facebook</i></a>
                             </div>
 
                         </div>
