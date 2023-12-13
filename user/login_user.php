@@ -44,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" href="../dashboard/admin/cslogin/style.css">
     <link rel="icon" type="image/x-icon" href="../img/logo.png">
 
-    <title>Login Admin</title>
+    <title>Login User</title>
   </head>
   <body>
   <div class="content">
