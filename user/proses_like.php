@@ -17,9 +17,5 @@ if ($user_has_liked) {
     mysqli_query($conn, "INSERT INTO film_like (film_id, user_id) VALUES ('$filmId', '$idUser')");
 }
 
-$like_count_query = mysqli_query($conn, "SELECT COUNT(*) AS total_likes FROM film_like WHERE film_id = '$filmId'");
-$like_count_data = mysqli_fetch_assoc($like_count_query);
-$total_likes = $like_count_data['total_likes'];
-
 header("Location: anime-details.php?id=$filmId");
 exit();
