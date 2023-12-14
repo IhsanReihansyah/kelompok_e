@@ -239,7 +239,7 @@ $data = mysqli_fetch_array($query);
                                     <span>Watch Now</span>
                                 </a>
 
-                                <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2FDreamMovie.com"
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2FDreamMovie.com%2F<?= $url ?>"
                                     target="_blank" rel="noopener noreferrer" id="facebookBtn" class="facebook">
                                     <i class="fa fa-facebook-square"></i> Facebook
                                 </a>
