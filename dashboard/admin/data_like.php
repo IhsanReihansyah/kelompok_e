@@ -18,7 +18,7 @@ include 'koneksi.php';
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-    <title>Halaman Admin</title>
+    <title>Data Like</title>
 
     <meta name="description" content="">
 
@@ -64,7 +64,7 @@ include 'koneksi.php';
         ?>
         <!-- Navbar -->
 
-        
+
 
         <!-- / Navbar -->
 
@@ -86,7 +86,7 @@ include 'koneksi.php';
                                                 class="fa-solid fa-circle-plus"></i></a> -->
 
                                         <!-- Tabel Start -->
-                                        <table  id="like" class="table table-striped table-bordered">
+                                        <table id="like" class="table table-striped table-bordered">
                                             <thead>
                                                 <tr class="text-center">
                                                     <th>Judul Film</th>
@@ -101,20 +101,20 @@ include 'koneksi.php';
                                                 
                                                 while ($data = mysqli_fetch_array($query)) {
                                                     ?>
-                                                    <tr>
-                                                        <td>
-                                                            <?php echo $data['judul_film']; ?>
-                                                        </td>
-                                                        <td>
-                                                            <?php echo $data['genre']; ?>
-                                                        </td>
-                                                        <td>
-                                                            <?php
+                                                <tr>
+                                                    <td>
+                                                        <?php echo $data['judul_film']; ?>
+                                                    </td>
+                                                    <td>
+                                                        <?php echo $data['genre']; ?>
+                                                    </td>
+                                                    <td>
+                                                        <?php
                                                                 echo $data['totalLikes'];
                                                             ?>
-                                                        </td>
-                                                    </tr>
-                                                    <?php
+                                                    </td>
+                                                </tr>
+                                                <?php
                                                 }
                                                 ?>
                                             </tbody>
@@ -138,7 +138,7 @@ include 'koneksi.php';
         <script src="../../components/js/jquery-ui.min.js"></script>
         <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
         <script>
-            $.widget.bridge('uibutton', $.ui.button)
+        $.widget.bridge('uibutton', $.ui.button)
         </script>
         <!-- Bootstrap 4 -->
         <script src="../../components/js/bootstrap.bundle.min.js"></script>
@@ -170,13 +170,13 @@ include 'koneksi.php';
         <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
         <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
         <script>
-    $(document).ready(function () {
-        $('#like').DataTable({
-            searching: false, // Menonaktifkan fitur pencarian
-            // scrollX: true
+        $(document).ready(function() {
+            $('#like').DataTable({
+                searching: false, // Menonaktifkan fitur pencarian
+                // scrollX: true
+            });
         });
-    });
-</script>
+        </script>
 
 </body>
 

@@ -45,7 +45,7 @@
                 <li class="menu-item">
                     <a href="data_like.php" class="menu-link">
                         <i class="menu-icon tf-icons bx bxs-heart" style="color: grey;"></i>
-                        <div data-i18n="Analytics">Like</div>
+                        <div data-i18n="Analytics">Data Like</div>
                     </a>
                 </li>
 

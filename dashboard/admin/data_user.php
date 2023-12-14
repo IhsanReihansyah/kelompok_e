@@ -17,7 +17,7 @@ include 'koneksi.php';
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-    <title>Halaman Admin</title>
+    <title>Data User</title>
 
     <meta name="description" content="">
 
@@ -61,7 +61,7 @@ include 'koneksi.php';
     <!-- Layout container -->
     <div class="layout-page">
         <!-- Navbar -->
-        
+
         <!-- / Navbar -->
 
         <!-- Content wrapper -->
@@ -79,7 +79,7 @@ include 'koneksi.php';
                                     <div class="card-body">
 
                                         <!-- Tabel Start -->
-                                        <table  id="user" class="table table-striped table-bordered">
+                                        <table id="user" class="table table-striped table-bordered">
                                             <thead>
                                                 <tr class="text-center">
                                                     <th>No</th>
@@ -94,28 +94,28 @@ include 'koneksi.php';
                                                 $query = mysqli_query($conn, "SELECT * FROM user ORDER BY id ASC;");
                                                 while ($data = mysqli_fetch_array($query)) {
                                                     ?>
-                                                    <tr>
-                                                        <td>
-                                                            <?php echo $no++ ?>
-                                                        </td>
-                                                        <td>
-                                                            <?php echo $data['nickname']; ?>
-                                                        </td>
-                                                        <td>
-                                                            <?php echo $data['username']; ?>
-                                                        </td>
-                                                        <td>
-                                                            <center>
-                                                                <a href="hapus_user.php?id=<?php echo $data["id"] ?>"
-                                                                    class="btn btn-danger d-inline"
-                                                                    onclick="return confirm('Data Akan Dihapus?')">
-                                                                    <i class="fa fa-trash" style="color: white;"></i>
-                                                                </a>
-                                                            </center>
-                                                        </td>
+                                                <tr>
+                                                    <td>
+                                                        <?php echo $no++ ?>
+                                                    </td>
+                                                    <td>
+                                                        <?php echo $data['nickname']; ?>
+                                                    </td>
+                                                    <td>
+                                                        <?php echo $data['username']; ?>
+                                                    </td>
+                                                    <td>
+                                                        <center>
+                                                            <a href="hapus_user.php?id=<?php echo $data["id"] ?>"
+                                                                class="btn btn-danger d-inline"
+                                                                onclick="return confirm('Data Akan Dihapus?')">
+                                                                <i class="fa fa-trash" style="color: white;"></i>
+                                                            </a>
+                                                        </center>
+                                                    </td>
 
-                                                    </tr>
-                                                    <?php
+                                                </tr>
+                                                <?php
                                                 }
                                                 ?>
                                             </tbody>
@@ -140,7 +140,7 @@ include 'koneksi.php';
         <script src="../../components/js/jquery-ui.min.js"></script>
         <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
         <script>
-            $.widget.bridge('uibutton', $.ui.button)
+        $.widget.bridge('uibutton', $.ui.button)
         </script>
         <!-- Bootstrap 4 -->
         <script src="../../components/js/bootstrap.bundle.min.js"></script>
@@ -172,13 +172,13 @@ include 'koneksi.php';
         <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
         <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
         <script>
-    $(document).ready(function () {
-        $('#user').DataTable({
-            searching: false, // Menonaktifkan fitur pencarian
-            // scrollX: true
+        $(document).ready(function() {
+            $('#user').DataTable({
+                searching: false, // Menonaktifkan fitur pencarian
+                // scrollX: true
+            });
         });
-    });
-</script>
+        </script>
 
 </body>
 
